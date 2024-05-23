@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "/LastFans/static/js/main.d2abe8ef.js",
+    "main.js": "/LastFans/static/js/main.b33680f5.js",
     "index.html": "/LastFans/index.html",
-    "main.d2abe8ef.js.map": "/LastFans/static/js/main.d2abe8ef.js.map"
+    "main.b33680f5.js.map": "/LastFans/static/js/main.b33680f5.js.map"
   },
   "entrypoints": [
-    "static/js/main.d2abe8ef.js"
+    "static/js/main.b33680f5.js"
   ]
 }
