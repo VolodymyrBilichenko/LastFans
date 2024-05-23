@@ -1,14 +1,14 @@
-import { useState } from "react";
 import { Route, Routes, useLocation } from "react-router-dom";
 import { routes } from "./routes/routes";
 
 export const App = () => {
   const location = useLocation();
-  const [routesList] = useState(routes())
 
   return (
     <Routes location={location}>
-        {routesList.map(route => <Route key={route.path} element={route.element} path={route.path}/>)}
+        {
+          routes.map((item: any) => <Route key={item.path} element={item.element} path={item.path}/>)
+        }
     </Routes>
   );
 }
