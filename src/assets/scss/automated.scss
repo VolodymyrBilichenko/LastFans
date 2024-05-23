@@ -1,0 +1,96 @@
+.automated {
+    @include adaptiveValue("padding", 37, 15);
+    background-color: var(--white);
+    border-radius: toRem(16);
+    // .automated__body
+    &__body {
+        display: grid;
+        gap: toRem(30);
+    }
+    // .automated__block
+    &__block {
+        display: grid;
+        gap: toRem(10);
+    }
+    // .automated__label
+    &__label {
+        font-weight: 600;
+    }
+    // .automated__spoller
+    &__spoller {
+    }
+    // .automated__bottom
+    &__bottom {
+        display: flex;
+        align-items: end;
+        justify-content: space-between;
+        gap: toRem(10);
+    }
+    // .automated__button
+    &__button {
+    }
+    // .automated__delay
+    &__delay {
+    }
+
+    &__body-textarea{
+        height: toRem(381);
+        position: relative;
+        
+    }
+    &__textarea{
+        
+    }
+}
+.spoller-automated {
+    border-radius: toRem(10);
+    cursor: pointer;
+    height: fit-content;
+    // .spoller-automated__title
+    &__title {
+        list-style: none;
+        font-size: toRem(15);
+        color: #525252;
+        display: flex;
+        align-items: center;
+        gap: toRem(10);
+        justify-content: space-between;
+        &::after{
+            content:'';
+            flex: 0 0 toRem(12);
+            width: toRem(12);
+            height: toRem(6);
+            background: url('../img/icons/arrow.svg') center / cover no-repeat;
+            transition: all .3s ease;
+        }
+        &._spoller-active{
+            &::after{
+                content:'';
+                transform: scale(-1);
+            }
+        }
+    }
+    // .spoller-automated__body
+    &__body {
+    }
+}
+
+.delay-automated {
+    
+    // .delay-automated__body
+    &__body {
+        display: flex;
+        align-items: center;
+        gap: toRem(20);
+    }
+    // .delay-automated__text
+    &__text {
+    }
+    // .delay-automated__input
+    &__input {
+        width: toRem(88);
+        font-size: toRem(15);
+    }
+}
+
+
