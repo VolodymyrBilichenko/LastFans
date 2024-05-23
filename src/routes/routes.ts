@@ -1,12 +1,14 @@
+import { Main } from '../'
+
 export const routes = () => {
     return [
         {
             path: '/LastFans',
-            element: 'q'
+            element: <Main/>
         },
         {
             path: '/',
-            element: 'q'
+            element: <Main/>
         },
     ]
 }
