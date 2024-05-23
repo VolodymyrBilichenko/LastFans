@@ -6,9 +6,9 @@ export const App = () => {
 
   return (
     <Routes location={location}>
-        {
-          routes.map((item: any) => <Route key={item.path} element={item.element} path={item.path}/>)
-        }
+      {
+        routes.map((item: any) => <Route key={item.path} element={item.element} path={item.path}/>)
+      }
     </Routes>
   );
 }

@@ -1,6 +1,4 @@
 import { createSlice } from "@reduxjs/toolkit";
-// import {IDonateInfo, IGeneralInfo, INews, INewsSingle, IServer, IUser} from "../models";
-
 
 const toolkitSlice = createSlice({
     name: "toolkit",
