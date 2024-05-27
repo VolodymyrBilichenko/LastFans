@@ -55,7 +55,7 @@ export const Header = () => {
                                                         <div className="body-messages__item item-message unread">
                                                             <div className="item-message__user user-item user-item--stories online">
                                                                 <div className="user-item__image user-item__image--decoration">
-                                                                    <picture><source srcSet="img/user/02.webp" type="image/webp"/><img className="user-photo" src="img/user/02.jpg" alt="ph"/></picture>
+                                                                    <img className="user-photo" src="img/user/02.jpg" alt="ph"/>
                                                                     <div className="user-item__image-status">
                                                                         <svg className="online-status" width="8" height="9" viewBox="0 0 8 9" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                                             <circle cx="4" cy="4.5" r="4" fill="#3DD598" style={{fill:'#3DD598', fillOpacity:'1'}} />
@@ -72,7 +72,7 @@ export const Header = () => {
                                                         <div className="body-messages__item item-message unread">
                                                             <div className="item-message__user user-item user-item--stories online">
                                                                 <div className="user-item__image user-item__image--decoration">
-                                                                    <picture><source srcSet="img/user/02.webp" type="image/webp"/><img className="user-photo" src="img/user/02.jpg" alt="ph"/></picture>
+                                                                    <img className="user-photo" src="img/user/02.jpg" alt="ph"/>
                                                                     <div className="user-item__image-status">
                                                                         <svg className="online-status" width="8" height="9" viewBox="0 0 8 9" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                                             <circle cx="4" cy="4.5" r="4" fill="#3DD598" style={{fill:'#3DD598', fillOpacity:'1'}} />
@@ -89,7 +89,7 @@ export const Header = () => {
                                                         <div className="body-messages__item item-message unread">
                                                             <div className="item-message__user user-item user-item--stories online">
                                                                 <div className="user-item__image user-item__image--decoration">
-                                                                    <picture><source srcSet="img/user/02.webp" type="image/webp"/><img className="user-photo" src="img/user/02.jpg" alt="ph"/></picture>
+                                                                    <img className="user-photo" src="img/user/02.jpg" alt="ph"/>
                                                                     <div className="user-item__image-status">
                                                                         <svg className="online-status" width="8" height="9" viewBox="0 0 8 9" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                                             <circle cx="4" cy="4.5" r="4" fill="#3DD598" style={{fill:'#3DD598', fillOpacity:'1'}} />
@@ -139,7 +139,7 @@ export const Header = () => {
                                             <div className="body-popup-sub-header__item item-sub">
                                                 <div className="item-sub__user user-item user-item--stories">
                                                     <div className="user-item__image user-item__image--decoration">
-                                                        <picture><source srcSet="img/user/02.webp" type="image/webp"/><img className="user-photo" src="img/user/02.jpg" alt="ph"/></picture>
+                                                        <img className="user-photo" src="img/user/02.jpg" alt="ph"/>
                                                         <div className="user-item__image-icon">
                                                             <img src="img/icons/logo-white.svg" alt="ph"/>
                                                         </div>
@@ -163,7 +163,7 @@ export const Header = () => {
                                             <div className="body-popup-sub-header__item item-sub">
                                                 <div className="item-sub__user user-item user-item--stories">
                                                     <div className="user-item__image user-item__image--decoration">
-                                                        <picture><source srcSet="img/user/02.webp" type="image/webp"/><img className="user-photo" src="img/user/02.jpg" alt="ph"/></picture>
+                                                        <img className="user-photo" src="img/user/02.jpg" alt="ph"/>
                                                         <div className="user-item__image-icon">
                                                             <img src="img/icons/logo-white.svg" alt="ph"/>
                                                         </div>
@@ -187,7 +187,7 @@ export const Header = () => {
                                             <div className="body-popup-sub-header__item item-sub">
                                                 <div className="item-sub__user user-item user-item--stories">
                                                     <div className="user-item__image user-item__image--decoration">
-                                                        <picture><source srcSet="img/user/02.webp" type="image/webp"/><img className="user-photo" src="img/user/02.jpg" alt="ph"/></picture>
+                                                        <img className="user-photo" src="img/user/02.jpg" alt="ph"/>
                                                         <div className="user-item__image-icon">
                                                             <img src="img/icons/logo-white.svg" alt="ph"/>
                                                         </div>
@@ -234,7 +234,7 @@ export const Header = () => {
                                         <div className="popup-notifications-header__body body-popup-notifications-header">
                                             <div className="body-popup-notifications-header__item item-notifications item-notifications--unread item-notifications--love">
                                                 <a href="some" className="item-notifications__image">
-                                                    <picture><source srcSet="img/user/01.webp" type="image/webp"/><img className="user-photo" src={UserPhoto} alt="ph"/></picture>
+                                                    <img className="user-photo" src={UserPhoto} alt="ph"/>
                                                     <div className="item-notifications__image-icon">
                                                         <img src="img/icons/love.svg" alt="ph"/>
                                                     </div>
@@ -264,7 +264,7 @@ export const Header = () => {
                                             </div>
                                             <div className="body-popup-notifications-header__item item-notifications item-notifications--unread item-notifications--tip">
                                                 <a href="some" className="item-notifications__image">
-                                                    <picture><source srcSet="img/user/01.webp" type="image/webp"/><img className="user-photo" src={UserPhoto} alt="ph"/></picture>
+                                                    <img className="user-photo" src={UserPhoto} alt="ph"/>
                                                     <div className="item-notifications__image-icon">
                                                         <img src="img/icons/dollar.svg" alt="ph"/>
                                                     </div>
@@ -287,7 +287,7 @@ export const Header = () => {
                                             </div>
                                             <div className="body-popup-notifications-header__item item-notifications item-notifications--unread item-notifications--love">
                                                 <a href="some" className="item-notifications__image">
-                                                    <picture><source srcSet="img/user/01.webp" type="image/webp"/><img className="user-photo" src={UserPhoto} alt="ph"/></picture>
+                                                    <img className="user-photo" src={UserPhoto} alt="ph"/>
                                                     <div className="item-notifications__image-icon">
                                                         <img src="img/icons/love.svg" alt="ph"/>
                                                     </div>
@@ -326,14 +326,14 @@ export const Header = () => {
                                     <span></span>
                                 </div>
                             </button>
-                            <picture><source srcSet="img/user/01.webp" type="image/webp"/><img className="user-header__image" src={UserPhoto} alt="ph"/></picture>
+                            <img className="user-header__image" src={UserPhoto} alt="ph"/>
                             <div className="user-header__popup popup-user-header popup-main">
                                 <div className="popup-main__wrapper">
                                     <div className="popup-main__content">
 
                                         <div className="popup-user-header__top top-popup-user-header">
                                             <div className="top-popup-user-header__image">
-                                                <picture><source srcSet="img/user/01.webp" type="image/webp"/><img src={UserPhoto} alt="ph"/></picture>
+                                                <img src={UserPhoto} alt="ph"/>
                                             </div>
                                             <p className="top-popup-user-header__name">darkangeel</p>
                                             <p className="top-popup-user-header__username">@darkangeel</p>

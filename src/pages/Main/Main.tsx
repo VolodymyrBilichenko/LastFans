@@ -1,4 +1,17 @@
-import React from 'react'
+import UserPhoto from '../../assets/img/user/01.png'
+import UserPhoto2 from '../../assets/img/user/02.jpg'
+import UserPost from '../../assets/img/post/01.jpg'
+import Icon from '../../assets/img/icons/image.svg'
+import PlusIc from '../../assets/img/icons/plus.svg'
+import PinIc from '../../assets/img/icons/pin.svg'
+import LogoWhiteIc from '../../assets/img/icons/logo-white.svg'
+import VideoIc from '../../assets/img/icons/video.svg'
+import MoneyIc from '../../assets/img/icons/monney.svg'
+import MoneyIc2 from '../../assets/img/icons/money-02.svg'
+import AudioIc from '../../assets/img/icons/audio.svg'
+import FileIc from '../../assets/img/icons/file.svg'
+import StoryPh from '../../assets/img/story/story.jpg'
+import LiveIc from '../../assets/img/icons/live.svg'
 
 export const Main = () => {
   return (
@@ -231,7 +244,7 @@ export const Main = () => {
 						<div className="new-post-main__body">
 							<div className="new-post-main__content">
 								<a href="some" className="new-post-main__image user-image user-image--40">
-                                    <img src="/assets/img/user/01.png" alt="ph"/>
+                                    <img src={UserPhoto} alt="ph"/>
 								</a>
 								<div className="new-post-main__input input-main">
 									<input type="text" name="form[]" placeholder="Create new post" className="input"/>
@@ -239,22 +252,22 @@ export const Main = () => {
 							</div>
 							<div className="new-post-main__actions">
 								<button className="new-post-main__item">
-									<img src="img/icons/image.svg" alt="Icon"/>
+									<img src={Icon} alt="Icon"/>
 								</button>
 								<button className="new-post-main__item">
-									<img src="img/icons/video.svg" alt="Icon"/>
+									<img src={VideoIc} alt="Icon"/>
 								</button>
 								<button className="new-post-main__item">
-									<img src="img/icons/monney.svg" alt="Icon"/>
+									<img src={MoneyIc} alt="Icon"/>
 								</button>
 								<button className="new-post-main__item">
-									<img src="img/icons/audio.svg" alt="Icon"/>
+									<img src={AudioIc} alt="Icon"/>
 								</button>
 								<button className="new-post-main__item">
-									<img src="img/icons/file.svg" alt="Icon"/>
+									<img src={FileIc} alt="Icon"/>
 								</button>
 								<button className="new-post-main__item">
-									<img src="img/icons/money-02.svg" alt="Icon"/>
+									<img src={MoneyIc2} alt="Icon"/>
 								</button>
 							</div>
 						</div>
@@ -263,16 +276,16 @@ export const Main = () => {
 						<div className="stories-main__content">
 							<div className="stories-main__item add-story">
 								<div className="add-story__image">
-                                        <img src="img/story/story.jpg" alt="ph"/>
+                                        <img src={StoryPh} alt="ph"/>
 								</div>
 								<div className="add-story__text">
-									<img src="img/icons/plus.svg" alt="Icon"/>
+									<img src={PlusIc} alt="Icon"/>
 									<p>Add story</p>
 								</div>
 							</div>
 							<a href="some" className="stories-main__item live-stories-main">
 								<div className="live-stories-main__text">
-									<img src="img/icons/live.svg" alt="Icon"/>
+									<img src={LiveIc} alt="Icon"/>
 									<p>Go Live</p>
 								</div>
 							</a>
@@ -295,67 +308,67 @@ export const Main = () => {
 								</a>
 								<a href="some" className="highlights-main__item item-highlights-main swiper-slide">
 									<div className="item-highlights-main__image">
-                                            <img src="img/story/story.jpg" alt="ph"/>
+                                            <img src={StoryPh} alt="ph"/>
 									</div>
 									<p className="item-highlights-main__text">NewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNew</p>
 								</a>
 								<a href="some" className="highlights-main__item item-highlights-main swiper-slide">
 									<div className="item-highlights-main__image">
-                                            <img src="img/story/story.jpg" alt="ph"/>
+                                            <img src={StoryPh} alt="ph"/>
 									</div>
 									<p className="item-highlights-main__text">New</p>
 								</a>
 								<a href="some" className="highlights-main__item item-highlights-main swiper-slide">
 									<div className="item-highlights-main__image">
-                                            <img src="img/story/story.jpg" alt="ph"/>
+                                            <img src={StoryPh} alt="ph"/>
 									</div>
 									<p className="item-highlights-main__text">New</p>
 								</a>
 								<a href="some" className="highlights-main__item item-highlights-main swiper-slide">
 									<div className="item-highlights-main__image">
-                                            <img src="img/story/story.jpg" alt="ph"/>
+                                            <img src={StoryPh} alt="ph"/>
 									</div>
 									<p className="item-highlights-main__text">New</p>
 								</a>
 								<a href="some" className="highlights-main__item item-highlights-main swiper-slide">
 									<div className="item-highlights-main__image">
-                                            <img src="img/story/story.jpg" alt="ph"/>
+                                            <img src={StoryPh} alt="ph"/>
 									</div>
 									<p className="item-highlights-main__text">New</p>
 								</a>
 								<a href="some" className="highlights-main__item item-highlights-main swiper-slide">
 									<div className="item-highlights-main__image">
-                                            <img src="img/story/story.jpg" alt="ph"/>
+                                            <img src={StoryPh} alt="ph"/>
 									</div>
 									<p className="item-highlights-main__text">New</p>
 								</a>
 								<a href="some" className="highlights-main__item item-highlights-main swiper-slide">
 									<div className="item-highlights-main__image">
-                                            <img src="img/story/story.jpg" alt="ph"/>
+                                            <img src={StoryPh} alt="ph"/>
 									</div>
 									<p className="item-highlights-main__text">New</p>
 								</a>
 								<a href="some" className="highlights-main__item item-highlights-main swiper-slide">
 									<div className="item-highlights-main__image">
-                                            <img src="img/story/story.jpg" alt="ph"/>
+                                            <img src={StoryPh} alt="ph"/>
 									</div>
 									<p className="item-highlights-main__text">New</p>
 								</a>
 								<a href="some" className="highlights-main__item item-highlights-main swiper-slide">
 									<div className="item-highlights-main__image">
-                                            <img src="img/story/story.jpg" alt="ph"/>
+                                            <img src={StoryPh} alt="ph"/>
 									</div>
 									<p className="item-highlights-main__text">New</p>
 								</a>
 								<a href="some" className="highlights-main__item item-highlights-main swiper-slide">
 									<div className="item-highlights-main__image">
-                                            <img src="img/story/story.jpg" alt="ph"/>
+                                            <img src={StoryPh} alt="ph"/>
 									</div>
 									<p className="item-highlights-main__text">New</p>
 								</a>
 								<a href="some" className="highlights-main__item item-highlights-main swiper-slide">
 									<div className="item-highlights-main__image">
-                                        <img src="img/story/story.jpg" alt="ph"/>
+                                        <img src={StoryPh} alt="ph"/>
 									</div>
 									<p className="item-highlights-main__text">New</p>
 								</a>
@@ -369,7 +382,7 @@ export const Main = () => {
 							<div className="post__top top-post">
 								<div className="top-post__user user-item user-item--stories online">
 									<div className="user-item__image user-item__image--decoration">
-                                        <img className="user-photo" src="img/user/01.png" alt="ph"/>
+                                        <img className="user-photo" src={UserPhoto} alt="ph"/>
 										<div className="user-item__image-status">
 											<svg className="online-status" width="8" height="9" viewBox="0 0 8 9" fill="none" xmlns="http://www.w3.org/2000/svg">
 												<circle cx="4" cy="4.5" r="4" fill="#3DD598" style={{fill:'#3DD598', fillOpacity:'1'}} />
@@ -381,7 +394,7 @@ export const Main = () => {
 										<div className="user-item__block">
 											<div className="user-item__post-time"><span>02.03.20</span>14:15<span></span></div>
 											<div className="user-item__post-pin pin-icon">
-												<img src="img/icons/pin.svg" alt="Icon"/>
+												<img src={PinIc} alt="Icon"/>
 											</div>
 										</div>
 									</div>
@@ -416,7 +429,7 @@ export const Main = () => {
 								<div className="post__content content-post">
 									<div data-gallery className="content-post__images gallery">
 										<a href="img/post/01.jpg" className="content-post__image gallery__image">
-                                            <img src="img/post/01.jpg" alt="" className="ibg gallery__preview"/>
+                                            <img src={UserPost} alt="" className="ibg gallery__preview"/>
 										</a>
 									</div>
 								</div>
@@ -490,7 +503,7 @@ export const Main = () => {
 							<div className="post__top top-post">
 								<div className="top-post__user user-item user-item--stories online">
 									<div className="user-item__image user-item__image--decoration">
-                                        <img className="user-photo" src="img/user/01.png" alt="ph"/>
+                                        <img className="user-photo" src={UserPhoto} alt="ph"/>
 										<div className="user-item__image-status">
 											<svg className="online-status" width="8" height="9" viewBox="0 0 8 9" fill="none" xmlns="http://www.w3.org/2000/svg">
 												<circle cx="4" cy="4.5" r="4" fill="#3DD598" style={{fill:'#3DD598', fillOpacity:'1'}} />
@@ -502,7 +515,7 @@ export const Main = () => {
 										<div className="user-item__block">
 											<div className="user-item__post-time"><span>02.03.20</span>14:15<span></span></div>
 											<div className="user-item__post-pin pin-icon">
-												<img src="img/icons/pin.svg" alt="Icon"/>
+												<img src={PinIc} alt="Icon"/>
 											</div>
 										</div>
 									</div>
@@ -537,10 +550,10 @@ export const Main = () => {
 								<div className="post__content content-post">
 									<div data-gallery className="content-post__images gallery two-photo">
 										<a href="img/post/01.jpg" className="content-post__image gallery__image">
-                                            <img src="img/post/01.jpg" alt="" className="ibg gallery__preview"/>
+                                            <img src={UserPost} alt="" className="ibg gallery__preview"/>
 										</a>
 										<a href="img/post/01.jpg" className="content-post__image gallery__image">
-                                            <img src="img/post/01.jpg" alt="" className="ibg gallery__preview"/>
+                                            <img src={UserPost} alt="" className="ibg gallery__preview"/>
 										</a>
 									</div>
 								</div>
@@ -614,7 +627,7 @@ export const Main = () => {
 							<div className="post__top top-post">
 								<div className="top-post__user user-item user-item--stories online">
 									<div className="user-item__image user-item__image--decoration">
-                                        <img className="user-photo" src="img/user/01.png" alt="ph"/>
+                                        <img className="user-photo" src={UserPhoto} alt="ph"/>
 										<div className="user-item__image-status">
 											<svg className="online-status" width="8" height="9" viewBox="0 0 8 9" fill="none" xmlns="http://www.w3.org/2000/svg">
 												<circle cx="4" cy="4.5" r="4" fill="#3DD598" style={{fill:'#3DD598', fillOpacity:'1'}} />
@@ -626,7 +639,7 @@ export const Main = () => {
 										<div className="user-item__block">
 											<div className="user-item__post-time"><span>02.03.20</span>14:15<span></span></div>
 											<div className="user-item__post-pin pin-icon">
-												<img src="img/icons/pin.svg" alt="Icon"/>
+												<img src={PinIc} alt="Icon"/>
 											</div>
 										</div>
 									</div>
@@ -661,13 +674,13 @@ export const Main = () => {
 								<div className="post__content content-post">
 									<div data-gallery className="content-post__images gallery three-photo">
 										<a href="img/post/01.jpg" className="content-post__image gallery__image">
-                                            <img src="img/post/01.jpg" alt="" className="ibg gallery__preview"/>
+                                            <img src={UserPost} alt="" className="ibg gallery__preview"/>
 										</a>
 										<a href="img/post/01.jpg" className="content-post__image gallery__image">
-                                            <img src="img/post/01.jpg" alt="" className="ibg gallery__preview"/>
+                                            <img src={UserPost} alt="" className="ibg gallery__preview"/>
 										</a>
 										<a href="img/post/01.jpg" className="content-post__image gallery__image">
-                                            <img src="img/post/01.jpg" alt="" className="ibg gallery__preview"/>
+                                            <img src={UserPost} alt="" className="ibg gallery__preview"/>
 										</a>
 									</div>
 								</div>
@@ -770,9 +783,9 @@ export const Main = () => {
 							<div className="body-messages__item item-message">
 								<div className="item-message__user user-item user-item--stories">
 									<div className="user-item__image user-item__image--decoration">
-                                        <img className="user-photo" src="img/user/02.jpg" alt="ph"/>
+                                        <img className="user-photo" src={UserPhoto2} alt="ph"/>
 										<div className="user-item__image-icon">
-											<img src="img/icons/logo-white.svg" alt="ph"/>
+											<img src={LogoWhiteIc} alt="ph"/>
 										</div>
 									</div>
 									<div className="user-item__body">
@@ -806,9 +819,9 @@ export const Main = () => {
 							<div className="body-messages__item item-message">
 								<div className="item-message__user user-item user-item--stories">
 									<div className="user-item__image user-item__image--decoration">
-                                        <img className="user-photo" src="img/user/02.jpg" alt="ph"/>
+                                        <img className="user-photo" src={UserPhoto2} alt="ph"/>
 										<div className="user-item__image-icon">
-											<img src="img/icons/logo-white.svg" alt="ph"/>
+											<img src={LogoWhiteIc} alt="ph"/>
 										</div>
 									</div>
 									<div className="user-item__body">
@@ -842,9 +855,9 @@ export const Main = () => {
 							<div className="body-messages__item item-message">
 								<div className="item-message__user user-item user-item--stories">
 									<div className="user-item__image user-item__image--decoration">
-                                        <img className="user-photo" src="img/user/02.jpg" alt="ph"/>
+                                        <img className="user-photo" src={UserPhoto2} alt="ph"/>
 										<div className="user-item__image-icon">
-											<img src="img/icons/logo-white.svg" alt="ph"/>
+											<img src={LogoWhiteIc} alt="ph"/>
 										</div>
 									</div>
 									<div className="user-item__body">
@@ -878,9 +891,9 @@ export const Main = () => {
 							<div className="body-messages__item item-message">
 								<div className="item-message__user user-item user-item--stories">
 									<div className="user-item__image user-item__image--decoration">
-                                        <img className="user-photo" src="img/user/02.jpg" alt="ph"/>
+                                        <img className="user-photo" src={UserPhoto2} alt="ph"/>
 										<div className="user-item__image-icon">
-											<img src="img/icons/logo-white.svg" alt="ph"/>
+											<img src={LogoWhiteIc} alt="ph"/>
 										</div>
 									</div>
 									<div className="user-item__body">
@@ -914,9 +927,9 @@ export const Main = () => {
 							<div className="body-messages__item item-message">
 								<div className="item-message__user user-item user-item--stories">
 									<div className="user-item__image user-item__image--decoration">
-                                        <img className="user-photo" src="img/user/02.jpg" alt="ph"/>
+                                        <img className="user-photo" src={UserPhoto2} alt="ph"/>
 										<div className="user-item__image-icon">
-											<img src="img/icons/logo-white.svg" alt="ph"/>
+											<img src={LogoWhiteIc} alt="ph"/>
 										</div>
 									</div>
 									<div className="user-item__body">
@@ -950,9 +963,9 @@ export const Main = () => {
 							<div className="body-messages__item item-message">
 								<div className="item-message__user user-item user-item--stories">
 									<div className="user-item__image user-item__image--decoration">
-										<picture><source srcSet="img/user/02.webp" type="image/webp"/><img className="user-photo" src="img/user/02.jpg" alt="ph"/></picture>
+										<img className="user-photo" src={UserPhoto2} alt="ph"/>
 										<div className="user-item__image-icon">
-											<img src="img/icons/logo-white.svg" alt="ph"/>
+											<img src={LogoWhiteIc} alt="ph"/>
 										</div>
 									</div>
 									<div className="user-item__body">
@@ -986,9 +999,9 @@ export const Main = () => {
 							<div className="body-messages__item item-message">
 								<div className="item-message__user user-item user-item--stories">
 									<div className="user-item__image user-item__image--decoration">
-										<picture><source srcSet="img/user/02.webp" type="image/webp"/><img className="user-photo" src="img/user/02.jpg" alt="ph"/></picture>
+										<img className="user-photo" src={UserPhoto2} alt="ph"/>
 										<div className="user-item__image-icon">
-											<img src="img/icons/logo-white.svg" alt="ph"/>
+											<img src={LogoWhiteIc} alt="ph"/>
 										</div>
 									</div>
 									<div className="user-item__body">
@@ -1022,9 +1035,9 @@ export const Main = () => {
 							<div className="body-messages__item item-message">
 								<div className="item-message__user user-item user-item--stories">
 									<div className="user-item__image user-item__image--decoration">
-										<picture><source srcSet="img/user/02.webp" type="image/webp"/><img className="user-photo" src="img/user/02.jpg" alt="ph"/></picture>
+										<img className="user-photo" src={UserPhoto2} alt="ph"/>
 										<div className="user-item__image-icon">
-											<img src="img/icons/logo-white.svg" alt="ph"/>
+											<img src={LogoWhiteIc} alt="ph"/>
 										</div>
 									</div>
 									<div className="user-item__body">
@@ -1058,9 +1071,9 @@ export const Main = () => {
 							<div className="body-messages__item item-message">
 								<div className="item-message__user user-item user-item--stories">
 									<div className="user-item__image user-item__image--decoration">
-										<picture><source srcSet="img/user/02.webp" type="image/webp"/><img className="user-photo" src="img/user/02.jpg" alt="ph"/></picture>
+										<img className="user-photo" src={UserPhoto2} alt="ph"/>
 										<div className="user-item__image-icon">
-											<img src="img/icons/logo-white.svg" alt="ph"/>
+											<img src={LogoWhiteIc} alt="ph"/>
 										</div>
 									</div>
 									<div className="user-item__body">
@@ -1094,9 +1107,9 @@ export const Main = () => {
 							<div className="body-messages__item item-message">
 								<div className="item-message__user user-item user-item--stories">
 									<div className="user-item__image user-item__image--decoration">
-										<picture><source srcSet="img/user/02.webp" type="image/webp"/><img className="user-photo" src="img/user/02.jpg" alt="ph"/></picture>
+										<img className="user-photo" src={UserPhoto2} alt="ph"/>
 										<div className="user-item__image-icon">
-											<img src="img/icons/logo-white.svg" alt="ph"/>
+											<img src={LogoWhiteIc} alt="ph"/>
 										</div>
 									</div>
 									<div className="user-item__body">
