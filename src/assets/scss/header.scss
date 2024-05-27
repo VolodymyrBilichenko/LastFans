@@ -13,7 +13,6 @@
     &__wrapper {
         display: flex;
         align-items: center;
-        // @include adaptiveValue("height", 110, 60);
         height: toRem(60);
         @media (min-width:$mobile){
              height: toRem(110); 
@@ -34,9 +33,15 @@
         align-items: center;
         gap: toRem(5);
         text-transform: uppercase;
+
+        p{
+            font-weight: 600;
+        }
+
         @include adaptiveValue("font-size", 30, 20);
         span{
             color: var(--blue);
+            font-weight: 600;
         }
         img{
             flex: 0 0 toRem(20);
@@ -98,6 +103,9 @@
     }
     // .header__actions
     &__actions {
+        @media (min-width:$tablet){
+             max-width: 83%; 
+        }
         width: 100%;
         margin: 0 0 0 auto;
         display: flex;
