@@ -1,6 +1,7 @@
 import { ForgotPass } from '../pages/ForgotPass/ForgotPass'
 import { Login } from '../pages/Login/Login'
 import { Main } from '../pages/Main/Main'
+import { NotFound } from '../pages/NotFound/NotFound'
 import { Registration } from '../pages/Registration/Registration'
 
 export const routes: any[] = [
@@ -25,6 +26,10 @@ export const routes: any[] = [
     {
         path: '/forgot',
         element: <ForgotPass/>
+    },
+    {
+        path: '*',
+        element: <NotFound/>
     },
 
 ]
