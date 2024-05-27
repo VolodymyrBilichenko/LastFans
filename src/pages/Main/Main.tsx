@@ -9,7 +9,7 @@ export const Main = () => {
 				<div className="page-menu__wrapper">
 					<div data-spollers className="page-menu__body">
 						<div className="page-menu__items spollers">
-							<a href="#" className="page-menu__item item-page-menu">
+							<a href="some" className="page-menu__item item-page-menu">
 								<div className="item-page-menu__image">
 									<div className="item-page-menu__image-body">
 
@@ -28,7 +28,7 @@ export const Main = () => {
 									</div>
 								</div>
 							</a>
-							<a href="#" className="page-menu__item item-page-menu">
+							<a href="some" className="page-menu__item item-page-menu">
 								<div className="item-page-menu__image">
 									<div className="item-page-menu__image-body">
 										<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -47,7 +47,7 @@ export const Main = () => {
 								</div>
 							</a>
 
-							<a href="#" className="page-menu__item item-page-menu">
+							<a href="some" className="page-menu__item item-page-menu">
 								<div className="item-page-menu__image">
 									<div className="item-page-menu__image-body">
 
@@ -67,7 +67,7 @@ export const Main = () => {
 								</div>
 							</a>
 
-							<a href="#" className="page-menu__item item-page-menu">
+							<a href="some" className="page-menu__item item-page-menu">
 								<div className="item-page-menu__image">
 									<div className="item-page-menu__image-body">
 
@@ -85,7 +85,7 @@ export const Main = () => {
 								</div>
 							</a>
 
-							<a href="#" className="page-menu__item item-page-menu">
+							<a href="some" className="page-menu__item item-page-menu">
 								<div className="item-page-menu__image">
 									<div className="item-page-menu__image-body">
 										<svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -127,9 +127,9 @@ export const Main = () => {
 											<summary data-spoller-close className="sub-menu__title spollers__title">My profile</summary>
 
 											<div className="sub-menu__body spollers__body">
-												<a href="#" className="item-page-menu__text">Profile</a>
-												<a href="#" className="item-page-menu__text">Automated messages</a>
-												<a href="#" className="item-page-menu__text">History</a>
+												<a href="some" className="item-page-menu__text">Profile</a>
+												<a href="some" className="item-page-menu__text">Automated messages</a>
+												<a href="some" className="item-page-menu__text">History</a>
 											</div>
 										</details>
 									</div>
@@ -140,7 +140,7 @@ export const Main = () => {
 					</div>
 					<div className="page-menu__footer">
 						<div className="page-menu__items">
-							<a href="#" className="page-menu__item item-page-menu">
+							<a href="some" className="page-menu__item item-page-menu">
 								<div className="item-page-menu__image">
 									<div className="item-page-menu__image-body">
 										<svg width="24" height="26" viewBox="0 0 24 26" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -158,7 +158,7 @@ export const Main = () => {
 									</div>
 								</div>
 							</a>
-							<a href="#" className="page-menu__item item-page-menu">
+							<a href="some" className="page-menu__item item-page-menu">
 								<div className="item-page-menu__image">
 									<div className="item-page-menu__image-body">
 										<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -179,7 +179,7 @@ export const Main = () => {
 								</div>
 							</a>
 
-							<a href="#" className="page-menu__item item-page-menu">
+							<a href="some" className="page-menu__item item-page-menu">
 								<div className="item-page-menu__image">
 									<div className="item-page-menu__image-body">
 										<svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -230,8 +230,8 @@ export const Main = () => {
 					<div className="main__new-post new-post-main main__item">
 						<div className="new-post-main__body">
 							<div className="new-post-main__content">
-								<a href="#" className="new-post-main__image user-image user-image--40">
-                                    <img src="img/user/01.png" alt="Image"/>
+								<a href="some" className="new-post-main__image user-image user-image--40">
+                                    <img src="img/user/01.png" alt="ph"/>
 								</a>
 								<div className="new-post-main__input input-main">
 									<input type="text" name="form[]" placeholder="Create new post" className="input"/>
@@ -263,14 +263,14 @@ export const Main = () => {
 						<div className="stories-main__content">
 							<div className="stories-main__item add-story">
 								<div className="add-story__image">
-                                        <img src="img/story/story.jpg" alt="Image"/>
+                                        <img src="img/story/story.jpg" alt="ph"/>
 								</div>
 								<div className="add-story__text">
 									<img src="img/icons/plus.svg" alt="Icon"/>
 									<p>Add story</p>
 								</div>
 							</div>
-							<a href="#" className="stories-main__item live-stories-main">
+							<a href="some" className="stories-main__item live-stories-main">
 								<div className="live-stories-main__text">
 									<img src="img/icons/live.svg" alt="Icon"/>
 									<p>Go Live</p>
@@ -285,7 +285,7 @@ export const Main = () => {
 						</div>
 						<div className="highlights-main__body body-highlights-main swiper">
 							<div className="highlights-main__content swiper-wrapper">
-								<a href="#" data-popup="#popup-timeline-post" className="highlights-main__item item-highlights-main item-highlights-main--new swiper-slide">
+								<a href="some" data-popup="#popup-timeline-post" className="highlights-main__item item-highlights-main item-highlights-main--new swiper-slide">
 									<div className="item-highlights-main__image">
 										<svg width="18" height="17" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
 											<path fill-rule="evenodd" clip-rule="evenodd" d="M9 0C9.5868 0 10.0625 0.475697 10.0625 1.0625V7.4375H16.4375C17.0243 7.4375 17.5 7.9132 17.5 8.5C17.5 9.0868 17.0243 9.5625 16.4375 9.5625H10.0625V15.9375C10.0625 16.5243 9.5868 17 9 17C8.4132 17 7.9375 16.5243 7.9375 15.9375V9.5625H1.5625C0.975697 9.5625 0.5 9.0868 0.5 8.5C0.5 7.9132 0.975697 7.4375 1.5625 7.4375H7.9375V1.0625C7.9375 0.475697 8.4132 0 9 0Z" fill="#3F79CF" style={{fill:'#3F79CF', fillOpacity:'1'}} />
@@ -293,69 +293,69 @@ export const Main = () => {
 									</div>
 									<p className="item-highlights-main__text">New</p>
 								</a>
-								<a href="#" className="highlights-main__item item-highlights-main swiper-slide">
+								<a href="some" className="highlights-main__item item-highlights-main swiper-slide">
 									<div className="item-highlights-main__image">
-                                            <img src="img/story/story.jpg" alt="Image"/>
+                                            <img src="img/story/story.jpg" alt="ph"/>
 									</div>
 									<p className="item-highlights-main__text">NewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNew</p>
 								</a>
-								<a href="#" className="highlights-main__item item-highlights-main swiper-slide">
+								<a href="some" className="highlights-main__item item-highlights-main swiper-slide">
 									<div className="item-highlights-main__image">
-                                            <img src="img/story/story.jpg" alt="Image"/>
+                                            <img src="img/story/story.jpg" alt="ph"/>
 									</div>
 									<p className="item-highlights-main__text">New</p>
 								</a>
-								<a href="#" className="highlights-main__item item-highlights-main swiper-slide">
+								<a href="some" className="highlights-main__item item-highlights-main swiper-slide">
 									<div className="item-highlights-main__image">
-                                            <img src="img/story/story.jpg" alt="Image"/>
+                                            <img src="img/story/story.jpg" alt="ph"/>
 									</div>
 									<p className="item-highlights-main__text">New</p>
 								</a>
-								<a href="#" className="highlights-main__item item-highlights-main swiper-slide">
+								<a href="some" className="highlights-main__item item-highlights-main swiper-slide">
 									<div className="item-highlights-main__image">
-                                            <img src="img/story/story.jpg" alt="Image"/>
+                                            <img src="img/story/story.jpg" alt="ph"/>
 									</div>
 									<p className="item-highlights-main__text">New</p>
 								</a>
-								<a href="#" className="highlights-main__item item-highlights-main swiper-slide">
+								<a href="some" className="highlights-main__item item-highlights-main swiper-slide">
 									<div className="item-highlights-main__image">
-                                            <img src="img/story/story.jpg" alt="Image"/>
+                                            <img src="img/story/story.jpg" alt="ph"/>
 									</div>
 									<p className="item-highlights-main__text">New</p>
 								</a>
-								<a href="#" className="highlights-main__item item-highlights-main swiper-slide">
+								<a href="some" className="highlights-main__item item-highlights-main swiper-slide">
 									<div className="item-highlights-main__image">
-                                            <img src="img/story/story.jpg" alt="Image"/>
+                                            <img src="img/story/story.jpg" alt="ph"/>
 									</div>
 									<p className="item-highlights-main__text">New</p>
 								</a>
-								<a href="#" className="highlights-main__item item-highlights-main swiper-slide">
+								<a href="some" className="highlights-main__item item-highlights-main swiper-slide">
 									<div className="item-highlights-main__image">
-                                            <img src="img/story/story.jpg" alt="Image"/>
+                                            <img src="img/story/story.jpg" alt="ph"/>
 									</div>
 									<p className="item-highlights-main__text">New</p>
 								</a>
-								<a href="#" className="highlights-main__item item-highlights-main swiper-slide">
+								<a href="some" className="highlights-main__item item-highlights-main swiper-slide">
 									<div className="item-highlights-main__image">
-                                            <img src="img/story/story.jpg" alt="Image"/>
+                                            <img src="img/story/story.jpg" alt="ph"/>
 									</div>
 									<p className="item-highlights-main__text">New</p>
 								</a>
-								<a href="#" className="highlights-main__item item-highlights-main swiper-slide">
+								<a href="some" className="highlights-main__item item-highlights-main swiper-slide">
 									<div className="item-highlights-main__image">
-                                            <img src="img/story/story.jpg" alt="Image"/>
+                                            <img src="img/story/story.jpg" alt="ph"/>
 									</div>
 									<p className="item-highlights-main__text">New</p>
 								</a>
-								<a href="#" className="highlights-main__item item-highlights-main swiper-slide">
+								<a href="some" className="highlights-main__item item-highlights-main swiper-slide">
 									<div className="item-highlights-main__image">
-                                            <img src="img/story/story.jpg" alt="Image"/>
+                                            <img src="img/story/story.jpg" alt="ph"/>
 									</div>
 									<p className="item-highlights-main__text">New</p>
 								</a>
-								<a href="#" className="highlights-main__item item-highlights-main swiper-slide">
+								<a href="some" className="highlights-main__item item-highlights-main swiper-slide">
 									<div className="item-highlights-main__image">
-                                        <img src="img/story/story.jpg" alt="Image"/>
+                                        <img src="img/story/story.jpg" alt="ph"/>
 									</div>
 									<p className="item-highlights-main__text">New</p>
 								</a>
@@ -369,7 +369,7 @@ export const Main = () => {
 							<div className="post__top top-post">
 								<div className="top-post__user user-item user-item--stories online">
 									<div className="user-item__image user-item__image--decoration">
-                                        <img className="user-photo" src="img/user/01.png" alt="User image"/>
+                                        <img className="user-photo" src="img/user/01.png" alt="ph"/>
 										<div className="user-item__image-status">
 											<svg className="online-status" width="8" height="9" viewBox="0 0 8 9" fill="none" xmlns="http://www.w3.org/2000/svg">
 												<circle cx="4" cy="4.5" r="4" fill="#3DD598" style={{fill:'#3DD598', fillOpacity:'1'}} />
@@ -377,7 +377,7 @@ export const Main = () => {
 										</div>
 									</div>
 									<div className="user-item__body">
-										<a href="#" className="user-item__name">Boob007</a>
+										<a href="some" className="user-item__name">Boob007</a>
 										<div className="user-item__block">
 											<div className="user-item__post-time"><span>02.03.20</span>14:15<span></span></div>
 											<div className="user-item__post-pin pin-icon">
@@ -396,7 +396,7 @@ export const Main = () => {
 										<div className="popup-actions__wrapper">
 											<div className="popup-actions__content">
 												<div className="popup-actions__body body-popup-actions">
-													<a href="#" className="body-popup-actions__item mass">Mass message</a>
+													<a href="some" className="body-popup-actions__item mass">Mass message</a>
 												</div>
 											</div>
 										</div>
@@ -454,7 +454,7 @@ export const Main = () => {
 												</div>
 											</div>
 										</button>
-										<a href="#" className="footer-post__comments comments-footer-post">
+										<a href="some" className="footer-post__comments comments-footer-post">
 											<div className="comments-footer-post__body">
 												<div className="comments-footer-post__icon">
 													<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -477,7 +477,7 @@ export const Main = () => {
 										</div>
 
 									</div>
-									<a href="#" className="footer-post__share">
+									<a href="some" className="footer-post__share">
 										<svg width="22" height="24" viewBox="0 0 22 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 											<path d="M17.5074 16.1435C16.3575 16.1435 15.3214 16.64 14.6024 17.43L8.13493 13.4243C8.3076 12.9823 8.40337 12.5022 8.40337 12C8.40337 11.4975 8.3076 11.0174 8.13493 10.5756L14.6024 6.56981C15.3214 7.35973 16.3575 7.85649 17.5074 7.85649C19.6735 7.85649 21.4357 6.09429 21.4357 3.92815C21.4357 1.76202 19.6735 0 17.5074 0C15.3412 0 13.579 1.7622 13.579 3.92834C13.579 4.43059 13.675 4.9107 13.8474 5.35271L7.38017 9.35832C6.66112 8.5684 5.62511 8.07164 4.47521 8.07164C2.30908 8.07164 0.546875 9.83403 0.546875 12C0.546875 14.1661 2.30908 15.9283 4.47521 15.9283C5.62511 15.9283 6.66112 15.4317 7.38017 14.6416L13.8474 18.6472C13.675 19.0893 13.579 19.5694 13.579 20.0718C13.579 22.2377 15.3412 24 17.5074 24C19.6735 24 21.4357 22.2377 21.4357 20.0718C21.4357 17.9057 19.6735 16.1435 17.5074 16.1435ZM15.0114 3.92834C15.0114 2.55212 16.1311 1.43243 17.5074 1.43243C18.8836 1.43243 20.0033 2.55212 20.0033 3.92834C20.0033 5.30455 18.8836 6.42424 17.5074 6.42424C16.1311 6.42424 15.0114 5.30455 15.0114 3.92834ZM4.47521 14.4959C3.09881 14.4959 1.97912 13.3762 1.97912 12C1.97912 10.6238 3.09881 9.50407 4.47521 9.50407C5.85143 9.50407 6.97093 10.6238 6.97093 12C6.97093 13.3762 5.85143 14.4959 4.47521 14.4959ZM15.0114 20.0716C15.0114 18.6954 16.1311 17.5757 17.5074 17.5757C18.8836 17.5757 20.0033 18.6954 20.0033 20.0716C20.0033 21.4478 18.8836 22.5675 17.5074 22.5675C16.1311 22.5675 15.0114 21.4478 15.0114 20.0716Z" fill="#838383" style={{fill:'#838383', fillOpacity:'1'}} />
 										</svg>
@@ -490,7 +490,7 @@ export const Main = () => {
 							<div className="post__top top-post">
 								<div className="top-post__user user-item user-item--stories online">
 									<div className="user-item__image user-item__image--decoration">
-                                        <img className="user-photo" src="img/user/01.png" alt="User image"/>
+                                        <img className="user-photo" src="img/user/01.png" alt="ph"/>
 										<div className="user-item__image-status">
 											<svg className="online-status" width="8" height="9" viewBox="0 0 8 9" fill="none" xmlns="http://www.w3.org/2000/svg">
 												<circle cx="4" cy="4.5" r="4" fill="#3DD598" style={{fill:'#3DD598', fillOpacity:'1'}} />
@@ -498,7 +498,7 @@ export const Main = () => {
 										</div>
 									</div>
 									<div className="user-item__body">
-										<a href="#" className="user-item__name">Boob007</a>
+										<a href="some" className="user-item__name">Boob007</a>
 										<div className="user-item__block">
 											<div className="user-item__post-time"><span>02.03.20</span>14:15<span></span></div>
 											<div className="user-item__post-pin pin-icon">
@@ -517,7 +517,7 @@ export const Main = () => {
 										<div className="popup-actions__wrapper">
 											<div className="popup-actions__content">
 												<div className="popup-actions__body body-popup-actions">
-													<a href="#" className="body-popup-actions__item mass">Mass message</a>
+													<a href="some" className="body-popup-actions__item mass">Mass message</a>
 												</div>
 											</div>
 										</div>
@@ -578,7 +578,7 @@ export const Main = () => {
 												</div>
 											</div>
 										</button>
-										<a href="#" className="footer-post__comments comments-footer-post">
+										<a href="some" className="footer-post__comments comments-footer-post">
 											<div className="comments-footer-post__body">
 												<div className="comments-footer-post__icon">
 													<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -601,7 +601,7 @@ export const Main = () => {
 										</div>
 
 									</div>
-									<a href="#" className="footer-post__share">
+									<a href="some" className="footer-post__share">
 										<svg width="22" height="24" viewBox="0 0 22 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 											<path d="M17.5074 16.1435C16.3575 16.1435 15.3214 16.64 14.6024 17.43L8.13493 13.4243C8.3076 12.9823 8.40337 12.5022 8.40337 12C8.40337 11.4975 8.3076 11.0174 8.13493 10.5756L14.6024 6.56981C15.3214 7.35973 16.3575 7.85649 17.5074 7.85649C19.6735 7.85649 21.4357 6.09429 21.4357 3.92815C21.4357 1.76202 19.6735 0 17.5074 0C15.3412 0 13.579 1.7622 13.579 3.92834C13.579 4.43059 13.675 4.9107 13.8474 5.35271L7.38017 9.35832C6.66112 8.5684 5.62511 8.07164 4.47521 8.07164C2.30908 8.07164 0.546875 9.83403 0.546875 12C0.546875 14.1661 2.30908 15.9283 4.47521 15.9283C5.62511 15.9283 6.66112 15.4317 7.38017 14.6416L13.8474 18.6472C13.675 19.0893 13.579 19.5694 13.579 20.0718C13.579 22.2377 15.3412 24 17.5074 24C19.6735 24 21.4357 22.2377 21.4357 20.0718C21.4357 17.9057 19.6735 16.1435 17.5074 16.1435ZM15.0114 3.92834C15.0114 2.55212 16.1311 1.43243 17.5074 1.43243C18.8836 1.43243 20.0033 2.55212 20.0033 3.92834C20.0033 5.30455 18.8836 6.42424 17.5074 6.42424C16.1311 6.42424 15.0114 5.30455 15.0114 3.92834ZM4.47521 14.4959C3.09881 14.4959 1.97912 13.3762 1.97912 12C1.97912 10.6238 3.09881 9.50407 4.47521 9.50407C5.85143 9.50407 6.97093 10.6238 6.97093 12C6.97093 13.3762 5.85143 14.4959 4.47521 14.4959ZM15.0114 20.0716C15.0114 18.6954 16.1311 17.5757 17.5074 17.5757C18.8836 17.5757 20.0033 18.6954 20.0033 20.0716C20.0033 21.4478 18.8836 22.5675 17.5074 22.5675C16.1311 22.5675 15.0114 21.4478 15.0114 20.0716Z" fill="#838383" style={{fill:'#838383', fillOpacity:'1'}} />
 										</svg>
@@ -614,7 +614,7 @@ export const Main = () => {
 							<div className="post__top top-post">
 								<div className="top-post__user user-item user-item--stories online">
 									<div className="user-item__image user-item__image--decoration">
-                                        <img className="user-photo" src="img/user/01.png" alt="User image"/>
+                                        <img className="user-photo" src="img/user/01.png" alt="ph"/>
 										<div className="user-item__image-status">
 											<svg className="online-status" width="8" height="9" viewBox="0 0 8 9" fill="none" xmlns="http://www.w3.org/2000/svg">
 												<circle cx="4" cy="4.5" r="4" fill="#3DD598" style={{fill:'#3DD598', fillOpacity:'1'}} />
@@ -622,7 +622,7 @@ export const Main = () => {
 										</div>
 									</div>
 									<div className="user-item__body">
-										<a href="#" className="user-item__name">Boob007</a>
+										<a href="some" className="user-item__name">Boob007</a>
 										<div className="user-item__block">
 											<div className="user-item__post-time"><span>02.03.20</span>14:15<span></span></div>
 											<div className="user-item__post-pin pin-icon">
@@ -641,7 +641,7 @@ export const Main = () => {
 										<div className="popup-actions__wrapper">
 											<div className="popup-actions__content">
 												<div className="popup-actions__body body-popup-actions">
-													<a href="#" className="body-popup-actions__item mass">Mass message</a>
+													<a href="some" className="body-popup-actions__item mass">Mass message</a>
 												</div>
 											</div>
 										</div>
@@ -705,7 +705,7 @@ export const Main = () => {
 												</div>
 											</div>
 										</button>
-										<a href="#" className="footer-post__comments comments-footer-post">
+										<a href="some" className="footer-post__comments comments-footer-post">
 											<div className="comments-footer-post__body">
 												<div className="comments-footer-post__icon">
 													<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -728,7 +728,7 @@ export const Main = () => {
 										</div>
 
 									</div>
-									<a href="#" className="footer-post__share">
+									<a href="some" className="footer-post__share">
 										<svg width="22" height="24" viewBox="0 0 22 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 											<path d="M17.5074 16.1435C16.3575 16.1435 15.3214 16.64 14.6024 17.43L8.13493 13.4243C8.3076 12.9823 8.40337 12.5022 8.40337 12C8.40337 11.4975 8.3076 11.0174 8.13493 10.5756L14.6024 6.56981C15.3214 7.35973 16.3575 7.85649 17.5074 7.85649C19.6735 7.85649 21.4357 6.09429 21.4357 3.92815C21.4357 1.76202 19.6735 0 17.5074 0C15.3412 0 13.579 1.7622 13.579 3.92834C13.579 4.43059 13.675 4.9107 13.8474 5.35271L7.38017 9.35832C6.66112 8.5684 5.62511 8.07164 4.47521 8.07164C2.30908 8.07164 0.546875 9.83403 0.546875 12C0.546875 14.1661 2.30908 15.9283 4.47521 15.9283C5.62511 15.9283 6.66112 15.4317 7.38017 14.6416L13.8474 18.6472C13.675 19.0893 13.579 19.5694 13.579 20.0718C13.579 22.2377 15.3412 24 17.5074 24C19.6735 24 21.4357 22.2377 21.4357 20.0718C21.4357 17.9057 19.6735 16.1435 17.5074 16.1435ZM15.0114 3.92834C15.0114 2.55212 16.1311 1.43243 17.5074 1.43243C18.8836 1.43243 20.0033 2.55212 20.0033 3.92834C20.0033 5.30455 18.8836 6.42424 17.5074 6.42424C16.1311 6.42424 15.0114 5.30455 15.0114 3.92834ZM4.47521 14.4959C3.09881 14.4959 1.97912 13.3762 1.97912 12C1.97912 10.6238 3.09881 9.50407 4.47521 9.50407C5.85143 9.50407 6.97093 10.6238 6.97093 12C6.97093 13.3762 5.85143 14.4959 4.47521 14.4959ZM15.0114 20.0716C15.0114 18.6954 16.1311 17.5757 17.5074 17.5757C18.8836 17.5757 20.0033 18.6954 20.0033 20.0716C20.0033 21.4478 18.8836 22.5675 17.5074 22.5675C16.1311 22.5675 15.0114 21.4478 15.0114 20.0716Z" fill="#838383" style={{fill:'#838383', fillOpacity:'1'}} />
 										</svg>
@@ -755,7 +755,7 @@ export const Main = () => {
 								<div className="popup-actions__wrapper">
 									<div className="popup-actions__content">
 										<div className="popup-actions__body body-popup-actions">
-											<a href="#" className="body-popup-actions__item mass">Mass message</a>
+											<a href="some" className="body-popup-actions__item mass">Mass message</a>
 										</div>
 									</div>
 								</div>
@@ -770,13 +770,13 @@ export const Main = () => {
 							<div className="body-messages__item item-message">
 								<div className="item-message__user user-item user-item--stories">
 									<div className="user-item__image user-item__image--decoration">
-                                        <img className="user-photo" src="img/user/02.jpg" alt="User image"/>
+                                        <img className="user-photo" src="img/user/02.jpg" alt="ph"/>
 										<div className="user-item__image-icon">
-											<img src="img/icons/logo-white.svg" alt="Image"/>
+											<img src="img/icons/logo-white.svg" alt="ph"/>
 										</div>
 									</div>
 									<div className="user-item__body">
-										<a href="#" className="user-item__name">Boob007</a>
+										<a href="some" className="user-item__name">Boob007</a>
 										<span className="user-item__status online">
 											<svg className="online-status" width="8" height="9" viewBox="0 0 8 9" fill="none" xmlns="http://www.w3.org/2000/svg">
 												<circle cx="4" cy="4.5" r="4" fill="#3DD598" style={{fill:'#3DD598', fillOpacity:'1'}} />
@@ -796,7 +796,7 @@ export const Main = () => {
 										<div className="popup-actions__wrapper">
 											<div className="popup-actions__content">
 												<div className="popup-actions__body body-popup-actions">
-													<a href="#" className="body-popup-actions__item mass">Mass message</a>
+													<a href="some" className="body-popup-actions__item mass">Mass message</a>
 												</div>
 											</div>
 										</div>
@@ -806,13 +806,13 @@ export const Main = () => {
 							<div className="body-messages__item item-message">
 								<div className="item-message__user user-item user-item--stories">
 									<div className="user-item__image user-item__image--decoration">
-                                        <img className="user-photo" src="img/user/02.jpg" alt="User image"/>
+                                        <img className="user-photo" src="img/user/02.jpg" alt="ph"/>
 										<div className="user-item__image-icon">
-											<img src="img/icons/logo-white.svg" alt="Image"/>
+											<img src="img/icons/logo-white.svg" alt="ph"/>
 										</div>
 									</div>
 									<div className="user-item__body">
-										<a href="#" className="user-item__name">Boob007</a>
+										<a href="some" className="user-item__name">Boob007</a>
 										<span className="user-item__status online">
 											<svg className="online-status" width="8" height="9" viewBox="0 0 8 9" fill="none" xmlns="http://www.w3.org/2000/svg">
 												<circle cx="4" cy="4.5" r="4" fill="#3DD598" style={{fill:'#3DD598', fillOpacity:'1'}} />
@@ -832,7 +832,7 @@ export const Main = () => {
 										<div className="popup-actions__wrapper">
 											<div className="popup-actions__content">
 												<div className="popup-actions__body body-popup-actions">
-													<a href="#" className="body-popup-actions__item mass">Mass message</a>
+													<a href="some" className="body-popup-actions__item mass">Mass message</a>
 												</div>
 											</div>
 										</div>
@@ -842,13 +842,13 @@ export const Main = () => {
 							<div className="body-messages__item item-message">
 								<div className="item-message__user user-item user-item--stories">
 									<div className="user-item__image user-item__image--decoration">
-                                        <img className="user-photo" src="img/user/02.jpg" alt="User image"/>
+                                        <img className="user-photo" src="img/user/02.jpg" alt="ph"/>
 										<div className="user-item__image-icon">
-											<img src="img/icons/logo-white.svg" alt="Image"/>
+											<img src="img/icons/logo-white.svg" alt="ph"/>
 										</div>
 									</div>
 									<div className="user-item__body">
-										<a href="#" className="user-item__name">Boob007</a>
+										<a href="some" className="user-item__name">Boob007</a>
 										<span className="user-item__status online">
 											<svg className="online-status" width="8" height="9" viewBox="0 0 8 9" fill="none" xmlns="http://www.w3.org/2000/svg">
 												<circle cx="4" cy="4.5" r="4" fill="#3DD598" style={{fill:'#3DD598', fillOpacity:'1'}} />
@@ -868,7 +868,7 @@ export const Main = () => {
 										<div className="popup-actions__wrapper">
 											<div className="popup-actions__content">
 												<div className="popup-actions__body body-popup-actions">
-													<a href="#" className="body-popup-actions__item mass">Mass message</a>
+													<a href="some" className="body-popup-actions__item mass">Mass message</a>
 												</div>
 											</div>
 										</div>
@@ -878,13 +878,13 @@ export const Main = () => {
 							<div className="body-messages__item item-message">
 								<div className="item-message__user user-item user-item--stories">
 									<div className="user-item__image user-item__image--decoration">
-                                        <img className="user-photo" src="img/user/02.jpg" alt="User image"/>
+                                        <img className="user-photo" src="img/user/02.jpg" alt="ph"/>
 										<div className="user-item__image-icon">
-											<img src="img/icons/logo-white.svg" alt="Image"/>
+											<img src="img/icons/logo-white.svg" alt="ph"/>
 										</div>
 									</div>
 									<div className="user-item__body">
-										<a href="#" className="user-item__name">Boob007</a>
+										<a href="some" className="user-item__name">Boob007</a>
 										<span className="user-item__status online">
 											<svg className="online-status" width="8" height="9" viewBox="0 0 8 9" fill="none" xmlns="http://www.w3.org/2000/svg">
 												<circle cx="4" cy="4.5" r="4" fill="#3DD598" style={{fill:'#3DD598', fillOpacity:'1'}} />
@@ -904,7 +904,7 @@ export const Main = () => {
 										<div className="popup-actions__wrapper">
 											<div className="popup-actions__content">
 												<div className="popup-actions__body body-popup-actions">
-													<a href="#" className="body-popup-actions__item mass">Mass message</a>
+													<a href="some" className="body-popup-actions__item mass">Mass message</a>
 												</div>
 											</div>
 										</div>
@@ -914,13 +914,13 @@ export const Main = () => {
 							<div className="body-messages__item item-message">
 								<div className="item-message__user user-item user-item--stories">
 									<div className="user-item__image user-item__image--decoration">
-                                        <img className="user-photo" src="img/user/02.jpg" alt="User image"/>
+                                        <img className="user-photo" src="img/user/02.jpg" alt="ph"/>
 										<div className="user-item__image-icon">
-											<img src="img/icons/logo-white.svg" alt="Image"/>
+											<img src="img/icons/logo-white.svg" alt="ph"/>
 										</div>
 									</div>
 									<div className="user-item__body">
-										<a href="#" className="user-item__name">Boob007</a>
+										<a href="some" className="user-item__name">Boob007</a>
 										<span className="user-item__status online">
 											<svg className="online-status" width="8" height="9" viewBox="0 0 8 9" fill="none" xmlns="http://www.w3.org/2000/svg">
 												<circle cx="4" cy="4.5" r="4" fill="#3DD598" style={{fill:'#3DD598', fillOpacity:'1'}} />
@@ -940,7 +940,7 @@ export const Main = () => {
 										<div className="popup-actions__wrapper">
 											<div className="popup-actions__content">
 												<div className="popup-actions__body body-popup-actions">
-													<a href="#" className="body-popup-actions__item mass">Mass message</a>
+													<a href="some" className="body-popup-actions__item mass">Mass message</a>
 												</div>
 											</div>
 										</div>
@@ -950,13 +950,13 @@ export const Main = () => {
 							<div className="body-messages__item item-message">
 								<div className="item-message__user user-item user-item--stories">
 									<div className="user-item__image user-item__image--decoration">
-										<picture><source srcSet="img/user/02.webp" type="image/webp"/><img className="user-photo" src="img/user/02.jpg" alt="User image"/></picture>
+										<picture><source srcSet="img/user/02.webp" type="image/webp"/><img className="user-photo" src="img/user/02.jpg" alt="ph"/></picture>
 										<div className="user-item__image-icon">
-											<img src="img/icons/logo-white.svg" alt="Image"/>
+											<img src="img/icons/logo-white.svg" alt="ph"/>
 										</div>
 									</div>
 									<div className="user-item__body">
-										<a href="#" className="user-item__name">Boob007</a>
+										<a href="some" className="user-item__name">Boob007</a>
 										<span className="user-item__status online">
 											<svg className="online-status" width="8" height="9" viewBox="0 0 8 9" fill="none" xmlns="http://www.w3.org/2000/svg">
 												<circle cx="4" cy="4.5" r="4" fill="#3DD598" style={{fill:'#3DD598', fillOpacity:'1'}} />
@@ -976,7 +976,7 @@ export const Main = () => {
 										<div className="popup-actions__wrapper">
 											<div className="popup-actions__content">
 												<div className="popup-actions__body body-popup-actions">
-													<a href="#" className="body-popup-actions__item mass">Mass message</a>
+													<a href="some" className="body-popup-actions__item mass">Mass message</a>
 												</div>
 											</div>
 										</div>
@@ -986,13 +986,13 @@ export const Main = () => {
 							<div className="body-messages__item item-message">
 								<div className="item-message__user user-item user-item--stories">
 									<div className="user-item__image user-item__image--decoration">
-										<picture><source srcSet="img/user/02.webp" type="image/webp"/><img className="user-photo" src="img/user/02.jpg" alt="User image"/></picture>
+										<picture><source srcSet="img/user/02.webp" type="image/webp"/><img className="user-photo" src="img/user/02.jpg" alt="ph"/></picture>
 										<div className="user-item__image-icon">
-											<img src="img/icons/logo-white.svg" alt="Image"/>
+											<img src="img/icons/logo-white.svg" alt="ph"/>
 										</div>
 									</div>
 									<div className="user-item__body">
-										<a href="#" className="user-item__name">Boob007</a>
+										<a href="some" className="user-item__name">Boob007</a>
 										<span className="user-item__status online">
 											<svg className="online-status" width="8" height="9" viewBox="0 0 8 9" fill="none" xmlns="http://www.w3.org/2000/svg">
 												<circle cx="4" cy="4.5" r="4" fill="#3DD598" style={{fill:'#3DD598', fillOpacity:'1'}} />
@@ -1012,7 +1012,7 @@ export const Main = () => {
 										<div className="popup-actions__wrapper">
 											<div className="popup-actions__content">
 												<div className="popup-actions__body body-popup-actions">
-													<a href="#" className="body-popup-actions__item mass">Mass message</a>
+													<a href="some" className="body-popup-actions__item mass">Mass message</a>
 												</div>
 											</div>
 										</div>
@@ -1022,13 +1022,13 @@ export const Main = () => {
 							<div className="body-messages__item item-message">
 								<div className="item-message__user user-item user-item--stories">
 									<div className="user-item__image user-item__image--decoration">
-										<picture><source srcSet="img/user/02.webp" type="image/webp"/><img className="user-photo" src="img/user/02.jpg" alt="User image"/></picture>
+										<picture><source srcSet="img/user/02.webp" type="image/webp"/><img className="user-photo" src="img/user/02.jpg" alt="ph"/></picture>
 										<div className="user-item__image-icon">
-											<img src="img/icons/logo-white.svg" alt="Image"/>
+											<img src="img/icons/logo-white.svg" alt="ph"/>
 										</div>
 									</div>
 									<div className="user-item__body">
-										<a href="#" className="user-item__name">Boob007</a>
+										<a href="some" className="user-item__name">Boob007</a>
 										<span className="user-item__status online">
 											<svg className="online-status" width="8" height="9" viewBox="0 0 8 9" fill="none" xmlns="http://www.w3.org/2000/svg">
 												<circle cx="4" cy="4.5" r="4" fill="#3DD598" style={{fill:'#3DD598', fillOpacity:'1'}} />
@@ -1048,7 +1048,7 @@ export const Main = () => {
 										<div className="popup-actions__wrapper">
 											<div className="popup-actions__content">
 												<div className="popup-actions__body body-popup-actions">
-													<a href="#" className="body-popup-actions__item mass">Mass message</a>
+													<a href="some" className="body-popup-actions__item mass">Mass message</a>
 												</div>
 											</div>
 										</div>
@@ -1058,13 +1058,13 @@ export const Main = () => {
 							<div className="body-messages__item item-message">
 								<div className="item-message__user user-item user-item--stories">
 									<div className="user-item__image user-item__image--decoration">
-										<picture><source srcSet="img/user/02.webp" type="image/webp"/><img className="user-photo" src="img/user/02.jpg" alt="User image"/></picture>
+										<picture><source srcSet="img/user/02.webp" type="image/webp"/><img className="user-photo" src="img/user/02.jpg" alt="ph"/></picture>
 										<div className="user-item__image-icon">
-											<img src="img/icons/logo-white.svg" alt="Image"/>
+											<img src="img/icons/logo-white.svg" alt="ph"/>
 										</div>
 									</div>
 									<div className="user-item__body">
-										<a href="#" className="user-item__name">Boob007</a>
+										<a href="some" className="user-item__name">Boob007</a>
 										<span className="user-item__status online">
 											<svg className="online-status" width="8" height="9" viewBox="0 0 8 9" fill="none" xmlns="http://www.w3.org/2000/svg">
 												<circle cx="4" cy="4.5" r="4" fill="#3DD598" style={{fill:'#3DD598', fillOpacity:'1'}} />
@@ -1084,7 +1084,7 @@ export const Main = () => {
 										<div className="popup-actions__wrapper">
 											<div className="popup-actions__content">
 												<div className="popup-actions__body body-popup-actions">
-													<a href="#" className="body-popup-actions__item mass">Mass message</a>
+													<a href="some" className="body-popup-actions__item mass">Mass message</a>
 												</div>
 											</div>
 										</div>
@@ -1094,13 +1094,13 @@ export const Main = () => {
 							<div className="body-messages__item item-message">
 								<div className="item-message__user user-item user-item--stories">
 									<div className="user-item__image user-item__image--decoration">
-										<picture><source srcSet="img/user/02.webp" type="image/webp"/><img className="user-photo" src="img/user/02.jpg" alt="User image"/></picture>
+										<picture><source srcSet="img/user/02.webp" type="image/webp"/><img className="user-photo" src="img/user/02.jpg" alt="ph"/></picture>
 										<div className="user-item__image-icon">
-											<img src="img/icons/logo-white.svg" alt="Image"/>
+											<img src="img/icons/logo-white.svg" alt="ph"/>
 										</div>
 									</div>
 									<div className="user-item__body">
-										<a href="#" className="user-item__name">Boob007</a>
+										<a href="some" className="user-item__name">Boob007</a>
 										<span className="user-item__status online">
 											<svg className="online-status" width="8" height="9" viewBox="0 0 8 9" fill="none" xmlns="http://www.w3.org/2000/svg">
 												<circle cx="4" cy="4.5" r="4" fill="#3DD598" style={{fill:'#3DD598', fillOpacity:'1'}} />
@@ -1120,7 +1120,7 @@ export const Main = () => {
 										<div className="popup-actions__wrapper">
 											<div className="popup-actions__content">
 												<div className="popup-actions__body body-popup-actions">
-													<a href="#" className="body-popup-actions__item mass">Mass message</a>
+													<a href="some" className="body-popup-actions__item mass">Mass message</a>
 												</div>
 											</div>
 										</div>
