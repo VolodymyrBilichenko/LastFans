@@ -1,20 +1,36 @@
 {
   "files": {
     "main.css": "/LastFans/static/css/main.c22d8b01.css",
-    "main.js": "/LastFans/static/js/main.dfd0c7d2.js",
+    "main.js": "/LastFans/static/js/main.36479bc4.js",
+    "static/media/01.jpg": "/LastFans/static/media/01.f217d4beaf3d41359216.jpg",
+    "static/media/story.jpg": "/LastFans/static/media/story.4d418b69e89a59dbea3b.jpg",
     "static/media/01.png": "/LastFans/static/media/01.bc682c6fdac60b4db832.png",
+    "static/media/01.svg": "/LastFans/static/media/01.e11ba31cd4bc6d39e5bc09c0d6054fc2.svg",
+    "static/media/money-02.svg": "/LastFans/static/media/money-02.c856d65fd2b81c37b434aa77efc84cc8.svg",
+    "static/media/file.svg": "/LastFans/static/media/file.952f0395e77a663761f4dd07b3e93266.svg",
+    "static/media/monney.svg": "/LastFans/static/media/monney.33688ce2b72d1b4e0a591a6cd0498a79.svg",
+    "static/media/google.svg": "/LastFans/static/media/google.acdb693f32fff205f9912091a6bd0e54.svg",
+    "static/media/live.svg": "/LastFans/static/media/live.244e7984ff5f4c2baed92bb19db4c2f9.svg",
+    "static/media/image.svg": "/LastFans/static/media/image.4807c842717d929aa431493335239831.svg",
+    "static/media/pin.svg": "/LastFans/static/media/pin.d3af6e58d6cb788ef29aca0889f203bc.svg",
+    "static/media/audio.svg": "/LastFans/static/media/audio.79c7dfc0bd073a103ea5458263662423.svg",
+    "static/media/apple.svg": "/LastFans/static/media/apple.12550462f9cac8d651f35c105a1f5f62.svg",
     "static/media/logo.svg": "/LastFans/static/media/logo.3b6923643ea2348b27d0733718155186.svg",
+    "static/media/logo-white.svg": "/LastFans/static/media/logo-white.0bd6c92269dfaecad006dfbf1b4864ec.svg",
+    "static/media/video.svg": "/LastFans/static/media/video.aa4ee0e8a8fcf074b9449b3aec662bcf.svg",
+    "static/media/facebook.svg": "/LastFans/static/media/facebook.8b663838190559e1425e8fccc1bce74d.svg",
     "static/media/arrow.svg": "/LastFans/static/media/arrow.c404277b7bb607585f44.svg",
     "static/media/check.svg": "/LastFans/static/media/check.705cbafc5b754f49c3eb.svg",
     "static/media/bg.svg": "/LastFans/static/media/bg.a262f762617b36d88431.svg",
+    "static/media/plus.svg": "/LastFans/static/media/plus.d8dfc75df0d8f1032df2da407c286412.svg",
     "index.html": "/LastFans/index.html",
     "static/media/search.svg": "/LastFans/static/media/search.492833310383eee8097b.svg",
     "static/media/icons.scss": "/LastFans/static/media/icons.fc895074ea3194cc1151.scss",
     "main.c22d8b01.css.map": "/LastFans/static/css/main.c22d8b01.css.map",
-    "main.dfd0c7d2.js.map": "/LastFans/static/js/main.dfd0c7d2.js.map"
+    "main.36479bc4.js.map": "/LastFans/static/js/main.36479bc4.js.map"
   },
   "entrypoints": [
     "static/css/main.c22d8b01.css",
-    "static/js/main.dfd0c7d2.js"
+    "static/js/main.36479bc4.js"
   ]
 }
