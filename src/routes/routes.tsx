@@ -1,4 +1,5 @@
 import { Main } from '../pages/Main/Main'
+import { Registration } from '../pages/Registration/Registration'
 
 export const routes: any[] = [
     
@@ -10,6 +11,10 @@ export const routes: any[] = [
     {
         path: '/',
         element: <Main/>
+    },
+    {
+        path: '/registration',
+        element: <Registration/>
     },
 
 ]
