@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/LastFans/static/css/main.505b9df6.css",
-    "main.js": "/LastFans/static/js/main.d7ddd876.js",
+    "main.js": "/LastFans/static/js/main.6a44f5ad.js",
     "static/media/01.jpg": "/LastFans/static/media/01.f217d4beaf3d41359216.jpg",
     "static/media/story.jpg": "/LastFans/static/media/story.4d418b69e89a59dbea3b.jpg",
     "static/media/bg.jpg": "/LastFans/static/media/bg.2b23d4899c20b4fdee00.jpg",
@@ -9,15 +9,21 @@
     "static/media/group-message.svg": "/LastFans/static/media/group-message.9084761fb40b5be5c5a4b91ea06e1f55.svg",
     "static/media/01.svg": "/LastFans/static/media/01.e11ba31cd4bc6d39e5bc09c0d6054fc2.svg",
     "static/media/money-02.svg": "/LastFans/static/media/money-02.c856d65fd2b81c37b434aa77efc84cc8.svg",
+    "static/media/user.svg": "/LastFans/static/media/user.c72ae1f7e4a410f1f91767d232890af6.svg",
     "static/media/file.svg": "/LastFans/static/media/file.952f0395e77a663761f4dd07b3e93266.svg",
+    "static/media/stats.svg": "/LastFans/static/media/stats.7c810830d24dfbd47a44480d65fc2181.svg",
     "static/media/blocked-user.svg": "/LastFans/static/media/blocked-user.6fb642951e70d55ef17cc3c72aad70fc.svg",
+    "static/media/pin-green.svg": "/LastFans/static/media/pin-green.d77bbd60d9ae170ff76e1d2e3a4a838a.svg",
     "static/media/monney.svg": "/LastFans/static/media/monney.33688ce2b72d1b4e0a591a6cd0498a79.svg",
     "static/media/google.svg": "/LastFans/static/media/google.acdb693f32fff205f9912091a6bd0e54.svg",
+    "static/media/edit.svg": "/LastFans/static/media/edit.305c61200380f5351e98b782cd68935d.svg",
     "static/media/bin.svg": "/LastFans/static/media/bin.1022c9312baf8e0ae60c9a8373f92f0a.svg",
     "static/media/sort.svg": "/LastFans/static/media/sort.97474c4318fe2f91e6a969f6acbb300f.svg",
     "static/media/micro.svg": "/LastFans/static/media/micro.2ba1892390bfdcfb7c429275d166f0d9.svg",
     "static/media/live.svg": "/LastFans/static/media/live.244e7984ff5f4c2baed92bb19db4c2f9.svg",
     "static/media/image.svg": "/LastFans/static/media/image.4807c842717d929aa431493335239831.svg",
+    "static/media/audio-mute.svg": "/LastFans/static/media/audio-mute.83d6dc42b716b2ecc051224a696c55e8.svg",
+    "static/media/message.svg": "/LastFans/static/media/message.5836b1902094eb12ad449bb3df2ee00d.svg",
     "static/media/pin.svg": "/LastFans/static/media/pin.d3af6e58d6cb788ef29aca0889f203bc.svg",
     "static/media/audio.svg": "/LastFans/static/media/audio.79c7dfc0bd073a103ea5458263662423.svg",
     "static/media/apple.svg": "/LastFans/static/media/apple.12550462f9cac8d651f35c105a1f5f62.svg",
@@ -34,10 +40,10 @@
     "static/media/send.svg": "/LastFans/static/media/send.5dc14ce34094258cc2ade1f4fa5f2ad5.svg",
     "static/media/icons.scss": "/LastFans/static/media/icons.fc895074ea3194cc1151.scss",
     "main.505b9df6.css.map": "/LastFans/static/css/main.505b9df6.css.map",
-    "main.d7ddd876.js.map": "/LastFans/static/js/main.d7ddd876.js.map"
+    "main.6a44f5ad.js.map": "/LastFans/static/js/main.6a44f5ad.js.map"
   },
   "entrypoints": [
     "static/css/main.505b9df6.css",
-    "static/js/main.d7ddd876.js"
+    "static/js/main.6a44f5ad.js"
   ]
 }
