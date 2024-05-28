@@ -16,6 +16,7 @@ import { MyProfile } from '../pages/MyProfile/MyProfile'
 import { Registration } from '../pages/Registration/Registration'
 import { Subscribers } from '../pages/Subscribers/Subscribers'
 import { Profile } from '../pages/Profile/Profile'
+import { Statistic } from '../pages/Statistic/Statistic'
 
 export const routes: any[] = [
     
@@ -75,6 +76,10 @@ export const routes: any[] = [
     {
         path: '/my-profile',
         element: <MyProfile/>
+    },
+    {
+        path: '/statistic',
+        element: <Statistic/>
     },
     
     
