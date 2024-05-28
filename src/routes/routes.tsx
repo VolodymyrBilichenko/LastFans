@@ -9,6 +9,7 @@ import { Login } from '../pages/Login/Login'
 import { Main } from '../pages/Main/Main'
 import { NotFound } from '../pages/NotFound/NotFound'
 import { Registration } from '../pages/Registration/Registration'
+import { Subscribers } from '../pages/Subscribers/Subscribers'
 
 export const routes: any[] = [
     
@@ -47,6 +48,10 @@ export const routes: any[] = [
     },
     
     
+    {
+        path: '/subscribers',
+        element: <Subscribers/>
+    },
     {
         path: '/groups',
         element: <Groups/>
