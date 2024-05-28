@@ -15,6 +15,7 @@ import { PaymentAdd } from '../pages/PaymentAdd/PaymentAdd'
 import { MyProfile } from '../pages/MyProfile/MyProfile'
 import { Registration } from '../pages/Registration/Registration'
 import { Subscribers } from '../pages/Subscribers/Subscribers'
+import { Profile } from '../pages/Profile/Profile'
 
 export const routes: any[] = [
     
@@ -66,6 +67,10 @@ export const routes: any[] = [
     {
         path: '/payment-add',
         element: <PaymentAdd/>
+    },
+    {
+        path: '/profile',
+        element: <Profile/>
     },
     {
         path: '/my-profile',
