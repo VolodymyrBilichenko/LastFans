@@ -1,5 +1,6 @@
 import { AutoMessage } from '../pages/AutoMessage/AutoMessage'
 import { BlockedUsers } from '../pages/BlockedUsers/BlockedUsers'
+import { Followers } from '../pages/Followers/Followers'
 import { ForgotPass } from '../pages/ForgotPass/ForgotPass'
 import { History } from '../pages/History/History'
 import { LiveStream } from '../pages/LiveStream/LiveStream'
@@ -40,12 +41,18 @@ export const routes: any[] = [
         element: <AutoMessage/>
     },
     {
+        path: '/history',
+        element: <History/>
+    },
+
+    
+    {
         path: '/blocked-users',
         element: <BlockedUsers/>
     },
     {
-        path: '/history',
-        element: <History/>
+        path: '/followers',
+        element: <Followers/>
     },
     {
         path: '*',
