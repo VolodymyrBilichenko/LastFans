@@ -7,7 +7,7 @@ import MoneyIc from '../../assets/img/icons/money-white.svg'
 import SaleIc from '../../assets/img/icons/sale.svg'
 
 
-export const Profile = () => {
+export const MyProfile = () => {
     return (
         <main className="page page-profile">
             <AsideMenu/>
