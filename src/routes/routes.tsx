@@ -1,6 +1,7 @@
 import { AutoMessage } from '../pages/AutoMessage/AutoMessage'
 import { BlockedUsers } from '../pages/BlockedUsers/BlockedUsers'
 import { ForgotPass } from '../pages/ForgotPass/ForgotPass'
+import { History } from '../pages/History/History'
 import { LiveStream } from '../pages/LiveStream/LiveStream'
 import { Login } from '../pages/Login/Login'
 import { Main } from '../pages/Main/Main'
@@ -41,6 +42,10 @@ export const routes: any[] = [
     {
         path: '/blocked-users',
         element: <BlockedUsers/>
+    },
+    {
+        path: '/history',
+        element: <History/>
     },
     {
         path: '*',
