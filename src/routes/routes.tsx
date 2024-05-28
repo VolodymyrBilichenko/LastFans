@@ -11,6 +11,7 @@ import { Messages } from '../pages/Messages/Messages'
 import { Models } from '../pages/Models/Models'
 import { NotFound } from '../pages/NotFound/NotFound'
 import { Payment } from '../pages/Payment/Payment'
+import { PaymentAdd } from '../pages/PaymentAdd/PaymentAdd'
 import { Registration } from '../pages/Registration/Registration'
 import { Subscribers } from '../pages/Subscribers/Subscribers'
 
@@ -60,6 +61,10 @@ export const routes: any[] = [
     {
         path: '/payment',
         element: <Payment/>
+    },
+    {
+        path: '/payment-add',
+        element: <PaymentAdd/>
     },
     
     

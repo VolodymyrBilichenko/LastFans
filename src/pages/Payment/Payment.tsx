@@ -70,7 +70,7 @@ export const Payment = () => {
                                     </div>
                                 </div>
                             </div>
-                            <NavLink to={'/'} className="body-payment__add add-body-payment">
+                            <NavLink to={'/payment-add'} className="body-payment__add add-body-payment">
                                 <div className="add-body-payment__image">
                                     <img src={Wallet} alt="Icon"/>
                                 </div>
