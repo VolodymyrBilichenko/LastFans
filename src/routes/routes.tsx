@@ -8,6 +8,7 @@ import { LiveStream } from '../pages/LiveStream/LiveStream'
 import { Login } from '../pages/Login/Login'
 import { Main } from '../pages/Main/Main'
 import { Messages } from '../pages/Messages/Messages'
+import { Models } from '../pages/Models/Models'
 import { NotFound } from '../pages/NotFound/NotFound'
 import { Registration } from '../pages/Registration/Registration'
 import { Subscribers } from '../pages/Subscribers/Subscribers'
@@ -50,6 +51,10 @@ export const routes: any[] = [
     {
         path: '/messages',
         element: <Messages/>
+    },
+    {
+        path: '/models',
+        element: <Models/>
     },
     
     
