@@ -7,6 +7,7 @@ import { History } from '../pages/History/History'
 import { LiveStream } from '../pages/LiveStream/LiveStream'
 import { Login } from '../pages/Login/Login'
 import { Main } from '../pages/Main/Main'
+import { Messages } from '../pages/Messages/Messages'
 import { NotFound } from '../pages/NotFound/NotFound'
 import { Registration } from '../pages/Registration/Registration'
 import { Subscribers } from '../pages/Subscribers/Subscribers'
@@ -45,6 +46,10 @@ export const routes: any[] = [
     {
         path: '/history',
         element: <History/>
+    },
+    {
+        path: '/messages',
+        element: <Messages/>
     },
     
     
