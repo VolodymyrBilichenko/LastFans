@@ -1,3 +1,4 @@
+import { AutoMessage } from '../pages/AutoMessage/AutoMessage'
 import { ForgotPass } from '../pages/ForgotPass/ForgotPass'
 import { LiveStream } from '../pages/LiveStream/LiveStream'
 import { Login } from '../pages/Login/Login'
@@ -31,6 +32,10 @@ export const routes: any[] = [
     {
         path: '/live',
         element: <LiveStream/>
+    },
+    {
+        path: '/auto-message',
+        element: <AutoMessage/>
     },
     {
         path: '*',
