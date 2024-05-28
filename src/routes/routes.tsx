@@ -10,6 +10,7 @@ import { Main } from '../pages/Main/Main'
 import { Messages } from '../pages/Messages/Messages'
 import { Models } from '../pages/Models/Models'
 import { NotFound } from '../pages/NotFound/NotFound'
+import { Payment } from '../pages/Payment/Payment'
 import { Registration } from '../pages/Registration/Registration'
 import { Subscribers } from '../pages/Subscribers/Subscribers'
 
@@ -55,6 +56,10 @@ export const routes: any[] = [
     {
         path: '/models',
         element: <Models/>
+    },
+    {
+        path: '/payment',
+        element: <Payment/>
     },
     
     
