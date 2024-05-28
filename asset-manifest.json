@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/LastFans/static/css/main.505b9df6.css",
-    "main.js": "/LastFans/static/js/main.e1c95193.js",
+    "main.js": "/LastFans/static/js/main.d7da90a3.js",
     "static/media/01.jpg": "/LastFans/static/media/01.f217d4beaf3d41359216.jpg",
     "static/media/story.jpg": "/LastFans/static/media/story.4d418b69e89a59dbea3b.jpg",
     "static/media/bg.jpg": "/LastFans/static/media/bg.2b23d4899c20b4fdee00.jpg",
@@ -9,6 +9,7 @@
     "static/media/group-message.svg": "/LastFans/static/media/group-message.9084761fb40b5be5c5a4b91ea06e1f55.svg",
     "static/media/01.svg": "/LastFans/static/media/01.e11ba31cd4bc6d39e5bc09c0d6054fc2.svg",
     "static/media/money-02.svg": "/LastFans/static/media/money-02.c856d65fd2b81c37b434aa77efc84cc8.svg",
+    "static/media/wallet.svg": "/LastFans/static/media/wallet.3149e762d0b356fcb00ee47734994149.svg",
     "static/media/user.svg": "/LastFans/static/media/user.c72ae1f7e4a410f1f91767d232890af6.svg",
     "static/media/file.svg": "/LastFans/static/media/file.952f0395e77a663761f4dd07b3e93266.svg",
     "static/media/stats.svg": "/LastFans/static/media/stats.7c810830d24dfbd47a44480d65fc2181.svg",
@@ -21,7 +22,9 @@
     "static/media/sort.svg": "/LastFans/static/media/sort.97474c4318fe2f91e6a969f6acbb300f.svg",
     "static/media/micro.svg": "/LastFans/static/media/micro.2ba1892390bfdcfb7c429275d166f0d9.svg",
     "static/media/live.svg": "/LastFans/static/media/live.244e7984ff5f4c2baed92bb19db4c2f9.svg",
+    "static/media/chip.svg": "/LastFans/static/media/chip.a7d12807c83c2c6b32c81c8e51b0c04d.svg",
     "static/media/image.svg": "/LastFans/static/media/image.4807c842717d929aa431493335239831.svg",
+    "static/media/active.svg": "/LastFans/static/media/active.d2ca8d3b7adcc2d2d6096f54fbb1ba77.svg",
     "static/media/audio-mute.svg": "/LastFans/static/media/audio-mute.83d6dc42b716b2ecc051224a696c55e8.svg",
     "static/media/message.svg": "/LastFans/static/media/message.5836b1902094eb12ad449bb3df2ee00d.svg",
     "static/media/pin.svg": "/LastFans/static/media/pin.d3af6e58d6cb788ef29aca0889f203bc.svg",
@@ -40,10 +43,10 @@
     "static/media/send.svg": "/LastFans/static/media/send.5dc14ce34094258cc2ade1f4fa5f2ad5.svg",
     "static/media/icons.scss": "/LastFans/static/media/icons.fc895074ea3194cc1151.scss",
     "main.505b9df6.css.map": "/LastFans/static/css/main.505b9df6.css.map",
-    "main.e1c95193.js.map": "/LastFans/static/js/main.e1c95193.js.map"
+    "main.d7da90a3.js.map": "/LastFans/static/js/main.d7da90a3.js.map"
   },
   "entrypoints": [
     "static/css/main.505b9df6.css",
-    "static/js/main.e1c95193.js"
+    "static/js/main.d7da90a3.js"
   ]
 }
