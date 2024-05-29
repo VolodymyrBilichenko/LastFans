@@ -1,3 +1,7 @@
+import { Swiper, SwiperSlide } from "swiper/react";
+import 'swiper/css';
+import 'swiper/css/pagination';
+
 import StoryPh from '../../assets/img/story/story.jpg'
 
 export const Highlights = () => {
@@ -7,8 +11,17 @@ export const Highlights = () => {
                 <h3 className="highlights-main__title title title--small">Highlights</h3>
             </div>
 
-            <div className="highlights-main__body body-highlights-main swiper">
-                <div className="highlights-main__content swiper-wrapper">
+            <Swiper className="highlights-main__body body-highlights-main mySwiper"
+                slidesPerView={6}
+                spaceBetween={10}
+
+                breakpoints={{
+                    768: {
+                        slidesPerView: 8,
+                    },
+                }}
+            >
+                <SwiperSlide >
                     <a href="some" data-popup="#popup-timeline-post" className="highlights-main__item item-highlights-main item-highlights-main--new swiper-slide">
                         <div className="item-highlights-main__image">
                             <svg width="18" height="17" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -17,75 +30,97 @@ export const Highlights = () => {
                         </div>
                         <p className="item-highlights-main__text">New</p>
                     </a>
+                </SwiperSlide>
+
+                <SwiperSlide >
                     <a href="some" className="highlights-main__item item-highlights-main swiper-slide">
                         <div className="item-highlights-main__image">
                                 <img src={StoryPh} alt="ph"/>
                         </div>
                         <p className="item-highlights-main__text">NewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNew</p>
                     </a>
+                </SwiperSlide>
+                <SwiperSlide >
                     <a href="some" className="highlights-main__item item-highlights-main swiper-slide">
                         <div className="item-highlights-main__image">
                                 <img src={StoryPh} alt="ph"/>
                         </div>
-                        <p className="item-highlights-main__text">New</p>
+                        <p className="item-highlights-main__text">NewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNew</p>
                     </a>
+                </SwiperSlide>
+                <SwiperSlide >
                     <a href="some" className="highlights-main__item item-highlights-main swiper-slide">
                         <div className="item-highlights-main__image">
                                 <img src={StoryPh} alt="ph"/>
                         </div>
-                        <p className="item-highlights-main__text">New</p>
+                        <p className="item-highlights-main__text">NewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNew</p>
                     </a>
+                </SwiperSlide>
+                <SwiperSlide >
                     <a href="some" className="highlights-main__item item-highlights-main swiper-slide">
                         <div className="item-highlights-main__image">
                                 <img src={StoryPh} alt="ph"/>
                         </div>
-                        <p className="item-highlights-main__text">New</p>
+                        <p className="item-highlights-main__text">NewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNew</p>
                     </a>
+                </SwiperSlide>
+                <SwiperSlide >
                     <a href="some" className="highlights-main__item item-highlights-main swiper-slide">
                         <div className="item-highlights-main__image">
                                 <img src={StoryPh} alt="ph"/>
                         </div>
-                        <p className="item-highlights-main__text">New</p>
+                        <p className="item-highlights-main__text">NewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNew</p>
                     </a>
+                </SwiperSlide>
+                <SwiperSlide >
                     <a href="some" className="highlights-main__item item-highlights-main swiper-slide">
                         <div className="item-highlights-main__image">
                                 <img src={StoryPh} alt="ph"/>
                         </div>
-                        <p className="item-highlights-main__text">New</p>
+                        <p className="item-highlights-main__text">NewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNew</p>
                     </a>
+                </SwiperSlide>
+                <SwiperSlide >
                     <a href="some" className="highlights-main__item item-highlights-main swiper-slide">
                         <div className="item-highlights-main__image">
                                 <img src={StoryPh} alt="ph"/>
                         </div>
-                        <p className="item-highlights-main__text">New</p>
+                        <p className="item-highlights-main__text">NewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNew</p>
                     </a>
+                </SwiperSlide>
+                <SwiperSlide >
                     <a href="some" className="highlights-main__item item-highlights-main swiper-slide">
                         <div className="item-highlights-main__image">
                                 <img src={StoryPh} alt="ph"/>
                         </div>
-                        <p className="item-highlights-main__text">New</p>
+                        <p className="item-highlights-main__text">NewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNew</p>
                     </a>
+                </SwiperSlide>
+                <SwiperSlide >
                     <a href="some" className="highlights-main__item item-highlights-main swiper-slide">
                         <div className="item-highlights-main__image">
                                 <img src={StoryPh} alt="ph"/>
                         </div>
-                        <p className="item-highlights-main__text">New</p>
+                        <p className="item-highlights-main__text">NewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNew</p>
                     </a>
+                </SwiperSlide>
+                <SwiperSlide >
                     <a href="some" className="highlights-main__item item-highlights-main swiper-slide">
                         <div className="item-highlights-main__image">
                                 <img src={StoryPh} alt="ph"/>
                         </div>
-                        <p className="item-highlights-main__text">New</p>
+                        <p className="item-highlights-main__text">NewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNew</p>
                     </a>
+                </SwiperSlide>
+                <SwiperSlide >
                     <a href="some" className="highlights-main__item item-highlights-main swiper-slide">
                         <div className="item-highlights-main__image">
-                            <img src={StoryPh} alt="ph"/>
+                                <img src={StoryPh} alt="ph"/>
                         </div>
-                        <p className="item-highlights-main__text">New</p>
+                        <p className="item-highlights-main__text">NewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNew</p>
                     </a>
-
-                </div>
-            </div>
+                </SwiperSlide>
+            </Swiper>
 
         </div>
     )
