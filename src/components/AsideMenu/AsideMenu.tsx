@@ -105,7 +105,7 @@ export const AsideMenu = ({isOpenAsideMenu}: IAsideMenu) => {
                                 </div>
                             </div>
                         </NavLink>
-                        <div>
+                        <NavLink to={'/my-profile'}>
                             <div className="page-menu__item item-page-menu">
                                 <div className="item-page-menu__image">
                                     <div className="item-page-menu__image-body">
@@ -135,7 +135,7 @@ export const AsideMenu = ({isOpenAsideMenu}: IAsideMenu) => {
                                     </details>
                                 </div>
                             </div>
-                        </div>
+                        </NavLink>
                     </div>
 
                 </div>
