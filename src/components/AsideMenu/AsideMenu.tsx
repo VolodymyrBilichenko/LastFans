@@ -1,12 +1,16 @@
-import React from 'react'
+import { NavLink } from "react-router-dom"
 
-export const AsideMenu = () => {
+interface IAsideMenu {
+    isOpenAsideMenu?: boolean
+} 
+export const AsideMenu = ({isOpenAsideMenu}: IAsideMenu) => {
+    
     return (
-        <aside className="page-menu">
+        <aside className={`page-menu ${isOpenAsideMenu === true ? 'active' : ''}`} >
             <div className="page-menu__wrapper">
                 <div data-spollers className="page-menu__body">
                     <div className="page-menu__items spollers">
-                        <a href="some" className="page-menu__item item-page-menu">
+                        <NavLink to={'/'} className="page-menu__item item-page-menu">
                             <div className="item-page-menu__image">
                                 <div className="item-page-menu__image-body">
 
@@ -24,8 +28,8 @@ export const AsideMenu = () => {
                                     <div className="sub-menu__title spollers__title">Main page</div>
                                 </div>
                             </div>
-                        </a>
-                        <a href="some" className="page-menu__item item-page-menu">
+                        </NavLink>
+                        <NavLink to={'/shop'} className="page-menu__item item-page-menu">
                             <div className="item-page-menu__image">
                                 <div className="item-page-menu__image-body">
                                     <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -42,9 +46,9 @@ export const AsideMenu = () => {
                                     <div className="sub-menu__title spollers__title">Shop</div>
                                 </div>
                             </div>
-                        </a>
+                        </NavLink>
 
-                        <a href="some" className="page-menu__item item-page-menu">
+                        <NavLink to={'/livestream'} className="page-menu__item item-page-menu">
                             <div className="item-page-menu__image">
                                 <div className="item-page-menu__image-body">
 
@@ -62,9 +66,9 @@ export const AsideMenu = () => {
                                     <div className="sub-menu__title spollers__title">Livestreaming</div>
                                 </div>
                             </div>
-                        </a>
+                        </NavLink>
 
-                        <a href="some" className="page-menu__item item-page-menu">
+                        <NavLink to={'/models'} className="page-menu__item item-page-menu">
                             <div className="item-page-menu__image">
                                 <div className="item-page-menu__image-body">
 
@@ -80,9 +84,9 @@ export const AsideMenu = () => {
                                     <div className="sub-menu__title spollers__title">Models</div>
                                 </div>
                             </div>
-                        </a>
+                        </NavLink>
 
-                        <a href="some" className="page-menu__item item-page-menu">
+                        <NavLink to={'/statistic'} className="page-menu__item item-page-menu">
                             <div className="item-page-menu__image">
                                 <div className="item-page-menu__image-body">
                                     <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -100,7 +104,7 @@ export const AsideMenu = () => {
                                     <div className="sub-menu__title spollers__title">Statistics</div>
                                 </div>
                             </div>
-                        </a>
+                        </NavLink>
                         <div>
                             <div className="page-menu__item item-page-menu">
                                 <div className="item-page-menu__image">

@@ -203,6 +203,8 @@
     transition: all .3s ease;
     z-index: 20;
     outline: 1px solid var(--secondary);
+
+
     @media (max-width:$mobile){
         height: calc(100vh - 60px);
     }
