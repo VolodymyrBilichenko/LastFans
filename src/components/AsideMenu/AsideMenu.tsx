@@ -29,7 +29,7 @@ export const AsideMenu = ({isOpenAsideMenu}: IAsideMenu) => {
                                 </div>
                             </div>
                         </NavLink>
-                        <NavLink to={'/shop'} className="page-menu__item item-page-menu">
+                        <NavLink to={'/video-store'} className="page-menu__item item-page-menu">
                             <div className="item-page-menu__image">
                                 <div className="item-page-menu__image-body">
                                     <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -48,7 +48,7 @@ export const AsideMenu = ({isOpenAsideMenu}: IAsideMenu) => {
                             </div>
                         </NavLink>
 
-                        <NavLink to={'/livestream'} className="page-menu__item item-page-menu">
+                        <NavLink to={'/live'} className="page-menu__item item-page-menu">
                             <div className="item-page-menu__image">
                                 <div className="item-page-menu__image-body">
 
