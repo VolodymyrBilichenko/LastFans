@@ -1,13 +1,13 @@
+import "./assets/scss/style.scss";
 import { Route, Routes, useLocation } from "react-router-dom";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 import { routes } from "./routes/routes";
 import { Header } from "./components/Header/Header";
 import { AsideMenu } from "./components/AsideMenu/AsideMenu";
 import { AsideMessages } from "./components/AsideMessages/AsideMessages";
-
-import "./assets/scss/style.scss";
 import { useOpenAside } from "./hooks/OpenAside";
 import { useEffect, useState } from "react";
+
 
 export const App = () => {
   const location = useLocation();
