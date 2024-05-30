@@ -2,40 +2,50 @@ import { Route, Routes, useLocation } from "react-router-dom";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 import { routes } from "./routes/routes";
 import { Header } from "./components/Header/Header";
-import { useState } from "react";
 import { AsideMenu } from "./components/AsideMenu/AsideMenu";
 import { AsideMessages } from "./components/AsideMessages/AsideMessages";
 
 import "./assets/scss/style.scss";
 import { useOpenAside } from "./hooks/OpenAside";
+import { useEffect, useState } from "react";
 
 export const App = () => {
   const location = useLocation();
-  const [loading, setLoading] = useState(false);
-
-  const toggleLoader = (value: any) => {
-    setLoading(value);
-  };
-
   const {handleOpenMenu, isOpenAsideMenu} = useOpenAside();
+  const [showHeader, setShowHeader] = useState(true);
+  const [showAsideMessages, setShowAsideMessages] = useState(true);
+  const [showAsideMenu, setShowAsideMenu] = useState(true);
+  const [mainClass, setMainClass] = useState('page-main');
+
+  useEffect(() => {
+    let currentPage = routes.find((item) => item.path === location.pathname);
+
+    if (!currentPage) {
+      currentPage = routes.find((item) => item.path === '*');
+    }
+
+    const registrationPageClass = ['/login', '/registration', '/forgot'];
+    const isRegistrationPage = registrationPageClass.includes(location.pathname) || currentPage.path === '*';
+
+    setShowHeader(currentPage ? currentPage?.needed !== false : true);
+    setShowAsideMessages(currentPage ? currentPage?.needed !== false : true);
+    setShowAsideMenu(currentPage ? currentPage?.needed !== false : true);
+    setMainClass(isRegistrationPage ? 'page-registration' : 'page-main');
+  }, [location.pathname])
   
   return (
-    <div style={{ position: "relative" }}>
-      {loading && (
-        <p style={{ position: "absolute", top: "0", left: "0" }}>loading...</p>
-      )}
+    <>
+      { showHeader && <Header handleOpenMenu={handleOpenMenu}/>}
+      
+      <main className={`page ${mainClass}`}>
 
-      <Header handleOpenMenu={handleOpenMenu}/>
-      <main className="page page-main">
-        <AsideMenu isOpenAsideMenu={isOpenAsideMenu}/>
+        {showAsideMenu && <AsideMenu isOpenAsideMenu={isOpenAsideMenu}/>}
 
         <TransitionGroup component={null}>
           <CSSTransition
             key={location.pathname}
             classNames="fade"
             timeout={300}
-            onEnter={() => toggleLoader(true)}
-            onExited={() => toggleLoader(false)}
           >
             <Routes location={location}>
               {routes.map((item: any) => (
@@ -49,8 +59,8 @@ export const App = () => {
           </CSSTransition>
         </TransitionGroup>
 
-        <AsideMessages />
+        {showAsideMessages && <AsideMessages />}
       </main>
-    </div>
+    </>
   );
 };

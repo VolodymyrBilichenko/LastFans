@@ -33,15 +33,18 @@ export const routes: any[] = [
     },
     {
         path: '/registration',
-        element: <Registration/>
+        element: <Registration/>,
+        needed: false
     },
     {
         path: '/login',
-        element: <Login/>
+        element: <Login/>,
+        needed: false
     },
     {
         path: '/forgot',
-        element: <ForgotPass/>
+        element: <ForgotPass/>,
+        needed: false
     },
     {
         path: '/live',
@@ -111,7 +114,8 @@ export const routes: any[] = [
     },
     {
         path: '*',
-        element: <NotFound/>
+        element: <NotFound/>,
+        needed: false
     },
 
 ]
