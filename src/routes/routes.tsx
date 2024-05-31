@@ -48,7 +48,8 @@ export const routes: any[] = [
     },
     {
         path: '/live',
-        element: <LiveStream/>
+        element: <LiveStream/>,
+        message: false
     },
     {
         path: '/auto-message',

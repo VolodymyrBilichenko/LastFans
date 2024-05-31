@@ -27,10 +27,14 @@ export const App = () => {
     const registrationPageClass = ['/login', '/registration', '/forgot'];
     const isRegistrationPage = registrationPageClass.includes(location.pathname) || currentPage.path === '*';
 
+    
+    
     setShowHeader(currentPage ? currentPage?.needed !== false : true);
     setShowAsideMessages(currentPage ? currentPage?.needed !== false : true);
     setShowAsideMenu(currentPage ? currentPage?.needed !== false : true);
     setMainClass(isRegistrationPage ? 'page-registration' : 'page-main');
+
+    setShowAsideMessages(currentPage ? currentPage.message !== false : true);
   }, [location.pathname])
   
   return (

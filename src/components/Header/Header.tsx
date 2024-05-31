@@ -1,5 +1,6 @@
 import UserPhoto from '../../assets/img/user/01.png'
 import LogoPh from '../../assets/img/icons/logo.svg'
+import { NavLink } from 'react-router-dom'
 
 interface IOpenMenu {
     handleOpenMenu?: any
@@ -18,7 +19,7 @@ export const Header = ({handleOpenMenu}: IOpenMenu) => {
                         </svg>
                     </div>
                 </div>
-                <a href="some" className="header__logo logo">
+                <NavLink to={'/'} className="header__logo logo">
                     <div className="logo__block">
 
                         <p className="logo__text">l</p>
@@ -28,7 +29,7 @@ export const Header = ({handleOpenMenu}: IOpenMenu) => {
 
                     <span className="logo__text">fans</span>
 
-                </a>
+                </NavLink>
                 <div className="header__actions">
                     <div className="header__search">
                         <input type="text" name="form[]" placeholder="Search by nickname or hashtags " className="header__input input"/>
