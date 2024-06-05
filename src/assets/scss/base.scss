@@ -82,3 +82,11 @@
   opacity: 1;
   transition: all .3s ease;
 }
+
+
+// style from opacity
+
+.sr-only{
+	opacity: 0;
+	visibility: hidden;
+}
