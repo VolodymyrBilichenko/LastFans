@@ -1,5 +1,6 @@
 import UserPhoto2 from '../../assets/img/user/02.jpg'
 import LogoWhiteIc from '../../assets/img/icons/logo-white.svg'
+import { NavLink } from 'react-router-dom'
 
 export const AsideMessages = () => {
     return (
@@ -29,7 +30,7 @@ export const AsideMessages = () => {
                         <input type="text" name="form[]" placeholder="Search by nickname or hashtags " className="search__input input"/>
                     </div>
                     <div className="body-messages__items">
-                        <div className="body-messages__item item-message">
+                        <NavLink to={'/messages'} className="body-messages__item item-message">
                             <div className="item-message__user user-item user-item--stories">
                                 <div className="user-item__image user-item__image--decoration">
                                     <img className="user-photo" src={UserPhoto2} alt="ph"/>
@@ -64,8 +65,8 @@ export const AsideMessages = () => {
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div className="body-messages__item item-message">
+                        </NavLink>
+                        <NavLink to={'/messages'} className="body-messages__item item-message">
                             <div className="item-message__user user-item user-item--stories">
                                 <div className="user-item__image user-item__image--decoration">
                                     <img className="user-photo" src={UserPhoto2} alt="ph"/>
@@ -100,8 +101,8 @@ export const AsideMessages = () => {
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div className="body-messages__item item-message">
+                        </NavLink>
+                        <NavLink to={'/messages'} className="body-messages__item item-message">
                             <div className="item-message__user user-item user-item--stories">
                                 <div className="user-item__image user-item__image--decoration">
                                     <img className="user-photo" src={UserPhoto2} alt="ph"/>
@@ -136,8 +137,8 @@ export const AsideMessages = () => {
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div className="body-messages__item item-message">
+                        </NavLink>
+                        <NavLink to={'/messages'} className="body-messages__item item-message">
                             <div className="item-message__user user-item user-item--stories">
                                 <div className="user-item__image user-item__image--decoration">
                                     <img className="user-photo" src={UserPhoto2} alt="ph"/>
@@ -172,8 +173,8 @@ export const AsideMessages = () => {
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div className="body-messages__item item-message">
+                        </NavLink>
+                        <NavLink to={'/messages'} className="body-messages__item item-message">
                             <div className="item-message__user user-item user-item--stories">
                                 <div className="user-item__image user-item__image--decoration">
                                     <img className="user-photo" src={UserPhoto2} alt="ph"/>
@@ -208,8 +209,8 @@ export const AsideMessages = () => {
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div className="body-messages__item item-message">
+                        </NavLink>
+                        <NavLink to={'/messages'} className="body-messages__item item-message">
                             <div className="item-message__user user-item user-item--stories">
                                 <div className="user-item__image user-item__image--decoration">
                                     <img className="user-photo" src={UserPhoto2} alt="ph"/>
@@ -244,8 +245,8 @@ export const AsideMessages = () => {
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div className="body-messages__item item-message">
+                        </NavLink>
+                        <NavLink to={'/messages'} className="body-messages__item item-message">
                             <div className="item-message__user user-item user-item--stories">
                                 <div className="user-item__image user-item__image--decoration">
                                     <img className="user-photo" src={UserPhoto2} alt="ph"/>
@@ -280,8 +281,8 @@ export const AsideMessages = () => {
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div className="body-messages__item item-message">
+                        </NavLink>
+                        <NavLink to={'/messages'} className="body-messages__item item-message">
                             <div className="item-message__user user-item user-item--stories">
                                 <div className="user-item__image user-item__image--decoration">
                                     <img className="user-photo" src={UserPhoto2} alt="ph"/>
@@ -316,8 +317,8 @@ export const AsideMessages = () => {
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div className="body-messages__item item-message">
+                        </NavLink>
+                        <NavLink to={'/messages'} className="body-messages__item item-message">
                             <div className="item-message__user user-item user-item--stories">
                                 <div className="user-item__image user-item__image--decoration">
                                     <img className="user-photo" src={UserPhoto2} alt="ph"/>
@@ -352,8 +353,8 @@ export const AsideMessages = () => {
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div className="body-messages__item item-message">
+                        </NavLink>
+                        <NavLink to={'/messages'} className="body-messages__item item-message">
                             <div className="item-message__user user-item user-item--stories">
                                 <div className="user-item__image user-item__image--decoration">
                                     <img className="user-photo" src={UserPhoto2} alt="ph"/>
@@ -388,7 +389,7 @@ export const AsideMessages = () => {
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </NavLink>
                     </div>
 
                 </div>

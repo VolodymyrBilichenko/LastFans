@@ -12,6 +12,7 @@ import AudioIc from '../../assets/img/icons/audio.svg'
 import FileIc from '../../assets/img/icons/file.svg'
 import StoryPh from '../../assets/img/story/story.jpg'
 import LiveIc from '../../assets/img/icons/live.svg'
+import { NavLink } from 'react-router-dom'
 
 export const Main = () => {
 	
@@ -61,12 +62,12 @@ export const Main = () => {
 							<p>Add story</p>
 						</div>
 					</div>
-					<a href="some" className="stories-main__item live-stories-main">
+					<NavLink to={'/live'} className="stories-main__item live-stories-main">
 						<div className="live-stories-main__text">
 							<img src={LiveIc} alt="Icon"/>
 							<p>Go Live</p>
 						</div>
-					</a>
+					</NavLink>
 
 				</div>
 			</div>

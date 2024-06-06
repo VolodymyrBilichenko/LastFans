@@ -61,7 +61,8 @@ export const routes: any[] = [
     },
     {
         path: '/messages',
-        element: <Messages/>
+        element: <Messages/>,
+        message: false
     },
     {
         path: '/models',

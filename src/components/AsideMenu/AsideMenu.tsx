@@ -1,9 +1,17 @@
+import { useState } from "react";
 import { NavLink } from "react-router-dom"
 
 interface IAsideMenu {
     isOpenAsideMenu?: boolean
 } 
 export const AsideMenu = ({isOpenAsideMenu}: IAsideMenu) => {
+    const [subMenu, setSubMenu] = useState(false);
+
+    const handleOpenSubMenu = () => {
+        setSubMenu(!subMenu);
+        console.log('click');
+        
+    }
     
     return (
         <aside className={`page-menu ${isOpenAsideMenu === true ? 'active' : ''}`} >
@@ -105,7 +113,9 @@ export const AsideMenu = ({isOpenAsideMenu}: IAsideMenu) => {
                                 </div>
                             </div>
                         </NavLink>
-                        <NavLink to={'/my-profile'}>
+                        <div className={`page-menu__item item-page-menu ${subMenu ? 'active' : ''}`}
+                            onClick={handleOpenSubMenu}
+                        >
                             <div className="page-menu__item item-page-menu">
                                 <div className="item-page-menu__image">
                                     <div className="item-page-menu__image-body">
@@ -125,17 +135,17 @@ export const AsideMenu = ({isOpenAsideMenu}: IAsideMenu) => {
                                 </div>
                                 <div className="item-page-menu__content sub-menu">
                                     <details className="sub-menu__item spollers__item">
-                                        <summary data-spoller-close className="sub-menu__title spollers__title">My profile</summary>
+                                        <summary data-spoller-close className={`sub-menu__title spollers__title ${subMenu ? '_spoller-active' : ''}`}>My profile</summary>
 
                                         <div className="sub-menu__body spollers__body">
-                                            <a href="some" className="item-page-menu__text">Profile</a>
-                                            <a href="some" className="item-page-menu__text">Automated messages</a>
-                                            <a href="some" className="item-page-menu__text">History</a>
+                                            <NavLink to={'/profile'} className="item-page-menu__text">Profile</NavLink>
+                                            <NavLink to={'/auto-message'} className="item-page-menu__text">Automated messages</NavLink>
+                                            <NavLink to={'/history'} className="item-page-menu__text">History</NavLink>
                                         </div>
                                     </details>
                                 </div>
                             </div>
-                        </NavLink>
+                        </div>
                     </div>
 
                 </div>
