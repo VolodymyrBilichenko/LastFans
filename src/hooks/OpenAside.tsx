@@ -3,8 +3,8 @@ import { useState } from "react";
 export const useOpenAside = () => {
     const [isOpenAsideMenu, setIsOpenAsideMenu] = useState(false);
     
-    const handleOpenMenu = () => {
-        setIsOpenAsideMenu(!isOpenAsideMenu);
+    const handleOpenMenu = (bool: boolean) => {
+        setIsOpenAsideMenu(bool ?? !isOpenAsideMenu);
     }
 
     return {

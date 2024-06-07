@@ -25,7 +25,7 @@ export const App = () => {
       
       <main className={`page ${currentPage[0]?.additionalClass ?? 'page-main'} `}>
 
-        {!currentPage[0]?.isNotNeedMenu && <AsideMenu isOpenAsideMenu={isOpenAsideMenu}/>}
+        {!currentPage[0]?.isNotNeedMenu && <AsideMenu handleOpenMenu={handleOpenMenu} isOpenAsideMenu={isOpenAsideMenu}/>}
 
         <TransitionGroup component={null}>
           <CSSTransition
