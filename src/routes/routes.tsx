@@ -122,10 +122,6 @@ export const routes: any[] = [
     {
         path: '/rules/:title',
         element: <Rules/>,
-        isNotNeedHeader: false,
-        isNotNeedMessage: false,
-        isNotNeedMenu: false,
-        additionalClass: 'page-main'
     },
     {
         path: '*',

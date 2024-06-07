@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import UserPhoto from './../../../assets/img/user/01.png'
+// import UserPhoto from './../../../assets/img/user/01.png'
 
 interface ILiveStreamChatItemProps {
     user: { username: string; photo: string }

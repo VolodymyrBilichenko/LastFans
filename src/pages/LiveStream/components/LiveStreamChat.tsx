@@ -3,7 +3,6 @@ import UserPhoto from './../../../assets/img/user/01.png'
 import MicroIc from './../../../assets/img/icons/micro.svg'
 import SendIc from './../../../assets/img/icons/send.svg'
 import { LiveStreamChatItem } from './LiveStreamChatItem'
-import { updateJsxElement } from 'typescript'
 
 interface ILiveStreamChatProps {
 

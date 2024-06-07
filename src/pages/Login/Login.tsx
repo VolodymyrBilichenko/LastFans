@@ -4,9 +4,42 @@ import LogoWhiteIc from '../../assets/img/icons/logo-white.svg'
 import GoogleIc from '../../assets/img/icons/google.svg'
 import AppleIc from '../../assets/img/icons/apple.svg'
 import FacebookIc from '../../assets/img/icons/facebook.svg'
-import { NavLink } from 'react-router-dom'
+import { NavLink, useNavigate } from 'react-router-dom'
+import { useState } from 'react'
 
 export const Login = () => {
+    const [password, setPassword] = useState<string>("");
+    const [email, setEmail] = useState<string>("");
+    const [error, setError] = useState<string | null>(null);
+    const navigate = useNavigate();
+
+    const validateForm = () => {
+        const emailRegex = /^[^\s@]+@[a-zA-Z0-9\-_.]+\.[a-z]{2,6}$/;
+        const isValidEmail = emailRegex.test(email);
+    
+        if (!isValidEmail) {
+          setError("Введіть дійсні значення");
+          return false;
+        }
+        return true;
+    };
+    
+    const resetForm = () => {
+        setEmail("");
+        setPassword("");
+    };
+      
+    const submitForm = (evt: React.FormEvent<HTMLFormElement>) => {
+        evt.preventDefault();
+        setError(null);
+        resetForm();
+        
+        
+        if (validateForm()) {
+            navigate('/');
+        }
+    }
+
     return (
         <div className="registration">
             <div className="registration__block block-registration">
@@ -31,12 +64,21 @@ export const Login = () => {
                     <div className="main-registration__header header-main-registration">
                         <h1 className="header-main-registration__title title">Log in</h1>
                     </div>
-                    <form action="" className="main-registration__form form-main-registration">
+                    <form action="" className="main-registration__form form-main-registration"
+                        onSubmit={submitForm}
+                    >
                         <div className="form-main-registration__body">
-                            <input type="email" name="form[]" placeholder="Email adress *" className="form-main-registration__input input input-main"/>
-                            <input type="password" name="form[]" placeholder="Password *" className="form-main-registration__input input input-main"/>
+                            <input type={'email'} name="form[]" placeholder="Email adress *" className="form-main-registration__input input input-main"
+                                onChange={(e) => setEmail(e.target.value)}
+                            />{error && <span className="error__message">{error}</span>}
+
+                            <input type="password" name="form[]" placeholder="Password *" className="form-main-registration__input input input-main"
+                                onChange={(e) => setPassword(e.target.value)}
+                            />{error && <span className="error__message">{error}</span>}
                         </div>
-                        <button className="form-main-registration__button button button--fw"><span>Log in</span></button>
+                        {/* <NavLink to={'/'}> */}
+                            <button className="form-main-registration__button button button--fw"><span>Log in</span></button>
+                        {/* </NavLink> */}
                         
                     </form>
 
