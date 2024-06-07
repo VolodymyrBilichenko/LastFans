@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom"
+import { AsideMenuMode } from "./components/AsideMenuMode";
 
 interface IAsideMenu {
     isOpenAsideMenu?: boolean
@@ -9,8 +10,6 @@ export const AsideMenu = ({isOpenAsideMenu}: IAsideMenu) => {
 
     const handleOpenSubMenu = () => {
         setSubMenu(!subMenu);
-        console.log('click');
-        
     }
     
     return (
@@ -212,23 +211,8 @@ export const AsideMenu = ({isOpenAsideMenu}: IAsideMenu) => {
                                 </div>
                             </div>
                         </a>
-                        <div className="page-menu__item item-page-menu item-page-menu--mode">
-                            <div className="item-page-menu__content item-page-menu__content-mode sub-menu">
-                                <div className="sub-menu__item spollers__item">
-                                    <div className="mode">
-                                        <p className="mode__text">Light Mode</p>
-                                        <div className="mode__body">
-                                            <div className="switch-mode">
-                                                <div className="switch-mode__body">
-                                                    <input type="checkbox" id="switch" className="switch-mode__input"/>
-                                                    <label htmlFor="switch" className="switch-mode__button"></label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        
+                        <AsideMenuMode/>
 
                     </div>
 
