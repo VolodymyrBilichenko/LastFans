@@ -397,9 +397,9 @@
 
     }
     &.item-page-menu{
-        border-right: toRem(4) solid var(--blue);
+        // border-right: toRem(4) solid var(--blue);
         .sub-menu__title{
-            // border-right: toRem(4) solid var(--blue);
+            border-right: toRem(4) solid var(--blue);
         }
     }
     &.footer-post__like{

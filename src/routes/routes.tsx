@@ -25,31 +25,41 @@ export const routes: any[] = [
     {
         path: '/LastFans',
         element: <Main/>,
-        
+        additionalClass: 'page-main'
     },
     {
         path: '/',
-        element: <Main/>
+        element: <Main/>,
+        additionalClass: 'page-main'
     },
     {
         path: '/registration',
         element: <Registration/>,
-        needed: false
+        isNotNeedHeader: true,
+        isNotNeedMessage: true,
+        isNotNeedMenu: true,
+        additionalClass: 'page-registration'
     },
     {
         path: '/login',
         element: <Login/>,
-        needed: false
+        isNotNeedHeader: true,
+        isNotNeedMessage: true,
+        isNotNeedMenu: true,
+        additionalClass: 'page-login'
     },
     {
         path: '/forgot',
         element: <ForgotPass/>,
-        needed: false
+        isNotNeedHeader: true,
+        isNotNeedMessage: true,
+        isNotNeedMenu: true,
+        additionalClass: 'page-login'
     },
     {
         path: '/live',
         element: <LiveStream/>,
-        message: false
+        isNotNeedMessage: true
     },
     {
         path: '/auto-message',
@@ -62,7 +72,8 @@ export const routes: any[] = [
     {
         path: '/messages',
         element: <Messages/>,
-        message: false
+        isNotNeedMessage: true,
+        additionalClass: 'messages-page'
     },
     {
         path: '/models',
@@ -117,7 +128,10 @@ export const routes: any[] = [
     {
         path: '*',
         element: <NotFound/>,
-        needed: false
+        isNotNeedHeader: true,
+        isNotNeedMessage: true,
+        isNotNeedMenu: true,
+        additionalClass: 'page-registration'
     },
 
 ]

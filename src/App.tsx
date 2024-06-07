@@ -6,44 +6,21 @@ import { Header } from "./components/Header/Header";
 import { AsideMenu } from "./components/AsideMenu/AsideMenu";
 import { AsideMessages } from "./components/AsideMessages/AsideMessages";
 import { useOpenAside } from "./hooks/OpenAside";
-import { useEffect, useState } from "react";
 
 
 export const App = () => {
   const location = useLocation();
   const {handleOpenMenu, isOpenAsideMenu} = useOpenAside();
-  const [showHeader, setShowHeader] = useState(true);
-  const [showAsideMessages, setShowAsideMessages] = useState(true);
-  const [showAsideMenu, setShowAsideMenu] = useState(true);
-  const [mainClass, setMainClass] = useState('page-main');
 
-  useEffect(() => {
-    let currentPage = routes.find((item) => item.path === location.pathname);
-
-    if (!currentPage) {
-      currentPage = routes.find((item) => item.path === '*');
-    }
-
-    const registrationPageClass = ['/login', '/registration', '/forgot'];
-    const isRegistrationPage = registrationPageClass.includes(location.pathname) || currentPage.path === '*';
-
-    
-    
-    setShowHeader(currentPage ? currentPage?.needed !== false : true);
-    setShowAsideMessages(currentPage ? currentPage?.needed !== false : true);
-    setShowAsideMenu(currentPage ? currentPage?.needed !== false : true);
-    setMainClass(isRegistrationPage ? 'page-registration' : 'page-main');
-
-    setShowAsideMessages(currentPage ? currentPage.message !== false : true);
-  }, [location.pathname])
+  const currentPage = routes.filter(item => item.path === location.pathname || item.path === '*');
   
   return (
     <>
-      { showHeader && <Header handleOpenMenu={handleOpenMenu}/>}
+      { !currentPage[0]?.isNotNeedHeader && <Header handleOpenMenu={handleOpenMenu}/>}
       
-      <main className={`page ${mainClass}`}>
+      <main className={`page ${currentPage[0]?.additionalClass ?? 'page-main'} `}>
 
-        {showAsideMenu && <AsideMenu isOpenAsideMenu={isOpenAsideMenu}/>}
+        {!currentPage[0]?.isNotNeedMenu && <AsideMenu isOpenAsideMenu={isOpenAsideMenu}/>}
 
         <TransitionGroup component={null}>
           <CSSTransition
@@ -63,7 +40,7 @@ export const App = () => {
           </CSSTransition>
         </TransitionGroup>
 
-        {showAsideMessages && <AsideMessages />}
+        {!currentPage[0]?.isNotNeedMessage && <AsideMessages />}
       </main>
     </>
   );
