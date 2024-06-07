@@ -11,16 +11,18 @@ import { useOpenAside } from "./hooks/OpenAside";
 export const App = () => {
   const location = useLocation();
   const {handleOpenMenu, isOpenAsideMenu} = useOpenAside();
-
   const currentPage = routes.filter(item => item.path === location.pathname || item.path === '*');
-  
+  const isOnRulesPage = location.pathname.startsWith("/rules");
+
+
+    
   return (
     <>
-      { !currentPage[0]?.isNotNeedHeader && <Header handleOpenMenu={handleOpenMenu}/>}
+      {!currentPage[0]?.isNotNeedHeader && !isOnRulesPage && <Header handleOpenMenu={handleOpenMenu}/>}
       
       <main className={`page ${currentPage[0]?.additionalClass ?? 'page-main'} `}>
 
-        {!currentPage[0]?.isNotNeedMenu && <AsideMenu isOpenAsideMenu={isOpenAsideMenu}/>}
+        {!currentPage[0]?.isNotNeedMenu && !isOnRulesPage && <AsideMenu isOpenAsideMenu={isOpenAsideMenu}/>}
 
         <TransitionGroup component={null}>
           <CSSTransition
@@ -40,7 +42,7 @@ export const App = () => {
           </CSSTransition>
         </TransitionGroup>
 
-        {!currentPage[0]?.isNotNeedMessage && <AsideMessages />}
+        {!currentPage[0]?.isNotNeedMessage && !isOnRulesPage && <AsideMessages />}
       </main>
     </>
   );

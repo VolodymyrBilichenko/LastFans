@@ -16,6 +16,7 @@ import { Profile } from '../pages/Profile/Profile'
 import { Statistic } from '../pages/Statistic/Statistic'
 import { VideoStore } from '../pages/VideoStore/VideoStore'
 import { AddStore } from '../pages/AddStore/AddStore'
+import { Rules } from '../pages/Rules/Rules'
 
 export const routes: any[] = [
     
@@ -104,10 +105,13 @@ export const routes: any[] = [
         path: '/add-store',
         element: <AddStore/>
     },
-    
     {
         path: '/subscribers',
         element: <Subscribers/>
+    },
+    {
+        path: '/rules/:title',
+        element: <Rules/>,
     },
     {
         path: '*',
