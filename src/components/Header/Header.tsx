@@ -1,5 +1,10 @@
 import UserPhoto from '../../assets/img/user/01.png'
 import LogoPh from '../../assets/img/icons/logo.svg'
+import VideoIc from '../../assets/img/icons/video.svg'
+import TimelineIc from '../../assets/img/icons/user-menu/timeline.svg'
+import MessageIc from '../../assets/img/icons/user-menu/message.svg'
+import SettingsIc from '../../assets/img/icons/user-menu/settings.svg'
+import LogoutIc from '../../assets/img/icons/user-menu/logout.svg'
 import { NavLink } from 'react-router-dom'
 import { useState } from 'react'
 
@@ -8,11 +13,16 @@ interface IOpenMenu {
 } 
 
 export const Header = ({handleOpenMenu}: IOpenMenu) => {
-    const [isOpenModal, setIsOpenModal] = useState(false);
+    // const [isOpenModal, setIsOpenModal] = useState(false);
 
-    const handleOpenModal = () => {
-        setIsOpenModal(!isOpenModal);
-    }
+    // const handleOpenModal = () => {
+    //     setIsOpenModal(!isOpenModal);
+    // }
+    const [openModal, setOpenModal] = useState<string | null>(null);
+
+    const handleOpenModal = (modalName: string) => {
+        setOpenModal(openModal === modalName ? null : modalName);
+    };
     
     return (
         <header className="header">
@@ -45,8 +55,8 @@ export const Header = ({handleOpenMenu}: IOpenMenu) => {
 
                         <div className="header__value">$ 268.80</div>
 
-                        <div className={`header__messages messages-header field notification ${isOpenModal ? 'field-active' : ''}`}
-                            onClick={handleOpenModal}
+                        <div className={`header__messages messages-header field notification ${openModal === 'messages' ? 'field-active' : ''}`}
+                            onClick={() => handleOpenModal('messages')}
                         >
                             <div className="messages-header__icon header-icon">
                                 <svg width="24" height="20" viewBox="0 0 24 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -68,7 +78,7 @@ export const Header = ({handleOpenMenu}: IOpenMenu) => {
                                             <div className="page-messages__body body-messages">
                                                 <div className="body-messages__content">
                                                     <div className="body-messages__items">
-                                                        <div className="body-messages__item item-message unread">
+                                                        <NavLink to={'/messages'} className="body-messages__item item-message unread">
                                                             <div className="item-message__user user-item user-item--stories online">
                                                                 <div className="user-item__image user-item__image--decoration">
                                                                     <img className="user-photo" src={UserPhoto} alt="ph"/>
@@ -84,8 +94,8 @@ export const Header = ({handleOpenMenu}: IOpenMenu) => {
                                                                 </div>
                                                             </div>
 
-                                                        </div>
-                                                        <div className="body-messages__item item-message unread">
+                                                        </NavLink>
+                                                        <NavLink to={'/messages'} className="body-messages__item item-message unread">
                                                             <div className="item-message__user user-item user-item--stories online">
                                                                 <div className="user-item__image user-item__image--decoration">
                                                                     <img className="user-photo" src={UserPhoto} alt="ph"/>
@@ -101,8 +111,8 @@ export const Header = ({handleOpenMenu}: IOpenMenu) => {
                                                                 </div>
                                                             </div>
 
-                                                        </div>
-                                                        <div className="body-messages__item item-message unread">
+                                                        </NavLink>
+                                                        <NavLink to={'/messages'} className="body-messages__item item-message unread">
                                                             <div className="item-message__user user-item user-item--stories online">
                                                                 <div className="user-item__image user-item__image--decoration">
                                                                     <img className="user-photo" src={UserPhoto} alt="ph"/>
@@ -118,7 +128,7 @@ export const Header = ({handleOpenMenu}: IOpenMenu) => {
                                                                 </div>
                                                             </div>
 
-                                                        </div>
+                                                        </NavLink>
                                                     </div>
 
                                                 </div>
@@ -130,8 +140,8 @@ export const Header = ({handleOpenMenu}: IOpenMenu) => {
                             </div>
                         </div>
 
-                        <div className={`header__sub sub-header field notification ${isOpenModal ? 'field-active' : ''}`}
-                            onClick={handleOpenModal}
+                        <div className={`header__sub sub-header field notification ${openModal === 'request' ? 'field-active' : ''}`}
+                            onClick={() => handleOpenModal('request')}
                         >
                             <div className="sub-header__icon header-icon">
                                 <svg width="24" height="22" viewBox="0 0 24 22" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -233,8 +243,8 @@ export const Header = ({handleOpenMenu}: IOpenMenu) => {
                             </div>
                         </div>
 
-                        <div className={`header__notifications notifications-header field notification ${isOpenModal ? 'field-active' : ''}`}
-                            onClick={handleOpenModal}
+                        <div className={`header__notifications notifications-header field notification ${openModal === 'notification' ? 'field-active' : ''}`}
+                            onClick={() => handleOpenModal('notification')}
                         >
                             <div className="notifications-header__icon header-icon">
                                 <svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -343,8 +353,8 @@ export const Header = ({handleOpenMenu}: IOpenMenu) => {
                             </div>
                         </div>
 
-                        <div className={`header__user user-header field ${isOpenModal ? 'field-active' : ''}`}
-                            onClick={handleOpenModal}
+                        <div className={`header__user user-header field ${openModal === 'user' ? 'field-active' : ''}`}
+                            onClick={() => handleOpenModal('user')}
                         >
                             <button type="button" className="user-header__button">
                                 <div className="user-header__button-body">
@@ -382,10 +392,10 @@ export const Header = ({handleOpenMenu}: IOpenMenu) => {
                                                 <p className="rating-body-popup-user-header__text">You are in the <span>top 5.61%</span> of all creators!</p>
                                             </div>
                                             <div className="body-popup-user-header__content">
-                                                <div className="body-popup-user-header__subscribers subscribers">
+                                                <NavLink to={'/subscribers'} className="body-popup-user-header__subscribers subscribers">
                                                     <div className="subscribers__value">26</div>
                                                     <div className="subscribers__text">Subscibers</div>
-                                                </div>
+                                                </NavLink>
                                                 <div className="body-popup-user-header__fans subscribers">
                                                     <div className="subscribers__value">1389</div>
                                                     <div className="subscribers__text">Fans</div>
@@ -395,38 +405,38 @@ export const Header = ({handleOpenMenu}: IOpenMenu) => {
                                         <div className="popup-user-header__menu menu-popup-user-header">
                                             <a href="some" className="menu-popup-user-header__link link-menu-popup-user-header">
                                                 <div className="link-menu-popup-user-header__image">
-                                                    <img src="img/icons/user-menu/timeline.svg" alt="ph"/>
+                                                    <img src={TimelineIc} alt="ph"/>
                                                 </div>
                                                 <p className="link-menu-popup-user-header__text">Timeline</p>
                                             </a>
-                                            <a href="some" className="menu-popup-user-header__link link-menu-popup-user-header">
+                                            <NavLink to={'/video-store'} className="menu-popup-user-header__link link-menu-popup-user-header">
                                                 <div className="link-menu-popup-user-header__image">
-                                                    <img src="img/icons/video.svg" alt="ph"/>
+                                                    <img src={VideoIc} alt="ph"/>
 
                                                 </div>
                                                 <p className="link-menu-popup-user-header__text">Video Store</p>
-                                            </a>
-                                            <a href="some" className="menu-popup-user-header__link link-menu-popup-user-header">
+                                            </NavLink>
+                                            <NavLink to={'/messages'} className="menu-popup-user-header__link link-menu-popup-user-header">
                                                 <div className="link-menu-popup-user-header__image">
-                                                    <img src="img/icons/user-menu/message.svg" alt="ph"/>
+                                                    <img src={MessageIc} alt="ph"/>
 
                                                 </div>
                                                 <p className="link-menu-popup-user-header__text">Messages</p>
-                                            </a>
-                                            <a href="some" className="menu-popup-user-header__link link-menu-popup-user-header">
+                                            </NavLink>
+                                            <NavLink to={'/my-profile'} className="menu-popup-user-header__link link-menu-popup-user-header">
                                                 <div className="link-menu-popup-user-header__image">
-                                                    <img src="img/icons/user-menu/settings.svg" alt="ph"/>
+                                                    <img src={SettingsIc} alt="ph"/>
 
                                                 </div>
                                                 <p className="link-menu-popup-user-header__text">Settings</p>
-                                            </a>
-                                            <a href="some" className="menu-popup-user-header__link link-menu-popup-user-header">
+                                            </NavLink>
+                                            <NavLink to={'/login'} className="menu-popup-user-header__link link-menu-popup-user-header">
                                                 <div className="link-menu-popup-user-header__image">
-                                                    <img src="img/icons/user-menu/logout.svg" alt="ph"/>
+                                                    <img src={LogoutIc} alt="ph"/>
 
                                                 </div>
                                                 <p className="link-menu-popup-user-header__text">Logout</p>
-                                            </a>
+                                            </NavLink>
                                         </div>
                                     </div>
                                 </div>
