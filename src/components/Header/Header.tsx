@@ -22,7 +22,7 @@ export const Header = ({handleOpenMenu}: IOpenMenu) => {
     return (
         <header className="header">
             <div className="header__wrapper">
-                <div className="header__menu-button button-menu-header" onClick={handleOpenMenu}>
+                <div className="header__menu-button button-menu-header" onClick={_ => handleOpenMenu()}>
                     <div className="button-menu-header__body">
                         <svg width="28" height="25" viewBox="0 0 28 25" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M1.99935 0.5H25.9993C26.7993 0.5 27.3327 1.03333 27.3327 1.83333V23.1667C27.3327 23.9667 26.7993 24.5 25.9993 24.5H1.99935C1.19935 24.5 0.666016 23.9667 0.666016 23.1667V1.83333C0.666016 1.03333 1.19935 0.5 1.99935 0.5ZM13.9056 3.16667V21.8333H24.666V3.16667H13.9056Z" fill="#3F79CF" style={{fill:'#3F79CF', fillOpacity:'1'}} />
