@@ -76,6 +76,12 @@ export const routes: any[] = [
         additionalClass: 'messages-page'
     },
     {
+        path: '/messages/:userId',
+        element: <Messages/>,
+        isNotNeedMessage: true,
+        additionalClass: 'messages-page'
+    },
+    {
         path: '/models',
         element: <Models/>
     },
@@ -89,6 +95,10 @@ export const routes: any[] = [
     },
     {
         path: '/profile',
+        element: <Profile/>
+    },
+    {
+        path: '/profile/:userId',
         element: <Profile/>
     },
     {

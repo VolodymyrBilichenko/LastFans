@@ -50,7 +50,7 @@ export const ModelItem: React.FC<IModelItemProps> = ({ userName, userTag, userId
                                 <NavLink to={`/profile/${userId}`} className="user-item-models__view button button--transparent">
                                     <span>View profile</span>
                                 </NavLink>
-                                <NavLink to={`/message/${userId}`} className="user-item-models__message button">
+                                <NavLink to={`/messages/${userId}`} className="user-item-models__message button">
                                     <span>Message</span>
                                 </NavLink>
                             </div>
