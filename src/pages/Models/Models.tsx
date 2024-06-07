@@ -1,5 +1,5 @@
-import PostPh from '../../assets/img/post/01.jpg' 
-import UserPh from '../../assets/img/user/01.png' 
+// import PostPh from '../../assets/img/post/01.jpg' 
+// import UserPh from '../../assets/img/user/01.png' 
 import { ModelItem } from './components/ModelItem'
 
 export const Models = () => {

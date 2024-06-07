@@ -15,7 +15,6 @@ export const App = () => {
   const {handleOpenMenu, isOpenAsideMenu} = useOpenAside();
 
   const checkLocation = location.pathname.slice(0, location.pathname.indexOf('/',1) === -1 ? undefined : location.pathname.indexOf('/',1))
-
   const currentPage = routes.filter(item => item.path === checkLocation || item.path === '*');
     
   return (

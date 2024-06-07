@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import PostPh from '../../assets/img/post/01.jpg'
-import UserPh from '../../assets/img/user/01.png'
+// import PostPh from '../../assets/img/post/01.jpg'
+// import UserPh from '../../assets/img/user/01.png'
 import { VideoStoreFilter } from './components/VideoStoreFilter'
 import { VideoStoreItem } from './components/VideoStoreItem'
 

@@ -1,4 +1,3 @@
-import { useEffect, useRef } from 'react'
 import { LiveStreamChat } from './components/LiveStreamChat'
 
 export const LiveStream = () => {
