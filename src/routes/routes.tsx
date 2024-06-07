@@ -1,8 +1,5 @@
 import { AutoMessage } from '../pages/AutoMessage/AutoMessage'
-import { BlockedUsers } from '../pages/BlockedUsers/BlockedUsers'
-import { Followers } from '../pages/Followers/Followers'
 import { ForgotPass } from '../pages/ForgotPass/ForgotPass'
-import { Groups } from '../pages/Groups/Groups'
 import { History } from '../pages/History/History'
 import { LiveStream } from '../pages/LiveStream/LiveStream'
 import { Login } from '../pages/Login/Login'
@@ -108,22 +105,9 @@ export const routes: any[] = [
         element: <AddStore/>
     },
     
-    
     {
         path: '/subscribers',
         element: <Subscribers/>
-    },
-    {
-        path: '/groups',
-        element: <Groups/>
-    },
-    {
-        path: '/blocked-users',
-        element: <BlockedUsers/>
-    },
-    {
-        path: '/followers',
-        element: <Followers/>
     },
     {
         path: '*',
@@ -133,5 +117,4 @@ export const routes: any[] = [
         isNotNeedMenu: true,
         additionalClass: 'page-registration'
     },
-
 ]

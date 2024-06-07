@@ -5,12 +5,12 @@ export const SubscribersButtons = () => {
         <div className="page-subscribers__tabs tabs-subscribers">
 
 
-            <div className="tabs-content-profile__item subscribers-tab ">
+            <div className="tabs-content-profile__item subscribers-tab active">
                 <p className="tabs-content-profile__name">Subscribers</p>
             </div>
 
 
-            <div className="tabs-content-profile__item followers-tab active">
+            <div className="tabs-content-profile__item followers-tab">
                 <div className="followers-tab__body field"> 
                     <p className="tabs-content-profile__name">Followers</p>
                     <button className="followers-tab__sort ">
