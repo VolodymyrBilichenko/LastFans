@@ -6,6 +6,8 @@ import { Header } from "./components/Header/Header";
 import { AsideMenu } from "./components/AsideMenu/AsideMenu";
 import { AsideMessages } from "./components/AsideMessages/AsideMessages";
 import { useOpenAside } from "./hooks/OpenAside";
+import { ToastContainer } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 
 export const App = () => {
@@ -18,6 +20,8 @@ export const App = () => {
     
   return (
     <>
+      <ToastContainer/>
+
       {!currentPage[0]?.isNotNeedHeader && !isOnRulesPage && <Header handleOpenMenu={handleOpenMenu}/>}
       
       <main className={`page ${currentPage[0]?.additionalClass ?? 'page-main'} `}>

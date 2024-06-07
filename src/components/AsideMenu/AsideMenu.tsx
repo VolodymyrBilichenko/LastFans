@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom"
+import { toast } from "react-toastify";
 
 interface IAsideMenu {
     isOpenAsideMenu?: boolean
@@ -10,7 +11,10 @@ export const AsideMenu = ({isOpenAsideMenu}: IAsideMenu) => {
     const handleOpenSubMenu = () => {
         setSubMenu(!subMenu);
         console.log('click');
-        
+    }
+
+    const componentInDevelopment = () => {
+        toast.error('This page is still under development');
     }
     
     return (
@@ -151,7 +155,7 @@ export const AsideMenu = ({isOpenAsideMenu}: IAsideMenu) => {
                 </div>
                 <div className="page-menu__footer">
                     <div className="page-menu__items">
-                        <NavLink to={'/rules/Privacy'} className="page-menu__item item-page-menu">
+                        <NavLink to={''} onClick={componentInDevelopment} className="page-menu__item item-page-menu">
                             <div className="item-page-menu__image">
                                 <div className="item-page-menu__image-body">
                                     <svg width="24" height="26" viewBox="0 0 24 26" fill="none" xmlns="http://www.w3.org/2000/svg">
