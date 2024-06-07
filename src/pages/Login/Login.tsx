@@ -4,11 +4,10 @@ import LogoWhiteIc from '../../assets/img/icons/logo-white.svg'
 import GoogleIc from '../../assets/img/icons/google.svg'
 import AppleIc from '../../assets/img/icons/apple.svg'
 import FacebookIc from '../../assets/img/icons/facebook.svg'
+import { NavLink } from 'react-router-dom'
 
 export const Login = () => {
     return (
-        // <main className="page page-login">
-        // </main>
         <div className="registration">
             <div className="registration__block block-registration">
                 <div className="block-registration__body">
@@ -40,7 +39,9 @@ export const Login = () => {
                         <button className="form-main-registration__button button button--fw"><span>Log in</span></button>
                         
                     </form>
-                    <a href="some" className="main-registration__forgot">Forgot your password?</a>
+
+                    <NavLink to={'/forgot'} className="main-registration__forgot">Forgot your password?</NavLink>
+
                     <div className="main-registration__socials socials-main-registration">
                         <a href="some" className="socials-main-registration__item item-socials-main-registration">
                             <div className="item-socials-main-registration__image">
@@ -62,7 +63,10 @@ export const Login = () => {
                         </a>
                     </div>
                     <div className="main-registration__footer footer-main-registration">
-                        <p className="footer-main-registration__text">Already have an account? <a href="some">Sign in</a></p>
+                        <p className="footer-main-registration__text">
+                            Already have an account? 
+                            <NavLink to={'/registration'}>Sign in</NavLink>
+                        </p>
                     </div>
                 </div>
                 <div className="main-registration__decor">

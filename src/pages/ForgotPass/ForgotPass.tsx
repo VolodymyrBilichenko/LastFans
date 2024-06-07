@@ -1,11 +1,10 @@
 import MainDecor from '../../assets/img/registration/01.svg'
 import LogoIc from '../../assets/img/icons/logo.svg'
 import LogoWhiteIc from '../../assets/img/icons/logo-white.svg'
+import { NavLink } from 'react-router-dom'
 
 export const ForgotPass = () => {
     return (
-        // <main className="page page-login">
-        // </main>
         <div className="registration">
             <div className="registration__block block-registration">
                 <div className="block-registration__body">
@@ -37,7 +36,10 @@ export const ForgotPass = () => {
                         
                     </form>
                     <div className="main-registration__footer footer-main-registration">
-                        <p className="footer-main-registration__text">Do you remember the password? <a href="some">Sign in</a></p>
+                        <p className="footer-main-registration__text">
+                            Do you remember the password? 
+                            <NavLink to={'/login'}>Sign up</NavLink>
+                        </p>
                     </div>
                 </div>
                 <div className="main-registration__decor">

@@ -4,6 +4,7 @@ import LogoWhiteIc from '../../assets/img/icons/logo-white.svg'
 
 import { SocialAuth } from '../../components/SocialAuth/SocialAuth'
 import { useState } from 'react'
+import { NavLink } from 'react-router-dom'
 
 export const Registration = () => {
     const [isModelState, setIsModelState] = useState(true)
@@ -96,7 +97,10 @@ export const Registration = () => {
                     )}
 
                     <div className="main-registration__footer footer-main-registration">
-                        <p className="footer-main-registration__text">Already have an account? <a href="some">Sign in</a></p>
+                        <p className="footer-main-registration__text">
+                            Already have an account? 
+                            <NavLink to={'/login'} >Sign up</NavLink>
+                        </p>
                     </div>
                 </div>
                 <div className="main-registration__decor">

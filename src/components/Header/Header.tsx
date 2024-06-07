@@ -1,13 +1,18 @@
 import UserPhoto from '../../assets/img/user/01.png'
 import LogoPh from '../../assets/img/icons/logo.svg'
 import { NavLink } from 'react-router-dom'
+import { useState } from 'react'
 
 interface IOpenMenu {
     handleOpenMenu?: any
 } 
 
 export const Header = ({handleOpenMenu}: IOpenMenu) => {
-    
+    const [isOpenModal, setIsOpenModal] = useState(false);
+
+    const handleOpenModal = () => {
+        setIsOpenModal(!isOpenModal);
+    }
     
     return (
         <header className="header">
@@ -19,6 +24,7 @@ export const Header = ({handleOpenMenu}: IOpenMenu) => {
                         </svg>
                     </div>
                 </div>
+
                 <NavLink to={'/'} className="header__logo logo">
                     <div className="logo__block">
 
@@ -30,6 +36,7 @@ export const Header = ({handleOpenMenu}: IOpenMenu) => {
                     <span className="logo__text">fans</span>
 
                 </NavLink>
+
                 <div className="header__actions">
                     <div className="header__search">
                         <input type="text" name="form[]" placeholder="Search by nickname or hashtags " className="header__input input"/>
@@ -37,7 +44,10 @@ export const Header = ({handleOpenMenu}: IOpenMenu) => {
                     <div className="header__content">
 
                         <div className="header__value">$ 268.80</div>
-                        <div className="header__messages messages-header field notification">
+
+                        <div className={`header__messages messages-header field notification ${isOpenModal ? 'field-active' : ''}`}
+                            onClick={handleOpenModal}
+                        >
                             <div className="messages-header__icon header-icon">
                                 <svg width="24" height="20" viewBox="0 0 24 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M23.25 0.859375H0.75C0.56352 0.859375 0.384677 0.933454 0.252815 1.06532C0.120954 1.19718 0.046875 1.37602 0.046875 1.5625V17.5C0.046875 17.9351 0.219726 18.3524 0.527403 18.6601C0.83508 18.9678 1.25238 19.1406 1.6875 19.1406H22.3125C22.7476 19.1406 23.1649 18.9678 23.4726 18.6601C23.7803 18.3524 23.9531 17.9351 23.9531 17.5V1.5625C23.9531 1.37602 23.879 1.19718 23.7472 1.06532C23.6153 0.933454 23.4365 0.859375 23.25 0.859375ZM21.443 2.26562L12 10.9211L2.55703 2.26562H21.443ZM22.3125 17.7344H1.6875C1.62534 17.7344 1.56573 17.7097 1.52177 17.6657C1.47782 17.6218 1.45312 17.5622 1.45312 17.5V3.16094L11.5312 12.393C11.6609 12.5116 11.8302 12.5773 12.0059 12.5773C12.1815 12.5773 12.3509 12.5116 12.4805 12.393L22.5469 3.16094V17.5C22.5469 17.5622 22.5222 17.6218 22.4782 17.6657C22.4343 17.7097 22.3747 17.7344 22.3125 17.7344Z" fill="#6F767E" style={{fill:'#6F767E', fillOpacity:'1'}} />
@@ -61,7 +71,7 @@ export const Header = ({handleOpenMenu}: IOpenMenu) => {
                                                         <div className="body-messages__item item-message unread">
                                                             <div className="item-message__user user-item user-item--stories online">
                                                                 <div className="user-item__image user-item__image--decoration">
-                                                                    <img className="user-photo" src="img/user/02.jpg" alt="ph"/>
+                                                                    <img className="user-photo" src={UserPhoto} alt="ph"/>
                                                                     <div className="user-item__image-status">
                                                                         <svg className="online-status" width="8" height="9" viewBox="0 0 8 9" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                                             <circle cx="4" cy="4.5" r="4" fill="#3DD598" style={{fill:'#3DD598', fillOpacity:'1'}} />
@@ -78,7 +88,7 @@ export const Header = ({handleOpenMenu}: IOpenMenu) => {
                                                         <div className="body-messages__item item-message unread">
                                                             <div className="item-message__user user-item user-item--stories online">
                                                                 <div className="user-item__image user-item__image--decoration">
-                                                                    <img className="user-photo" src="img/user/02.jpg" alt="ph"/>
+                                                                    <img className="user-photo" src={UserPhoto} alt="ph"/>
                                                                     <div className="user-item__image-status">
                                                                         <svg className="online-status" width="8" height="9" viewBox="0 0 8 9" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                                             <circle cx="4" cy="4.5" r="4" fill="#3DD598" style={{fill:'#3DD598', fillOpacity:'1'}} />
@@ -95,7 +105,7 @@ export const Header = ({handleOpenMenu}: IOpenMenu) => {
                                                         <div className="body-messages__item item-message unread">
                                                             <div className="item-message__user user-item user-item--stories online">
                                                                 <div className="user-item__image user-item__image--decoration">
-                                                                    <img className="user-photo" src="img/user/02.jpg" alt="ph"/>
+                                                                    <img className="user-photo" src={UserPhoto} alt="ph"/>
                                                                     <div className="user-item__image-status">
                                                                         <svg className="online-status" width="8" height="9" viewBox="0 0 8 9" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                                             <circle cx="4" cy="4.5" r="4" fill="#3DD598" style={{fill:'#3DD598', fillOpacity:'1'}} />
@@ -119,7 +129,10 @@ export const Header = ({handleOpenMenu}: IOpenMenu) => {
                                 </div>
                             </div>
                         </div>
-                        <div className="header__sub sub-header field notification">
+
+                        <div className={`header__sub sub-header field notification ${isOpenModal ? 'field-active' : ''}`}
+                            onClick={handleOpenModal}
+                        >
                             <div className="sub-header__icon header-icon">
                                 <svg width="24" height="22" viewBox="0 0 24 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M13.3508 17.9595C12.9161 17.9825 12.4654 17.9896 11.9988 17.9896C10.0955 17.9896 8.16496 17.8079 6.26483 17.4477C6.03151 17.4017 5.86211 17.1962 5.86211 16.9581V16.1813C5.86211 13.5738 7.99876 11.452 10.6244 11.452C11.5433 11.4528 12.455 11.4528 13.3731 11.452C14.5238 11.452 15.632 11.867 16.4926 12.6224C16.7915 12.8843 17.2453 12.8549 17.5082 12.5598C17.7711 12.2638 17.7423 11.8131 17.4451 11.5512C16.8266 11.0093 16.1091 10.607 15.3404 10.3491C16.7179 9.33181 17.6153 7.70831 17.6153 5.87613C17.6153 2.80054 15.0959 0.297852 11.9988 0.297852C8.90168 0.297852 6.38229 2.80054 6.38229 5.87613C6.38229 7.70673 7.27882 9.32864 8.65398 10.3467C6.19851 11.1672 4.42383 13.4699 4.42383 16.1805V16.9573C4.42383 17.8762 5.08144 18.6713 5.99076 18.849C7.98358 19.2267 10.0044 19.4179 11.9988 19.4179C12.4918 19.4179 12.968 19.4092 13.4283 19.3846C13.8254 19.364 14.129 19.0275 14.1083 18.6332C14.0859 18.2404 13.7351 17.9365 13.3508 17.9595ZM7.82057 5.87613C7.82057 3.58769 9.69513 1.72694 11.9988 1.72694C14.3024 1.72694 16.177 3.58848 16.177 5.87613C16.177 8.15585 14.3152 10.0102 12.022 10.0229H11.9756C9.68235 10.0102 7.82057 8.15585 7.82057 5.87613Z" fill="#6F767E" style={{fill:'#6F767E', fillOpacity:'1'}} />
@@ -145,7 +158,7 @@ export const Header = ({handleOpenMenu}: IOpenMenu) => {
                                             <div className="body-popup-sub-header__item item-sub">
                                                 <div className="item-sub__user user-item user-item--stories">
                                                     <div className="user-item__image user-item__image--decoration">
-                                                        <img className="user-photo" src="img/user/02.jpg" alt="ph"/>
+                                                        <img className="user-photo" src={UserPhoto} alt="ph"/>
                                                         <div className="user-item__image-icon">
                                                             <img src="img/icons/logo-white.svg" alt="ph"/>
                                                         </div>
@@ -169,7 +182,7 @@ export const Header = ({handleOpenMenu}: IOpenMenu) => {
                                             <div className="body-popup-sub-header__item item-sub">
                                                 <div className="item-sub__user user-item user-item--stories">
                                                     <div className="user-item__image user-item__image--decoration">
-                                                        <img className="user-photo" src="img/user/02.jpg" alt="ph"/>
+                                                        <img className="user-photo" src={UserPhoto} alt="ph"/>
                                                         <div className="user-item__image-icon">
                                                             <img src="img/icons/logo-white.svg" alt="ph"/>
                                                         </div>
@@ -193,7 +206,7 @@ export const Header = ({handleOpenMenu}: IOpenMenu) => {
                                             <div className="body-popup-sub-header__item item-sub">
                                                 <div className="item-sub__user user-item user-item--stories">
                                                     <div className="user-item__image user-item__image--decoration">
-                                                        <img className="user-photo" src="img/user/02.jpg" alt="ph"/>
+                                                        <img className="user-photo" src={UserPhoto} alt="ph"/>
                                                         <div className="user-item__image-icon">
                                                             <img src="img/icons/logo-white.svg" alt="ph"/>
                                                         </div>
@@ -219,7 +232,10 @@ export const Header = ({handleOpenMenu}: IOpenMenu) => {
                                 </div>
                             </div>
                         </div>
-                        <div className="header__notifications notifications-header field notification">
+
+                        <div className={`header__notifications notifications-header field notification ${isOpenModal ? 'field-active' : ''}`}
+                            onClick={handleOpenModal}
+                        >
                             <div className="notifications-header__icon header-icon">
                                 <svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path fillRule="evenodd" clipRule="evenodd" d="M0 15.0959C2.07459e-06 14.7151 0.154705 14.3506 0.428635 14.086L1.45759 13.0922C1.84928 12.7139 2.06977 12.1922 2.06814 11.6476L2.05867 8.4946C2.04543 4.08319 5.61789 0.5 10.0293 0.5C14.4314 0.5 18 4.06859 18 8.47067L18 11.6716C18 12.202 18.2107 12.7107 18.5858 13.0858L19.5858 14.0858C19.851 14.351 20 14.7107 20 15.0858C20 15.8668 19.3668 16.5 18.5858 16.5H14C14 18.7091 12.2091 20.5 10 20.5C7.79086 20.5 6 18.7091 6 16.5H1.40408C0.628628 16.5 0 15.8714 0 15.0959ZM8 16.5C8 17.6046 8.89543 18.5 10 18.5C11.1046 18.5 12 17.6046 12 16.5H8ZM16 11.6716C16 12.7324 16.4214 13.7499 17.1716 14.5L2.87851 14.5C3.64222 13.746 4.07136 12.7161 4.06813 11.6416L4.05867 8.4886C4.04875 5.1841 6.7248 2.5 10.0293 2.5C13.3268 2.5 16 5.17316 16 8.47067L16 11.6716Z" fill="#6F767E" style={{fill:'#6F767E', fillOpacity:'1'}} />
@@ -326,7 +342,10 @@ export const Header = ({handleOpenMenu}: IOpenMenu) => {
                                 </div>
                             </div>
                         </div>
-                        <div className="header__user user-header field">
+
+                        <div className={`header__user user-header field ${isOpenModal ? 'field-active' : ''}`}
+                            onClick={handleOpenModal}
+                        >
                             <button type="button" className="user-header__button">
                                 <div className="user-header__button-body">
                                     <span></span>
