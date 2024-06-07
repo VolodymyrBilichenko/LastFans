@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom"
+import { AsideMenuMode } from "./components/AsideMenuMode";
 import { toast } from "react-toastify";
 
 interface IAsideMenu {
@@ -15,6 +16,7 @@ export const AsideMenu = ({isOpenAsideMenu}: IAsideMenu) => {
 
     const componentInDevelopment = () => {
         toast.error('This page is still under development');
+
     }
     
     return (
@@ -215,7 +217,12 @@ export const AsideMenu = ({isOpenAsideMenu}: IAsideMenu) => {
                                     <div className="sub-menu__title spollers__title">Terms of Service</div>
                                 </div>
                             </div>
+
                         </NavLink>
+                        
+                        <AsideMenuMode/>
+
+                        
                         <div className="page-menu__item item-page-menu item-page-menu--mode">
                             <div className="item-page-menu__content item-page-menu__content-mode sub-menu">
                                 <div className="sub-menu__item spollers__item">
@@ -233,6 +240,7 @@ export const AsideMenu = ({isOpenAsideMenu}: IAsideMenu) => {
                                 </div>
                             </div>
                         </div>
+
 
                     </div>
 

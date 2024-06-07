@@ -13,10 +13,14 @@ import 'react-toastify/dist/ReactToastify.css';
 export const App = () => {
   const location = useLocation();
   const {handleOpenMenu, isOpenAsideMenu} = useOpenAside();
-  const currentPage = routes.filter(item => item.path === location.pathname || item.path === '*');
+
+
+  const checkLocation = location.pathname.slice(0, location.pathname.indexOf('/',1) === -1 ? undefined : location.pathname.indexOf('/',1))
+
+  const currentPage = routes.filter(item => item.path === checkLocation || item.path === '*');
+
+<!--   const currentPage = routes.filter(item => item.path === location.pathname || item.path === '*'); -->
   const isOnRulesPage = location.pathname.startsWith("/rules");
-
-
     
   return (
     <>
