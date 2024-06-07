@@ -1,5 +1,5 @@
-import UserBgPh from '../../assets/img/user/bg.jpg'
-import UserPh from '../../assets/img/user/01.png'
+import UserBgPh from '../../../../assets/img/user/bg.jpg'
+import UserPh from '../../../../assets/img/user/01.png'
 
 export const Followers = () => {
     return (

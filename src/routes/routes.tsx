@@ -1,8 +1,5 @@
 import { AutoMessage } from '../pages/AutoMessage/AutoMessage'
-import { BlockedUsers } from '../pages/BlockedUsers/BlockedUsers'
-import { Followers } from '../pages/Followers/Followers'
 import { ForgotPass } from '../pages/ForgotPass/ForgotPass'
-import { Groups } from '../pages/Groups/Groups'
 import { History } from '../pages/History/History'
 import { LiveStream } from '../pages/LiveStream/LiveStream'
 import { Login } from '../pages/Login/Login'
@@ -19,6 +16,7 @@ import { Profile } from '../pages/Profile/Profile'
 import { Statistic } from '../pages/Statistic/Statistic'
 import { VideoStore } from '../pages/VideoStore/VideoStore'
 import { AddStore } from '../pages/AddStore/AddStore'
+import { Rules } from '../pages/Rules/Rules'
 
 export const routes: any[] = [
     
@@ -117,23 +115,17 @@ export const routes: any[] = [
         path: '/add-store',
         element: <AddStore/>
     },
-    
-    
     {
         path: '/subscribers',
         element: <Subscribers/>
     },
     {
-        path: '/groups',
-        element: <Groups/>
-    },
-    {
-        path: '/blocked-users',
-        element: <BlockedUsers/>
-    },
-    {
-        path: '/followers',
-        element: <Followers/>
+        path: '/rules/:title',
+        element: <Rules/>,
+        isNotNeedHeader: false,
+        isNotNeedMessage: false,
+        isNotNeedMenu: false,
+        additionalClass: 'page-main'
     },
     {
         path: '*',
@@ -143,5 +135,4 @@ export const routes: any[] = [
         isNotNeedMenu: true,
         additionalClass: 'page-registration'
     },
-
 ]

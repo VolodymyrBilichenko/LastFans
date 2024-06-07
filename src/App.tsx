@@ -6,26 +6,31 @@ import { Header } from "./components/Header/Header";
 import { AsideMenu } from "./components/AsideMenu/AsideMenu";
 import { AsideMessages } from "./components/AsideMessages/AsideMessages";
 import { useOpenAside } from "./hooks/OpenAside";
+import { ToastContainer } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 
 export const App = () => {
   const location = useLocation();
   const {handleOpenMenu, isOpenAsideMenu} = useOpenAside();
 
+
   const checkLocation = location.pathname.slice(0, location.pathname.indexOf('/',1) === -1 ? undefined : location.pathname.indexOf('/',1))
 
-  console.log(checkLocation);
-  
-  
   const currentPage = routes.filter(item => item.path === checkLocation || item.path === '*');
-  
+
+<!--   const currentPage = routes.filter(item => item.path === location.pathname || item.path === '*'); -->
+  const isOnRulesPage = location.pathname.startsWith("/rules");
+    
   return (
     <>
-      { !currentPage[0]?.isNotNeedHeader && <Header handleOpenMenu={handleOpenMenu}/>}
+      <ToastContainer/>
+
+      {!currentPage[0]?.isNotNeedHeader && !isOnRulesPage && <Header handleOpenMenu={handleOpenMenu}/>}
       
       <main className={`page ${currentPage[0]?.additionalClass ?? 'page-main'} `}>
 
-        {!currentPage[0]?.isNotNeedMenu && <AsideMenu isOpenAsideMenu={isOpenAsideMenu}/>}
+        {!currentPage[0]?.isNotNeedMenu && !isOnRulesPage && <AsideMenu isOpenAsideMenu={isOpenAsideMenu}/>}
 
         <TransitionGroup component={null}>
           <CSSTransition
@@ -45,7 +50,7 @@ export const App = () => {
           </CSSTransition>
         </TransitionGroup>
 
-        {!currentPage[0]?.isNotNeedMessage && <AsideMessages />}
+        {!currentPage[0]?.isNotNeedMessage && !isOnRulesPage && <AsideMessages />}
       </main>
     </>
   );

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom"
 import { AsideMenuMode } from "./components/AsideMenuMode";
+import { toast } from "react-toastify";
 
 interface IAsideMenu {
     isOpenAsideMenu?: boolean
@@ -10,6 +11,12 @@ export const AsideMenu = ({isOpenAsideMenu}: IAsideMenu) => {
 
     const handleOpenSubMenu = () => {
         setSubMenu(!subMenu);
+        console.log('click');
+    }
+
+    const componentInDevelopment = () => {
+        toast.error('This page is still under development');
+
     }
     
     return (
@@ -150,7 +157,7 @@ export const AsideMenu = ({isOpenAsideMenu}: IAsideMenu) => {
                 </div>
                 <div className="page-menu__footer">
                     <div className="page-menu__items">
-                        <a href="some" className="page-menu__item item-page-menu">
+                        <NavLink to={''} onClick={componentInDevelopment} className="page-menu__item item-page-menu">
                             <div className="item-page-menu__image">
                                 <div className="item-page-menu__image-body">
                                     <svg width="24" height="26" viewBox="0 0 24 26" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -167,8 +174,8 @@ export const AsideMenu = ({isOpenAsideMenu}: IAsideMenu) => {
                                     <div className="sub-menu__title spollers__title">Privacy</div>
                                 </div>
                             </div>
-                        </a>
-                        <a href="some" className="page-menu__item item-page-menu">
+                        </NavLink>
+                        <NavLink to={'/rules/Cookie-Notice'} className="page-menu__item item-page-menu">
                             <div className="item-page-menu__image">
                                 <div className="item-page-menu__image-body">
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -187,9 +194,9 @@ export const AsideMenu = ({isOpenAsideMenu}: IAsideMenu) => {
                                     <div className="sub-menu__title spollers__title">Cookie Notice</div>
                                 </div>
                             </div>
-                        </a>
+                        </NavLink>
 
-                        <a href="some" className="page-menu__item item-page-menu">
+                        <NavLink to={'/rules/Terms-of-Service'} className="page-menu__item item-page-menu">
                             <div className="item-page-menu__image">
                                 <div className="item-page-menu__image-body">
                                     <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -210,9 +217,30 @@ export const AsideMenu = ({isOpenAsideMenu}: IAsideMenu) => {
                                     <div className="sub-menu__title spollers__title">Terms of Service</div>
                                 </div>
                             </div>
-                        </a>
+
+                        </NavLink>
                         
                         <AsideMenuMode/>
+
+                        
+                        <div className="page-menu__item item-page-menu item-page-menu--mode">
+                            <div className="item-page-menu__content item-page-menu__content-mode sub-menu">
+                                <div className="sub-menu__item spollers__item">
+                                    <div className="mode">
+                                        <p className="mode__text">Light Mode</p>
+                                        <div className="mode__body">
+                                            <div className="switch-mode">
+                                                <div className="switch-mode__body">
+                                                    <input type="checkbox" id="switch" className="switch-mode__input"/>
+                                                    <label htmlFor="switch" className="switch-mode__button"></label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
 
                     </div>
 

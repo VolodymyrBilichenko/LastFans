@@ -13,11 +13,6 @@ interface IOpenMenu {
 } 
 
 export const Header = ({handleOpenMenu}: IOpenMenu) => {
-    // const [isOpenModal, setIsOpenModal] = useState(false);
-
-    // const handleOpenModal = () => {
-    //     setIsOpenModal(!isOpenModal);
-    // }
     const [openModal, setOpenModal] = useState<string | null>(null);
 
     const handleOpenModal = (modalName: string) => {
