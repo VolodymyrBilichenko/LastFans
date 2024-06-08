@@ -200,7 +200,7 @@
     // min-height: 100vh;
     height: 100%;
     overflow: auto;
-    transition: all .3s ease;
+    // transition: transform .3s ease;
     z-index: 20;
     outline: 1px solid var(--secondary);
 
@@ -244,7 +244,7 @@
     cursor: pointer;
     display: flex;
     // align-items: center;
-    transition: all .3s ease;
+    // transition: all .3s ease;
     overflow: hidden;
     box-sizing: border-box;
     &--mode{
@@ -258,8 +258,8 @@
     }
     @media (any-hover: hover){
         &:hover{
+            background-color: var(--blue-transparent);
             .item-page-menu__image{
-                background-color: var(--blue-transparent);
                 
                 svg path{
                     stroke: var(--blue) !important;
@@ -268,7 +268,7 @@
                 }
             }
             .sub-menu__title{
-                background-color: var(--blue-transparent);
+                // background-color: var(--blue-transparent);
 
                 color: var(--blue);
             }
@@ -351,7 +351,7 @@
         display: flex;
         align-items: center;
 
-        transition: all .3s ease;
+        // transition: all .3s ease;
     }
     // .sub-menu__body
     &__body {
@@ -409,6 +409,8 @@
     }
     &.tabs-profile__item{
         border-color: var(--blue);
+        transition: all .3s ease;
+
     }
     &.tabs-content-profile__item{
         border-color: var(--blue);
@@ -417,6 +419,8 @@
         background-color: var(--blue);
         color: #fff;
         border-color: var(--blue);
+        transition: all .3s ease;
+
         @media (any-hover: hover){
             &:hover{
                 color: #fff;
@@ -1178,7 +1182,7 @@
     }
     // .user-item-sub__name
     &__name {
-        transition: all .3s ease;
+        // transition: all .3s ease;
         font-weight: 600;
         font-size: toRem(14);
         max-width: toRem(100);
@@ -1187,9 +1191,7 @@
         text-overflow: ellipsis;
         width: 100%;
         min-width: toRem(80);
-        &:not(:last-child) {
-            margin-bottom: toRem(10);
-        }
+        line-height: 24px; /* 24/16 */
     }
     &__username{
         max-width: toRem(100);
@@ -1215,6 +1217,7 @@
         display: flex;
         align-items: center;
         gap: toRem(10);
+        line-height: 20px; /* 20/12 */
     }
     // .user-item__post-time
     &__post-time {
@@ -1381,16 +1384,19 @@
     gap: toRem(20);
     align-items: center;
     justify-content: space-between;
-    transition: all .3s ease;
     @media (any-hover: hover){
         &:hover{
             .user-item__name{
+                transition: color .3s ease;
                 color: var(--blue);
             }
         }
     }
     // .item-message__user
     &__user {
+        .user-item__name{
+            font-size: toRem(18);
+        }
     }
     // .item-message__actions
     &__actions {

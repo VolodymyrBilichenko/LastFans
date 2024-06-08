@@ -314,6 +314,7 @@
     }
     // .item-groups__body
     &__body {
+        width: fit-content;
         display: flex;
         align-items: center;
         gap: toRem(10);
