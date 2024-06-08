@@ -14,8 +14,7 @@ export const Login = () => {
     const [passwordError, setPasswordError] = useState<string | null>(null);
     const navigate = useNavigate();
 
-    const YDALIT = [1, 2, 3]
-
+    
     const validateForm = () => {
         let isValid = true;
 
