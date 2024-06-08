@@ -436,13 +436,16 @@
     }
     // .field-block-add-vid__item
     &__item {
+        position: relative;
+
         min-height: toRem(55);
         height: fit-content;
         cursor: pointer;
         padding: toRem(8) 0;
         display: flex;
         align-items: center;
-
+        outline: none;
+        border: 1px solid var(--blue);
     }
     // .field-block-add-vid__title
     &__title {
@@ -450,28 +453,38 @@
         text-wrap: nowrap;
         list-style: none;
         padding: 0  toRem(20);
-        padding-top: toRem(3);
 
         margin: auto;
         position: relative;
         display: flex;
         align-items: center;
         gap: toRem(10);
-        &._spoller-active{
+        // &._spoller-active{
             
-            &.field-block-add-vid__title{
-                border-bottom: 1px solid #E2E2E2;
-                // padding-bottom: toRem(10);
+        //     &.field-block-add-vid__title{
+        //         border-bottom: 1px solid #E2E2E2;
+        //         // padding-bottom: toRem(10);
     
-            }
-        }
+        //     }
+        // }
     }
     // .field-block-add-vid__body
     &__body {
+        position: absolute;
+
+        top: calc(100% - 10px);
+        left: -0.8px;
+        width: calc(100% + 1.6px);
         padding: toRem(10) 0;
         display: grid;
         gap: toRem(10);
         text-align: center;
+        border: 1px solid var(--blue);
+        border-top: none;
+        background-color: var(--secondary);
+        z-index: 20;
+        box-sizing: border-box;
+        border-radius: 0 0 10px 10px;
     }
     // .field-block-add-vid__value
     &__value {
@@ -700,7 +713,6 @@
             text-align: center;
             border-bottom: 2px solid transparent;
         }
-        transition: all .3s ease;
     }
     // .tabs-profile__image
     &__image {
@@ -801,7 +813,6 @@
         border-radius: toRem(16);
         background-color: transparent;
         width: 100%;
-        transition: all .3s ease;
 
         border: 1px solid var(--border);
         min-height: toRem(49);
@@ -811,8 +822,10 @@
 
         @media (any-hover: hover){
             &:hover{
+                transition: all .3s ease;
+
                 color: var(--blue);
-            border: 1px solid var(--blue);
+                border: 1px solid var(--blue);
 
             }
         }
@@ -853,7 +866,7 @@
         text-align: center;
         border-bottom: 2px solid transparent;
 
-        transition: all .3s ease;
+        // transition: all .3s ease;
     }
 }
 // =============================================================================================================

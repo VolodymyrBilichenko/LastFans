@@ -91,13 +91,12 @@
 
 .per-page {
     display: flex;
-    align-items: start;
+    align-items: center;
     text-align: center;
     gap: toRem(10);
     font-weight: 500;
     // .per-page__text
     &__text {
-        padding-top: toRem(15);
         text-wrap: nowrap;
         // height: toRem(55);
         display: flex;
@@ -107,22 +106,32 @@
 		// .field-block-add-vid__item
 		&__item {
             max-width: toRem(100);
+            min-width: toRem(55);
             width: 100%;
             display: flex;
             align-items: center;
             justify-content: center;
             outline-color: var(--blue);
             min-height: 0;
+            @media (min-width:$tablet){
+                width: toRem(100);
+                  
+            }
 		}
 		// .field-block-add-vid__title
 		&__title {
+            font-weight: 500;
             display: flex;
             justify-content: center;
             align-items: center;
             text-align: center;
+            font-size: toRem(14);
             border-color: var(--blue) !important;
             @media (max-width:$mobile){
-                padding: 0 toRem(10);
+                padding: 0 toRem(5);
+            }
+            @media (min-width:$tablet){
+                 font-size: toRem(16); 
             }
 
             &::after{
@@ -131,6 +140,11 @@
                 width: toRem(12);
                 height: toRem(6);
                 background: url('../img/icons/arrow.svg') center / cover no-repeat;
+                @media (min-width:$tablet){
+                    flex: 0 0 toRem(16);
+                    width: toRem(16);
+                    height: toRem(9);
+                }
             }
 		}
 		// .field-block-add-vid__body
@@ -233,12 +247,13 @@
         padding-top: toRem(5);
         width: 100%;
         display: grid;
-        gap: toRem(2);
+        // gap: toRem(2);
     }
     // .item-video-store__text
     &__text {
         font-size: toRem(14);
         font-weight: 600;
+        line-height: 20px;
     }
     // .item-video-store__block
     &__block {
@@ -251,13 +266,14 @@
     &__info {
         font-size: toRem(14);
         display: grid;
-        gap: toRem(2);
+        // gap: toRem(2);
     }
     // .item-video-store__user-
     &__user {
         display: flex;
         gap: toRem(5);
         align-items: center;
+        line-height: 24px;
     }
     // .item-video-store__name
     &__name {
@@ -269,6 +285,7 @@
     // .item-video-store__date
     &__date {
         font-weight: 300;
+        line-height: 20px;
     }
     // .item-video-store__button
     &__button {
@@ -388,15 +405,18 @@
 .footer-video-store {
     width: 100%;
     display: flex;
-    align-items: start;
+    align-items: center;
     justify-content: space-between;
     gap: toRem(10);
     // .footer-video-store__pages
     &__pages {
-        padding-top: toRem(10);
         display: flex;
         align-items: center;
-        gap: toRem(10);
+        @include adaptiveValue("gap", 25, 15);
+        font-weight: 500;
+        @media (min-width:$tablet){
+             gap: 37px; 
+        }
     }
 }
 
