@@ -1,26 +1,26 @@
 import React from 'react'
 import PostPh from './../../../assets/img/post/01.jpg'
 import UserPh from './../../../assets/img/user/01.png'
+import { IUser } from '../../../models'
+import { NavLink } from 'react-router-dom'
 
 interface IVideoStoreItemProps {
     title: string
-    user: {
-        userName: string
-        userTag: string
-    }
+    user: IUser
     date: string
     isNew: boolean
     isDownload: boolean
     price: number
+    poster: string
 }
 
-export const VideoStoreItem: React.FC<IVideoStoreItemProps> = ({ title, user, date, isNew, isDownload, price }) => {
+export const VideoStoreItem: React.FC<IVideoStoreItemProps> = ({ title, user, date, isNew, isDownload, price, poster }) => {
 
     return (
         <div className="content-video-store__item item-video-store">
             <div className="item-video-store__wrapper">
                 <div className="item-video-store__image">
-                    <img src={PostPh} alt="ph" />
+                    <img src={poster} alt="ph" />
                     <div className="item-video-store__price">
                         <p>$<span>
                             {price}
@@ -28,9 +28,9 @@ export const VideoStoreItem: React.FC<IVideoStoreItemProps> = ({ title, user, da
                     </div>
                 </div>
                 <div className="item-video-store__body">
-                    <div className="user-item__image">
-                        <img className="user-photo" src={UserPh} alt="User ph" />
-                    </div>
+                    <NavLink to={`/profile/${user.usertag}`} className="user-item__image">
+                        <img className="user-photo" src={user.photo} alt="User ph" />
+                    </NavLink>
                     <div className="item-video-store__content">
                         <p className="item-video-store__text">
                             {title}
@@ -39,10 +39,10 @@ export const VideoStoreItem: React.FC<IVideoStoreItemProps> = ({ title, user, da
                             <div className="item-video-store__info">
                                 <div className="item-video-store__user">
                                     <p className="item-video-store__name">
-                                        {user.userName}
+                                        {user.username}
                                     </p>
                                     <p className="item-video-store__username">
-                                        {user.userTag}
+                                        {user.usertag}
                                     </p>
                                 </div>
                                 <span className="item-video-store__date">
