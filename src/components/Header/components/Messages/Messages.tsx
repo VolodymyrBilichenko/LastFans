@@ -50,7 +50,7 @@ export const Messages: React.FC<IMessagesProps> = () => {
         setMockMessages(prev => prev.map(item => ({...item, isRead: true})))
     }
 
-    const isHaveUnreadMessages = !mockMessages.filter(item => item.isRead).length
+    const isHaveUnreadMessages = !!mockMessages.filter(item => !item.isRead).length
 
     return (
         <div className="messages-header__popup popup-messages-header popup-main">
