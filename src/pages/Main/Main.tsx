@@ -81,18 +81,18 @@ export const Main = () => {
 						user={{
 							username: "Kolya",
 							usertag: "@kolik",
-							photo: UserPhoto
+							photo: 'https://static01.nyt.com/images/2012/08/19/t-magazine/19well-emma-2/19well-emma-2-superJumbo.jpg'
 						}}
 						date={new Date('Sun Jun 09 2024 11:55:54 GMT+0300 (Восточная Европа, летнее время)')}
 						isPinned={false}
 						message={'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptate cumque accusantium et, autem perferendis deleniti ducimus temporibus eum ratione cupiditate a molestias odio aliquam enim quidem repellat optio fuga id?'}
-						images={['https://www.popsci.com/wp-content/uploads/2019/01/07/UQL4MLA6MXE6ECSZHOSXA3LA4E.jpg', ]}
+						images={['https://i.guim.co.uk/img/media/235decf96980ee9351d2b2613e40463ce870a1f5/0_0_2800_3806/master/2800.jpg?width=465&dpr=1&s=none', 'https://i2-prod.mylondon.news/incoming/article24910140.ece/ALTERNATES/s1200b/1_CaptureJPG.jpg']}
 					/>
 					<PostItem
 						user={{
-							username: "Kolya",
-							usertag: "@kolik",
-							photo: UserPhoto
+							username: "Kolya 2",
+							usertag: "@kolik2",
+							photo: 'https://static01.nyt.com/images/2012/08/19/t-magazine/19well-emma-2/19well-emma-2-superJumbo.jpg'
 						}}
 						date={new Date('Sun Jun 09 2024 11:55:54 GMT+0300 (Восточная Европа, летнее время)')}
 						isPinned={false}
@@ -101,9 +101,9 @@ export const Main = () => {
 					/>
 					<PostItem
 						user={{
-							username: "Kolya",
-							usertag: "@kolik",
-							photo: UserPhoto
+							username: "Kolya 1",
+							usertag: "@kolik4",
+							photo: 'https://static01.nyt.com/images/2012/08/19/t-magazine/19well-emma-2/19well-emma-2-superJumbo.jpg'
 						}}
 						date={new Date('Sun Jun 09 2024 11:55:54 GMT+0300 (Восточная Европа, летнее время)')}
 						isPinned={false}
