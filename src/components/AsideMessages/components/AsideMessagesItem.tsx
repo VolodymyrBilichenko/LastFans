@@ -2,14 +2,14 @@ import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import UserPhoto2 from './../../../assets/img/user/02.jpg'
 import LogoWhiteIc from './../../../assets/img/icons/logo-white.svg'
+import { IUser } from '../../../models'
 
 interface IAsideMessagesItemProps {
-    userName: string
+    user: IUser
     isOnline: boolean
-    id: string
 }
 
-export const AsideMessagesItem: React.FC<IAsideMessagesItemProps> = ({userName, isOnline, id}) => {
+export const AsideMessagesItem: React.FC<IAsideMessagesItemProps> = ({user, isOnline}) => {
 
     const [isOpen, setIsOpen] = useState(false)
 
@@ -17,16 +17,16 @@ export const AsideMessagesItem: React.FC<IAsideMessagesItemProps> = ({userName, 
 
     return (
         <div className="body-messages__item item-message">
-            <div onClick={_ => navigate(`/messages/${id}`)} style={{width: "100%"}} className="item-message__user user-item user-item--stories">
+            <div onClick={_ => navigate(`/messages/${user.usertag}`)} style={{width: "100%"}} className="item-message__user user-item user-item--stories">
                 <div className="user-item__image user-item__image--decoration">
-                    <img className="user-photo" src={UserPhoto2} alt="ph" />
+                    <img className="user-photo" src={user.photo} alt="ph" />
                     <div className="user-item__image-icon">
                         <img src={LogoWhiteIc} alt="ph" />
                     </div>
                 </div>
                 <div className="user-item__body">
                     <button style={{textAlign: "left"}} className="user-item__name">
-                        {userName}
+                        {user.username}
                     </button>
                     <span className="user-item__status online">
                         <svg className="online-status" width="8" height="9" viewBox="0 0 8 9" fill="none" xmlns="http://www.w3.org/2000/svg">
