@@ -8,7 +8,7 @@ export const VideoStore = () => {
 
     const [isOpenFilter, setIsOpenFilter] = useState<boolean>(false)
     const [searchValue, setSearchValue] = useState<string>('')
-    const [mockVideo, setMockVideo] = useState([
+    const [mockVideo] = useState([
         {
             title: "Emma yellow dress",
             user: {
@@ -76,20 +76,25 @@ export const VideoStore = () => {
 
                         {
                             mockVideo
-                            ?.filter(item => item.title.toLocaleLowerCase().includes(searchValue.toLocaleLowerCase()))
-                            ?.map(item => (
-                                <VideoStoreItem
-                                    title={item.title}
-                                    user={item.user}
-                                    date={item.date}
-                                    isNew={item.isNew}
-                                    isDownload={item.isDownload}
-                                    price={item.price}
-                                    poster={item.poster}
-                                />
-                            ))
+                                ?.filter(item => item.title.toLocaleLowerCase().includes(searchValue.toLocaleLowerCase()))
+                                ?.map(item => (
+                                    <VideoStoreItem
+                                        title={item.title}
+                                        user={item.user}
+                                        date={item.date}
+                                        isNew={item.isNew}
+                                        isDownload={item.isDownload}
+                                        price={item.price}
+                                        poster={item.poster}
+                                    />
+                                ))
                         }
 
+
+                        {
+                            !mockVideo?.filter(item => item.title.toLocaleLowerCase().includes(searchValue.toLocaleLowerCase())).length 
+                            && "Videos not found"
+                        }
 
                     </div>
                     <div className="video-store__footer footer-video-store">
