@@ -5,6 +5,8 @@ import SaleIc from '../../assets/img/icons/sale.svg'
 import { IUser } from '../../models'
 import { useSelector } from 'react-redux'
 import { useState } from 'react'
+import { MyProfileVid } from './components/MyProfileVid'
+
 
 
 export const MyProfile = () => {
@@ -71,6 +73,7 @@ export const MyProfile = () => {
                         
                     </div>
                 </div>
+
                 {user.sex === "woman" && <div className="profile__vid vid-profile">
                     <h2 className="vid-profile__title title title--medium">Custom vid settings</h2>
                     <div className="vid-profile__body">
@@ -225,6 +228,10 @@ export const MyProfile = () => {
                         <button className="vid-profile__button button"><span>Save changes</span></button>
                     </div>
                 </div>}
+
+
+                <MyProfileVid/>
+
             </div>
         </div>
     )
