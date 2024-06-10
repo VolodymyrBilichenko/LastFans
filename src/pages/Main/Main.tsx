@@ -29,7 +29,7 @@ export const Main = () => {
 					<div className="new-post-main__body">
 						<div className="new-post-main__content">
 							<NavLink to={"/profile"} className="new-post-main__image user-image user-image--40">
-								<img src={UserPhoto} alt="ph" />
+								<img src={"https://static01.nyt.com/images/2012/08/19/t-magazine/19well-emma-2/19well-emma-2-superJumbo.jpg"} alt="ph" />
 							</NavLink>
 							<button onClick={_ => toast.error("This modal is developing")} className="new-post-main__input input-main">
 								<input type="text" name="form[]" style={{pointerEvents: "none"}} placeholder="Create new post" disabled className="input" />
