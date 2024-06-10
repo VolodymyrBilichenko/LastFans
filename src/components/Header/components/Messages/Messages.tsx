@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import { NavLink } from 'react-router-dom'
 import { MessagesItem } from './MessagesItem'
 import { IUser } from '../../../../models'
 import UserPhoto from '../../../../assets/img/user/01.png'

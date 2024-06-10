@@ -1,5 +1,7 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { IUser } from '../../../../models'
+import { Fancybox as NativeFancybox } from "@fancyapps/ui";
+import "@fancyapps/ui/dist/fancybox/fancybox.css";
 
 interface IChatItemProps {
     isOwner?: boolean
@@ -23,6 +25,15 @@ export const ChatItem: React.FC<IChatItemProps> = ({ isOwner, isEdited, message,
         setIsLiked(!isLiked)
     }
 
+    useEffect(() => {
+        NativeFancybox.bind("[data-fancybox]", {});
+        return () => {
+            NativeFancybox.unbind("[data-fancybox]");
+            NativeFancybox.close();
+        };
+    }, []);
+
+
     return (
         <div className={`content-chat__message chat-message ${isOwner ? "chat-message--main" : ""}`}>
             <div className="chat-message__block">
@@ -42,7 +53,7 @@ export const ChatItem: React.FC<IChatItemProps> = ({ isOwner, isEdited, message,
 
                                 {
                                     images.map(item => (
-                                        <a href={item} className="content-post__image gallery__image">
+                                        <a href={item} data-fancybox="gallery" className="content-post__image gallery__image">
                                             <img src={item} alt="ph" className="ibg gallery__preview" />
                                         </a>
                                     ))

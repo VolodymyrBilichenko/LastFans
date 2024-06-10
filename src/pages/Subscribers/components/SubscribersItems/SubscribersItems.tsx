@@ -1,4 +1,4 @@
-import UserBgPh from '../../../../assets/img/user/bg.jpg'
+// import UserBgPh from '../../../../assets/img/user/bg.jpg'
 import UserPh from '../../../../assets/img/user/01.png'
 import { SubscribersUser } from '../SubscribersUser'
 

@@ -1,5 +1,5 @@
 import React from 'react'
-import UserPhoto from './../../../../assets/img/user/01.png'
+// import UserPhoto from './../../../../assets/img/user/01.png'
 import dollar from './../../../../assets/img/icons/dollar.svg'
 import clock from './../../../../assets/img/icons/clock.svg'
 import { IUser } from '../../../../models'
