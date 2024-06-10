@@ -1,4 +1,4 @@
-import UserPhoto from '../../assets/img/user/01.png'
+// import UserPhoto from '../../assets/img/user/01.png'
 // import UserPost from '../../assets/img/post/01.jpg'
 import Icon from '../../assets/img/icons/image.svg'
 import PlusIc from '../../assets/img/icons/plus.svg'
