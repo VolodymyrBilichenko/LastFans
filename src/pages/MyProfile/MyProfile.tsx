@@ -22,14 +22,14 @@ export const MyProfile = () => {
                         <h2 className="body-profile__title title title--medium">My profile</h2>
                     </div>
                     <div className="body-profile__block">
-                        <div className="body-profile__top-image">
+                        {user.sex === "woman" && <div className="body-profile__top-image">
                             <img src={ProfilePh} alt="ph"/>
                             <button className="edit">
                                 <img className="ibg" src="@img/icons/edit.svg" alt="Icon"/>
                             </button>
-                        </div>
+                        </div>}
                         <div className="body-profile__wrapper">
-                            <div className="body-profile__top top-body-profile">
+                            <div style={{paddingTop: "1.4375rem"}} className="body-profile__top top-body-profile">
                                 <div className="top-body-profile__image">
                                     <img className="ibg" src={UserPh} alt="ph"/>
                                     <button className="edit">
@@ -38,7 +38,7 @@ export const MyProfile = () => {
                                 </div>
                                 <div className="top-body-profile__actions">
                                     <button className="top-body-profile__button button button--transparent"><span>Edit profile photo</span></button>
-                                    <button className="top-body-profile__button button button--transparent"><span>Edit cover photo</span></button>
+                                    {user.sex === "woman" && <button className="top-body-profile__button button button--transparent"><span>Edit cover photo</span></button>}
                                 </div>
                             </div>
                             <div className="body-profile__content content-body-profile">
@@ -46,7 +46,7 @@ export const MyProfile = () => {
                                 <input type="text" value={usertagValue} onChange={e => setUsertagValue(e.target.value)} placeholder="Username" className="content-body-profile__input input input-main"/>
                                 <textarea placeholder="About me" className="content-body-profile__about textarea"></textarea>
                             </div>
-                            <div className="body-profile__subscription subscription-body-profile">
+                            {user.sex === "woman" && <div className="body-profile__subscription subscription-body-profile">
                                 <div className="subscription-body-profile__price">
                                     <p className="subscription-body-profile__text">Subscription price</p>
                                     <div className="subscription-body-profile__field">
@@ -65,13 +65,13 @@ export const MyProfile = () => {
                                         <input min="0" type="number" placeholder="" className="subscription-body-profile__input input input-main"/>
                                     </div>
                                 </div>
-                            </div>
+                            </div>}
                             <button className="body-profile__button button"><span>Save changes</span></button>
                         </div>
                         
                     </div>
                 </div>
-                <div className="profile__vid vid-profile">
+                {user.sex === "woman" && <div className="profile__vid vid-profile">
                     <h2 className="vid-profile__title title title--medium">Custom vid settings</h2>
                     <div className="vid-profile__body">
                         <p className="vid-profile__text">Package Selection</p>
@@ -224,7 +224,7 @@ export const MyProfile = () => {
                         </div>
                         <button className="vid-profile__button button"><span>Save changes</span></button>
                     </div>
-                </div>
+                </div>}
             </div>
         </div>
     )

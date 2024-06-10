@@ -15,8 +15,12 @@ import { Highlights } from '../../components/Highlights/Highlights'
 import { NavLink } from 'react-router-dom'
 import { PostItem } from './components/PostItem'
 import { toast } from 'react-toastify'
+import { IUser } from '../../models'
+import { useSelector } from 'react-redux'
 
 export const Main = () => {
+
+	const user: IUser = useSelector((state: any) => state.toolkit.user)
 
 	const handleInDevelop = () => {
 		toast.error('This element in the development')
@@ -25,7 +29,7 @@ export const Main = () => {
 	return (
 		<div className="main">
 			<div className="main__container">
-				<div className="main__new-post new-post-main main__item">
+				{user.sex === "woman" && <div className="main__new-post new-post-main main__item">
 					<div className="new-post-main__body">
 						<div className="new-post-main__content">
 							<NavLink to={"/profile"} className="new-post-main__image user-image user-image--40">
@@ -56,8 +60,9 @@ export const Main = () => {
 							</button>
 						</div>
 					</div>
-				</div>
-				<div className="main__stories stories-main">
+				</div>}
+
+				{user.sex === "woman" && <div className="main__stories stories-main">
 					<div className="stories-main__content">
 						<NavLink to={''} onClick={handleInDevelop} className="stories-main__item add-story">
 							<div className="add-story__image">
@@ -76,9 +81,9 @@ export const Main = () => {
 						</NavLink>
 
 					</div>
-				</div>
+				</div>}
 
-				<Highlights />
+				{user.sex === "woman" && <Highlights />}
 
 				<div className="main__content content-main">
 

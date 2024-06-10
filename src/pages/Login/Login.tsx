@@ -56,17 +56,25 @@ export const Login = () => {
             resetForm();
             navigate('/');
 
-            const user: IUser = {
+            let user: IUser = {
                 username: "Angelina",
                 usertag: "@angel",
                 photo: "https://static01.nyt.com/images/2012/08/19/t-magazine/19well-emma-2/19well-emma-2-superJumbo.jpg",
-                sex: getCookies('access_token') ?? ""
+                sex: ""
             }
 
             if (email === 'man@test.test') {
                 setCookie('access_token', 'man')
+                user = {
+                    ...user,
+                    sex: "man"
+                }
             } else if (email === 'woman@test.test') {
                 setCookie('access_token', 'woman')
+                user = {
+                    ...user,
+                    sex: "woman"
+                }
             }
 
             dispatch(setUser(user))
