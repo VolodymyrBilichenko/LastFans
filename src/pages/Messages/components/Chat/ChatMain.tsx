@@ -129,7 +129,7 @@ export const ChatMain: React.FC<IChatMainProps> = ({ chatTheme }) => {
 
     return (
         <div className="chat__content content-chat" ref={chatWindow}>
-            <div className="content-chat__body theme" style={{ ...themeColors[chatTheme], transition: "all .3s ease" }}>
+            <div data-gallery className="content-chat__body theme" style={{ ...themeColors[chatTheme], transition: "all .3s ease" }}>
 
                 {
                     mockMessages.map(item => (
