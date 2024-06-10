@@ -1,19 +1,20 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { IUser } from "../models";
 
 const toolkitSlice = createSlice({
     name: "toolkit",
     initialState: {
-        user: {},
+        user: <IUser>{},
         modals: [],
     },
     reducers: {
-        setUser(state:any, action:any) {
+        setUser(state: any, action: {payload: IUser}) {
             state.user = action.payload
         },
         addModal(state: any, action: any) {
-            state.modals = action.payload 
+            state.modals = action.payload
         }
-        
+
     }
 })
 

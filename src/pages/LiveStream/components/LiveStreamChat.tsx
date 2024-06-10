@@ -3,6 +3,7 @@ import UserPhoto from './../../../assets/img/user/01.png'
 import MicroIc from './../../../assets/img/icons/micro.svg'
 import SendIc from './../../../assets/img/icons/send.svg'
 import { LiveStreamChatItem } from './LiveStreamChatItem'
+import { toast } from 'react-toastify'
 
 interface ILiveStreamChatProps {
 
@@ -13,6 +14,7 @@ export const LiveStreamChat: React.FC<ILiveStreamChatProps> = () => {
     const chatBlock: any = useRef(null)
 
     const [messageValue, setMessageValue] = useState<string>('')
+    const [isEmptyInput, setIsEmptyInput] = useState(false)
 
     useEffect(() => {
         chatBlock.current.scrollTo(0, 999999)
@@ -40,6 +42,12 @@ export const LiveStreamChat: React.FC<ILiveStreamChatProps> = () => {
 
     const handleSend = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
+        setIsEmptyInput(false)
+        
+        if(!messageValue) {
+            toast.error('Enter text please!')
+            return setIsEmptyInput(true)
+        }
 
         const message: any = {
             user: {
@@ -87,13 +95,13 @@ export const LiveStreamChat: React.FC<ILiveStreamChatProps> = () => {
 
                         </div>
                     </div>
-                    <form onSubmit={handleSend} className="chat__footer footer-chat">
-                        <div className="footer-chat__input input-chat">
+                    <form onSubmit={handleSend} className={`chat__footer footer-chat ${isEmptyInput ? "error" : ""}`}>
+                        <div className="footer-chat__input input-chat" style={{borderColor: isEmptyInput ? "red": "#E5EAEF"}}>
                             <div className="input-chat__box">
                                 <div className="input-chat__icon">
                                     <img src={MicroIc} alt="Icon" />
                                 </div>
-                                <input type="text" onChange={e => setMessageValue(e.target.value)} value={messageValue} placeholder="Enter message..." className="input-chat__input input" />
+                                <input type="text" onChange={e => setMessageValue(e.target.value)} value={messageValue} placeholder="Enter message..." className={`input-chat__input input`} />
                             </div>
                             <div className="input-chat__block">
                                 <div className="input-chat__actions actions-input-chat">

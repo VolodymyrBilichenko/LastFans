@@ -8,14 +8,33 @@ import { AsideMessages } from "./components/AsideMessages/AsideMessages";
 import { useOpenAside } from "./hooks/OpenAside";
 import { ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
+import { useEffect } from "react";
+import getCookies from "./functions/getCookie";
+import { useDispatch } from "react-redux";
+import { setUser } from "./redux/toolkitSlice";
+import { IUser } from "./models";
 
 
 export const App = () => {
   const location = useLocation();
+  const dispatch = useDispatch()
   const {handleOpenMenu, isOpenAsideMenu} = useOpenAside();
 
   const checkLocation = location.pathname.slice(0, location.pathname.indexOf('/',1) === -1 ? undefined : location.pathname.indexOf('/',1))
-  const currentPage = routes.filter(item => item.path === checkLocation || item.path === '*');
+  const currentPage = routes().filter(item => item.path === checkLocation || item.path === '*');
+
+  useEffect(() => {
+    if(!getCookies('access_token')) return
+
+    const user: IUser = {
+      username: "Angelina",
+      usertag: "@angel",
+      photo: "https://static01.nyt.com/images/2012/08/19/t-magazine/19well-emma-2/19well-emma-2-superJumbo.jpg",
+      sex: getCookies('access_token') ?? ""
+    }
+
+    dispatch(setUser(user))
+  }, [])
     
   return (
     <>
@@ -34,7 +53,7 @@ export const App = () => {
             timeout={300}
           >
             <Routes location={location}>
-              {routes.map((item: any) => (
+              {routes().map((item: any) => (
                 <Route
                   key={item.path}
                   element={item.element}

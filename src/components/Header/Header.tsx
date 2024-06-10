@@ -10,6 +10,8 @@ import { NavLink } from 'react-router-dom'
 import { useState } from 'react'
 import { Messages } from './components/Messages/Messages'
 import { Notifications } from './components/Notifications/Notifications'
+import { toast } from 'react-toastify'
+import setCookie from '../../functions/setCookie'
 
 interface IOpenMenu {
     handleOpenMenu?: any
@@ -110,7 +112,7 @@ export const Header = ({handleOpenMenu}: IOpenMenu) => {
                                                     >
                                                         <div className="item-sub__user user-item user-item--stories">
                                                             <div className="user-item__image user-item__image--decoration">
-                                                                <img className="user-photo" src={UserPhoto} alt="ph"/>
+                                                                <img className="user-photo" src={"https://static01.nyt.com/images/2012/08/19/t-magazine/19well-emma-2/19well-emma-2-superJumbo.jpg"} alt="ph"/>
                                                                 <div className="user-item__image-icon">
                                                                     <img src={LogoIc} alt="ph"/>
                                                                 </div>
@@ -165,14 +167,14 @@ export const Header = ({handleOpenMenu}: IOpenMenu) => {
                                     <span></span>
                                 </div>
                             </button>
-                            <img className="user-header__image" src={UserPhoto} alt="ph"/>
+                            <img className="user-header__image" src={"https://static01.nyt.com/images/2012/08/19/t-magazine/19well-emma-2/19well-emma-2-superJumbo.jpg"} alt="ph"/>
                             <div className="user-header__popup popup-user-header popup-main">
                                 <div className="popup-main__wrapper">
                                     <div className="popup-main__content">
 
                                         <div className="popup-user-header__top top-popup-user-header">
                                             <div className="top-popup-user-header__image">
-                                                <img src={UserPhoto} alt="ph"/>
+                                                <img src={"https://static01.nyt.com/images/2012/08/19/t-magazine/19well-emma-2/19well-emma-2-superJumbo.jpg"} alt="ph"/>
                                             </div>
                                             <p className="top-popup-user-header__name">darkangeel</p>
                                             <p className="top-popup-user-header__username">@darkangeel</p>
@@ -207,12 +209,12 @@ export const Header = ({handleOpenMenu}: IOpenMenu) => {
                                             </div>
                                         </div>
                                         <div className="popup-user-header__menu menu-popup-user-header">
-                                            <a href="some" className="menu-popup-user-header__link link-menu-popup-user-header">
+                                            <button onClick={_ => toast.error('This page is developing')} className="menu-popup-user-header__link link-menu-popup-user-header">
                                                 <div className="link-menu-popup-user-header__image">
                                                     <img src={TimelineIc} alt="ph"/>
                                                 </div>
                                                 <p className="link-menu-popup-user-header__text">Timeline</p>
-                                            </a>
+                                            </button>
                                             <NavLink to={'/video-store'} className="menu-popup-user-header__link link-menu-popup-user-header">
                                                 <div className="link-menu-popup-user-header__image">
                                                     <img src={VideoIc} alt="ph"/>
@@ -234,7 +236,7 @@ export const Header = ({handleOpenMenu}: IOpenMenu) => {
                                                 </div>
                                                 <p className="link-menu-popup-user-header__text">Settings</p>
                                             </NavLink>
-                                            <NavLink to={'/login'} className="menu-popup-user-header__link link-menu-popup-user-header">
+                                            <NavLink to={'/login'} onClick={_ => setCookie('access_token', '')} className="menu-popup-user-header__link link-menu-popup-user-header">
                                                 <div className="link-menu-popup-user-header__image">
                                                     <img src={LogoutIc} alt="ph"/>
 

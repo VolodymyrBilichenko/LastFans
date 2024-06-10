@@ -19,11 +19,15 @@ import { useState } from 'react'
 import { Chat } from './components/Chat/Chat'
 import { toast } from 'react-toastify'
 import { AsideMessagesItem } from '../../components/AsideMessages/components/AsideMessagesItem'
+import { IUser } from '../../models'
+import { useSelector } from 'react-redux'
 
 export const Messages = () => {
     
     const [activeChat, setActiveChat] = useState('allUser');
     const [chatTheme, setChatTheme] = useState('green')
+
+    const user: IUser = useSelector((state: any) => state.toolkit.user)
 
     const handleChooseTheme = (theme: string) => {
         if(!theme) toast.error('Unfortunately, we do not have this color')
@@ -209,7 +213,7 @@ export const Messages = () => {
             />
 
             <div className="messages-user">
-                <div className="messages-user__body">
+                <div className="messages-user__body" style={{height: "auto"}}>
                     <div className="messages-user__top top-messages-user">
                         <div className="user-item">
                             <div className="user-item__image">
@@ -279,7 +283,7 @@ export const Messages = () => {
                             </div>
                             
                         </div>
-                        <div className="messages-user__notes notes-messages-user">
+                        {user.sex === "woman" && <div className="messages-user__notes notes-messages-user">
                             <div className="notes-messages-user__title">Private notes</div>
                             <p className="notes-messages-user__text">
                                 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
@@ -287,13 +291,13 @@ export const Messages = () => {
                             <p className="notes-messages-user__text">
                                 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
                             </p>
-                        </div>
-                        <a href="some" className="messages-user__media button button--fw button--transparent">
+                        </div>}
+                        {user.sex === "woman" && <a href="some" className="messages-user__media button button--fw button--transparent">
                             <img src={ImageIc} alt="Icon"/>
                             <span>Media files</span>
-                        </a>
+                        </a>}
 
-                        <div className="messages-user__media-files media-files">
+                        {user.sex === "woman" && <div className="messages-user__media-files media-files">
                             <div className="media-files__header">
                                 <a href="some" className="media-files__back"><span>Media Files</span></a>
                             </div>
@@ -348,7 +352,7 @@ export const Messages = () => {
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div>}
                     </div>
                 </div>
             </div>
