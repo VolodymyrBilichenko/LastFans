@@ -21,7 +21,7 @@ import { toast } from 'react-toastify'
 
 export const Messages = () => {
 
-    const [chatTheme, setChatTheme] = useState('blue')
+    const [chatTheme, setChatTheme] = useState('green')
 
     const handleChooseTheme = (theme: string) => {
         if(!theme) toast.error('Unfortunately, we do not have this color')
