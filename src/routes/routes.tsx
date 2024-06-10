@@ -93,11 +93,13 @@ export const routes: any[] = [
     },
     {
         path: '/profile',
-        element: <Profile/>
+        element: <Profile/>,
+        additionalClass: 'page-profile-model'
     },
     {
         path: '/profile/:userId',
-        element: <Profile/>
+        element: <Profile/>,
+        additionalClass: 'page-profile-model'
     },
     {
         path: '/my-profile',

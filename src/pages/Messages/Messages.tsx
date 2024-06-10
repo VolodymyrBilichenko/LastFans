@@ -22,7 +22,7 @@ import { AsideMessagesItem } from '../../components/AsideMessages/components/Asi
 
 export const Messages = () => {
 
-    const [chatTheme, setChatTheme] = useState('blue')
+    const [chatTheme, setChatTheme] = useState('green')
 
     const handleChooseTheme = (theme: string) => {
         if(!theme) toast.error('Unfortunately, we do not have this color')
