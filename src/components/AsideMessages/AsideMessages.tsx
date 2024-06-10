@@ -2,8 +2,39 @@
 // import LogoWhiteIc from '../../assets/img/icons/logo-white.svg'
 import { NavLink } from 'react-router-dom'
 import { AsideMessagesItem } from './components/AsideMessagesItem'
+import { useState } from 'react'
 
 export const AsideMessages = () => {
+
+    const mockUsers = [
+        {
+            user: {
+                username: "Tomik",
+                usertag: "@tommm",
+                photo: 'https://goldenglobes.com/wp-content/uploads/2023/10/17-tomcruiseag.jpg'
+            },
+            isOnline: true
+        },
+        {
+            user: {
+                username: "Robertik",
+                usertag: "@robbb",
+                photo: 'https://ca-times.brightspotcdn.com/dims4/default/4c31853/2147483647/strip/false/crop/3000x2000+0+0/resize/1486x991!/quality/75/?url=https%3A%2F%2Fcalifornia-times-brightspot.s3.amazonaws.com%2Ff6%2Ff2%2Fada36e394ddeaa69bf4706fd378a%2Firon-man-robert-downey-jr.jpg'
+            },
+            isOnline: true
+        },
+        {
+            user: {
+                username: "Danilyok",
+                usertag: "@dan",
+                photo: 'https://www.okino.ua/media/var/cache/a0/1d/a01d08309b6f5ed71c78c393033b7c19.jpg'
+            },
+            isOnline: true
+        },
+    ]
+
+    const [searchValue, setSearchValue] = useState<string>('')
+
     return (
         <aside className="page-messages">
             <div className="page-messages__body body-messages">
@@ -28,34 +59,25 @@ export const AsideMessages = () => {
                 </div>
                 <div className="body-messages__content">
                     <div className="body-messages__search search">
-                        <input type="text" name="form[]" placeholder="Search by nickname or hashtags " className="search__input input" />
+                        <input onChange={e => setSearchValue(e.target.value)} value={searchValue} type="text" name="form[]" placeholder="Search by nickname or hashtags " className="search__input input" />
                     </div>
                     <div className="body-messages__items">
 
-                        <AsideMessagesItem
-                            user={{
-                                username: "Tomik",
-                                usertag: "@tommm",
-                                photo: 'https://goldenglobes.com/wp-content/uploads/2023/10/17-tomcruiseag.jpg'
-                            }}
-                            isOnline={true}
-                        />
-                        <AsideMessagesItem
-                            user={{
-                                username: "Robertik",
-                                usertag: "@robbb",
-                                photo: 'https://ca-times.brightspotcdn.com/dims4/default/4c31853/2147483647/strip/false/crop/3000x2000+0+0/resize/1486x991!/quality/75/?url=https%3A%2F%2Fcalifornia-times-brightspot.s3.amazonaws.com%2Ff6%2Ff2%2Fada36e394ddeaa69bf4706fd378a%2Firon-man-robert-downey-jr.jpg'
-                            }}
-                            isOnline={true}
-                        />
-                        <AsideMessagesItem
-                            user={{
-                                username: "Danilyok",
-                                usertag: "@dan",
-                                photo: 'https://www.okino.ua/media/var/cache/a0/1d/a01d08309b6f5ed71c78c393033b7c19.jpg'
-                            }}
-                            isOnline={true}
-                        />
+                        {
+                            mockUsers
+                                ?.filter(item => item.user.username.toLowerCase().includes(searchValue.toLowerCase()))
+                                ?.map(item => (
+                                    <AsideMessagesItem
+                                        user={item.user}
+                                        isOnline={item.isOnline}
+                                    />
+                                ))
+                        }
+
+                        {
+                            !mockUsers?.filter(item => item.user.username.toLowerCase().includes(searchValue.toLowerCase())).length
+                            && "Users not found"
+                        }
 
                     </div>
 

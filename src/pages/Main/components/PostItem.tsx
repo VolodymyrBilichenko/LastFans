@@ -14,6 +14,7 @@ import React, { useState, useEffect } from 'react'
 import { IUser } from '../../../models'
 import { Fancybox as NativeFancybox } from "@fancyapps/ui";
 import "@fancyapps/ui/dist/fancybox/fancybox.css";
+import { toast } from 'react-toastify';
 
 interface IPostItemProps {
     user: IUser
@@ -29,13 +30,16 @@ interface ILikeType {
     id: string;
 }
 
-export const PostItem: React.FC<IPostItemProps> = ({ user, date, isPinned, message, images }) => {
+export const PostItem: React.FC<IPostItemProps> = ({ user, date, message, images, ...props }) => {
 
     const dateWithZeroSymbol = (number: number) => {
         return +number < 10 ? "0" + number : number
     }
-
+    
+    
     const [chosenLike, setChosenLike] = useState<ILikeType>()
+    const [isOpenEditor, setIsOpenEditor] = useState<boolean>(false)
+    const [isPinned, setisPinned] = useState(props.isPinned)
 
     const [smiles, setSmiles] = useState<ILikeType[]>([{
         smile: '🚀',
@@ -88,6 +92,10 @@ export const PostItem: React.FC<IPostItemProps> = ({ user, date, isPinned, messa
         };
     }, []);
 
+    const handlePinned = () => {
+        setisPinned(prev => !prev)
+    }
+
     return (
         <div className="content-main__post post pin main__item">
             <div className="post__top top-post">
@@ -118,7 +126,7 @@ export const PostItem: React.FC<IPostItemProps> = ({ user, date, isPinned, messa
                         </div>
                     </div>
                 </div>
-                <div className="top-post__actions actions field">
+                <div onClick={_ => setIsOpenEditor(prev => !prev)} className={`top-post__actions actions field ${isOpenEditor ? "field-active" : ""}`}>
                     <svg width="21" height="6" viewBox="0 0 21 6" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M15.8569 3.00003C15.8569 4.1835 16.8163 5.14289 17.9997 5.14289C19.1832 5.14289 20.1426 4.1835 20.1426 3.00003C20.1426 1.81657 19.1832 0.857178 17.9997 0.857178C16.8163 0.857178 15.8569 1.81657 15.8569 3.00003Z" fill="#93989A" style={{ fill: '#93989A', fillOpacity: '1' }} />
                         <path d="M7.99944 3.00003C7.99944 4.1835 8.95883 5.14289 10.1423 5.14289C11.3258 5.14289 12.2852 4.1835 12.2852 3.00003C12.2852 1.81657 11.3258 0.857178 10.1423 0.857178C8.95883 0.857178 7.99944 1.81657 7.99944 3.00003Z" fill="#93989A" style={{ fill: '#93989A', fillOpacity: '1' }} />
@@ -128,7 +136,15 @@ export const PostItem: React.FC<IPostItemProps> = ({ user, date, isPinned, messa
                         <div className="popup-actions__wrapper">
                             <div className="popup-actions__content">
                                 <div className="popup-actions__body body-popup-actions">
-                                    <a href="some" className="body-popup-actions__item mass">Mass message</a>
+                                    <button onClick={handlePinned} className="body-popup-actions__item mass">
+                                        {isPinned ? "Unpin post" : "Pin post"}
+                                    </button>
+                                </div>
+                                <div className="popup-actions__body body-popup-actions">
+                                    <button onClick={_ => toast.error("This element is developing")} className="body-popup-actions__item mass">Edit</button>
+                                </div>
+                                <div className="popup-actions__body body-popup-actions">
+                                    <button onClick={_ => toast.error("This element is developing")} className="body-popup-actions__item mass">Delete</button>
                                 </div>
                             </div>
                         </div>
@@ -152,7 +168,7 @@ export const PostItem: React.FC<IPostItemProps> = ({ user, date, isPinned, messa
 
                         {
                             images.map(item => (
-                                <a href={item} data-fancybox="gallery" className="content-post__image gallery__image">
+                                <a href={item} data-fancybox={`gallery-${date.getTime()}`} className="content-post__image gallery__image">
                                     <img src={item} alt="" className="ibg gallery__preview" />
                                 </a>
                             ))
