@@ -1,5 +1,6 @@
 import UserPhoto from '../../assets/img/user/01.png'
 import LogoPh from '../../assets/img/icons/logo.svg'
+import LogoIc from '../../assets/img/icons/logo-white.svg'
 import VideoIc from '../../assets/img/icons/video.svg'
 import TimelineIc from '../../assets/img/icons/user-menu/timeline.svg'
 import MessageIc from '../../assets/img/icons/user-menu/message.svg'
@@ -14,12 +15,27 @@ interface IOpenMenu {
     handleOpenMenu?: any
 } 
 
+interface IRequest {
+    id: number,
+    username: string,
+    time: string,
+}
+
 export const Header = ({handleOpenMenu}: IOpenMenu) => {
     const [openModal, setOpenModal] = useState<string | null>(null);
+    const [requests, setRequests] = useState<IRequest[]>([
+        {id: 1, username: 'Bob007', time: '21 min'},
+        {id: 2, username: 'Lar', time: '22 min'},
+        {id: 3, username: 'The men', time: '23 min'},
+    ])
 
     const handleOpenModal = (modalName: string) => {
         setOpenModal(openModal === modalName ? null : modalName);
     };
+
+    const handleRequest = (id: number) => {
+        setRequests(requests.filter(request => request.id !== id))
+    }
     
     return (
         <header className="header">
@@ -87,78 +103,41 @@ export const Header = ({handleOpenMenu}: IOpenMenu) => {
                                             {/* <button className="top-popup-notifications-header__read"><span>Mark as read</span></button> */}
                                         </div>
                                         <div className="popup-sub-header__body body-popup-sub-header">
-                                            <div className="body-popup-sub-header__item item-sub">
-                                                <div className="item-sub__user user-item user-item--stories">
-                                                    <div className="user-item__image user-item__image--decoration">
-                                                        <img className="user-photo" src={UserPhoto} alt="ph"/>
-                                                        <div className="user-item__image-icon">
-                                                            <img src="img/icons/logo-white.svg" alt="ph"/>
+                                            {
+                                                requests.map(item => (
+                                                    <div className="body-popup-sub-header__item item-sub"
+                                                        key={item.id}
+                                                    >
+                                                        <div className="item-sub__user user-item user-item--stories">
+                                                            <div className="user-item__image user-item__image--decoration">
+                                                                <img className="user-photo" src={UserPhoto} alt="ph"/>
+                                                                <div className="user-item__image-icon">
+                                                                    <img src={LogoIc} alt="ph"/>
+                                                                </div>
+                                                            </div>
+                                                            <div className="user-item__body">
+                                                                <NavLink to={`/profile/${item.username}`} className="user-item__name">{item.username}</NavLink>
+                                                                <span className="user-item__status online">
+                                                                    <svg className="online-status" width="8" height="9" viewBox="0 0 8 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                        <circle cx="4" cy="4.5" r="4" fill="#3DD598" style={{fill:'#3DD598', fillOpacity:'1'}} />
+                                                                    </svg>
+
+                                                                    Online
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                        <div className="item-sub__block">
+                                                            <span className="item-sub__time">{item.time}</span>
+                                                            <button className="item-sub__button button button--transparent"
+                                                                onClick={() => handleRequest(item.id)}
+                                                            >
+                                                                <span>Reject</span>
+                                                            </button>
                                                         </div>
                                                     </div>
-                                                    <div className="user-item__body">
-                                                        <a href="some" className="user-item__name">Boob007</a>
-                                                        <span className="user-item__status online">
-                                                            <svg className="online-status" width="8" height="9" viewBox="0 0 8 9" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                                <circle cx="4" cy="4.5" r="4" fill="#3DD598" style={{fill:'#3DD598', fillOpacity:'1'}} />
-                                                            </svg>
+                                                ))
+                                            }
 
-                                                            Online
-                                                        </span>
-                                                    </div>
-                                                </div>
-                                                <div className="item-sub__block">
-                                                    <span className="item-sub__time">21 min</span>
-                                                    <button className="item-sub__button button button--transparent"><span>Reject</span></button>
-                                                </div>
-                                            </div>
-                                            <div className="body-popup-sub-header__item item-sub">
-                                                <div className="item-sub__user user-item user-item--stories">
-                                                    <div className="user-item__image user-item__image--decoration">
-                                                        <img className="user-photo" src={UserPhoto} alt="ph"/>
-                                                        <div className="user-item__image-icon">
-                                                            <img src="img/icons/logo-white.svg" alt="ph"/>
-                                                        </div>
-                                                    </div>
-                                                    <div className="user-item__body">
-                                                        <a href="some" className="user-item__name">Boob007</a>
-                                                        <span className="user-item__status online">
-                                                            <svg className="online-status" width="8" height="9" viewBox="0 0 8 9" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                                <circle cx="4" cy="4.5" r="4" fill="#3DD598" style={{fill:'#3DD598', fillOpacity:'1'}} />
-                                                            </svg>
-
-                                                            Online
-                                                        </span>
-                                                    </div>
-                                                </div>
-                                                <div className="item-sub__block">
-                                                    <span className="item-sub__time">21 min</span>
-                                                    <button className="item-sub__button button button--transparent"><span>Reject</span></button>
-                                                </div>
-                                            </div>
-                                            <div className="body-popup-sub-header__item item-sub">
-                                                <div className="item-sub__user user-item user-item--stories">
-                                                    <div className="user-item__image user-item__image--decoration">
-                                                        <img className="user-photo" src={UserPhoto} alt="ph"/>
-                                                        <div className="user-item__image-icon">
-                                                            <img src="img/icons/logo-white.svg" alt="ph"/>
-                                                        </div>
-                                                    </div>
-                                                    <div className="user-item__body">
-                                                        <a href="some" className="user-item__name">Boob007</a>
-                                                        <span className="user-item__status online">
-                                                            <svg className="online-status" width="8" height="9" viewBox="0 0 8 9" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                                <circle cx="4" cy="4.5" r="4" fill="#3DD598" style={{fill:'#3DD598', fillOpacity:'1'}} />
-                                                            </svg>
-
-                                                            Online
-                                                        </span>
-                                                    </div>
-                                                </div>
-                                                <div className="item-sub__block">
-                                                    <span className="item-sub__time">21 min</span>
-                                                    <button className="item-sub__button button button--transparent"><span>Reject</span></button>
-                                                </div>
-                                            </div>
                                         </div>
                                     </div>
                                 </div>

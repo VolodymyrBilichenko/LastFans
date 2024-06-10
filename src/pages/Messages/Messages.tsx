@@ -18,8 +18,6 @@ import BlockedUserIc from '../../assets/img/icons/blocked-user.svg'
 import { useState } from 'react'
 import { Chat } from './components/Chat/Chat'
 import { toast } from 'react-toastify'
-import { Swiper, SwiperSlide } from "swiper/react";
-import 'swiper/css';
 
 export const Messages = () => {
 
@@ -139,7 +137,7 @@ export const Messages = () => {
 
                         <a href="some" data-popup="#popup-add-group" className="groups__add button button--fw button--transparent"><span>Add new group</span></a>
                     </div>
-                    
+
                     <div className="body-messages__content">
 
                         <div className="body-messages__items">
