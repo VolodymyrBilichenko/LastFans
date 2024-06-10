@@ -17,126 +17,134 @@ import { Statistic } from '../pages/Statistic/Statistic'
 import { VideoStore } from '../pages/VideoStore/VideoStore'
 import { AddStore } from '../pages/AddStore/AddStore'
 import { Rules } from '../pages/Rules/Rules'
+import getCookies from '../functions/getCookie'
 
-export const routes: any[] = [
+export const routes = () => {
     
-    {
-        path: '/LastFans',
-        element: <Main/>,
-        additionalClass: 'page-main'
-    },
-    {
-        path: '/',
-        element: <Main/>,
-        additionalClass: 'page-main'
-    },
-    {
-        path: '/registration',
-        element: <Registration/>,
-        isNotNeedHeader: true,
-        isNotNeedMessage: true,
-        isNotNeedMenu: true,
-        additionalClass: 'page-registration'
-    },
-    {
-        path: '/login',
-        element: <Login/>,
-        isNotNeedHeader: true,
-        isNotNeedMessage: true,
-        isNotNeedMenu: true,
-        additionalClass: 'page-login'
-    },
-    {
-        path: '/forgot',
-        element: <ForgotPass/>,
-        isNotNeedHeader: true,
-        isNotNeedMessage: true,
-        isNotNeedMenu: true,
-        additionalClass: 'page-login'
-    },
-    {
-        path: '/live',
-        element: <LiveStream/>,
-        isNotNeedMessage: true
-    },
-    {
-        path: '/auto-message',
-        element: <AutoMessage/>
-    },
-    {
-        path: '/history',
-        element: <History/>
-    },
-    {
-        path: '/messages',
-        element: <Messages/>,
-        isNotNeedMessage: true,
-        additionalClass: 'messages-page'
-    },
-    {
-        path: '/messages/:userId',
-        element: <Messages/>,
-        isNotNeedMessage: true,
-        additionalClass: 'messages-page'
-    },
-    {
-        path: '/models',
-        element: <Models/>
-    },
-    {
-        path: '/payment',
-        element: <Payment/>
-    },
-    {
-        path: '/payment-add',
-        element: <PaymentAdd/>
-    },
-    {
-        path: '/profile',
-        element: <Profile/>,
-        additionalClass: 'page-profile-model'
-    },
-    {
-        path: '/profile/:userId',
-        element: <Profile/>,
-        additionalClass: 'page-profile-model'
-    },
-    {
-        path: '/my-profile',
-        element: <MyProfile/>
-    },
-    {
-        path: '/statistic',
-        element: <Statistic/>
-    },
-    {
-        path: '/video-store',
-        element: <VideoStore/>
-    },
-    {
-        path: '/add-store',
-        element: <AddStore/>
-    },
-    {
-        path: '/subscribers',
-        element: <Subscribers/>
-    },
-    {
-        path: '/rules',
-        element: <Rules/>,
-        additionalClass: 'page-main'
-    },
-    {
-        path: '/rules/:title',
-        element: <Rules/>,
-        additionalClass: 'page-main'
-    },
-    {
-        path: '*',
-        element: <NotFound/>,
-        isNotNeedHeader: true,
-        isNotNeedMessage: true,
-        isNotNeedMenu: true,
-        additionalClass: 'page-registration'
-    },
-]
+
+    return [
+    
+        {
+            path: '/LastFans',
+            element: <Main/>,
+            additionalClass: 'page-main'
+        },
+        {
+            path: '/',
+            element: !getCookies('access_token') ? <Login/> : <Main/>,
+            additionalClass: !getCookies('access_token') ? 'page-login' : 'page-main',
+            isNotNeedHeader: !getCookies('access_token'),
+            isNotNeedMessage: !getCookies('access_token'),
+            isNotNeedMenu: !getCookies('access_token'),
+        },
+        {
+            path: '/registration',
+            element: <Registration/>,
+            isNotNeedHeader: true,
+            isNotNeedMessage: true,
+            isNotNeedMenu: true,
+            additionalClass: 'page-registration'
+        },
+        {
+            path: '/login',
+            element: <Login/>,
+            isNotNeedHeader: true,
+            isNotNeedMessage: true,
+            isNotNeedMenu: true,
+            additionalClass: 'page-login'
+        },
+        {
+            path: '/forgot',
+            element: <ForgotPass/>,
+            isNotNeedHeader: true,
+            isNotNeedMessage: true,
+            isNotNeedMenu: true,
+            additionalClass: 'page-login'
+        },
+        {
+            path: '/live',
+            element: <LiveStream/>,
+            isNotNeedMessage: true
+        },
+        {
+            path: '/auto-message',
+            element: <AutoMessage/>
+        },
+        {
+            path: '/history',
+            element: <History/>
+        },
+        {
+            path: '/messages',
+            element: <Messages/>,
+            isNotNeedMessage: true,
+            additionalClass: 'messages-page'
+        },
+        {
+            path: '/messages/:userId',
+            element: <Messages/>,
+            isNotNeedMessage: true,
+            additionalClass: 'messages-page'
+        },
+        {
+            path: '/models',
+            element: <Models/>
+        },
+        {
+            path: '/payment',
+            element: <Payment/>
+        },
+        {
+            path: '/payment-add',
+            element: <PaymentAdd/>
+        },
+        {
+            path: '/profile',
+            element: <Profile/>,
+            additionalClass: 'page-profile-model'
+        },
+        {
+            path: '/profile/:userId',
+            element: <Profile/>,
+            additionalClass: 'page-profile-model'
+        },
+        {
+            path: '/my-profile',
+            element: <MyProfile/>
+        },
+        {
+            path: '/statistic',
+            element: <Statistic/>
+        },
+        {
+            path: '/video-store',
+            element: <VideoStore/>
+        },
+        {
+            path: '/add-store',
+            element: <AddStore/>
+        },
+        {
+            path: '/subscribers',
+            element: <Subscribers/>
+        },
+        {
+            path: '/rules',
+            element: <Rules/>,
+            additionalClass: 'page-main'
+        },
+        {
+            path: '/rules/:title',
+            element: <Rules/>,
+            additionalClass: 'page-main'
+        },
+        {
+            path: '*',
+            element: <NotFound/>,
+            isNotNeedHeader: true,
+            isNotNeedMessage: true,
+            isNotNeedMenu: true,
+            additionalClass: 'page-registration'
+        },
+    ]
+}

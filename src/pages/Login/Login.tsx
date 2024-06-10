@@ -6,6 +6,7 @@ import AppleIc from '../../assets/img/icons/apple.svg';
 import FacebookIc from '../../assets/img/icons/facebook.svg';
 import { NavLink, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
+import setCookie from '../../functions/setCookie';
 
 export const Login = () => {
     const [password, setPassword] = useState<string>("");
@@ -48,6 +49,8 @@ export const Login = () => {
         if (validateForm()) {
             resetForm();
             navigate('/');
+
+            setCookie('access_token', 'some')
         }
     };
 

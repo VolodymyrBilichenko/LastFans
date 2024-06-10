@@ -15,7 +15,7 @@ export const App = () => {
   const {handleOpenMenu, isOpenAsideMenu} = useOpenAside();
 
   const checkLocation = location.pathname.slice(0, location.pathname.indexOf('/',1) === -1 ? undefined : location.pathname.indexOf('/',1))
-  const currentPage = routes.filter(item => item.path === checkLocation || item.path === '*');
+  const currentPage = routes().filter(item => item.path === checkLocation || item.path === '*');
     
   return (
     <>
@@ -34,7 +34,7 @@ export const App = () => {
             timeout={300}
           >
             <Routes location={location}>
-              {routes.map((item: any) => (
+              {routes().map((item: any) => (
                 <Route
                   key={item.path}
                   element={item.element}
