@@ -2,9 +2,18 @@ import ProfilePh from '../../assets/img/user/profile-top.jpg'
 import UserPh from '../../assets/img/user/01.png'
 import MoneyIc from '../../assets/img/icons/money-white.svg'
 import SaleIc from '../../assets/img/icons/sale.svg'
+import { IUser } from '../../models'
+import { useSelector } from 'react-redux'
+import { useState } from 'react'
 
 
 export const MyProfile = () => {
+
+    const user: IUser = useSelector((state: any) => state.toolkit.user)
+
+    const [usernameValue, setUsernameValue] = useState<string>(user.username)
+    const [usertagValue, setUsertagValue] = useState<string>(user.usertag)
+
     return (
         <div className="profile">
             <div className="profile__container">
@@ -33,8 +42,8 @@ export const MyProfile = () => {
                                 </div>
                             </div>
                             <div className="body-profile__content content-body-profile">
-                                <input type="text" placeholder="Display name" className="content-body-profile__input input input-main"/>
-                                <input type="text" placeholder="Username" className="content-body-profile__input input input-main"/>
+                                <input type="text" value={usernameValue} onChange={e => setUsernameValue(e.target.value)} placeholder="Display name" className="content-body-profile__input input input-main"/>
+                                <input type="text" value={usertagValue} onChange={e => setUsertagValue(e.target.value)} placeholder="Username" className="content-body-profile__input input input-main"/>
                                 <textarea placeholder="About me" className="content-body-profile__about textarea"></textarea>
                             </div>
                             <div className="body-profile__subscription subscription-body-profile">

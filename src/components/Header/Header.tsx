@@ -11,6 +11,7 @@ import { useState } from 'react'
 import { Messages } from './components/Messages/Messages'
 import { Notifications } from './components/Notifications/Notifications'
 import { toast } from 'react-toastify'
+import setCookie from '../../functions/setCookie'
 
 interface IOpenMenu {
     handleOpenMenu?: any
@@ -235,7 +236,7 @@ export const Header = ({handleOpenMenu}: IOpenMenu) => {
                                                 </div>
                                                 <p className="link-menu-popup-user-header__text">Settings</p>
                                             </NavLink>
-                                            <NavLink to={'/login'} className="menu-popup-user-header__link link-menu-popup-user-header">
+                                            <NavLink to={'/login'} onClick={_ => setCookie('access_token', '')} className="menu-popup-user-header__link link-menu-popup-user-header">
                                                 <div className="link-menu-popup-user-header__image">
                                                     <img src={LogoutIc} alt="ph"/>
 

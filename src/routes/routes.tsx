@@ -100,8 +100,8 @@ export const routes = () => {
         },
         {
             path: '/profile',
-            element: <Profile/>,
-            additionalClass: 'page-profile-model'
+            element: <MyProfile/>,
+            additionalClass: 'page-profile'
         },
         {
             path: '/profile/:userId',
