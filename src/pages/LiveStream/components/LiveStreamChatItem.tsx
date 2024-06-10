@@ -40,7 +40,7 @@ export const LiveStreamChatItem: React.FC<ILiveStreamChatItemProps> = ({ user, m
                         </div>
                     </div>
                     <div className="chat-message__bottom">
-                        <p className="chat-message__edited">Edited</p>
+                        {/* <p className="chat-message__edited">Edited</p> */}
                         <div className={`chat-message__status status-message ${isRead ? 'read' : ''} ${isSend && !isRead ? 'done' : ''} `}>
                             <div className="status-message__icon status-message__icon--done">
                                 <svg width="12" height="9" viewBox="0 0 12 9" fill="none" xmlns="http://www.w3.org/2000/svg">
