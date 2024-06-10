@@ -90,7 +90,7 @@ export const PostItem: React.FC<IPostItemProps> = ({ user, date, message, images
     }
 
     return (
-        <div className="content-main__post post pin main__item locked">
+        <div className={`content-main__post post pin main__item ${user.sex === "man" ? "locked" : ""}`}>
             <div className="post__top top-post">
                 <div className="top-post__user user-item user-item--stories online">
                     <div className="user-item__image user-item__image--decoration">
@@ -163,14 +163,14 @@ export const PostItem: React.FC<IPostItemProps> = ({ user, date, message, images
                             images.map(item => (
                                 <a href={item} data-fancybox={`gallery-${date.getTime()}`} className="content-post__image gallery__image">
                                     <img src={item} alt="" className="ibg gallery__preview" />
-                                    <div className="content-post__image-unlock unlock">
+                                    {user.sex === "man" && <div className="content-post__image-unlock unlock">
                                         <div className="unlock__body">
                                             <div className="unlock__image">
                                                 <img src={lockLogo} alt="Icon" />
                                             </div>
                                             <NavLink to={`/profile/${user.usertag}`} className="unlock__button button button--fw"><span>Follow to unlock</span></NavLink>
                                         </div>
-                                    </div>
+                                    </div>}
                                 </a>
                             ))
                         }
