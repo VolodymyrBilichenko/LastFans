@@ -1,4 +1,5 @@
 import React, { SetStateAction } from 'react'
+import { NavLink } from 'react-router-dom'
 
 interface IVideoStoreFilterProps {
     isOpenFilter: boolean
@@ -252,12 +253,9 @@ export const VideoStoreFilter: React.FC<IVideoStoreFilterProps> = ({ isOpenFilte
                     <div className="block-filters-video-store__title">Followed</div>
 
                     <div className="followed-filters-video-store__items">
-                        <div className="user-item user-item--stories">
+                        <NavLink to="/profile" className="user-item user-item--stories">
                             <div className="user-item__image user-item__image--decoration">
-                                <img className="user-photo" src="@img/user/02.jpg" alt="User ph" />
-                                <div className="user-item__image-icon">
-                                    <img src="@img/icons/logo-white.svg" alt="ph" />
-                                </div>
+                                <img className="user-photo" src="https://goldenglobes.com/wp-content/uploads/2023/10/17-tomcruiseag.jpg" alt="User ph" />
                             </div>
                             <div className="user-item__body">
                                 <a href="some" className="user-item__name">Boob007</a>
@@ -269,13 +267,13 @@ export const VideoStoreFilter: React.FC<IVideoStoreFilterProps> = ({ isOpenFilte
                                     Online
                                 </span>
                             </div>
-                        </div>
-                        <div className="user-item">
+                        </NavLink>
+                        <NavLink to="/profile" className="user-item">
                             <div className="user-item__image user-item__image--decoration">
-                                <img className="user-photo" src="@img/user/02.jpg" alt="User ph" />
-                                <div className="user-item__image-icon">
+                                <img className="user-photo" src="https://goldenglobes.com/wp-content/uploads/2023/10/17-tomcruiseag.jpg" alt="User ph" />
+                                {/* <div className="user-item__image-icon">
                                     <img src="@img/icons/logo-white.svg" alt="ph" />
-                                </div>
+                                </div> */}
                             </div>
                             <div className="user-item__body">
                                 <a href="some" className="user-item__name">Boob007</a>
@@ -287,10 +285,10 @@ export const VideoStoreFilter: React.FC<IVideoStoreFilterProps> = ({ isOpenFilte
                                     Online
                                 </span>
                             </div>
-                        </div>
-                        <div className="user-item user-item--stories">
+                        </NavLink>
+                        <NavLink to="/profile" className="user-item user-item--stories">
                             <div className="user-item__image">
-                                <img className="user-photo" src="@img/user/02.jpg" alt="User ph" />
+                                <img className="user-photo" src="https://goldenglobes.com/wp-content/uploads/2023/10/17-tomcruiseag.jpg" alt="User ph" />
                                 <div className="user-item__image-icon">
                                     <img src="@img/icons/logo-white.svg" alt="ph" />
                                 </div>
@@ -305,7 +303,7 @@ export const VideoStoreFilter: React.FC<IVideoStoreFilterProps> = ({ isOpenFilte
                                     Online
                                 </span>
                             </div>
-                        </div>
+                        </NavLink>
                     </div>
                 </div>
             </div>
