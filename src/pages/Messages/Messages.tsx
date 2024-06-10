@@ -1,8 +1,8 @@
 // import PostPh from '../../assets/img/post/01.jpg'
 import UserPh from '../../assets/img/user/01.png'
-import UserPh2 from '../../assets/img/user/02.jpg'
+// import UserPh2 from '../../assets/img/user/02.jpg'
 import UserBgPh from '../../assets/img/user/bg.jpg'
-import LogoWhiteIc from '../../assets/img/icons/logo-white.svg'
+// import LogoWhiteIc from '../../assets/img/icons/logo-white.svg'
 // import MessageIc from '../../assets/img/icons/user-menu/message.svg'
 import ImageIc from '../../assets/img/icons/image.svg'
 // import VideoIc from '../../assets/img/icons/video.svg'
@@ -18,6 +18,7 @@ import BlockedUserIc from '../../assets/img/icons/blocked-user.svg'
 import { useState } from 'react'
 import { Chat } from './components/Chat/Chat'
 import { toast } from 'react-toastify'
+import { AsideMessagesItem } from '../../components/AsideMessages/components/AsideMessagesItem'
 
 export const Messages = () => {
 
@@ -28,6 +29,10 @@ export const Messages = () => {
 
         setChatTheme(theme)
     }
+
+    const handleInDevelop = () => {
+		toast.error('This element in the development')
+	}
     
     return (
         <div className="main-block">
@@ -83,7 +88,7 @@ export const Messages = () => {
                                     </div>
                                 </div>
                             </div>
-                            <div className="groups__item item-groups groups__slide ">
+                            <div onClick={handleInDevelop} className="groups__item item-groups groups__slide ">
                                 <div className="item-groups__body">
                                     <p className="item-groups__name">Нищие</p>
                                     <div className="item-groups__people">
@@ -108,7 +113,7 @@ export const Messages = () => {
                                     </div>
                                 </div>
                             </div>
-                            <div className="groups__item item-groups groups__slide ">
+                            <div onClick={handleInDevelop} className="groups__item item-groups groups__slide ">
                                 <div className="item-groups__body">
                                     <p className="item-groups__name">Адекваты</p>
                                     <div className="item-groups__people">
@@ -141,435 +146,31 @@ export const Messages = () => {
                     <div className="body-messages__content">
 
                         <div className="body-messages__items">
-                            <div className="body-messages__item item-message"> 
-                                <p className="user-item__value">$<span>3121.2</span></p>
-                                <div className="item-message__block">
-                                    <div className="item-message__user user-item user-item--stories">
-                                        <div className="user-item__image user-item__image--decoration">
-                                            <img className="user-photo" src={UserPh2} alt="User ph"/>
-                                            <div className="user-item__image-icon">
-                                                <img src={LogoWhiteIc} alt="ph"/>
-                                            </div>
-                                        </div>
-                                        <div className="user-item__body">
-                                            <a href="some" className="user-item__name">Boob007</a>
-                                            <span className="user-item__status online">
-                                                <svg className="online-status" width="8" height="9" viewBox="0 0 8 9" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                    <circle cx="4" cy="4.5" r="4" fill="#3DD598" />
-                                                </svg>
-                                                    
-                                                Online
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div className="top-body-messages__actions actions field">
-                                        <svg width="21" height="6" viewBox="0 0 21 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M15.8569 3.00003C15.8569 4.1835 16.8163 5.14289 17.9997 5.14289C19.1832 5.14289 20.1426 4.1835 20.1426 3.00003C20.1426 1.81657 19.1832 0.857178 17.9997 0.857178C16.8163 0.857178 15.8569 1.81657 15.8569 3.00003Z" fill="#93989A" />
-                                            <path d="M7.99944 3.00003C7.99944 4.1835 8.95883 5.14289 10.1423 5.14289C11.3258 5.14289 12.2852 4.1835 12.2852 3.00003C12.2852 1.81657 11.3258 0.857178 10.1423 0.857178C8.95883 0.857178 7.99944 1.81657 7.99944 3.00003Z" fill="#93989A" />
-                                            <path d="M0.142997 3.00003C0.142997 4.1835 1.10239 5.14289 2.28585 5.14289C3.46932 5.14289 4.42871 4.1835 4.42871 3.00003C4.42871 1.81657 3.46932 0.857178 2.28585 0.857178C1.10239 0.857178 0.142997 1.81657 0.142997 3.00003Z" fill="#93989A" />
-                                        </svg>
-                                        <div className="actions__popup popup-actions">
-                                            <div className="popup-actions__wrapper">
-                                                <div className="popup-actions__content">
-                                                    <div className="popup-actions__body body-popup-actions">
-                                                        <a href="some" data-popup="#popup-mass-message" className="body-popup-actions__item mass">Mass message</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="body-messages__item item-message"> 
-                                <p className="user-item__value">$<span>3121.2</span></p>
-                                <div className="item-message__block">
-                                    <div className="item-message__user user-item user-item--stories">
-                                        <div className="user-item__image user-item__image--decoration">
-                                            <img className="user-photo" src={UserPh2} alt="User ph"/>
-                                            <div className="user-item__image-icon">
-                                                <img src={LogoWhiteIc} alt="ph"/>
-                                            </div>
-                                        </div>
-                                        <div className="user-item__body">
-                                            <a href="some" className="user-item__name">Boob007</a>
-                                            <span className="user-item__status online">
-                                                <svg className="online-status" width="8" height="9" viewBox="0 0 8 9" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                    <circle cx="4" cy="4.5" r="4" fill="#3DD598" />
-                                                </svg>
-                                                    
-                                                Online
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div className="top-body-messages__actions actions field">
-                                        <svg width="21" height="6" viewBox="0 0 21 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M15.8569 3.00003C15.8569 4.1835 16.8163 5.14289 17.9997 5.14289C19.1832 5.14289 20.1426 4.1835 20.1426 3.00003C20.1426 1.81657 19.1832 0.857178 17.9997 0.857178C16.8163 0.857178 15.8569 1.81657 15.8569 3.00003Z" fill="#93989A" />
-                                            <path d="M7.99944 3.00003C7.99944 4.1835 8.95883 5.14289 10.1423 5.14289C11.3258 5.14289 12.2852 4.1835 12.2852 3.00003C12.2852 1.81657 11.3258 0.857178 10.1423 0.857178C8.95883 0.857178 7.99944 1.81657 7.99944 3.00003Z" fill="#93989A" />
-                                            <path d="M0.142997 3.00003C0.142997 4.1835 1.10239 5.14289 2.28585 5.14289C3.46932 5.14289 4.42871 4.1835 4.42871 3.00003C4.42871 1.81657 3.46932 0.857178 2.28585 0.857178C1.10239 0.857178 0.142997 1.81657 0.142997 3.00003Z" fill="#93989A" />
-                                        </svg>
-                                        <div className="actions__popup popup-actions">
-                                            <div className="popup-actions__wrapper">
-                                                <div className="popup-actions__content">
-                                                    <div className="popup-actions__body body-popup-actions">
-                                                        <a href="some" className="body-popup-actions__item mass">Mass message</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="body-messages__item item-message"> 
-                                <p className="user-item__value">$<span>3121.2</span></p>
-                                <div className="item-message__block">
-                                    <div className="item-message__user user-item user-item--stories">
-                                        <div className="user-item__image user-item__image--decoration">
-                                            <img className="user-photo" src={UserPh2} alt="User ph"/>
-                                            <div className="user-item__image-icon">
-                                                <img src={LogoWhiteIc} alt="ph"/>
-                                            </div>
-                                        </div>
-                                        <div className="user-item__body">
-                                            <a href="some" className="user-item__name">Boob007</a>
-                                            <span className="user-item__status online">
-                                                <svg className="online-status" width="8" height="9" viewBox="0 0 8 9" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                    <circle cx="4" cy="4.5" r="4" fill="#3DD598" />
-                                                </svg>
-                                                    
-                                                Online
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div className="top-body-messages__actions actions field">
-                                        <svg width="21" height="6" viewBox="0 0 21 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M15.8569 3.00003C15.8569 4.1835 16.8163 5.14289 17.9997 5.14289C19.1832 5.14289 20.1426 4.1835 20.1426 3.00003C20.1426 1.81657 19.1832 0.857178 17.9997 0.857178C16.8163 0.857178 15.8569 1.81657 15.8569 3.00003Z" fill="#93989A" />
-                                            <path d="M7.99944 3.00003C7.99944 4.1835 8.95883 5.14289 10.1423 5.14289C11.3258 5.14289 12.2852 4.1835 12.2852 3.00003C12.2852 1.81657 11.3258 0.857178 10.1423 0.857178C8.95883 0.857178 7.99944 1.81657 7.99944 3.00003Z" fill="#93989A" />
-                                            <path d="M0.142997 3.00003C0.142997 4.1835 1.10239 5.14289 2.28585 5.14289C3.46932 5.14289 4.42871 4.1835 4.42871 3.00003C4.42871 1.81657 3.46932 0.857178 2.28585 0.857178C1.10239 0.857178 0.142997 1.81657 0.142997 3.00003Z" fill="#93989A" />
-                                        </svg>
-                                        <div className="actions__popup popup-actions">
-                                            <div className="popup-actions__wrapper">
-                                                <div className="popup-actions__content">
-                                                    <div className="popup-actions__body body-popup-actions">
-                                                        <a href="some" className="body-popup-actions__item mass">Mass message</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="body-messages__item item-message"> 
-                                <p className="user-item__value">$<span>3121.2</span></p>
-                                <div className="item-message__block">
-                                    <div className="item-message__user user-item user-item--stories">
-                                        <div className="user-item__image user-item__image--decoration">
-                                            <img className="user-photo" src={UserPh2} alt="User ph"/>
-                                            <div className="user-item__image-icon">
-                                                <img src={LogoWhiteIc} alt="ph"/>
-                                            </div>
-                                        </div>
-                                        <div className="user-item__body">
-                                            <a href="some" className="user-item__name">Boob007</a>
-                                            <span className="user-item__status online">
-                                                <svg className="online-status" width="8" height="9" viewBox="0 0 8 9" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                    <circle cx="4" cy="4.5" r="4" fill="#3DD598" />
-                                                </svg>
-                                                    
-                                                Online
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div className="top-body-messages__actions actions field">
-                                        <svg width="21" height="6" viewBox="0 0 21 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M15.8569 3.00003C15.8569 4.1835 16.8163 5.14289 17.9997 5.14289C19.1832 5.14289 20.1426 4.1835 20.1426 3.00003C20.1426 1.81657 19.1832 0.857178 17.9997 0.857178C16.8163 0.857178 15.8569 1.81657 15.8569 3.00003Z" fill="#93989A" />
-                                            <path d="M7.99944 3.00003C7.99944 4.1835 8.95883 5.14289 10.1423 5.14289C11.3258 5.14289 12.2852 4.1835 12.2852 3.00003C12.2852 1.81657 11.3258 0.857178 10.1423 0.857178C8.95883 0.857178 7.99944 1.81657 7.99944 3.00003Z" fill="#93989A" />
-                                            <path d="M0.142997 3.00003C0.142997 4.1835 1.10239 5.14289 2.28585 5.14289C3.46932 5.14289 4.42871 4.1835 4.42871 3.00003C4.42871 1.81657 3.46932 0.857178 2.28585 0.857178C1.10239 0.857178 0.142997 1.81657 0.142997 3.00003Z" fill="#93989A" />
-                                        </svg>
-                                        <div className="actions__popup popup-actions">
-                                            <div className="popup-actions__wrapper">
-                                                <div className="popup-actions__content">
-                                                    <div className="popup-actions__body body-popup-actions">
-                                                        <a href="some" className="body-popup-actions__item mass">Mass message</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="body-messages__item item-message"> 
-                                <p className="user-item__value">$<span>3121.2</span></p>
-                                <div className="item-message__block">
-                                    <div className="item-message__user user-item user-item--stories">
-                                        <div className="user-item__image user-item__image--decoration">
-                                            <img className="user-photo" src={UserPh2} alt="User ph"/>
-                                            <div className="user-item__image-icon">
-                                                <img src={LogoWhiteIc} alt="ph"/>
-                                            </div>
-                                        </div>
-                                        <div className="user-item__body">
-                                            <a href="some" className="user-item__name">Boob007</a>
-                                            <span className="user-item__status online">
-                                                <svg className="online-status" width="8" height="9" viewBox="0 0 8 9" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                    <circle cx="4" cy="4.5" r="4" fill="#3DD598" />
-                                                </svg>
-                                                    
-                                                Online
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div className="top-body-messages__actions actions field">
-                                        <svg width="21" height="6" viewBox="0 0 21 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M15.8569 3.00003C15.8569 4.1835 16.8163 5.14289 17.9997 5.14289C19.1832 5.14289 20.1426 4.1835 20.1426 3.00003C20.1426 1.81657 19.1832 0.857178 17.9997 0.857178C16.8163 0.857178 15.8569 1.81657 15.8569 3.00003Z" fill="#93989A" />
-                                            <path d="M7.99944 3.00003C7.99944 4.1835 8.95883 5.14289 10.1423 5.14289C11.3258 5.14289 12.2852 4.1835 12.2852 3.00003C12.2852 1.81657 11.3258 0.857178 10.1423 0.857178C8.95883 0.857178 7.99944 1.81657 7.99944 3.00003Z" fill="#93989A" />
-                                            <path d="M0.142997 3.00003C0.142997 4.1835 1.10239 5.14289 2.28585 5.14289C3.46932 5.14289 4.42871 4.1835 4.42871 3.00003C4.42871 1.81657 3.46932 0.857178 2.28585 0.857178C1.10239 0.857178 0.142997 1.81657 0.142997 3.00003Z" fill="#93989A" />
-                                        </svg>
-                                        <div className="actions__popup popup-actions">
-                                            <div className="popup-actions__wrapper">
-                                                <div className="popup-actions__content">
-                                                    <div className="popup-actions__body body-popup-actions">
-                                                        <a href="some" className="body-popup-actions__item mass">Mass message</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="body-messages__item item-message"> 
-                                <p className="user-item__value">$<span>3121.2</span></p>
-                                <div className="item-message__block">
-                                    <div className="item-message__user user-item user-item--stories">
-                                        <div className="user-item__image user-item__image--decoration">
-                                            <img className="user-photo" src={UserPh2} alt="User ph"/>
-                                            <div className="user-item__image-icon">
-                                                <img src={LogoWhiteIc} alt="ph"/>
-                                            </div>
-                                        </div>
-                                        <div className="user-item__body">
-                                            <a href="some" className="user-item__name">Boob007</a>
-                                            <span className="user-item__status online">
-                                                <svg className="online-status" width="8" height="9" viewBox="0 0 8 9" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                    <circle cx="4" cy="4.5" r="4" fill="#3DD598" />
-                                                </svg>
-                                                    
-                                                Online
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div className="top-body-messages__actions actions field">
-                                        <svg width="21" height="6" viewBox="0 0 21 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M15.8569 3.00003C15.8569 4.1835 16.8163 5.14289 17.9997 5.14289C19.1832 5.14289 20.1426 4.1835 20.1426 3.00003C20.1426 1.81657 19.1832 0.857178 17.9997 0.857178C16.8163 0.857178 15.8569 1.81657 15.8569 3.00003Z" fill="#93989A" />
-                                            <path d="M7.99944 3.00003C7.99944 4.1835 8.95883 5.14289 10.1423 5.14289C11.3258 5.14289 12.2852 4.1835 12.2852 3.00003C12.2852 1.81657 11.3258 0.857178 10.1423 0.857178C8.95883 0.857178 7.99944 1.81657 7.99944 3.00003Z" fill="#93989A" />
-                                            <path d="M0.142997 3.00003C0.142997 4.1835 1.10239 5.14289 2.28585 5.14289C3.46932 5.14289 4.42871 4.1835 4.42871 3.00003C4.42871 1.81657 3.46932 0.857178 2.28585 0.857178C1.10239 0.857178 0.142997 1.81657 0.142997 3.00003Z" fill="#93989A" />
-                                        </svg>
-                                        <div className="actions__popup popup-actions">
-                                            <div className="popup-actions__wrapper">
-                                                <div className="popup-actions__content">
-                                                    <div className="popup-actions__body body-popup-actions">
-                                                        <a href="some" className="body-popup-actions__item mass">Mass message</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="body-messages__item item-message"> 
-                                <p className="user-item__value">$<span>3121.2</span></p>
-                                <div className="item-message__block">
-                                    <div className="item-message__user user-item user-item--stories">
-                                        <div className="user-item__image user-item__image--decoration">
-                                            <img className="user-photo" src={UserPh2} alt="User ph"/>
-                                            <div className="user-item__image-icon">
-                                                <img src={LogoWhiteIc} alt="ph"/>
-                                            </div>
-                                        </div>
-                                        <div className="user-item__body">
-                                            <a href="some" className="user-item__name">Boob007</a>
-                                            <span className="user-item__status online">
-                                                <svg className="online-status" width="8" height="9" viewBox="0 0 8 9" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                    <circle cx="4" cy="4.5" r="4" fill="#3DD598" />
-                                                </svg>
-                                                    
-                                                Online
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div className="top-body-messages__actions actions field">
-                                        <svg width="21" height="6" viewBox="0 0 21 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M15.8569 3.00003C15.8569 4.1835 16.8163 5.14289 17.9997 5.14289C19.1832 5.14289 20.1426 4.1835 20.1426 3.00003C20.1426 1.81657 19.1832 0.857178 17.9997 0.857178C16.8163 0.857178 15.8569 1.81657 15.8569 3.00003Z" fill="#93989A" />
-                                            <path d="M7.99944 3.00003C7.99944 4.1835 8.95883 5.14289 10.1423 5.14289C11.3258 5.14289 12.2852 4.1835 12.2852 3.00003C12.2852 1.81657 11.3258 0.857178 10.1423 0.857178C8.95883 0.857178 7.99944 1.81657 7.99944 3.00003Z" fill="#93989A" />
-                                            <path d="M0.142997 3.00003C0.142997 4.1835 1.10239 5.14289 2.28585 5.14289C3.46932 5.14289 4.42871 4.1835 4.42871 3.00003C4.42871 1.81657 3.46932 0.857178 2.28585 0.857178C1.10239 0.857178 0.142997 1.81657 0.142997 3.00003Z" fill="#93989A" />
-                                        </svg>
-                                        <div className="actions__popup popup-actions">
-                                            <div className="popup-actions__wrapper">
-                                                <div className="popup-actions__content">
-                                                    <div className="popup-actions__body body-popup-actions">
-                                                        <a href="some" className="body-popup-actions__item mass">Mass message</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="body-messages__item item-message"> 
-                                <p className="user-item__value">$<span>3121.2</span></p>
-                                <div className="item-message__block">
-                                    <div className="item-message__user user-item user-item--stories">
-                                        <div className="user-item__image user-item__image--decoration">
-                                            <img className="user-photo" src={UserPh2} alt="User ph"/>
-                                            <div className="user-item__image-icon">
-                                                <img src={LogoWhiteIc} alt="ph"/>
-                                            </div>
-                                        </div>
-                                        <div className="user-item__body">
-                                            <a href="some" className="user-item__name">Boob007</a>
-                                            <span className="user-item__status online">
-                                                <svg className="online-status" width="8" height="9" viewBox="0 0 8 9" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                    <circle cx="4" cy="4.5" r="4" fill="#3DD598" />
-                                                </svg>
-                                                    
-                                                Online
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div className="top-body-messages__actions actions field">
-                                        <svg width="21" height="6" viewBox="0 0 21 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M15.8569 3.00003C15.8569 4.1835 16.8163 5.14289 17.9997 5.14289C19.1832 5.14289 20.1426 4.1835 20.1426 3.00003C20.1426 1.81657 19.1832 0.857178 17.9997 0.857178C16.8163 0.857178 15.8569 1.81657 15.8569 3.00003Z" fill="#93989A" />
-                                            <path d="M7.99944 3.00003C7.99944 4.1835 8.95883 5.14289 10.1423 5.14289C11.3258 5.14289 12.2852 4.1835 12.2852 3.00003C12.2852 1.81657 11.3258 0.857178 10.1423 0.857178C8.95883 0.857178 7.99944 1.81657 7.99944 3.00003Z" fill="#93989A" />
-                                            <path d="M0.142997 3.00003C0.142997 4.1835 1.10239 5.14289 2.28585 5.14289C3.46932 5.14289 4.42871 4.1835 4.42871 3.00003C4.42871 1.81657 3.46932 0.857178 2.28585 0.857178C1.10239 0.857178 0.142997 1.81657 0.142997 3.00003Z" fill="#93989A" />
-                                        </svg>
-                                        <div className="actions__popup popup-actions">
-                                            <div className="popup-actions__wrapper">
-                                                <div className="popup-actions__content">
-                                                    <div className="popup-actions__body body-popup-actions">
-                                                        <a href="some" className="body-popup-actions__item mass">Mass message</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="body-messages__item item-message"> 
-                                <p className="user-item__value">$<span>3121.2</span></p>
-                                <div className="item-message__block">
-                                    <div className="item-message__user user-item user-item--stories">
-                                        <div className="user-item__image user-item__image--decoration">
-                                            <img className="user-photo" src={UserPh2} alt="User ph"/>
-                                            <div className="user-item__image-icon">
-                                                <img src={LogoWhiteIc} alt="ph"/>
-                                            </div>
-                                        </div>
-                                        <div className="user-item__body">
-                                            <a href="some" className="user-item__name">Boob007</a>
-                                            <span className="user-item__status online">
-                                                <svg className="online-status" width="8" height="9" viewBox="0 0 8 9" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                    <circle cx="4" cy="4.5" r="4" fill="#3DD598" />
-                                                </svg>
-                                                    
-                                                Online
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div className="top-body-messages__actions actions field">
-                                        <svg width="21" height="6" viewBox="0 0 21 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M15.8569 3.00003C15.8569 4.1835 16.8163 5.14289 17.9997 5.14289C19.1832 5.14289 20.1426 4.1835 20.1426 3.00003C20.1426 1.81657 19.1832 0.857178 17.9997 0.857178C16.8163 0.857178 15.8569 1.81657 15.8569 3.00003Z" fill="#93989A" />
-                                            <path d="M7.99944 3.00003C7.99944 4.1835 8.95883 5.14289 10.1423 5.14289C11.3258 5.14289 12.2852 4.1835 12.2852 3.00003C12.2852 1.81657 11.3258 0.857178 10.1423 0.857178C8.95883 0.857178 7.99944 1.81657 7.99944 3.00003Z" fill="#93989A" />
-                                            <path d="M0.142997 3.00003C0.142997 4.1835 1.10239 5.14289 2.28585 5.14289C3.46932 5.14289 4.42871 4.1835 4.42871 3.00003C4.42871 1.81657 3.46932 0.857178 2.28585 0.857178C1.10239 0.857178 0.142997 1.81657 0.142997 3.00003Z" fill="#93989A" />
-                                        </svg>
-                                        <div className="actions__popup popup-actions">
-                                            <div className="popup-actions__wrapper">
-                                                <div className="popup-actions__content">
-                                                    <div className="popup-actions__body body-popup-actions">
-                                                        <a href="some" className="body-popup-actions__item mass">Mass message</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="body-messages__item item-message"> 
-                                <p className="user-item__value">$<span>3121.2</span></p>
-                                <div className="item-message__block">
-                                    <div className="item-message__user user-item user-item--stories">
-                                        <div className="user-item__image user-item__image--decoration">
-                                            <img className="user-photo" src={UserPh2} alt="User ph"/>
-                                            <div className="user-item__image-icon">
-                                                <img src={LogoWhiteIc} alt="ph"/>
-                                            </div>
-                                        </div>
-                                        <div className="user-item__body">
-                                            <a href="some" className="user-item__name">Boob007</a>
-                                            <span className="user-item__status online">
-                                                <svg className="online-status" width="8" height="9" viewBox="0 0 8 9" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                    <circle cx="4" cy="4.5" r="4" fill="#3DD598" />
-                                                </svg>
-                                                    
-                                                Online
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div className="top-body-messages__actions actions field">
-                                        <svg width="21" height="6" viewBox="0 0 21 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M15.8569 3.00003C15.8569 4.1835 16.8163 5.14289 17.9997 5.14289C19.1832 5.14289 20.1426 4.1835 20.1426 3.00003C20.1426 1.81657 19.1832 0.857178 17.9997 0.857178C16.8163 0.857178 15.8569 1.81657 15.8569 3.00003Z" fill="#93989A" />
-                                            <path d="M7.99944 3.00003C7.99944 4.1835 8.95883 5.14289 10.1423 5.14289C11.3258 5.14289 12.2852 4.1835 12.2852 3.00003C12.2852 1.81657 11.3258 0.857178 10.1423 0.857178C8.95883 0.857178 7.99944 1.81657 7.99944 3.00003Z" fill="#93989A" />
-                                            <path d="M0.142997 3.00003C0.142997 4.1835 1.10239 5.14289 2.28585 5.14289C3.46932 5.14289 4.42871 4.1835 4.42871 3.00003C4.42871 1.81657 3.46932 0.857178 2.28585 0.857178C1.10239 0.857178 0.142997 1.81657 0.142997 3.00003Z" fill="#93989A" />
-                                        </svg>
-                                        <div className="actions__popup popup-actions">
-                                            <div className="popup-actions__wrapper">
-                                                <div className="popup-actions__content">
-                                                    <div className="popup-actions__body body-popup-actions">
-                                                        <a href="some" className="body-popup-actions__item mass">Mass message</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="body-messages__item item-message"> 
-                                <p className="user-item__value">$<span>3121.2</span></p>
-                                <div className="item-message__block">
-                                    <div className="item-message__user user-item user-item--stories">
-                                        <div className="user-item__image user-item__image--decoration">
-                                            <img className="user-photo" src={UserPh2} alt="User ph"/>
-                                            <div className="user-item__image-icon">
-                                                <img src={LogoWhiteIc} alt="ph"/>
-                                            </div>
-                                        </div>
-                                        <div className="user-item__body">
-                                            <a href="some" className="user-item__name">Boob007</a>
-                                            <span className="user-item__status online">
-                                                <svg className="online-status" width="8" height="9" viewBox="0 0 8 9" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                    <circle cx="4" cy="4.5" r="4" fill="#3DD598" />
-                                                </svg>
-                                                    
-                                                Online
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div className="top-body-messages__actions actions field">
-                                        <svg width="21" height="6" viewBox="0 0 21 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M15.8569 3.00003C15.8569 4.1835 16.8163 5.14289 17.9997 5.14289C19.1832 5.14289 20.1426 4.1835 20.1426 3.00003C20.1426 1.81657 19.1832 0.857178 17.9997 0.857178C16.8163 0.857178 15.8569 1.81657 15.8569 3.00003Z" fill="#93989A" />
-                                            <path d="M7.99944 3.00003C7.99944 4.1835 8.95883 5.14289 10.1423 5.14289C11.3258 5.14289 12.2852 4.1835 12.2852 3.00003C12.2852 1.81657 11.3258 0.857178 10.1423 0.857178C8.95883 0.857178 7.99944 1.81657 7.99944 3.00003Z" fill="#93989A" />
-                                            <path d="M0.142997 3.00003C0.142997 4.1835 1.10239 5.14289 2.28585 5.14289C3.46932 5.14289 4.42871 4.1835 4.42871 3.00003C4.42871 1.81657 3.46932 0.857178 2.28585 0.857178C1.10239 0.857178 0.142997 1.81657 0.142997 3.00003Z" fill="#93989A" />
-                                        </svg>
-                                        <div className="actions__popup popup-actions">
-                                            <div className="popup-actions__wrapper">
-                                                <div className="popup-actions__content">
-                                                    <div className="popup-actions__body body-popup-actions">
-                                                        <a href="some" className="body-popup-actions__item mass">Mass message</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+
+                            <AsideMessagesItem
+                                user={{
+                                    username: "Tomik",
+                                    usertag: "@tommm",
+                                    photo: 'https://goldenglobes.com/wp-content/uploads/2023/10/17-tomcruiseag.jpg'
+                                }}
+                                isOnline={true}
+                            />
+                            <AsideMessagesItem
+                                user={{
+                                    username: "Robertik",
+                                    usertag: "@robbb",
+                                    photo: 'https://ca-times.brightspotcdn.com/dims4/default/4c31853/2147483647/strip/false/crop/3000x2000+0+0/resize/1486x991!/quality/75/?url=https%3A%2F%2Fcalifornia-times-brightspot.s3.amazonaws.com%2Ff6%2Ff2%2Fada36e394ddeaa69bf4706fd378a%2Firon-man-robert-downey-jr.jpg'
+                                }}
+                                isOnline={true}
+                            />
+                            <AsideMessagesItem
+                                user={{
+                                    username: "Danilyok",
+                                    usertag: "@dan",
+                                    photo: 'https://www.okino.ua/media/var/cache/a0/1d/a01d08309b6f5ed71c78c393033b7c19.jpg'
+                                }}
+                                isOnline={true}
+                            />
                         </div>
 
                     </div>

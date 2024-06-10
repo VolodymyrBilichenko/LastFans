@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import UserPhoto2 from './../../../assets/img/user/02.jpg'
+// import UserPhoto2 from './../../../assets/img/user/02.jpg'
 import LogoWhiteIc from './../../../assets/img/icons/logo-white.svg'
 import { IUser } from '../../../models'
 

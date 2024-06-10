@@ -14,8 +14,13 @@ import LiveIc from '../../assets/img/icons/live.svg'
 import { Highlights } from '../../components/Highlights/Highlights'
 import { NavLink } from 'react-router-dom'
 import { PostItem } from './components/PostItem'
+import { toast } from 'react-toastify'
 
 export const Main = () => {
+
+	const handleInDevelop = () => {
+		toast.error('This element in the development')
+	}
 	
 	return (
 		<div className="main">
@@ -54,7 +59,7 @@ export const Main = () => {
 				</div>
 				<div className="main__stories stories-main">
 					<div className="stories-main__content">
-						<div className="stories-main__item add-story">
+						<NavLink to={''} onClick={handleInDevelop} className="stories-main__item add-story">
 							<div className="add-story__image">
 								<img src={StoryPh} alt="ph" />
 							</div>
@@ -62,7 +67,7 @@ export const Main = () => {
 								<img src={PlusIc} alt="Icon" />
 								<p>Add story</p>
 							</div>
-						</div>
+						</NavLink>
 						<NavLink to={'/live'} className="stories-main__item live-stories-main">
 							<div className="live-stories-main__text">
 								<img src={LiveIc} alt="Icon" />
