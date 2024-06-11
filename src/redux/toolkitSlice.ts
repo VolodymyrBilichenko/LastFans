@@ -11,8 +11,8 @@ const toolkitSlice = createSlice({
         setUser(state: any, action: {payload: IUser}) {
             state.user = action.payload
         },
-        addModal(state: any, action: any) {
-            state.modals = action.payload
+        addModal(state: any, action: {payload: string}) {
+            state.modals = [...state.modals, action.payload]
         }
 
     }
@@ -22,5 +22,6 @@ export default toolkitSlice.reducer;
 export const {
 
     setUser,
+    addModal,
 
 } = toolkitSlice.actions;

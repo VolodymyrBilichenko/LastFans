@@ -110,7 +110,8 @@ export const routes = () => {
         },
         {
             path: '/my-profile',
-            element: <MyProfile/>
+            element: <MyProfile/>,
+            additionalClass: 'page-profile'
         },
         {
             path: '/statistic',

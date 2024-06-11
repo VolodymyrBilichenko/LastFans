@@ -49,11 +49,11 @@ export const ChatItem: React.FC<IChatItemProps> = ({ isOwner, isEdited, message,
                                 {message}
                             </p>
 
-                            {images?.length && <div  data-gallery="true" className="content-post__images gallery">
+                            {images?.length && <div data-gallery="true" className="content-post__images gallery">
 
                                 {
                                     images.map(item => (
-                                        <a href={item} data-fancybox="gallery" className="content-post__image gallery__image">
+                                        <a href={item} data-fancybox={`gallery-${id}`} className="content-post__image gallery__image">
                                             <img src={item} alt="ph" className="ibg gallery__preview" />
                                         </a>
                                     ))

@@ -4,8 +4,9 @@ import { useState } from 'react'
 import { VideoStoreFilter } from './components/VideoStoreFilter'
 import { VideoStoreItem } from './components/VideoStoreItem'
 import { IUser } from '../../models'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { toast } from 'react-toastify'
+import { addModal } from '../../redux/toolkitSlice'
 
 export const VideoStore = () => {
 
@@ -13,6 +14,7 @@ export const VideoStore = () => {
 
     const [isOpenFilter, setIsOpenFilter] = useState<boolean>(false)
     const [searchValue, setSearchValue] = useState<string>('')
+
     const [mockVideo] = useState([
         {
             title: "Emma yellow dress",
@@ -42,6 +44,12 @@ export const VideoStore = () => {
         },
     ])
 
+    const dispatch = useDispatch();
+
+    const handleAddVideo = () => {
+        dispatch(addModal('addVideo'))
+    }
+
     return (
         <div className="video-store">
 
@@ -55,7 +63,7 @@ export const VideoStore = () => {
                     <div className="header-video-store__search">
                         <input type="text" name="form[]" value={searchValue} onChange={e => setSearchValue(e.target.value)} placeholder="Type search here" className="header-video-store__input input" />
                     </div>
-                    {user.sex === "woman" && <button onClick={_ => toast.error('This modal is developing')} className="header-video-store__add button"><span>Add video to my store</span></button>}
+                    {user.sex === "woman" && <button onClick={handleAddVideo} className="header-video-store__add button"><span>Add video to my store</span></button>}
                     {user.sex === "man" && <div className="header-video-store__block">
                         <button onClick={_ => setIsOpenFilter(prev => !prev)} className="header-video-store__filter button button--transparent">
                             <span>Filters</span>
