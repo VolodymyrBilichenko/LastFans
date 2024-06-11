@@ -444,9 +444,11 @@
         padding: toRem(8) 0;
         display: flex;
         align-items: center;
-        outline: none;
-        border: 1px solid var(--blue);
+        outline: 1px solid var(--blue);
+        transition: none
+        
     }
+    
     // .field-block-add-vid__title
     &__title {
         @include adaptiveValue("font-size", 15, 14);
@@ -472,14 +474,14 @@
     &__body {
         position: absolute;
 
-        top: calc(100% - 10px);
-        left: -0.8px;
-        width: calc(100% + 1.6px);
+        top: 100%;
+        left: 0;
+        width: 100%;
         padding: toRem(10) 0;
         display: grid;
         gap: toRem(10);
         text-align: center;
-        border: 1px solid var(--blue);
+        outline: 1px solid var(--blue);
         border-top: none;
         background-color: var(--secondary);
         z-index: 20;
@@ -501,6 +503,9 @@
     }
 }
 
+.field-block-add-vid__item[open]{
+    border-radius: 12px 12px 0 0;
+}
 // =============================================================================================================
 
 .page-profile-man{
