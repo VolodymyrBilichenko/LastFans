@@ -98,6 +98,18 @@
         position: relative;
         align-self: flex-end;
         z-index: 2;
+        // .user-item__name
+        .user-item__name {
+            @include adaptiveValue("font-size", 16, 12);
+            text-shadow: 0px 0px 4px #000000C9;
+
+        }
+        .user-item__username{
+            @include adaptiveValue("font-size", 16, 12);
+            text-shadow: 0px 0px 4px #000000C9;
+
+
+        }
     }
     .user-item {
         // .user-item__body
@@ -114,11 +126,9 @@
         // .user-item__name
         &__name {
             @include adaptiveValue("font-size", 16, 12);
-
         }
         &__username{
             @include adaptiveValue("font-size", 16, 12);
-
         }
     }
 }
