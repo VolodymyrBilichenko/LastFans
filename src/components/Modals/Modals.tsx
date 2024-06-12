@@ -3,6 +3,7 @@ import { ModalAddVid } from "./components/ModalAddVid"
 import { ModalCreateGroup } from "./components/ModalCreateGroup"
 import { ReactElement } from "react"
 import { removeModal } from "../../redux/toolkitSlice"
+import { ModalAddUserGroup } from "./components/ModalAddUserGroup"
 
 export const Modals = () => {
     const dispatch = useDispatch();
@@ -12,6 +13,7 @@ export const Modals = () => {
     const modalComponents: {[key: string]: ReactElement} = {
         'addVideo': <ModalAddVid/>,
         'createGroup': <ModalCreateGroup/>,
+        'addUserGroup': <ModalAddUserGroup/>,
     }
 
     const handleCloseModal = (modalName: string) => {

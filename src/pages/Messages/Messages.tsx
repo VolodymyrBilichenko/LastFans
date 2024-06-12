@@ -29,8 +29,8 @@ export const Messages = () => {
     const [chatTheme, setChatTheme] = useState('green');
     const dispatch = useDispatch();
 
-    const handleAddVideo = () => {
-        dispatch(addModal('createGroup'))
+    const handleModalOpen = (modalName: string) => {
+        dispatch(addModal(`${modalName}`))
     }
 
     const user: IUser = useSelector((state: any) => state.toolkit.user)
@@ -177,7 +177,7 @@ export const Messages = () => {
                             </div>
                         </div>
 
-                        <button onClick={handleAddVideo} data-popup="#popup-add-group" className="groups__add button button--fw button--transparent"><span>Add new group</span></button>
+                        <button onClick={() => handleModalOpen('createGroup')} data-popup="#popup-add-group" className="groups__add button button--fw button--transparent"><span>Add new group</span></button>
                     </div>
 
                     <div className="body-messages__content">
@@ -264,14 +264,14 @@ export const Messages = () => {
                                 </div>
                                 <p className="item-actions-messages-user__text">Pin</p>
                             </button>
-                            <button data-popup="#popup-block-user" className="actions-messages-user__item item-actions-messages-user block">
+                            <button  data-popup="#popup-block-user" className="actions-messages-user__item item-actions-messages-user block">
                                 <div className="item-actions-messages-user__icon">
                                     <img src={BlockedUserIc} alt="Icon"/>
                                 </div>
                                 <p className="item-actions-messages-user__text">Block</p>
                             </button>
                         </div>
-                        <a href="some" data-popup="#popup-user-group" className="messages-user__add button button--fw"><span>Add to group</span></a>
+                        <button onClick={() => handleModalOpen('addUserGroup')} data-popup="#popup-user-group" className="messages-user__add button button--fw"><span>Add to group</span></button>
                         <div className="messages-user__themes themes-messages-user">
                             <div className="themes-messages-user__title">Themes</div>
                             <div className="themes-messages-user__items">
