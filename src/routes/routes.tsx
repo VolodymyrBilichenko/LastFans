@@ -18,6 +18,7 @@ import { VideoStore } from '../pages/VideoStore/VideoStore'
 import { AddStore } from '../pages/AddStore/AddStore'
 import { Rules } from '../pages/Rules/Rules'
 import getCookies from '../functions/getCookie'
+import { Modals } from '../components/Modals/Modals'
 
 export const routes = () => {
     
@@ -138,6 +139,10 @@ export const routes = () => {
             path: '/rules/:title',
             element: <Rules/>,
             additionalClass: 'page-main'
+        },
+        {
+            path: '/mod',
+            element: <Modals/>,
         },
         {
             path: '*',

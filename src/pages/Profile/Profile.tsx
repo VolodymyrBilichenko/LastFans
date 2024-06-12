@@ -6,8 +6,8 @@ import MessageIc from '../../assets/img/icons/user-menu/message.svg'
 import VideoIc from '../../assets/img/icons/video.svg'
 import FolderIc from '../../assets/img/icons/folder.svg'
 import { NavLink } from 'react-router-dom'
-import { IUser } from '../../models'
-import { useSelector } from 'react-redux'
+// import { IUser } from '../../models'
+// import { useSelector } from 'react-redux'
 
 
 export const Profile = () => {
