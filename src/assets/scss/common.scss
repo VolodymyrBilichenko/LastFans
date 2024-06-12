@@ -444,7 +444,8 @@
     }
     &.like{
         svg path{
-            fill: var(--blue) !important;
+            fill: rgb(255, 0, 0) !important;
+            stroke: rgb(255, 0, 0) !important;
         }
     }
     
