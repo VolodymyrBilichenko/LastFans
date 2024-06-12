@@ -30,6 +30,10 @@ export const PostItem: React.FC<IPostItemProps> = ({ user, date, message, images
 
     const userState: IUser = useSelector((state: any) => state.toolkit.user)
 
+    user = userState.sex === "woman" ? userState : {...user, sex: "man"}
+
+    console.log(user);
+ 
     const [chosenLike, setChosenLike] = useState<ILikeType>()
     const [isOpenEditor, setIsOpenEditor] = useState<boolean>(false)
     const [isPinned, setisPinned] = useState(props.isPinned)
