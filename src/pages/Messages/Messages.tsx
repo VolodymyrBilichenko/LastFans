@@ -28,6 +28,7 @@ export const Messages = () => {
     const [activeChat, setActiveChat] = useState('allUser');
     const [chatTheme, setChatTheme] = useState('green');
     const dispatch = useDispatch();
+    const [openMass, setOpenMass] = useState(false);
 
     const handleModalOpen = (modalName: string) => {
         dispatch(addModal(`${modalName}`))
@@ -45,6 +46,10 @@ export const Messages = () => {
         setActiveChat(chatId);
     };
 
+    const handleOpenMass = () => {
+        setOpenMass(!openMass)
+    }
+
     
     return (
         <div className="main-block">
@@ -53,7 +58,7 @@ export const Messages = () => {
                     <div className="main-messages__wrapper">
                         <div className="body-messages__top top-body-messages">
                             <h3 className="top-body-messages__title title title--small">Messages</h3>
-                            <div className="top-body-messages__actions actions field">
+                            <div onClick={handleOpenMass} className={`top-body-messages__actions actions field ${openMass ? 'field-active' : ''}`}>
                                 <svg width="21" height="6" viewBox="0 0 21 6" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M15.8569 3.00003C15.8569 4.1835 16.8163 5.14289 17.9997 5.14289C19.1832 5.14289 20.1426 4.1835 20.1426 3.00003C20.1426 1.81657 19.1832 0.857178 17.9997 0.857178C16.8163 0.857178 15.8569 1.81657 15.8569 3.00003Z" fill="#93989A" />
                                     <path d="M7.99944 3.00003C7.99944 4.1835 8.95883 5.14289 10.1423 5.14289C11.3258 5.14289 12.2852 4.1835 12.2852 3.00003C12.2852 1.81657 11.3258 0.857178 10.1423 0.857178C8.95883 0.857178 7.99944 1.81657 7.99944 3.00003Z" fill="#93989A" />
@@ -63,7 +68,7 @@ export const Messages = () => {
                                     <div className="popup-actions__wrapper">
                                         <div className="popup-actions__content">
                                             <div className="popup-actions__body body-popup-actions">
-                                                <a href="#popup-mass-message" data-popup="#popup-mass-message"  className="body-popup-actions__item mass">Mass message</a>
+                                                <button onClick={() => handleModalOpen('massMessage')} data-popup="#popup-mass-message"  className="body-popup-actions__item mass">Mass message</button>
                                             </div>
                                         </div>
                                     </div>

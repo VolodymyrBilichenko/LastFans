@@ -1,9 +1,7 @@
-import React, { useState } from 'react'
-import PostPh from './../../../assets/img/post/01.jpg'
-import UserPh from './../../../assets/img/user/01.png'
 import { IUser } from '../../../models'
 import { NavLink } from 'react-router-dom'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
+import { addModal } from '../../../redux/toolkitSlice'
 
 interface IVideoStoreItemProps {
     title: string
@@ -16,8 +14,12 @@ interface IVideoStoreItemProps {
 }
 
 export const VideoStoreItem: React.FC<IVideoStoreItemProps> = ({ title, date, isNew, isDownload, price, poster, ...props }) => {
-
+    const dispatch = useDispatch();
     const user: IUser = useSelector((state: any) => state.toolkit.user)
+
+    const handleModalOpen = (modalName: string) => {
+        dispatch(addModal(`${modalName}`))
+    }
 
     return (
         <div className="content-video-store__item item-video-store">
@@ -52,7 +54,7 @@ export const VideoStoreItem: React.FC<IVideoStoreItemProps> = ({ title, date, is
                                     {date}
                                 </span>
                             </div>
-                            {user.sex === "man" && <button className="item-video-store__button button button--transparent"><span>Buy</span></button>}
+                            {user.sex === "man" && <button onClick={() => handleModalOpen('successfull')} className="item-video-store__button button button--transparent"><span>Buy</span></button>}
                         </div>
                     </div>
                 </div>

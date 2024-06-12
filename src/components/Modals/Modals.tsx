@@ -6,6 +6,8 @@ import { removeModal } from "../../redux/toolkitSlice"
 import { ModalAddUserGroup } from "./components/ModalAddUserGroup"
 import { ModalBlockUser } from "./components/ModalBlockUser"
 import { ModalTimeLinePost } from "./components/ModalTimeLinePost"
+import { ModalMassMessage } from "./components/ModalMassMessage"
+import { ModalSuccessfull } from "./components/ModalSuccessfull"
 
 export const Modals = () => {
     const dispatch = useDispatch();
@@ -18,6 +20,8 @@ export const Modals = () => {
         'addUserGroup': <ModalAddUserGroup/>,
         'blockUser': <ModalBlockUser/>,
         'timeLinePost': <ModalTimeLinePost/>,
+        'massMessage': <ModalMassMessage/>,
+        'successfull': <ModalSuccessfull/>,
     }
 
     const handleCloseModal = (modalName: string) => {
