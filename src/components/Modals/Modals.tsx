@@ -1,18 +1,21 @@
-import { useSelector } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
 import { ModalAddVid } from "./components/ModalAddVid"
 import { ModalCreateGroup } from "./components/ModalCreateGroup"
+import { ReactElement } from "react"
+import { removeModal } from "../../redux/toolkitSlice"
 
 export const Modals = () => {
-    const modalsStateStore = useSelector((state: any) => state.toolkit.modals) as ModalKeys[]
+    const dispatch = useDispatch();
+    const modalsStateStore = useSelector((state: any) => state.toolkit.modals)
     console.log(modalsStateStore);
+    
+    const modalComponents: {[key: string]: ReactElement} = {
+        'addVideo': <ModalAddVid/>,
+        'createGroup': <ModalCreateGroup/>,
+    }
 
-    type ModalKeys = 'addVideo' | 'createGroup';
-
-    const modalComponents: Record<ModalKeys, React.ComponentType> = {
-        // addVideo: <ModalAddVid/>,
-        // createGroup: <ModalCreateGroup/>,
-        addVideo: ModalAddVid,
-        createGroup: ModalCreateGroup,
+    const handleCloseModal = (modalName: string) => {
+        dispatch(removeModal(modalName))
     }
     
 
@@ -21,16 +24,18 @@ export const Modals = () => {
                     /* <div id="popup-add-group" aria-hidden="true" className="popup-add-group popup"> */
         <>
             {
-                modalsStateStore.map((modalName, index) => {
-                    const ModalComponent = modalComponents[modalName];
-                    
-                    // Рендерьте відповідний компонент у оболонці
+                modalsStateStore.map((modal: string) => {
                     return (
-                        <div key={index} id={`popup-${modalName}`} aria-hidden="true" className={`popup-${modalName} popup`}>
-                            <div className="popup__wrapper">
-                                <div className="popup__content">
-                                    <button data-close type="button" className="popup__close"></button>
-                                    <ModalComponent />
+                        
+                        <div id="popup-add-vid" aria-hidden="true"  className={`popup-add-vid popup ${modal ? 'popup_show' : ''}`}>
+                            <div className="popup-bgd"></div>
+                            <div  className="popup__wrapper" onClick={() => handleCloseModal(modal)}>
+                                <div  className="popup__content">
+                                    <button data-close type="button"  className="popup__close" onClick={() => handleCloseModal(modal)}></button>
+
+                                    {modalComponents[modal]}
+                                    
+                                    
                                 </div>
                             </div>
                         </div>
@@ -38,17 +43,6 @@ export const Modals = () => {
                 })
             }
 
-            <div id="popup-add-vid" aria-hidden="true"  className="popup-add-vid popup">
-                <div  className="popup__wrapper">
-                    <div  className="popup__content">
-                        <button data-close type="button"  className="popup__close"></button>
-
-                        
-                        
-                        
-                    </div>
-                </div>
-            </div>
         </>
     )
 }

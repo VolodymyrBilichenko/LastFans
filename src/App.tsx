@@ -13,6 +13,7 @@ import getCookies from "./functions/getCookie";
 import { useDispatch } from "react-redux";
 import { setUser } from "./redux/toolkitSlice";
 import { IUser } from "./models";
+import { Modals } from "./components/Modals/Modals";
 
 
 export const App = () => {
@@ -39,6 +40,8 @@ export const App = () => {
   return (
     <>
       <ToastContainer/>
+
+      <Modals/>
 
       {!currentPage[0]?.isNotNeedHeader && <Header handleOpenMenu={handleOpenMenu}/>}
       

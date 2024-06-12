@@ -5,7 +5,6 @@ import { VideoStoreFilter } from './components/VideoStoreFilter'
 import { VideoStoreItem } from './components/VideoStoreItem'
 import { IUser } from '../../models'
 import { useDispatch, useSelector } from 'react-redux'
-import { toast } from 'react-toastify'
 import { addModal } from '../../redux/toolkitSlice'
 
 export const VideoStore = () => {

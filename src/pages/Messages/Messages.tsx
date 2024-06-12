@@ -20,12 +20,18 @@ import { Chat } from './components/Chat/Chat'
 import { toast } from 'react-toastify'
 import { AsideMessagesItem } from '../../components/AsideMessages/components/AsideMessagesItem'
 import { IUser } from '../../models'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
+import { addModal } from '../../redux/toolkitSlice'
 
 export const Messages = () => {
     
     const [activeChat, setActiveChat] = useState('allUser');
-    const [chatTheme, setChatTheme] = useState('green')
+    const [chatTheme, setChatTheme] = useState('green');
+    const dispatch = useDispatch();
+
+    const handleAddVideo = () => {
+        dispatch(addModal('createGroup'))
+    }
 
     const user: IUser = useSelector((state: any) => state.toolkit.user)
 
@@ -171,7 +177,7 @@ export const Messages = () => {
                             </div>
                         </div>
 
-                        <a href="some" data-popup="#popup-add-group" className="groups__add button button--fw button--transparent"><span>Add new group</span></a>
+                        <button onClick={handleAddVideo} data-popup="#popup-add-group" className="groups__add button button--fw button--transparent"><span>Add new group</span></button>
                     </div>
 
                     <div className="body-messages__content">

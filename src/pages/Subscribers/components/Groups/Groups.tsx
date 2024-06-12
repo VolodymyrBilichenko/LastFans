@@ -1,9 +1,16 @@
-import { NavLink } from 'react-router-dom'
 import BinIc from '../../../../assets/img/icons/bin.svg'
 import GroupMessIc from '../../../../assets/img/icons/group-message.svg'
+import { NavLink } from 'react-router-dom'
 import { useState } from 'react'
+import { useDispatch } from 'react-redux'
+import { addModal } from '../../../../redux/toolkitSlice'
 
 export const Groups = () => {
+    const dispatch = useDispatch();
+
+    const handleAddVideo = () => {
+        dispatch(addModal('createGroup'))
+    }
 
     const [mockGroups, setMockGroups] = useState([
         {
@@ -83,7 +90,7 @@ export const Groups = () => {
                 }
 
             </div>
-            <a href="some" data-popup="#popup-add-group" className="groups__add button button--fw button--transparent"><span>Add new group</span></a>
+            <button onClick={handleAddVideo} data-popup="#popup-add-group" className="groups__add button button--fw button--transparent"><span>Add new group</span></button>
         </div>
     )
 }

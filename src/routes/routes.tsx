@@ -141,10 +141,6 @@ export const routes = () => {
             additionalClass: 'page-main'
         },
         {
-            path: '/mod',
-            element: <Modals/>,
-        },
-        {
             path: '*',
             element: <NotFound/>,
             isNotNeedHeader: true,

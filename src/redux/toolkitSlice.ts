@@ -13,6 +13,9 @@ const toolkitSlice = createSlice({
         },
         addModal(state: any, action: {payload: string}) {
             state.modals = [...state.modals, action.payload]
+        },
+        removeModal(state: any, action: {payload: string}) {
+            state.modals = state.modals.filter((modal: string) => modal !== action.payload)
         }
 
     }
@@ -23,5 +26,6 @@ export const {
 
     setUser,
     addModal,
+    removeModal,
 
 } = toolkitSlice.actions;
