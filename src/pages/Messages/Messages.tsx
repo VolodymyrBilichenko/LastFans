@@ -264,7 +264,7 @@ export const Messages = () => {
                                 </div>
                                 <p className="item-actions-messages-user__text">Pin</p>
                             </button>
-                            <button  data-popup="#popup-block-user" className="actions-messages-user__item item-actions-messages-user block">
+                            <button onClick={() => handleModalOpen('blockUser')} data-popup="#popup-block-user" className="actions-messages-user__item item-actions-messages-user block">
                                 <div className="item-actions-messages-user__icon">
                                     <img src={BlockedUserIc} alt="Icon"/>
                                 </div>

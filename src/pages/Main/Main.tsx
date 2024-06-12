@@ -16,14 +16,19 @@ import { NavLink } from 'react-router-dom'
 import { PostItem } from './components/PostItem'
 import { toast } from 'react-toastify'
 import { IUser } from '../../models'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
+import { addModal } from '../../redux/toolkitSlice'
 
 export const Main = () => {
-
-	const user: IUser = useSelector((state: any) => state.toolkit.user)
+	const dispatch = useDispatch();
+	const user: IUser = useSelector((state: any) => state.toolkit.user);
 
 	const handleInDevelop = () => {
 		toast.error('This element in the development')
+	}
+
+	const handleOpenModal = (modalName: string) => {
+		dispatch(addModal(`${modalName}`))
 	}
 	
 	return (
@@ -35,7 +40,7 @@ export const Main = () => {
 							<NavLink to={"/profile"} className="new-post-main__image user-image user-image--40">
 								<img src={"https://static01.nyt.com/images/2012/08/19/t-magazine/19well-emma-2/19well-emma-2-superJumbo.jpg"} alt="ph" />
 							</NavLink>
-							<button onClick={_ => toast.error("This modal is developing")} className="new-post-main__input input-main">
+							<button onClick={() => handleOpenModal('timeLinePost')} className="new-post-main__input input-main">
 								<input type="text" name="form[]" style={{pointerEvents: "none"}} placeholder="Create new post" disabled className="input" />
 							</button>
 						</div>
