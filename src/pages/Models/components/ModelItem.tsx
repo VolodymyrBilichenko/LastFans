@@ -33,7 +33,7 @@ export const ModelItem: React.FC<IModelItemProps> = ({ userName, userTag, userId
                 <div className="item-models__user user-item-models">
                     <button onClick={_ => setIsFavorite(prev => !prev)} className="item-models__like like">
                         <svg width="22" height="20" viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path style={{fill: isFavorite ? "#FF0000" : "transparent"}} d="M9.83191 18.0065L9.83083 18.0055C7.00698 15.4472 4.72355 13.3741 3.13731 11.4352C1.55929 9.50633 0.75 7.80226 0.75 5.99455C0.75 3.04245 3.05268 0.75 6 0.75C7.67171 0.75 9.2884 1.53139 10.3402 2.75575L10.9091 3.418L11.478 2.75575C12.5298 1.53139 14.1465 0.75 15.8182 0.75C18.7655 0.75 21.0682 3.04245 21.0682 5.99455C21.0682 7.80226 20.2589 9.50633 18.6809 11.4352C17.0946 13.3741 14.8112 15.4472 11.9874 18.0055L11.9863 18.0065L10.9091 18.9862L9.83191 18.0065Z" fill={isFavorite ? "#FF0000" : "transparent"} stroke={isFavorite ? "#FF0000" : "#838383"} stroke-width="1.5"/>
+                            <path style={{fill: isFavorite ? "#FF0000" : "transparent"}} d="M9.83191 18.0065L9.83083 18.0055C7.00698 15.4472 4.72355 13.3741 3.13731 11.4352C1.55929 9.50633 0.75 7.80226 0.75 5.99455C0.75 3.04245 3.05268 0.75 6 0.75C7.67171 0.75 9.2884 1.53139 10.3402 2.75575L10.9091 3.418L11.478 2.75575C12.5298 1.53139 14.1465 0.75 15.8182 0.75C18.7655 0.75 21.0682 3.04245 21.0682 5.99455C21.0682 7.80226 20.2589 9.50633 18.6809 11.4352C17.0946 13.3741 14.8112 15.4472 11.9874 18.0055L11.9863 18.0065L10.9091 18.9862L9.83191 18.0065Z" fill={isFavorite ? "#FF0000" : "transparent"} stroke={isFavorite ? "#FF0000" : "#B5CBED"} stroke-width="1.5"/>
                         </svg>
 
                     </button>

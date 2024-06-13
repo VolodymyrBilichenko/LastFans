@@ -2,7 +2,9 @@
 
 .highlights-main {
     overflow-y: hidden;
-
+    .swiper-slide{
+        width: fit-content;
+    }
     // .highlights-main__header
     &__header {
         width: 100%;
@@ -35,6 +37,10 @@
     justify-content: center;
     text-align: center;
     gap: toRem(5);
+    width: toRem(40);
+    @media (min-width:$mobileSmall){
+         width: toRem(105); 
+    }
     // .item-highlights-main__image
     &__image {
         flex: 0 0 toRem(40);
@@ -59,13 +65,20 @@
     }
     // .item-highlights-main__text
     &__text {
-        font-size: toRem(14);
+        font-size: toRem(10);
         font-weight: 500;
         max-width: toRem(75);
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
         line-height: 171.428571%; /* 24/14 */
+        @media (min-width:$mobileSmall){
+            font-size: toRem(14);
+            max-width: toRem(105);
+              
+        }
+
+        
     }
 }
 .item-highlights-main--new {

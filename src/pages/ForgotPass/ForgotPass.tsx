@@ -37,7 +37,7 @@ export const ForgotPass = () => {
                     </form>
                     <div className="main-registration__footer footer-main-registration">
                         <p className="footer-main-registration__text">
-                            Do you remember the password? 
+                            Do you remember the password?
                             <NavLink to={'/login'}>Sign up</NavLink>
                         </p>
                     </div>

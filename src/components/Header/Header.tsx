@@ -12,6 +12,7 @@ import { Messages } from './components/Messages/Messages'
 import { Notifications } from './components/Notifications/Notifications'
 import { toast } from 'react-toastify'
 import setCookie from '../../functions/setCookie'
+import { AsideMenuMode } from '../AsideMenu/components/AsideMenuMode'
 
 interface IOpenMenu {
     handleOpenMenu?: any
@@ -67,6 +68,7 @@ export const Header = ({handleOpenMenu}: IOpenMenu) => {
                         <input type="text" name="form[]" placeholder="Search by nickname or hashtags " className="header__input input"/>
                     </div>
                     <div className="header__content">
+                        <AsideMenuMode />
 
                         <div className="header__value">$ 268.80</div>
 

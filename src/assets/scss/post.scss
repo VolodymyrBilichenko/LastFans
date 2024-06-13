@@ -31,7 +31,9 @@
             width: toRem(46);
             height: toRem(46);
         }
-        
+        .user-item__body{
+            gap: 0;
+        }
     }
     // .top-post__actions
     &__actions {

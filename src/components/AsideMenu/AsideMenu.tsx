@@ -46,10 +46,8 @@ export const AsideMenu = ({ isOpenAsideMenu, handleOpenMenu }: IAsideMenu) => {
                                 </div>
 
                             </div>
-                            <div className="item-page-menu__content sub-menu">
-                                <div className="sub-menu__item spollers__item">
+                            <div className="item-page-menu__content">
                                     <div className="sub-menu__title spollers__title">Main page</div>
-                                </div>
                             </div>
                         </NavLink>
                         <NavLink to={'/video-store'} className="page-menu__item item-page-menu">
@@ -64,10 +62,9 @@ export const AsideMenu = ({ isOpenAsideMenu, handleOpenMenu }: IAsideMenu) => {
 
 
                             </div>
-                            <div className="item-page-menu__content sub-menu">
-                                <div className="sub-menu__item spollers__item">
+                            <div className="item-page-menu__content">
                                     <div className="sub-menu__title spollers__title">Shop</div>
-                                </div>
+                                
                             </div>
                         </NavLink>
 
@@ -84,10 +81,8 @@ export const AsideMenu = ({ isOpenAsideMenu, handleOpenMenu }: IAsideMenu) => {
 
 
                             </div>
-                            <div className="item-page-menu__content sub-menu">
-                                <div className="sub-menu__item spollers__item">
+                            <div className="item-page-menu__content">
                                     <div className="sub-menu__title spollers__title">Livestreaming</div>
-                                </div>
                             </div>
                         </NavLink>
 
@@ -102,10 +97,8 @@ export const AsideMenu = ({ isOpenAsideMenu, handleOpenMenu }: IAsideMenu) => {
 
 
                             </div>
-                            <div className="item-page-menu__content sub-menu">
-                                <div className="sub-menu__item spollers__item">
+                            <div className="item-page-menu__content">
                                     <div className="sub-menu__title spollers__title">Models</div>
-                                </div>
                             </div>
                         </NavLink>
 
@@ -122,38 +115,44 @@ export const AsideMenu = ({ isOpenAsideMenu, handleOpenMenu }: IAsideMenu) => {
 
 
                             </div>
-                            <div className="item-page-menu__content sub-menu">
-                                <div className="sub-menu__item spollers__item">
+                            <div className="item-page-menu__content">
                                     <div className="sub-menu__title spollers__title">Statistics</div>
-                                </div>
                             </div>
                         </NavLink>
-                        <div className={`page-menu__item item-page-menu`}>
+                        <div className="item-page-menu-wrapper">
+                            <div className={`page-menu__item item-page-menu ${location.pathname.includes('auto-message') || location.pathname.includes('history') || location.pathname.includes('profile') ? "active" : ""}`}>
 
-                            <div className="item-page-menu__image" onClick={handleOpenSubMenu}>
-                                <div className="item-page-menu__image-body">
-                                    <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <mask id="mask0_266_13139" style={{ maskType: 'luminance' }} maskUnits="userSpaceOnUse" x="0" y="0" width="22" height="22">
-                                            <path d="M0 1.90735e-06H22V22H0V1.90735e-06Z" fill="white" style={{ fill: 'white', fillOpacity: '1' }} />
-                                        </mask>
-                                        <g mask="url(#mask0_266_13139)">
-                                            <path d="M5.5 6.35938C5.5 3.32183 7.96245 0.859376 11 0.859376C14.0375 0.859376 16.5 3.32183 16.5 6.35938C16.5 9.39692 14.0375 11.8594 11 11.8594C7.96245 11.8594 5.5 9.39692 5.5 6.35938Z" stroke="#B5CBED" style={{ stroke: '#B5CBED', strokeOpacity: 1 }} strokeWidth="1.6" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round" />
-                                            <path d="M17.2776 13.1055C18.2792 13.5505 19.0804 14.0772 19.6877 14.6108C20.6136 15.4243 21.1406 16.5996 21.1406 17.832V19.4219C21.1406 20.3711 20.3711 21.1406 19.4219 21.1406H2.57812C1.6289 21.1406 0.859375 20.3711 0.859375 19.4219V17.832C0.859375 16.5996 1.38639 15.4243 2.31228 14.6108C3.87995 13.2335 6.73905 11.8594 11 11.8594" stroke="#B5CBED" style={{ stroke: '#B5CBED', strokeOpacity: 1 }} strokeWidth="1.6" strokeMiterlimit="10" strokeLinecap="round" />
-                                        </g>
-                                    </svg>
+                                <div className="item-page-menu__image" onClick={handleOpenSubMenu}>
+                                    <div className="item-page-menu__image-body">
+                                        <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <mask id="mask0_266_13139" style={{ maskType: 'luminance' }} maskUnits="userSpaceOnUse" x="0" y="0" width="22" height="22">
+                                                <path d="M0 1.90735e-06H22V22H0V1.90735e-06Z" fill="white" style={{ fill: 'white', fillOpacity: '1' }} />
+                                            </mask>
+                                            <g mask="url(#mask0_266_13139)">
+                                                <path d="M5.5 6.35938C5.5 3.32183 7.96245 0.859376 11 0.859376C14.0375 0.859376 16.5 3.32183 16.5 6.35938C16.5 9.39692 14.0375 11.8594 11 11.8594C7.96245 11.8594 5.5 9.39692 5.5 6.35938Z" stroke="#B5CBED" style={{ stroke: '#B5CBED', strokeOpacity: 1 }} strokeWidth="1.6" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round" />
+                                                <path d="M17.2776 13.1055C18.2792 13.5505 19.0804 14.0772 19.6877 14.6108C20.6136 15.4243 21.1406 16.5996 21.1406 17.832V19.4219C21.1406 20.3711 20.3711 21.1406 19.4219 21.1406H2.57812C1.6289 21.1406 0.859375 20.3711 0.859375 19.4219V17.832C0.859375 16.5996 1.38639 15.4243 2.31228 14.6108C3.87995 13.2335 6.73905 11.8594 11 11.8594" stroke="#B5CBED" style={{ stroke: '#B5CBED', strokeOpacity: 1 }} strokeWidth="1.6" strokeMiterlimit="10" strokeLinecap="round" />
+                                            </g>
+                                        </svg>
+
+                                    </div>
+
 
                                 </div>
-
-
+                                <div className="item-page-menu__content">
+                                        <div className={`sub-menu__title spollers__title`} onClick={handleOpenSubMenu}>My profile</div>
+                                </div>
                             </div>
-                            <div className={`item-page-menu__content sub-menu ${location.pathname.includes('auto-message') || location.pathname.includes('history') || location.pathname.includes('profile') ? "active" : ""}`}>
-                                <div className={`sub-menu__item spollers__item ${subMenu ? "active" : ""}`}>
-                                    <div  className={`sub-menu__title spollers__title`} onClick={handleOpenSubMenu}>My profile</div>
+                            <div className="sub-menu-wrapper">
 
-                                    <div className="sub-menu__body spollers__body">
-                                        <NavLink to={'/profile'} className="item-page-menu__text">Profile</NavLink>
-                                        <NavLink to={'/auto-message'} className="item-page-menu__text">Automated messages</NavLink>
-                                        <NavLink to={'/history'} className="item-page-menu__text">History</NavLink>
+                                <div className={`item-page-menu__content sub-menu`}>
+                                    <div className={`sub-menu__item spollers__item ${subMenu ? "active" : ""}`}>
+
+                                        
+                                        <div className="sub-menu__body spollers__body">
+                                            <NavLink to={'/profile'} className="item-page-menu__text">Profile</NavLink>
+                                            <NavLink to={'/auto-message'} className="item-page-menu__text">Automated messages</NavLink>
+                                            <NavLink to={'/history'} className="item-page-menu__text">History</NavLink>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -175,10 +174,8 @@ export const AsideMenu = ({ isOpenAsideMenu, handleOpenMenu }: IAsideMenu) => {
 
 
                             </div>
-                            <div className="item-page-menu__content sub-menu">
-                                <div className="sub-menu__item spollers__item">
+                            <div className="item-page-menu__content">
                                     <div className="sub-menu__title spollers__title">Privacy</div>
-                                </div>
                             </div>
                         </NavLink>
                         <NavLink to={'/rules/Cookie-Notice'} className="page-menu__item item-page-menu">
@@ -193,10 +190,9 @@ export const AsideMenu = ({ isOpenAsideMenu, handleOpenMenu }: IAsideMenu) => {
                                 </div>
 
                             </div>
-                            <div className="item-page-menu__content sub-menu">
-                                <div className="sub-menu__item spollers__item">
+                            <div className="item-page-menu__content">
                                     <div className="sub-menu__title spollers__title">Cookie Notice</div>
-                                </div>
+
                             </div>
                         </NavLink>
 
@@ -216,15 +212,18 @@ export const AsideMenu = ({ isOpenAsideMenu, handleOpenMenu }: IAsideMenu) => {
 
 
                             </div>
-                            <div className="item-page-menu__content sub-menu">
-                                <div className="sub-menu__item spollers__item">
+                            <div className="item-page-menu__content">
                                     <div className="sub-menu__title spollers__title">Terms of Service</div>
-                                </div>
+
                             </div>
 
                         </NavLink>
-
-                        <AsideMenuMode />
+                        <div className="page-menu__item item-page-menu item-page-menu--mode">
+                            <div className="item-page-menu__content item-page-menu__content-mode">
+                                    <AsideMenuMode />
+                                
+                            </div>
+                        </div>
 
                     </div>
 

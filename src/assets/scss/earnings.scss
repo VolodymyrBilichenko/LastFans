@@ -73,7 +73,15 @@
     align-items: center;
     width: 100%;
     justify-content: space-between;
-    border-bottom: 1px solid var(--secondary);
+    &:not(:last-child) {
+        
+        border-bottom: 1px solid var(--secondary);
+    }
+    @media (min-width:$tablet){
+        border-bottom: 1px solid var(--secondary);
+          
+    }
+    
     
     @media (max-width:$tablet){
         &:not(:first-child){
@@ -176,11 +184,11 @@
         display: none;
     }
     display: flex;
-    align-items: start;
+    align-items: center;
     justify-content: space-between;
     gap: toRem(20);
-    padding: toRem(30);
-    padding-bottom: toRem(10);
+    padding: toRem(12) toRem(30);
+    padding-bottom: toRem(7);
     // .footer-body-earnings__block
     &__block {
         display: flex;
@@ -238,6 +246,7 @@
                 min-height: toRem(32);
                 background: transparent;
                 width: toRem(60);
+                border-radius: 5px;
             }
             // .field-block-add-vid__title
             &__title {
