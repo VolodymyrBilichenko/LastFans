@@ -43,6 +43,7 @@
     }
 }
 .main-messages {
+    border-top: 1px solid var(--secondary);
     @media (max-width:$mobile){
         display: none;
     }

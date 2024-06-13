@@ -1,14 +1,14 @@
 .page-profile{
     display: flex;
     justify-content: space-between;
-    gap: toRem(20);
+    // gap: toRem(20);
     padding-bottom: toRem(30);
 }
 
 .page-profile-man{
     display: flex;
     justify-content: space-between;
-    gap: toRem(20);
+    // gap: toRem(20);
     padding-bottom: toRem(30);
 
     .top-body-profile{
@@ -483,7 +483,7 @@
         text-align: center;
         outline: 1px solid var(--blue);
         border-top: none;
-        background-color: var(--secondary);
+        background-color: var(--white);
         z-index: 20;
         box-sizing: border-box;
         border-radius: 0 0 10px 10px;
@@ -493,7 +493,7 @@
         @include adaptiveValue("font-size", 15, 14);
 
         text-wrap: nowrap;
-
+        line-height: 120%;
         transition: all .3s ease;
         @media (any-hover: hover){
             &:hover{

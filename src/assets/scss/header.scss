@@ -4,7 +4,7 @@
 .header {
     
     background-color: var(--white);
-    @media (max-width:$mobile){
+    @media (max-width:$tablet){
         .mode{
             display: none;
         }

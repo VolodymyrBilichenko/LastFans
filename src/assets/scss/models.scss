@@ -116,8 +116,9 @@
         // .user-item__body
         &__body {
             color: #fff;
-            display: grid;
+            // display: grid;
             font-size: toRem(16);
+            gap: 0;
             *{
                 font-weight: 400;
 

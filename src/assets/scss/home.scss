@@ -1,9 +1,10 @@
 //====================================================================================================
 .page {
+    @include adaptiveValue("gap", 70, 20);
+
 }
 .page-main {
     display: flex;
-    gap: toRem(20);
     justify-content: space-between;
     padding-bottom: toRem(30);
 }

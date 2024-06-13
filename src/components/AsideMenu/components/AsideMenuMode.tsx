@@ -19,12 +19,9 @@ export const AsideMenuMode: React.FC<IAsideMenuModeProps> = () => {
     }
 
     return (
-        <div className="page-menu__item item-page-menu item-page-menu--mode">
-            <div className="item-page-menu__content item-page-menu__content-mode sub-menu">
-                <div className="sub-menu__item spollers__item">
-                    <div className="mode">
+        <div className="mode">
                         <p className="mode__text">
-                            {isLightMode ? "Light Mode" : "Dark Mode"}
+                            {isLightMode ? "Dark Mode" : "Light Mode"}
                         </p>
                         <div className="mode__body">
                             <div className="switch-mode">
@@ -34,9 +31,7 @@ export const AsideMenuMode: React.FC<IAsideMenuModeProps> = () => {
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </div>
         </div>
+        
     )
 }
