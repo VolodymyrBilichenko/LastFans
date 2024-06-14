@@ -1952,3 +1952,20 @@ transform: scale(1);
 .fancybox__container {
     max-width: none !important;
 }
+
+
+// input 
+
+inputinput::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0; 
+}
+
+// input 
+
+#profilePhotoInput {
+    position: absolute;
+    top: 0;
+    left: 0;
+}

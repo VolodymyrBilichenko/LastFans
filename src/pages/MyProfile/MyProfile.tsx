@@ -2,6 +2,7 @@ import ProfilePh from '../../assets/img/user/profile-top.jpg'
 import UserPh from '../../assets/img/user/01.png'
 import MoneyIc from '../../assets/img/icons/money-white.svg'
 import SaleIc from '../../assets/img/icons/sale.svg'
+import EditIc from '../../assets/img/icons/edit.svg'
 import { IUser } from '../../models'
 import { useSelector } from 'react-redux'
 import { useState } from 'react'
@@ -15,6 +16,32 @@ export const MyProfile = () => {
 
     const [usernameValue, setUsernameValue] = useState<string>(user.username)
     const [usertagValue, setUsertagValue] = useState<string>(user.usertag)
+    const [userPhoto, setUserPhoto] = useState<string>(UserPh)
+    const [coverPhoto, setCoverPhoto] = useState<string>(ProfilePh)
+
+    const handleProfilePhotoChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        if (e.target.files && e.target.files[0]) {
+            const reader = new FileReader();
+            reader.onload = (e) => {
+                if (e.target && e.target.result) {
+                    setUserPhoto(e.target.result as string);
+                }
+            };
+            reader.readAsDataURL(e.target.files[0]);
+        }
+    }
+
+    const handleCoverPhotoChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        if (event.target.files && event.target.files[0]) {
+            const reader = new FileReader();
+            reader.onload = (e) => {
+                if (e.target && e.target.result) {
+                    setCoverPhoto(e.target.result as string);
+                }
+            };
+            reader.readAsDataURL(event.target.files[0]);
+        }
+    };
 
     return (
         <div className="profile">
@@ -25,22 +52,36 @@ export const MyProfile = () => {
                     </div>
                     <div className="body-profile__block">
                         {user.sex === "woman" && <div className="body-profile__top-image">
-                            <img src={ProfilePh} alt="ph"/>
-                            <button className="edit">
-                                <img className="ibg" src="@img/icons/edit.svg" alt="Icon"/>
+                            <img src={coverPhoto} alt="ph"/>
+                            <button className="edit" onClick={() => document.getElementById('coverPhotoInput')?.click()}>
+                                <img className="ibg" src={EditIc} alt="Icon"/>
                             </button>
+                            <input
+                                type="file"
+                                id="coverPhotoInput"
+                                style={{ display: 'none' }}
+                                accept="image/*"
+                                onChange={handleCoverPhotoChange}
+                            />
                         </div>}
                         <div className="body-profile__wrapper">
-                            <div style={{paddingTop: "1.4375rem"}} className="body-profile__top top-body-profile">
+                            <div className="body-profile__top top-body-profile">
                                 <div className="top-body-profile__image">
-                                    <img className="ibg" src={UserPh} alt="ph"/>
-                                    <button className="edit">
-                                        <img src="@img/icons/edit.svg" alt="Icon"/>
+                                    <img className="ibg" src={userPhoto} alt="ph"/>
+                                    <button className="edit" onClick={() => document.getElementById('profilePhotoInput')?.click()}>
+                                        <img src={EditIc} alt="Icon"/>
                                     </button>
+                                    <input type="file" 
+                                        style={{display: 'none'}}
+                                        id='profilePhotoInput'
+                                        accept='image/*'
+                                        onChange={handleProfilePhotoChange}
+                                    />
                                 </div>
                                 <div className="top-body-profile__actions">
-                                    <button className="top-body-profile__button button button--transparent"><span>Edit profile photo</span></button>
-                                    {user.sex === "woman" && <button className="top-body-profile__button button button--transparent"><span>Edit cover photo</span></button>}
+                                    <button className="top-body-profile__button button button--transparent" onClick={() => document.getElementById('profilePhotoInput')?.click()}><span>Edit profile photo</span></button>
+
+                                    {user.sex === "woman" && <button className="top-body-profile__button button button--transparent" onClick={() => document.getElementById('coverPhotoInput')?.click()}><span>Edit cover photo</span></button>}
                                 </div>
                             </div>
                             <div className="body-profile__content content-body-profile">
