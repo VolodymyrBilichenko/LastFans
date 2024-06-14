@@ -30,16 +30,14 @@ export const Modals = () => {
     
 
     return (
-        
-                    /* <div id="popup-add-group" aria-hidden="true" className="popup-add-group popup"> */
         <>
             {
                 modalsStateStore.map((modal: string) => {
                     return (
                         
                         <div id="popup-add-vid" aria-hidden="true"  className={`popup-add-vid popup ${modal ? 'popup_show' : ''}`}>
-                            <div className="popup-bgd"></div>
-                            <div  className="popup__wrapper" onClick={() => handleCloseModal(modal)}>
+                            <div className="popup-bgd" onClick={() => handleCloseModal(modal)}></div>
+                            {/* <div  className="popup__wrapper"> */}
                                 <div  className="popup__content">
                                     <button data-close type="button"  className="popup__close" onClick={() => handleCloseModal(modal)}></button>
 
@@ -47,7 +45,7 @@ export const Modals = () => {
                                     
                                     
                                 </div>
-                            </div>
+                            {/* </div> */}
                         </div>
                     );
                 })

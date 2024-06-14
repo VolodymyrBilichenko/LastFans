@@ -116,7 +116,8 @@ export const routes = () => {
         },
         {
             path: '/statistic',
-            element: <Statistic/>
+            element: <Statistic/>,
+            isNotNeedMessage: true,
         },
         {
             path: '/video-store',
