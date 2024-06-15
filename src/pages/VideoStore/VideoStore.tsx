@@ -1,9 +1,9 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 // import PostPh from '../../assets/img/post/01.jpg'
 // import UserPh from '../../assets/img/user/01.png'
 import { VideoStoreFilter } from './components/VideoStoreFilter'
 import { VideoStoreItem } from './components/VideoStoreItem'
-import { IUser } from '../../models'
+import { IFilterVideo, IUser } from '../../models'
 import { useDispatch, useSelector } from 'react-redux'
 import { addModal } from '../../redux/toolkitSlice'
 
@@ -13,6 +13,8 @@ export const VideoStore = () => {
 
     const [isOpenFilter, setIsOpenFilter] = useState<boolean>(false)
     const [searchValue, setSearchValue] = useState<string>('')
+
+
 
     const [mockVideo] = useState([
         {
@@ -25,7 +27,7 @@ export const VideoStore = () => {
             date: "08.03.2024",
             isNew: false,
             isDownload: true,
-            price: 123,
+            price: 25,
             poster: 'https://m.media-amazon.com/images/M/MV5BMWI0MDY3ZmUtMTZlZC00MDcyLTkyN2UtZTljZDNiZjM2NTlmXkEyXkFqcGdeQW1pYnJ5YW50._V1_.jpg'
         },
         {
@@ -38,8 +40,21 @@ export const VideoStore = () => {
             date: "08.03.2024",
             isNew: false,
             isDownload: true,
-            price: 100000,
+            price: 99,
             poster: 'https://m.media-amazon.com/images/I/71AnnJuUpoL._AC_UF894,1000_QL80_.jpg'
+        },
+        {
+            title: "Sexy Emma Watwon",
+            user: {
+                username: "Emmik",
+                usertag: "@emmiikk",
+                photo: "https://static01.nyt.com/images/2012/08/19/t-magazine/19well-emma-2/19well-emma-2-superJumbo.jpg"
+            },
+            date: "08.03.2024",
+            isNew: false,
+            isDownload: false,
+            price: 500,
+            poster: 'https://i.ytimg.com/vi/C5Pqf_RJ7FM/hq720.jpg?sqp=-oaymwEXCK4FEIIDSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLA3tWCygqRI7czQd4xpcO75JSaR5A'
         },
     ])
 
@@ -49,12 +64,31 @@ export const VideoStore = () => {
         dispatch(addModal('addVideo'))
     }
 
+    const [filter, setFilter] = useState<IFilterVideo>({
+        price: [],
+        isCanDownload: false
+    })
+
+    const [filterByPrice, setFilterByPrice] = useState<number[]>([])
+
+    useEffect(() => {
+        setFilterByPrice([])
+
+        filter.price.map(item => {
+            setFilterByPrice(prev => [...prev, ...item.split(',')].map(item => Number(item)))
+        });
+
+    }, [filter.price])
+
+
     return (
         <div className="video-store">
 
             <VideoStoreFilter
                 isOpenFilter={isOpenFilter}
                 setIsOpenFilter={setIsOpenFilter}
+                setFilter={setFilter}
+                filter={filter}
             />
 
             <div className="video-store__container">
@@ -88,6 +122,8 @@ export const VideoStore = () => {
 
                         {
                             mockVideo
+                                ?.filter(item => filter.isCanDownload ? item.isDownload : item)
+                                ?.filter(item => item.price <= Math.max(...filterByPrice) && item.price >= Math.min(...filterByPrice))
                                 ?.filter(item => item.title.toLocaleLowerCase().includes(searchValue.toLocaleLowerCase()))
                                 ?.map(item => (
                                     <VideoStoreItem
@@ -104,7 +140,11 @@ export const VideoStore = () => {
 
 
                         {
-                            !mockVideo?.filter(item => item.title.toLocaleLowerCase().includes(searchValue.toLocaleLowerCase())).length
+                            !mockVideo
+                                ?.filter(item => filter.isCanDownload ? item.isDownload : item)
+                                ?.filter(item => item.price <= Math.max(...filterByPrice) && item.price >= Math.min(...filterByPrice))
+                                ?.filter(item => item.title.toLocaleLowerCase().includes(searchValue.toLocaleLowerCase()))
+                                .length
                             && "Videos not found"
                         }
 

@@ -4,3 +4,8 @@ export interface IUser {
     photo: string
     sex?: string
 }
+
+export interface IFilterVideo {
+    price: string[]
+    isCanDownload: boolean
+}
