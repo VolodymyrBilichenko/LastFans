@@ -9,6 +9,9 @@ import ImageIc from './../../../../assets/img/icons/image.svg'
 import VideoIc from './../../../../assets/img/icons/video.svg'
 import AudioIc from './../../../../assets/img/icons/audio.svg'
 import { NavLink } from 'react-router-dom'
+import { useSelector } from 'react-redux'
+import { IUser } from '../../../../models'
+import { toast } from 'react-toastify'
 // import SendIc from './../../../../assets/img/icons/send.svg'
 // import MicroIc from './../../../../assets/img/icons/micro.svg'
 // import ProfileIc from './../../../../assets/img/icons/user.svg'
@@ -23,6 +26,8 @@ interface IChatHeaderProps {
 }
 
 export const ChatHeader: React.FC<IChatHeaderProps> = () => {
+
+    const user: IUser = useSelector((state: any) => state.toolkit.user)
 
     return (
         <div className="chat__top top-chat">
@@ -40,8 +45,9 @@ export const ChatHeader: React.FC<IChatHeaderProps> = () => {
                         <a href="some" className="user-item__name">Boob007</a>
                         <a href="some" className="user-item__username">@Boob007</a>
                     </NavLink>
+
                 </div>
-                <div className="top-chat__group">
+                {user.sex === "woman" && <div className="top-chat__group">
                     <div className="groups__item item-groups">
                         <div className="item-groups__body">
                             <p className="item-groups__name">Адекваты</p>
@@ -65,7 +71,8 @@ export const ChatHeader: React.FC<IChatHeaderProps> = () => {
                             </div>
                         </div>
                     </div>
-                </div>
+                </div>}
+                <button onClick={_ => toast.error('This function is developing')} className="top-chat__button button"><span>Send content</span></button>
             </div>
             <div className="top-chat__price-list chat-price-list">
                 <div className="chat-price-list__item message">
