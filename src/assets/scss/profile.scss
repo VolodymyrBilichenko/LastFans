@@ -241,6 +241,15 @@
 
 .vid-profile {
     padding-top: toRem(47);
+
+    .field-block-add-vid__item{
+        outline: 1px solid #E2E2E2;
+
+    }
+    .field-block-add-vid__body{
+        background-color: var(--secondary);
+        outline: 1px solid #E2E2E2;
+    }
     // .vid-profile__title
     &__title {
         &:not(:last-child) {
@@ -254,7 +263,6 @@
         padding-bottom: toRem(30);
         background-color: var(--white);
         border-radius: toRem(16);
-        overflow: hidden;
     }
     &__content{
         display: grid;
@@ -503,9 +511,7 @@
     }
 }
 
-.field-block-add-vid__item[open]{
-    border-radius: 12px 12px 0 0;
-}
+
 // =============================================================================================================
 
 .page-profile-man{

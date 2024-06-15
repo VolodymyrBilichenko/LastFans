@@ -33,12 +33,12 @@
     &__delay {
     }
 
-    &__body-textarea{
-        height: toRem(381);
+    &__textarea-body{
         position: relative;
         
     }
     &__textarea{
+        height: toRem(381);
         
     }
 }
@@ -90,6 +90,8 @@
     &__input {
         width: toRem(88);
         font-size: toRem(15);
+        text-align: center;
+        color: #525252;
     }
 }
 

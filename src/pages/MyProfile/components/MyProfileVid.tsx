@@ -63,7 +63,7 @@ export const MyProfileVid = () => {
                             <div className="block-add-vid__minutes minutes-block-add-vid">
                                 <p className="block-add-vid__text">Minutes</p>
                                 <div className="block-add-vid__field field-block-add-vid">
-                                    <details className="field-block-add-vid__item input input-main">
+                                    <details className="field-block-add-vid__item spollers__item-main input input-main">
                                         <summary className="field-block-add-vid__title">{minutes || "Select"}</summary>
                                         <div className="field-block-add-vid__body">
                                             {["5 min", "10 min", "15 min", "20 min", "25 min", "30 min"].map((time) => (
