@@ -1,19 +1,25 @@
-import React from 'react'
+import { useDispatch } from 'react-redux'
+import UserPh from '../../../assets/img/user/01.png'
+import { NavLink } from 'react-router-dom'
+import { addModal, removeModal } from '../../../redux/toolkitSlice';
 
 export const ModalBlockUser = () => {
+    const dispatch = useDispatch();
+
+
     return (
         <div className="popup-block-user__body popup__body">
             <h4 className="popup-block-user__title popup-title">Block user</h4>
             <div className="popup-block-user__block">
-                <div className="top-chat__user user-item online">
-                    <a href="#" className="user-item__image">
-                        <picture><source srcSet="img/user/01.webp" type="image/webp"/><img className="user-photo" src="img/user/01.png" alt="User image"/></picture>
-                    </a>
-                    <div className="user-item__body">
-                        <a href="#" className="user-item__name">Boob007</a>
-                        <a href="#" className="user-item__username">@Boob007</a>
+                <NavLink to={'/profile/:userId'} className="top-chat__user user-item online">
+                    <div className="user-item__image">
+                        <picture><source srcSet={UserPh} type="image/webp"/><img className="user-photo" src={UserPh} alt="User ph"/></picture>
                     </div>
-                </div>
+                    <div className="user-item__body">
+                        <div className="user-item__name">Boob007</div>
+                        <div className="user-item__username">@Boob007</div>
+                    </div>
+                </NavLink>
                 <div className="popup-block-user__items">
                     <div className="popup-block-user__item item-block">
                         <div className="item-block__body">
@@ -66,7 +72,7 @@ export const ModalBlockUser = () => {
                 </div>
 
             </div>
-            <button className="popup-block-user__button button"><span>Done</span></button>
+            <button onClick={() => dispatch(removeModal('blockUser'))} className="popup-block-user__button button"><span>Done</span></button>
         </div>
     )
 }

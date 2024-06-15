@@ -7,6 +7,7 @@ import { IUser } from '../../models'
 import { useSelector } from 'react-redux'
 import { useState } from 'react'
 import { MyProfileVid } from './components/MyProfileVid'
+import { toast } from 'react-toastify'
 
 
 
@@ -109,7 +110,7 @@ export const MyProfile = () => {
                                     </div>
                                 </div>
                             </div>}
-                            <button className="body-profile__button button"><span>Save changes</span></button>
+                            <button onClick={() => toast.success('Your data has been saved')} className="body-profile__button button"><span>Save changes</span></button>
                         </div>
                         
                     </div>

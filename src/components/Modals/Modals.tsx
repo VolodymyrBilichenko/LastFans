@@ -37,15 +37,13 @@ export const Modals = () => {
                         
                         <div id="popup-add-vid" aria-hidden="true"  className={`popup-add-vid popup ${modal ? 'popup_show' : ''}`}>
                             <div className="popup-bgd" onClick={() => handleCloseModal(modal)}></div>
-                            {/* <div  className="popup__wrapper"> */}
-                                <div  className="popup__content">
-                                    <button data-close type="button"  className="popup__close" onClick={() => handleCloseModal(modal)}></button>
+                            <div  className="popup__content">
+                                <button data-close type="button"  className="popup__close" onClick={() => handleCloseModal(modal)}></button>
 
-                                    {modalComponents[modal]}
-                                    
-                                    
-                                </div>
-                            {/* </div> */}
+                                {modalComponents[modal]}
+                                
+                                
+                            </div>
                         </div>
                     );
                 })

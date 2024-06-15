@@ -1,4 +1,6 @@
-import UserPhoto from '../../assets/img/user/01.png'
+import CreditCardIc from '../../assets/img/icons/user-menu/credit-card.svg'
+import EditIc from '../../assets/img/icons/user-menu/edit.svg'
+import SupportIc from '../../assets/img/icons/user-menu/service.svg'
 import LogoPh from '../../assets/img/icons/logo.svg'
 import LogoIc from '../../assets/img/icons/logo-white.svg'
 import VideoIc from '../../assets/img/icons/video.svg'
@@ -13,6 +15,8 @@ import { Notifications } from './components/Notifications/Notifications'
 import { toast } from 'react-toastify'
 import setCookie from '../../functions/setCookie'
 import { AsideMenuMode } from '../AsideMenu/components/AsideMenuMode'
+import { IUser } from '../../models'
+import { useSelector } from 'react-redux'
 
 interface IOpenMenu {
     handleOpenMenu?: any
@@ -25,6 +29,7 @@ interface IRequest {
 }
 
 export const Header = ({handleOpenMenu}: IOpenMenu) => {
+    const user: IUser = useSelector((state: any) => state.toolkit.user)
     const [openModal, setOpenModal] = useState<string | null>(null);
     const [requests, setRequests] = useState<IRequest[]>([
         {id: 1, username: 'Bob007', time: '21 min'},
@@ -211,19 +216,39 @@ export const Header = ({handleOpenMenu}: IOpenMenu) => {
                                             </div>
                                         </div>
                                         <div className="popup-user-header__menu menu-popup-user-header">
+                                            {user.sex === 'man' &&
+                                                <NavLink to={'/payment-add'} className="menu-popup-user-header__link link-menu-popup-user-header">
+                                                    <div className="link-menu-popup-user-header__image">
+                                                        <img src={CreditCardIc} alt="ph"/>
+
+                                                    </div>
+                                                    <p className="link-menu-popup-user-header__text">Add funds</p>
+                                                </NavLink>
+                                            }
                                             <button onClick={_ => toast.error('This page is developing')} className="menu-popup-user-header__link link-menu-popup-user-header">
                                                 <div className="link-menu-popup-user-header__image">
                                                     <img src={TimelineIc} alt="ph"/>
                                                 </div>
                                                 <p className="link-menu-popup-user-header__text">Timeline</p>
                                             </button>
-                                            <NavLink to={'/video-store'} className="menu-popup-user-header__link link-menu-popup-user-header">
-                                                <div className="link-menu-popup-user-header__image">
-                                                    <img src={VideoIc} alt="ph"/>
+                                            {user.sex === 'man' &&
+                                                <NavLink to={'/profile'} className="menu-popup-user-header__link link-menu-popup-user-header">
+                                                    <div className="link-menu-popup-user-header__image">
+                                                        <img src={EditIc} alt="ph"/>
 
-                                                </div>
-                                                <p className="link-menu-popup-user-header__text">Video Store</p>
-                                            </NavLink>
+                                                    </div>
+                                                    <p className="link-menu-popup-user-header__text">Edit profile</p>
+                                                </NavLink>
+                                            }
+                                            {user.sex === 'woman' &&
+                                                <NavLink to={'/video-store'} className="menu-popup-user-header__link link-menu-popup-user-header">
+                                                    <div className="link-menu-popup-user-header__image">
+                                                        <img src={VideoIc} alt="ph"/>
+
+                                                    </div>
+                                                    <p className="link-menu-popup-user-header__text">Video Store</p>
+                                                </NavLink>
+                                            }
                                             <NavLink to={'/messages'} className="menu-popup-user-header__link link-menu-popup-user-header">
                                                 <div className="link-menu-popup-user-header__image">
                                                     <img src={MessageIc} alt="ph"/>
@@ -231,13 +256,24 @@ export const Header = ({handleOpenMenu}: IOpenMenu) => {
                                                 </div>
                                                 <p className="link-menu-popup-user-header__text">Messages</p>
                                             </NavLink>
-                                            <NavLink to={'/my-profile'} className="menu-popup-user-header__link link-menu-popup-user-header">
-                                                <div className="link-menu-popup-user-header__image">
-                                                    <img src={SettingsIc} alt="ph"/>
+                                            {user.sex === 'woman' &&
+                                                <NavLink to={'/my-profile'} className="menu-popup-user-header__link link-menu-popup-user-header">
+                                                    <div className="link-menu-popup-user-header__image">
+                                                        <img src={SettingsIc} alt="ph"/>
 
-                                                </div>
-                                                <p className="link-menu-popup-user-header__text">Settings</p>
-                                            </NavLink>
+                                                    </div>
+                                                    <p className="link-menu-popup-user-header__text">Settings</p>
+                                                </NavLink>
+                                            }
+                                            {user.sex === 'man' &&
+                                                <button onClick={() => toast.error('This page is development')} className="menu-popup-user-header__link link-menu-popup-user-header">
+                                                    <div className="link-menu-popup-user-header__image">
+                                                        <img src={SupportIc} alt="ph"/>
+
+                                                    </div>
+                                                    <p className="link-menu-popup-user-header__text">Support</p>
+                                                </button>
+                                            }
                                             <NavLink to={'/login'} onClick={_ => setCookie('access_token', '')} className="menu-popup-user-header__link link-menu-popup-user-header">
                                                 <div className="link-menu-popup-user-header__image">
                                                     <img src={LogoutIc} alt="ph"/>
