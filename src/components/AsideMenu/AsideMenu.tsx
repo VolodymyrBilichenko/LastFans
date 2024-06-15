@@ -1,14 +1,19 @@
+import LogoutIc from '../../assets/img/icons/user-menu/logout.svg'
 import { useEffect, useState } from "react";
 import { NavLink, useLocation } from "react-router-dom"
 import { AsideMenuMode } from "./components/AsideMenuMode";
 import { toast } from "react-toastify";
 import { AsideMenuStyled } from "./AsideMenu.styled";
+import { IUser } from "../../models";
+import { useSelector } from "react-redux";
+import setCookie from '../../functions/setCookie';
 
 interface IAsideMenu {
     isOpenAsideMenu?: boolean
     handleOpenMenu?: any
 }
 export const AsideMenu = ({ isOpenAsideMenu, handleOpenMenu }: IAsideMenu) => {
+    const user: IUser = useSelector((state: any) => state.toolkit.user)
     const [subMenu, setSubMenu] = useState(false);
 
     const location = useLocation()
@@ -67,24 +72,25 @@ export const AsideMenu = ({ isOpenAsideMenu, handleOpenMenu }: IAsideMenu) => {
                                 
                             </div>
                         </NavLink>
+                        {user.sex === "woman" &&
+                            <NavLink to={'/live'} className="page-menu__item item-page-menu">
+                                <div className="item-page-menu__image">
+                                    <div className="item-page-menu__image-body">
 
-                        <NavLink to={'/live'} className="page-menu__item item-page-menu">
-                            <div className="item-page-menu__image">
-                                <div className="item-page-menu__image-body">
+                                        <svg width="24" height="22" viewBox="0 0 24 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M4.3267 17.556H19.675C21.4446 17.556 22.8845 16.1161 22.8845 14.3457V3.71029C22.8845 1.93993 21.4446 0.5 19.675 0.5H4.3267C2.55712 0.5 1.11719 1.93993 1.11719 3.71029V14.3457C1.11719 16.1161 2.55712 17.556 4.3267 17.556ZM2.52658 3.71029C2.52658 2.71745 3.33464 1.91018 4.3267 1.91018H19.675C20.6679 1.91018 21.4751 2.71745 21.4751 3.71029V14.3457C21.4751 15.3386 20.6671 16.1459 19.675 16.1459H4.3267C3.33385 16.1459 2.52658 15.3386 2.52658 14.3457V3.71029Z" fill="#B5CBED" style={{ fill: '#B5CBED', fillOpacity: 1 }} />
+                                            <path d="M9.9398 12.9699C10.264 13.1375 10.6147 13.2205 10.9647 13.2205C11.4157 13.2205 11.8636 13.0827 12.2481 12.8118L15.0301 10.8449C15.6197 10.4283 15.9712 9.74866 15.9712 9.02674C15.9712 8.3056 15.6189 7.62596 15.0301 7.21019L12.2473 5.24408C11.5645 4.76175 10.6805 4.70068 9.93901 5.08591C9.19751 5.46958 8.73633 6.22752 8.73633 7.0622V10.9936C8.73711 11.8283 9.19751 12.5862 9.9398 12.9699ZM10.1465 7.0622C10.1465 6.75135 10.3109 6.48043 10.5873 6.33714C10.7079 6.2745 10.8371 6.24318 10.9647 6.24318C11.1284 6.24318 11.2912 6.29408 11.4338 6.39509L14.2157 8.36119C14.435 8.51544 14.5603 8.75896 14.5603 9.02752C14.5603 9.29609 14.4342 9.53882 14.215 9.69464L11.433 11.6607C11.1793 11.8401 10.8637 11.862 10.5866 11.7187C10.3102 11.5754 10.1457 11.3053 10.1457 10.9936L10.1465 7.0622Z" fill="#B5CBED" style={{ fill: '#B5CBED', fillOpacity: 1 }} />
+                                            <path d="M22.9626 20.0099H1.03868C0.649532 20.0099 0.333984 20.3254 0.333984 20.7146C0.333984 21.1037 0.649532 21.4193 1.03868 21.4193H22.9626C23.3518 21.4193 23.6673 21.1037 23.6673 20.7146C23.6673 20.3254 23.3518 20.0099 22.9626 20.0099Z" fill="#B5CBED" style={{ fill: '#B5CBED', fillOpacity: 1 }} />
+                                        </svg>
+                                    </div>
 
-                                    <svg width="24" height="22" viewBox="0 0 24 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M4.3267 17.556H19.675C21.4446 17.556 22.8845 16.1161 22.8845 14.3457V3.71029C22.8845 1.93993 21.4446 0.5 19.675 0.5H4.3267C2.55712 0.5 1.11719 1.93993 1.11719 3.71029V14.3457C1.11719 16.1161 2.55712 17.556 4.3267 17.556ZM2.52658 3.71029C2.52658 2.71745 3.33464 1.91018 4.3267 1.91018H19.675C20.6679 1.91018 21.4751 2.71745 21.4751 3.71029V14.3457C21.4751 15.3386 20.6671 16.1459 19.675 16.1459H4.3267C3.33385 16.1459 2.52658 15.3386 2.52658 14.3457V3.71029Z" fill="#B5CBED" style={{ fill: '#B5CBED', fillOpacity: 1 }} />
-                                        <path d="M9.9398 12.9699C10.264 13.1375 10.6147 13.2205 10.9647 13.2205C11.4157 13.2205 11.8636 13.0827 12.2481 12.8118L15.0301 10.8449C15.6197 10.4283 15.9712 9.74866 15.9712 9.02674C15.9712 8.3056 15.6189 7.62596 15.0301 7.21019L12.2473 5.24408C11.5645 4.76175 10.6805 4.70068 9.93901 5.08591C9.19751 5.46958 8.73633 6.22752 8.73633 7.0622V10.9936C8.73711 11.8283 9.19751 12.5862 9.9398 12.9699ZM10.1465 7.0622C10.1465 6.75135 10.3109 6.48043 10.5873 6.33714C10.7079 6.2745 10.8371 6.24318 10.9647 6.24318C11.1284 6.24318 11.2912 6.29408 11.4338 6.39509L14.2157 8.36119C14.435 8.51544 14.5603 8.75896 14.5603 9.02752C14.5603 9.29609 14.4342 9.53882 14.215 9.69464L11.433 11.6607C11.1793 11.8401 10.8637 11.862 10.5866 11.7187C10.3102 11.5754 10.1457 11.3053 10.1457 10.9936L10.1465 7.0622Z" fill="#B5CBED" style={{ fill: '#B5CBED', fillOpacity: 1 }} />
-                                        <path d="M22.9626 20.0099H1.03868C0.649532 20.0099 0.333984 20.3254 0.333984 20.7146C0.333984 21.1037 0.649532 21.4193 1.03868 21.4193H22.9626C23.3518 21.4193 23.6673 21.1037 23.6673 20.7146C23.6673 20.3254 23.3518 20.0099 22.9626 20.0099Z" fill="#B5CBED" style={{ fill: '#B5CBED', fillOpacity: 1 }} />
-                                    </svg>
+
                                 </div>
-
-
-                            </div>
-                            <div className="item-page-menu__content">
-                                    <div className="sub-menu__title spollers__title">Livestreaming</div>
-                            </div>
-                        </NavLink>
+                                <div className="item-page-menu__content">
+                                        <div className="sub-menu__title spollers__title">Livestreaming</div>
+                                </div>
+                            </NavLink>
+                        }
 
                         <NavLink to={'/models'} className="page-menu__item item-page-menu">
                             <div className="item-page-menu__image">
@@ -102,23 +108,25 @@ export const AsideMenu = ({ isOpenAsideMenu, handleOpenMenu }: IAsideMenu) => {
                             </div>
                         </NavLink>
 
-                        <NavLink to={'/statistic'} className="page-menu__item item-page-menu">
-                            <div className="item-page-menu__image">
-                                <div className="item-page-menu__image-body">
-                                    <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M16.3333 3.57814C15.6144 3.52456 14.8379 3.5 14 3.5C5.83333 3.5 3.5 5.83333 3.5 14C3.5 22.1667 5.83333 24.5 14 24.5C22.1667 24.5 24.5 22.1667 24.5 14.6176C24.5 13.5393 24.4648 12.5582 24.388 11.6667" stroke="#B5CBED" style={{ stroke: '#B5CBED', strokeOpacity: 1 }} strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" />
-                                        <path d="M22.1654 8.16667C23.454 8.16667 24.4987 7.122 24.4987 5.83333C24.4987 4.54467 23.454 3.5 22.1654 3.5C20.8767 3.5 19.832 4.54467 19.832 5.83333C19.832 7.122 20.8767 8.16667 22.1654 8.16667Z" stroke="#B5CBED" style={{ stroke: '#B5CBED', strokeOpacity: 1 }} strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" />
-                                        <path d="M8.16797 17.5C10.268 14.5 11.0089 12.8272 12.4634 13.2222C13.5373 13.5139 13.6285 14.9179 14.8498 15.1667C16.4862 15.5 17.093 13 18.668 10.5" stroke="#B5CBED" style={{ stroke: '#B5CBED', strokeOpacity: 1 }} strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" />
-                                    </svg>
+                        {user.sex === "woman" && 
+                            <NavLink to={'/statistic'} className="page-menu__item item-page-menu">
+                                <div className="item-page-menu__image">
+                                    <div className="item-page-menu__image-body">
+                                        <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M16.3333 3.57814C15.6144 3.52456 14.8379 3.5 14 3.5C5.83333 3.5 3.5 5.83333 3.5 14C3.5 22.1667 5.83333 24.5 14 24.5C22.1667 24.5 24.5 22.1667 24.5 14.6176C24.5 13.5393 24.4648 12.5582 24.388 11.6667" stroke="#B5CBED" style={{ stroke: '#B5CBED', strokeOpacity: 1 }} strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" />
+                                            <path d="M22.1654 8.16667C23.454 8.16667 24.4987 7.122 24.4987 5.83333C24.4987 4.54467 23.454 3.5 22.1654 3.5C20.8767 3.5 19.832 4.54467 19.832 5.83333C19.832 7.122 20.8767 8.16667 22.1654 8.16667Z" stroke="#B5CBED" style={{ stroke: '#B5CBED', strokeOpacity: 1 }} strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" />
+                                            <path d="M8.16797 17.5C10.268 14.5 11.0089 12.8272 12.4634 13.2222C13.5373 13.5139 13.6285 14.9179 14.8498 15.1667C16.4862 15.5 17.093 13 18.668 10.5" stroke="#B5CBED" style={{ stroke: '#B5CBED', strokeOpacity: 1 }} strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" />
+                                        </svg>
+
+                                    </div>
+
 
                                 </div>
-
-
-                            </div>
-                            <div className="item-page-menu__content">
-                                    <div className="sub-menu__title spollers__title">Statistics</div>
-                            </div>
-                        </NavLink>
+                                <div className="item-page-menu__content">
+                                        <div className="sub-menu__title spollers__title">Statistics</div>
+                                </div>
+                            </NavLink>
+                        }
                         <div className="item-page-menu-wrapper">
                             <div className={`page-menu__item item-page-menu ${location.pathname.includes('auto-message') || location.pathname.includes('history') || location.pathname.includes('profile') ? "active" : ""}`}>
 
@@ -139,23 +147,69 @@ export const AsideMenu = ({ isOpenAsideMenu, handleOpenMenu }: IAsideMenu) => {
 
                                 </div>
                                 <div className="item-page-menu__content">
-                                        <div className={`sub-menu__title spollers__title`} onClick={handleOpenSubMenu}>My profile</div>
+                                    <div className={`sub-menu__title spollers__title`} onClick={handleOpenSubMenu}>My profile</div>
                                 </div>
                             </div>
-                            <div className="sub-menu-wrapper">
+                            {user.sex === "woman" ? ( 
+                                <div className="sub-menu-wrapper">
 
-                                <div className={`item-page-menu__content sub-menu`}>
-                                    <div className={`sub-menu__item spollers__item ${subMenu ? "active" : ""}`}>
+                                    <div className={`item-page-menu__content sub-menu`}>
+                                        <div className={`sub-menu__item spollers__item ${subMenu ? "active" : ""}`}>
 
-                                        
-                                        <div className="sub-menu__body spollers__body">
-                                            <NavLink to={'/profile'} className="item-page-menu__text">Profile</NavLink>
-                                            <NavLink to={'/auto-message'} className="item-page-menu__text">Automated messages</NavLink>
-                                            <NavLink to={'/history'} className="item-page-menu__text">History</NavLink>
+                                            
+                                            <div className="sub-menu__body spollers__body">
+                                                <NavLink to={'/profile'} className="item-page-menu__text">Profile</NavLink>
+                                                <NavLink to={'/auto-message'} className="item-page-menu__text">Automated messages</NavLink>
+                                                <NavLink to={'/history'} className="item-page-menu__text">History</NavLink>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                                ) : (
+                                    <div className="sub-menu-wrapper">
+
+                                        <div className={`item-page-menu__content sub-menu`}>
+                                            <div className={`sub-menu__item spollers__item ${subMenu ? "active" : ""}`}>
+
+                                                
+                                                <div className="sub-menu__body spollers__body">
+                                                    <NavLink to={'/profile'} className="item-page-menu__text">Profile</NavLink>
+                                                    <div onClick={() => toast.error('This page is development')} className="item-page-menu__text">Transactions</div>
+                                                    <NavLink to={'/payment'} className="item-page-menu__text">Payment method</NavLink>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                )
+                            }
+                            {user.sex === 'man' && 
+                                <NavLink to={'/login'} onClick={_ => setCookie('access_token', '')} className="page-menu__item item-page-menu">
+                                    <div className="item-page-menu__image">
+                                        <div className="item-page-menu__image-body">
+                                            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <mask id="mask0_191_2252" style={{maskType:'luminance'}} maskUnits="userSpaceOnUse" x="3" y="3" width="22" height="22">
+                                                    <path d="M25 3H3V25H25V3Z" fill="white"  />
+                                                </mask>
+                                                <g mask="url(#mask0_191_2252)">
+                                                    <mask id="mask1_191_2252" style={{maskType:'luminance'}} maskUnits="userSpaceOnUse" x="3" y="3" width="22" height="22">
+                                                        <path d="M3 3H25V25H3V3Z" fill="white"  />
+                                                    </mask>
+                                                    <g mask="url(#mask1_191_2252)">
+                                                        <path d="M17.6523 19.8438V21.5625C17.6523 22.9864 16.4981 24.1406 15.0742 24.1406H6.4375C5.01364 24.1406 3.85938 22.9864 3.85938 21.5625V6.4375C3.85938 5.01364 5.01364 3.85938 6.4375 3.85938H15.0742C16.4981 3.85938 17.6523 5.01364 17.6523 6.4375V8.15625" stroke="#B5CBED"  strokeWidth="1.875" stroke-miterlimit="10" stroke-linecap="round" strokeLinejoin="round" />
+                                                        <path d="M23.9258 14.043H12.2812" stroke="#B5CBED"  strokeWidth="1.875" stroke-miterlimit="10" stroke-linecap="round" strokeLinejoin="round" />
+                                                        <path d="M21.8379 16.8789L23.7623 14.9545C24.2657 14.451 24.2657 13.6349 23.7623 13.1315L21.8379 11.207" stroke="#B5CBED"  strokeWidth="1.875" stroke-miterlimit="10" stroke-linecap="round" strokeLinejoin="round" />
+                                                    </g>
+                                                </g>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <div className="item-page-menu__content sub-menu">
+                                        <div className="sub-menu__item spollers__item">
+                                            <div className="sub-menu__title spollers__title">Logout</div>
+                                        </div>
+                                    </div>
+                                </NavLink>
+                            }
                         </div>
                     </div>
 

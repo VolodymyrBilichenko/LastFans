@@ -23,8 +23,6 @@ export const MyProfileVid = () => {
             return;
         }
 
-        toast.success('Тариф додано');
-
         const newTariff: ITariff = {
             id: new Date().getTime(),
             minutes,
@@ -41,7 +39,6 @@ export const MyProfileVid = () => {
 
     const handleDeleteTariff = (id: number) => {
         setStartTariff(startTariff.filter(tariff => tariff.id !== id));
-        toast.warning('Тариф видалений');
     }
 
     const isTariffValid = () => {
