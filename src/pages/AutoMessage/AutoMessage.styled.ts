@@ -40,5 +40,20 @@ export const AutoMessageStyled = styled.div`
         border: 1px solid #E2E2E2;
         border-radius: 10px 10px 0 0;
      }
+
+
+     .rdw-editor-toolbar {
+      justify-content: space-between;
+     }
+
+     .rdw-option-wrapper[title='Outdent'],
+     .rdw-option-wrapper[title='Indent'],
+     .rdw-option-wrapper[title='Subscript'],
+     .rdw-option-wrapper[title='Superscript'],
+     .rdw-option-wrapper[title='Monospace'],
+     .rdw-embedded-wrapper,
+     .rdw-fontfamily-wrapper {
+      display: none;
+     }
     
 `
