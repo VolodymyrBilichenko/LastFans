@@ -60,7 +60,7 @@ export const routes = () => {
             isNotNeedHeader: true,
             isNotNeedMessage: true,
             isNotNeedMenu: true,
-            additionalClass: 'page-login'
+            additionalClass: 'page-recovery'
         },
         {
             path: '/live',
