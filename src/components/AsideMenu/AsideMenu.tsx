@@ -13,7 +13,7 @@ interface IAsideMenu {
     handleOpenMenu?: any
 }
 export const AsideMenu = ({ isOpenAsideMenu, handleOpenMenu }: IAsideMenu) => {
-    const user: IUser = useSelector((state: any) => state.toolkit.user)
+    const user: IUser = useSelector((state: any) => state.toolkit.user);
     const [subMenu, setSubMenu] = useState(false);
 
     const location = useLocation()
