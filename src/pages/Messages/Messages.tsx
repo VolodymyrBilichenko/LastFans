@@ -238,7 +238,7 @@ export const Messages = () => {
                     </div>
 
                     <div className="body-messages__button-wrapper">
-                        <button className="body-messages__button button button--transparent button--fw"><span>Read all messages</span></button>
+                        <button onClick={_ => toast.error('This function is developing')} className="body-messages__button button button--transparent button--fw"><span>Read all messages</span></button>
                     </div>
 
                 </div>

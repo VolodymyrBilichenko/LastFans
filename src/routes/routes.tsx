@@ -20,7 +20,9 @@ import { Rules } from '../pages/Rules/Rules'
 import getCookies from '../functions/getCookie'
 import { Modals } from '../components/Modals/Modals'
 
-export const routes = () => {
+export const routes = (sex?: string) => {
+    
+    console.log(sex);
     
 
     return [
@@ -112,7 +114,7 @@ export const routes = () => {
         {
             path: '/my-profile',
             element: <MyProfile/>,
-            additionalClass: 'page-profile'
+            additionalClass: sex === 'man' ? 'page-profile-man' : 'page-profile'
         },
         {
             path: '/statistic',
