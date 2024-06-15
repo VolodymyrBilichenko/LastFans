@@ -73,7 +73,7 @@ export const ChatBottom: React.FC<IChatBottomProps> = () => {
                 <div className="input-chat__block">
                     <div className="input-chat__actions actions-input-chat">
 
-                        {user.sex === "man" && <button onClick={_ => toast.error('This function is developing')} className="actions-input-chat__item actions-input-chat__item--tip">
+                        {user.sex === "man" && <button type="button" onClick={_ => toast.error('This function is developing')} className="actions-input-chat__item actions-input-chat__item--tip">
                             <span>Tip</span>
                             <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <circle cx="10" cy="10" r="10" fill="#29CE69"></circle>

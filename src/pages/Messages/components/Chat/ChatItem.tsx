@@ -25,9 +25,6 @@ export const ChatItem: React.FC<IChatItemProps> = ({ isOwner, isEdited, message,
         setIsLiked(!isLiked)
     }
 
-    console.log(isEdited);
-    
-
     const dispatch = useDispatch()
 
     const handleEditMessage = () => {

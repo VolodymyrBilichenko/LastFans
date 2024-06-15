@@ -80,7 +80,7 @@ const toolkitSlice = createSlice({
         },
 
         addMessage(state: any, action: { payload: any }) {
-            const isChange = state.chatMessages.filter((item: any) => item.id === action?.payload?.id)
+            const isChange = state.chatMessages.filter((item: any) => item.id === action?.payload?.id).length
 
             if (isChange) {
                 let itemIndex = 0
@@ -88,8 +88,9 @@ const toolkitSlice = createSlice({
                     if (item.id === action?.payload?.id) itemIndex = index
                 })
 
-
                 state.chatMessages = [...state.chatMessages.slice(0, itemIndex), {...action.payload, isEdited: true}, ...state.chatMessages.slice(itemIndex + 1)]
+
+                state.chatMessageChange = {}
 
             } else {
                 state.chatMessages = [...state.chatMessages, action.payload]
