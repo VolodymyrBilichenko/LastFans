@@ -99,7 +99,8 @@ export const routes = (sex?: string) => {
         },
         {
             path: '/payment-add',
-            element: <PaymentAdd/>
+            element: <PaymentAdd/>,
+            additionalClass: 'page-payment'
         },
         {
             path: '/profile',
