@@ -253,7 +253,7 @@ export const VideoStoreFilter: React.FC<IVideoStoreFilterProps> = ({ isOpenFilte
                     <div className="block-filters-video-store__title">Followed</div>
 
                     <div className="followed-filters-video-store__items">
-                        <NavLink to="/profile" className="user-item user-item--stories">
+                        <NavLink to="/my-profile" className="user-item user-item--stories">
                             <div className="user-item__image user-item__image--decoration">
                                 <img className="user-photo" src="https://goldenglobes.com/wp-content/uploads/2023/10/17-tomcruiseag.jpg" alt="User ph" />
                             </div>
@@ -268,7 +268,7 @@ export const VideoStoreFilter: React.FC<IVideoStoreFilterProps> = ({ isOpenFilte
                                 </span>
                             </div>
                         </NavLink>
-                        <NavLink to="/profile" className="user-item">
+                        <NavLink to="/my-profile" className="user-item">
                             <div className="user-item__image user-item__image--decoration">
                                 <img className="user-photo" src="https://goldenglobes.com/wp-content/uploads/2023/10/17-tomcruiseag.jpg" alt="User ph" />
                                 {/* <div className="user-item__image-icon">
@@ -286,7 +286,7 @@ export const VideoStoreFilter: React.FC<IVideoStoreFilterProps> = ({ isOpenFilte
                                 </span>
                             </div>
                         </NavLink>
-                        <NavLink to="/profile" className="user-item user-item--stories">
+                        <NavLink to="/my-profile" className="user-item user-item--stories">
                             <div className="user-item__image">
                                 <img className="user-photo" src="https://goldenglobes.com/wp-content/uploads/2023/10/17-tomcruiseag.jpg" alt="User ph" />
                                 <div className="user-item__image-icon">

@@ -41,7 +41,7 @@ export const ChatHeader: React.FC<IChatHeaderProps> = () => {
                             </svg>
                         </div>
                     </a>
-                    <NavLink to={'/profile'} className="user-item__body">
+                    <NavLink to={'/my-profile'} className="user-item__body">
                         <a href="some" className="user-item__name">Boob007</a>
                         <a href="some" className="user-item__username">@Boob007</a>
                     </NavLink>
