@@ -1,7 +1,11 @@
+import { Editor } from 'react-draft-wysiwyg';
+import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
+import { AutoMessageStyled } from './AutoMessage.styled';
+
 
 export const AutoMessage = () => {
     return (
-        <div className="profile">
+        <AutoMessageStyled className="profile">
             <div className="profile__container">
                 <div className="profile__body body-profile">
                     <div className="body-profile__header">
@@ -38,7 +42,8 @@ export const AutoMessage = () => {
                             <div className="automated__block">
                                 <label className="automated__label">Your message</label>
                                 <div className="automated__textarea-body">
-                                    <textarea id="editor" className="automated__textarea textarea"></textarea>
+                                    {/* <textarea id="editor" className="automated__textarea textarea"></textarea> */}
+                                    <Editor />
                                 </div>
                             </div>
                             <div className="automated__bottom">
@@ -58,6 +63,6 @@ export const AutoMessage = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        </AutoMessageStyled>
     )
 }

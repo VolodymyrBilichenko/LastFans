@@ -150,6 +150,7 @@ export const AsideMenu = ({ isOpenAsideMenu, handleOpenMenu }: IAsideMenu) => {
                                     <div className={`sub-menu__title spollers__title`} onClick={handleOpenSubMenu}>My profile</div>
                                 </div>
                             </div>
+
                             {user.sex === "woman" ? ( 
                                 <div className="sub-menu-wrapper">
 
@@ -158,10 +159,11 @@ export const AsideMenu = ({ isOpenAsideMenu, handleOpenMenu }: IAsideMenu) => {
 
                                             
                                             <div className="sub-menu__body spollers__body">
-                                                <NavLink to={'/profile'} className="item-page-menu__text">Profile</NavLink>
+                                                <NavLink to={'/my-profile'} className="item-page-menu__text">Profile</NavLink>
                                                 <NavLink to={'/auto-message'} className="item-page-menu__text">Automated messages</NavLink>
                                                 <NavLink to={'/history'} className="item-page-menu__text">History</NavLink>
                                             </div>
+
                                         </div>
                                     </div>
                                 </div>
@@ -173,7 +175,7 @@ export const AsideMenu = ({ isOpenAsideMenu, handleOpenMenu }: IAsideMenu) => {
 
                                                 
                                                 <div className="sub-menu__body spollers__body">
-                                                    <NavLink to={'/profile'} className="item-page-menu__text">Profile</NavLink>
+                                                    <NavLink to={'/my-profile'} className="item-page-menu__text">Profile</NavLink>
                                                     <div onClick={() => toast.error('This page is development')} className="item-page-menu__text">Transactions</div>
                                                     <NavLink to={'/payment'} className="item-page-menu__text">Payment method</NavLink>
                                                 </div>
