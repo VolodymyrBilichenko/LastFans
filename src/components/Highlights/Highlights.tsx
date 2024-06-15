@@ -17,7 +17,7 @@ export const Highlights = () => {
                 <h3 className="highlights-main__title title title--small">Highlights</h3>
             </div>
 
-            <Swiper className="highlights-main__body body-highlights-main mySwiper"
+            <Swiper data-gallery className="highlights-main__body body-highlights-main mySwiper"
                 slidesPerView={'auto'}
                 spaceBetween={22}
 
@@ -34,7 +34,7 @@ export const Highlights = () => {
                     
                 }}
             >
-                <SwiperSlide >
+                <SwiperSlide>
                     <NavLink to={''} onClick={handleInDevelop} data-popup="#popup-timeline-post" className="highlights-main__item item-highlights-main item-highlights-main--new">
                         <div className="item-highlights-main__image">
                             <svg width="18" height="17" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -46,7 +46,7 @@ export const Highlights = () => {
                 </SwiperSlide>
 
                 <SwiperSlide >
-                    <NavLink to={'/profile'} className="highlights-main__item item-highlights-main">
+                    <NavLink to={'https://goldenglobes.com/wp-content/uploads/2023/10/17-tomcruiseag.jpg'} data-fancybox={"stories"} className="highlights-main__item item-highlights-main">
                         <div className="item-highlights-main__image">
                                 <img src={StoryPh} alt="ph"/>
                         </div>
@@ -54,7 +54,7 @@ export const Highlights = () => {
                     </NavLink>
                 </SwiperSlide>
                 <SwiperSlide >
-                    <NavLink to={'/profile'} className="highlights-main__item item-highlights-main">
+                    <NavLink to={'https://goldenglobes.com/wp-content/uploads/2023/10/17-tomcruiseag.jpg'} data-fancybox={"stories"} className="highlights-main__item item-highlights-main">
                         <div className="item-highlights-main__image">
                                 <img src={StoryPh} alt="ph"/>
                         </div>
@@ -62,7 +62,7 @@ export const Highlights = () => {
                     </NavLink>
                 </SwiperSlide>
                 <SwiperSlide >
-                    <NavLink to={'/profile'} className="highlights-main__item item-highlights-main">
+                    <NavLink to={'https://goldenglobes.com/wp-content/uploads/2023/10/17-tomcruiseag.jpg'} data-fancybox={"stories"} className="highlights-main__item item-highlights-main">
                         <div className="item-highlights-main__image">
                                 <img src={StoryPh} alt="ph"/>
                         </div>
@@ -70,7 +70,7 @@ export const Highlights = () => {
                     </NavLink>
                 </SwiperSlide>
                 <SwiperSlide >
-                    <NavLink to={'/profile'} className="highlights-main__item item-highlights-main">
+                    <NavLink to={'https://goldenglobes.com/wp-content/uploads/2023/10/17-tomcruiseag.jpg'} data-fancybox={"stories"} className="highlights-main__item item-highlights-main">
                         <div className="item-highlights-main__image">
                                 <img src={StoryPh} alt="ph"/>
                         </div>
@@ -78,7 +78,7 @@ export const Highlights = () => {
                     </NavLink>
                 </SwiperSlide>
                 <SwiperSlide >
-                    <NavLink to={'/profile'} className="highlights-main__item item-highlights-main">
+                    <NavLink to={'https://goldenglobes.com/wp-content/uploads/2023/10/17-tomcruiseag.jpg'} data-fancybox={"stories"} className="highlights-main__item item-highlights-main">
                         <div className="item-highlights-main__image">
                                 <img src={StoryPh} alt="ph"/>
                         </div>
@@ -86,7 +86,7 @@ export const Highlights = () => {
                     </NavLink>
                 </SwiperSlide>
                 <SwiperSlide >
-                    <NavLink to={'/profile'} className="highlights-main__item item-highlights-main">
+                    <NavLink to={'https://goldenglobes.com/wp-content/uploads/2023/10/17-tomcruiseag.jpg'} data-fancybox={"stories"} className="highlights-main__item item-highlights-main">
                         <div className="item-highlights-main__image">
                                 <img src={StoryPh} alt="ph"/>
                         </div>
@@ -94,7 +94,7 @@ export const Highlights = () => {
                     </NavLink>
                 </SwiperSlide>
                 <SwiperSlide >
-                    <NavLink to={'/profile'} className="highlights-main__item item-highlights-main">
+                    <NavLink to={'https://goldenglobes.com/wp-content/uploads/2023/10/17-tomcruiseag.jpg'} data-fancybox={"stories"} className="highlights-main__item item-highlights-main">
                         <div className="item-highlights-main__image">
                                 <img src={StoryPh} alt="ph"/>
                         </div>
@@ -102,7 +102,7 @@ export const Highlights = () => {
                     </NavLink>
                 </SwiperSlide>
                 <SwiperSlide >
-                    <NavLink to={'/profile'} className="highlights-main__item item-highlights-main">
+                    <NavLink to={'https://goldenglobes.com/wp-content/uploads/2023/10/17-tomcruiseag.jpg'} data-fancybox={"stories"} className="highlights-main__item item-highlights-main">
                         <div className="item-highlights-main__image">
                                 <img src={StoryPh} alt="ph"/>
                         </div>
@@ -110,7 +110,7 @@ export const Highlights = () => {
                     </NavLink>
                 </SwiperSlide>
                 <SwiperSlide >
-                    <NavLink to={'/profile'} className="highlights-main__item item-highlights-main">
+                    <NavLink to={'https://goldenglobes.com/wp-content/uploads/2023/10/17-tomcruiseag.jpg'} data-fancybox={"stories"} className="highlights-main__item item-highlights-main">
                         <div className="item-highlights-main__image">
                                 <img src={StoryPh} alt="ph"/>
                         </div>
@@ -118,7 +118,7 @@ export const Highlights = () => {
                     </NavLink>
                 </SwiperSlide>
                 <SwiperSlide >
-                    <NavLink to={'/profile'} className="highlights-main__item item-highlights-main">
+                    <NavLink to={'https://goldenglobes.com/wp-content/uploads/2023/10/17-tomcruiseag.jpg'} data-fancybox={"stories"} className="highlights-main__item item-highlights-main">
                         <div className="item-highlights-main__image">
                                 <img src={StoryPh} alt="ph"/>
                         </div>
@@ -126,7 +126,7 @@ export const Highlights = () => {
                     </NavLink>
                 </SwiperSlide>
                 <SwiperSlide >
-                    <NavLink to={'/profile'} className="highlights-main__item item-highlights-main">
+                    <NavLink to={'https://goldenglobes.com/wp-content/uploads/2023/10/17-tomcruiseag.jpg'} data-fancybox={"stories"} className="highlights-main__item item-highlights-main">
                         <div className="item-highlights-main__image">
                                 <img src={StoryPh} alt="ph"/>
                         </div>
