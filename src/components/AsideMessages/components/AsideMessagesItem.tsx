@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom'
 // import UserPhoto2 from './../../../assets/img/user/02.jpg'
 import LogoWhiteIc from './../../../assets/img/icons/logo-white.svg'
 import { IUser } from '../../../models'
+import { AsideMessageStyled } from '../AsideMessage.styled'
 
 interface IAsideMessagesItemProps {
     user: IUser
@@ -15,16 +16,24 @@ export const AsideMessagesItem: React.FC<IAsideMessagesItemProps> = ({user, isOn
 
     const navigate = useNavigate()
 
+    const [isLookedStories, setIsLookedStories] = useState(false)
+
     return (
-        <div className="body-messages__item item-message">
-            <div onClick={_ => navigate(`/messages/${user.usertag}`)} style={{width: "100%"}} className="item-message__user user-item user-item--stories">
-                <div className="user-item__image user-item__image--decoration">
+        <AsideMessageStyled className="body-messages__item item-message">
+            <div style={{width: "100%"}} className={`item-message__user user-item ${!isLookedStories ? "user-item--stories" : ""}`}>
+                <div className={`user-item__image user-item__image--decoration`}>
                     <img className="user-photo" src={user.photo} alt="ph" />
                     <div className="user-item__image-icon">
                         <img src={LogoWhiteIc} alt="ph" />
                     </div>
+
+                    <div className="gallery-stories" onClick={_ => setIsLookedStories(true)} data-gallery>
+                        <a href="https://images.hellomagazine.com/horizon/landscape/13bd17120306-tom-cruise.jpg" data-fancybox={`gallery-${user.usertag}`}></a>
+                        <a href="https://media.gq.com/photos/65d8aa57f4c01c81b4fece32/4:3/w_1024%2Cc_limit/GettyImages-1986202995.jpg" data-fancybox={`gallery-${user.usertag}`}></a>
+                    </div>
+
                 </div>
-                <div className="user-item__body">
+                <div onClick={_ => navigate(`/messages/${user.usertag}`)} className="user-item__body">
                     <button style={{textAlign: "left"}} className="user-item__name">
                         {user.username}
                     </button>
@@ -53,6 +62,6 @@ export const AsideMessagesItem: React.FC<IAsideMessagesItemProps> = ({user, isOn
                     </div>
                 </div>
             </div>
-        </div>
+        </AsideMessageStyled>
     )
 }

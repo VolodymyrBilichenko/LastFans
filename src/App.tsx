@@ -14,20 +14,29 @@ import { useDispatch, useSelector } from "react-redux";
 import { setUser } from "./redux/toolkitSlice";
 import { IUser } from "./models";
 import { Modals } from "./components/Modals/Modals";
+import { Fancybox as NativeFancybox } from "@fancyapps/ui";
 
 
 export const App = () => {
   const location = useLocation();
   const dispatch = useDispatch()
-  const {handleOpenMenu, isOpenAsideMenu} = useOpenAside();
+  const { handleOpenMenu, isOpenAsideMenu } = useOpenAside();
 
   const user: IUser = useSelector((state: any) => state.toolkit.user)
 
-  const checkLocation = location.pathname.slice(0, location.pathname.indexOf('/',1) === -1 ? undefined : location.pathname.indexOf('/',1))
+  const checkLocation = location.pathname.slice(0, location.pathname.indexOf('/', 1) === -1 ? undefined : location.pathname.indexOf('/', 1))
   const currentPage = routes(user.sex).filter(item => item.path === checkLocation || item.path === '*');
 
   useEffect(() => {
-    if(!getCookies('access_token')) return
+    NativeFancybox.bind("[data-fancybox]", {});
+    return () => {
+      NativeFancybox.unbind("[data-fancybox]");
+      NativeFancybox.close();
+    };
+  }, []);
+
+  useEffect(() => {
+    if (!getCookies('access_token')) return
 
     const user: IUser = {
       username: "Angelina",
@@ -38,18 +47,18 @@ export const App = () => {
 
     dispatch(setUser(user))
   }, [])
-    
+
   return (
     <>
-      <ToastContainer/>
+      <ToastContainer />
 
-      <Modals/>
+      <Modals />
 
-      {!currentPage[0]?.isNotNeedHeader && <Header handleOpenMenu={handleOpenMenu}/>}
-      
+      {!currentPage[0]?.isNotNeedHeader && <Header handleOpenMenu={handleOpenMenu} />}
+
       <main className={`page ${currentPage[0]?.additionalClass ?? 'page-main'} `}>
 
-        {!currentPage[0]?.isNotNeedMenu && <AsideMenu handleOpenMenu={handleOpenMenu} isOpenAsideMenu={isOpenAsideMenu}/>}
+        {!currentPage[0]?.isNotNeedMenu && <AsideMenu handleOpenMenu={handleOpenMenu} isOpenAsideMenu={isOpenAsideMenu} />}
 
         <TransitionGroup component={null}>
           <CSSTransition
