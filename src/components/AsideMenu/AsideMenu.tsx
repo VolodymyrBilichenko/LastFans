@@ -149,7 +149,7 @@ export const AsideMenu = ({ isOpenAsideMenu, handleOpenMenu }: IAsideMenu) => {
 
                                         
                                         <div className="sub-menu__body spollers__body">
-                                            <NavLink to={'/profile'} className="item-page-menu__text">Profile</NavLink>
+                                            <NavLink to={'/my-profile'} className="item-page-menu__text">Profile</NavLink>
                                             <NavLink to={'/auto-message'} className="item-page-menu__text">Automated messages</NavLink>
                                             <NavLink to={'/history'} className="item-page-menu__text">History</NavLink>
                                         </div>

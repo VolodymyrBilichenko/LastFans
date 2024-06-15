@@ -104,7 +104,7 @@ export const routes = (sex?: string) => {
         {
             path: '/profile',
             element: <MyProfile/>,
-            additionalClass: 'page-profile'
+            additionalClass: 'page-profile-model'
         },
         {
             path: '/profile/:userId',
