@@ -24,7 +24,7 @@ export const AsideMenu = ({ isOpenAsideMenu, handleOpenMenu }: IAsideMenu) => {
     }
 
     useEffect(() => {
-        if(isOpenAsideMenu) return
+        if (isOpenAsideMenu) return
         setSubMenu(false)
     }, [isOpenAsideMenu])
 
@@ -52,7 +52,7 @@ export const AsideMenu = ({ isOpenAsideMenu, handleOpenMenu }: IAsideMenu) => {
 
                             </div>
                             <div className="item-page-menu__content">
-                                    <div className="sub-menu__title spollers__title">Main page</div>
+                                <div className="sub-menu__title spollers__title">Main page</div>
                             </div>
                         </NavLink>
                         <NavLink to={'/video-store'} className="page-menu__item item-page-menu">
@@ -68,8 +68,8 @@ export const AsideMenu = ({ isOpenAsideMenu, handleOpenMenu }: IAsideMenu) => {
 
                             </div>
                             <div className="item-page-menu__content">
-                                    <div className="sub-menu__title spollers__title">Shop</div>
-                                
+                                <div className="sub-menu__title spollers__title">Shop</div>
+
                             </div>
                         </NavLink>
                         {user.sex === "woman" &&
@@ -87,7 +87,7 @@ export const AsideMenu = ({ isOpenAsideMenu, handleOpenMenu }: IAsideMenu) => {
 
                                 </div>
                                 <div className="item-page-menu__content">
-                                        <div className="sub-menu__title spollers__title">Livestreaming</div>
+                                    <div className="sub-menu__title spollers__title">Livestreaming</div>
                                 </div>
                             </NavLink>
                         }
@@ -104,11 +104,11 @@ export const AsideMenu = ({ isOpenAsideMenu, handleOpenMenu }: IAsideMenu) => {
 
                             </div>
                             <div className="item-page-menu__content">
-                                    <div className="sub-menu__title spollers__title">Models</div>
+                                <div className="sub-menu__title spollers__title">Models</div>
                             </div>
                         </NavLink>
 
-                        {user.sex === "woman" && 
+                        {user.sex === "woman" &&
                             <NavLink to={'/statistic'} className="page-menu__item item-page-menu">
                                 <div className="item-page-menu__image">
                                     <div className="item-page-menu__image-body">
@@ -123,12 +123,12 @@ export const AsideMenu = ({ isOpenAsideMenu, handleOpenMenu }: IAsideMenu) => {
 
                                 </div>
                                 <div className="item-page-menu__content">
-                                        <div className="sub-menu__title spollers__title">Statistics</div>
+                                    <div className="sub-menu__title spollers__title">Statistics</div>
                                 </div>
                             </NavLink>
                         }
                         <div className="item-page-menu-wrapper">
-                            <div className={`page-menu__item item-page-menu ${location.pathname.includes('auto-message') || location.pathname.includes('history') || location.pathname.includes('profile') ? "active" : ""}`}>
+                            <div className={`page-menu__item item-page-menu ${location.pathname.includes('auto-message') || location.pathname.includes('history') || location.pathname.includes('payment') || location.pathname.includes('profile') ? "active" : ""}`}>
 
                                 <div className="item-page-menu__image" onClick={handleOpenSubMenu}>
                                     <div className="item-page-menu__image-body">
@@ -151,55 +151,49 @@ export const AsideMenu = ({ isOpenAsideMenu, handleOpenMenu }: IAsideMenu) => {
                                 </div>
                             </div>
 
-                            {user.sex === "woman" ? ( 
-                                <div className="sub-menu-wrapper">
 
-                                    <div className={`item-page-menu__content sub-menu`}>
-                                        <div className={`sub-menu__item spollers__item ${subMenu ? "active" : ""}`}>
+                            <div className="sub-menu-wrapper">
 
-                                            
-                                            <div className="sub-menu__body spollers__body">
-                                                <NavLink to={'/my-profile'} className="item-page-menu__text">Profile</NavLink>
+                                <div className={`item-page-menu__content sub-menu`}>
+                                    <div className={`sub-menu__item spollers__item ${subMenu ? "active" : ""}`}>
+
+
+                                        <div className="sub-menu__body spollers__body">
+                                            <NavLink to={'/my-profile'} className="item-page-menu__text">Profile</NavLink>
+
+
+                                            {user?.sex === "woman" ?<>
                                                 <NavLink to={'/auto-message'} className="item-page-menu__text">Automated messages</NavLink>
                                                 <NavLink to={'/history'} className="item-page-menu__text">History</NavLink>
-                                            </div>
+                                            </> :
+                                            <>
+                                                <div onClick={() => toast.error('This page is development')} className="item-page-menu__text">Transactions</div>
+                                                <NavLink to={'/payment'} className="item-page-menu__text">Payment method</NavLink>
+                                            </>}
 
                                         </div>
+
                                     </div>
                                 </div>
-                                ) : (
-                                    <div className="sub-menu-wrapper">
-
-                                        <div className={`item-page-menu__content sub-menu`}>
-                                            <div className={`sub-menu__item spollers__item ${subMenu ? "active" : ""}`}>
-
-                                                
-                                                <div className="sub-menu__body spollers__body">
-                                                    <NavLink to={'/my-profile'} className="item-page-menu__text">Profile</NavLink>
-                                                    <div onClick={() => toast.error('This page is development')} className="item-page-menu__text">Transactions</div>
-                                                    <NavLink to={'/payment'} className="item-page-menu__text">Payment method</NavLink>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                )
-                            }
-                            {user.sex === 'man' && 
+                            </div>
+                                
+                            
+                            {user.sex === 'man' &&
                                 <NavLink to={'/login'} onClick={_ => setCookie('access_token', '')} className="page-menu__item item-page-menu">
                                     <div className="item-page-menu__image">
                                         <div className="item-page-menu__image-body">
                                             <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <mask id="mask0_191_2252" style={{maskType:'luminance'}} maskUnits="userSpaceOnUse" x="3" y="3" width="22" height="22">
-                                                    <path d="M25 3H3V25H25V3Z" fill="white"  />
+                                                <mask id="mask0_191_2252" style={{ maskType: 'luminance' }} maskUnits="userSpaceOnUse" x="3" y="3" width="22" height="22">
+                                                    <path d="M25 3H3V25H25V3Z" fill="white" />
                                                 </mask>
                                                 <g mask="url(#mask0_191_2252)">
-                                                    <mask id="mask1_191_2252" style={{maskType:'luminance'}} maskUnits="userSpaceOnUse" x="3" y="3" width="22" height="22">
-                                                        <path d="M3 3H25V25H3V3Z" fill="white"  />
+                                                    <mask id="mask1_191_2252" style={{ maskType: 'luminance' }} maskUnits="userSpaceOnUse" x="3" y="3" width="22" height="22">
+                                                        <path d="M3 3H25V25H3V3Z" fill="white" />
                                                     </mask>
                                                     <g mask="url(#mask1_191_2252)">
-                                                        <path d="M17.6523 19.8438V21.5625C17.6523 22.9864 16.4981 24.1406 15.0742 24.1406H6.4375C5.01364 24.1406 3.85938 22.9864 3.85938 21.5625V6.4375C3.85938 5.01364 5.01364 3.85938 6.4375 3.85938H15.0742C16.4981 3.85938 17.6523 5.01364 17.6523 6.4375V8.15625" stroke="#B5CBED"  strokeWidth="1.875" stroke-miterlimit="10" stroke-linecap="round" strokeLinejoin="round" />
-                                                        <path d="M23.9258 14.043H12.2812" stroke="#B5CBED"  strokeWidth="1.875" stroke-miterlimit="10" stroke-linecap="round" strokeLinejoin="round" />
-                                                        <path d="M21.8379 16.8789L23.7623 14.9545C24.2657 14.451 24.2657 13.6349 23.7623 13.1315L21.8379 11.207" stroke="#B5CBED"  strokeWidth="1.875" stroke-miterlimit="10" stroke-linecap="round" strokeLinejoin="round" />
+                                                        <path d="M17.6523 19.8438V21.5625C17.6523 22.9864 16.4981 24.1406 15.0742 24.1406H6.4375C5.01364 24.1406 3.85938 22.9864 3.85938 21.5625V6.4375C3.85938 5.01364 5.01364 3.85938 6.4375 3.85938H15.0742C16.4981 3.85938 17.6523 5.01364 17.6523 6.4375V8.15625" stroke="#B5CBED" strokeWidth="1.875" stroke-miterlimit="10" stroke-linecap="round" strokeLinejoin="round" />
+                                                        <path d="M23.9258 14.043H12.2812" stroke="#B5CBED" strokeWidth="1.875" stroke-miterlimit="10" stroke-linecap="round" strokeLinejoin="round" />
+                                                        <path d="M21.8379 16.8789L23.7623 14.9545C24.2657 14.451 24.2657 13.6349 23.7623 13.1315L21.8379 11.207" stroke="#B5CBED" strokeWidth="1.875" stroke-miterlimit="10" stroke-linecap="round" strokeLinejoin="round" />
                                                     </g>
                                                 </g>
                                             </svg>
@@ -231,7 +225,7 @@ export const AsideMenu = ({ isOpenAsideMenu, handleOpenMenu }: IAsideMenu) => {
 
                             </div>
                             <div className="item-page-menu__content">
-                                    <div className="sub-menu__title spollers__title">Privacy</div>
+                                <div className="sub-menu__title spollers__title">Privacy</div>
                             </div>
                         </NavLink>
                         <NavLink to={'/rules/Cookie-Notice'} className="page-menu__item item-page-menu">
@@ -240,14 +234,14 @@ export const AsideMenu = ({ isOpenAsideMenu, handleOpenMenu }: IAsideMenu) => {
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M20.4834 3.51563C18.2221 1.31949 15.1875 0.101308 12.0353 0.124344C8.88321 0.147381 5.86672 1.40979 3.63777 3.63874C1.40881 5.8677 0.146405 8.88419 0.123368 12.0363C0.100331 15.1885 1.31851 18.2231 3.51465 20.4844C5.04802 22.0159 6.96703 23.1043 9.06848 23.6343C11.1699 24.1642 13.3756 24.116 15.4518 23.4947C15.7482 23.4043 15.9968 23.2002 16.1431 22.927C16.2893 22.6538 16.3215 22.3338 16.2324 22.037C16.1433 21.7402 15.9403 21.4907 15.6678 21.3432C15.3953 21.1957 15.0755 21.1621 14.7782 21.2498C13.8766 21.52 12.9403 21.6569 11.999 21.6563C6.6745 21.6563 2.34278 17.3245 2.34278 12C2.34278 6.67547 6.6745 2.34375 11.999 2.34375C17.3236 2.34375 21.6553 6.67547 21.6553 12C21.6586 13.8822 21.1094 15.724 20.0756 17.2969C19.9094 17.5566 19.8523 17.8713 19.9166 18.1728C19.9809 18.4743 20.1615 18.7384 20.4191 18.9077C20.6767 19.077 20.9907 19.138 21.293 19.0774C21.5953 19.0169 21.8615 18.8396 22.034 18.5841C23.5467 16.2768 24.2184 13.5188 23.936 10.7743C23.6536 8.02987 22.4343 5.46648 20.4834 3.51563Z" fill="#B5CBED" />
                                         <path d="M10.8281 6.28125V13.7344C10.8281 14.0452 10.9516 14.3432 11.1714 14.563C11.3911 14.7828 11.6892 14.9062 12 14.9062C12.3108 14.9062 12.6089 14.7828 12.8286 14.563C13.0484 14.3432 13.1719 14.0452 13.1719 13.7344V6.28125C13.1719 5.97045 13.0484 5.67238 12.8286 5.45261C12.6089 5.23284 12.3108 5.10938 12 5.10938C11.6892 5.10938 11.3911 5.23284 11.1714 5.45261C10.9516 5.67238 10.8281 5.97045 10.8281 6.28125Z" fill="#B5CBED" />
-                                        <path d="M12 18.8906C11.7682 18.8906 11.5417 18.8219 11.3489 18.6931C11.1562 18.5644 11.006 18.3813 10.9173 18.1672C10.8286 17.9531 10.8054 17.7175 10.8506 17.4901C10.8959 17.2628 11.0075 17.054 11.1714 16.8901C11.3352 16.7262 11.5441 16.6146 11.7714 16.5694C11.9987 16.5242 12.2343 16.5474 12.4485 16.6361C12.6626 16.7248 12.8456 16.875 12.9744 17.0677C13.1031 17.2604 13.1719 17.487 13.1719 17.7188C13.1719 18.0296 13.0484 18.3276 12.8286 18.5474C12.6089 18.7672 12.3108 18.8906 12 18.8906Z" fill="#B5CBED"/>
+                                        <path d="M12 18.8906C11.7682 18.8906 11.5417 18.8219 11.3489 18.6931C11.1562 18.5644 11.006 18.3813 10.9173 18.1672C10.8286 17.9531 10.8054 17.7175 10.8506 17.4901C10.8959 17.2628 11.0075 17.054 11.1714 16.8901C11.3352 16.7262 11.5441 16.6146 11.7714 16.5694C11.9987 16.5242 12.2343 16.5474 12.4485 16.6361C12.6626 16.7248 12.8456 16.875 12.9744 17.0677C13.1031 17.2604 13.1719 17.487 13.1719 17.7188C13.1719 18.0296 13.0484 18.3276 12.8286 18.5474C12.6089 18.7672 12.3108 18.8906 12 18.8906Z" fill="#B5CBED" />
                                     </svg>
 
                                 </div>
 
                             </div>
                             <div className="item-page-menu__content">
-                                    <div className="sub-menu__title spollers__title">Cookie Notice</div>
+                                <div className="sub-menu__title spollers__title">Cookie Notice</div>
 
                             </div>
                         </NavLink>
@@ -269,15 +263,15 @@ export const AsideMenu = ({ isOpenAsideMenu, handleOpenMenu }: IAsideMenu) => {
 
                             </div>
                             <div className="item-page-menu__content">
-                                    <div className="sub-menu__title spollers__title">Terms of Service</div>
+                                <div className="sub-menu__title spollers__title">Terms of Service</div>
 
                             </div>
 
                         </NavLink>
                         <div className="page-menu__item item-page-menu item-page-menu--mode">
                             <div className="item-page-menu__content item-page-menu__content-mode">
-                                    <AsideMenuMode />
-                                
+                                <AsideMenuMode />
+
                             </div>
                         </div>
 
