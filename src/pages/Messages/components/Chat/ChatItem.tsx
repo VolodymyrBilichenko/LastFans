@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react'
 import { IUser } from '../../../../models'
 import { Fancybox as NativeFancybox } from "@fancyapps/ui";
 import "@fancyapps/ui/dist/fancybox/fancybox.css";
+import { useDispatch } from 'react-redux';
+import { changeMessage, deleteMessage } from '../../../../redux/toolkitSlice';
 
 interface IChatItemProps {
     isOwner?: boolean
@@ -13,11 +15,9 @@ interface IChatItemProps {
     message: string
     user: IUser
     date: Date
-    handleDeleteMessage: any
-    handleEditMessage: any
 }
 
-export const ChatItem: React.FC<IChatItemProps> = ({ isOwner, isEdited, message, images, isLocked, user, date, isRead, id, handleDeleteMessage, handleEditMessage }) => {
+export const ChatItem: React.FC<IChatItemProps> = ({ isOwner, isEdited, message, images, isLocked, user, date, isRead, id }) => {
 
     const [isLiked, setIsLiked] = useState(false);
 
@@ -25,14 +25,21 @@ export const ChatItem: React.FC<IChatItemProps> = ({ isOwner, isEdited, message,
         setIsLiked(!isLiked)
     }
 
-    useEffect(() => {
-        NativeFancybox.bind("[data-fancybox]", {});
-        return () => {
-            NativeFancybox.unbind("[data-fancybox]");
-            NativeFancybox.close();
-        };
-    }, []);
+    console.log(isEdited);
+    
 
+    const dispatch = useDispatch()
+
+    const handleEditMessage = () => {
+        dispatch(changeMessage({
+            id: String(id),
+            text: message
+        }))
+    }
+
+    const handleDeleteMessage = () => {
+        dispatch(deleteMessage(String(id)))
+    }
 
     return (
         <div className={`content-chat__message chat-message ${isOwner ? "chat-message--main" : ""}`}>
@@ -72,7 +79,7 @@ export const ChatItem: React.FC<IChatItemProps> = ({ isOwner, isEdited, message,
                             </span>
                         </div>
                         <div className="chat-message__actions actions-chat-message">
-                            {isOwner && <button onClick={_ => handleEditMessage(id, 'BLA BLA NEW')} className="actions-chat-message__button reply">
+                            {isOwner && <button onClick={handleEditMessage} className="actions-chat-message__button reply">
                                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <g clip-path="url(#clip0_360_6133)">
                                         <path d="M2.16397 14.3489C1.97197 14.3489 1.78034 14.2758 1.63372 14.1291C1.34084 13.8363 1.34084 13.3615 1.63372 13.0686L13.354 1.34838C13.6465 1.0555 14.1216 1.0555 14.4145 1.34838C14.7073 1.64125 14.7073 2.116 14.4145 2.40888L2.69422 14.1291C2.54797 14.2754 2.35597 14.3489 2.16397 14.3489Z" fill="#838383" />
@@ -99,7 +106,7 @@ export const ChatItem: React.FC<IChatItemProps> = ({ isOwner, isEdited, message,
                             
                             </button>
 
-                            {isOwner && <button onClick={_ => handleDeleteMessage(id)} className="actions-chat-message__button reply">
+                            {isOwner && <button onClick={handleDeleteMessage} className="actions-chat-message__button reply">
                                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M17.0312 2.34375H14.1016V1.75781C14.1016 0.788555 13.313 0 12.3438 0H7.65625C6.68699 0 5.89844 0.788555 5.89844 1.75781V2.34375H2.96875C1.99949 2.34375 1.21094 3.1323 1.21094 4.10156C1.21094 4.88 1.71973 5.54145 2.42207 5.77191L3.46719 18.3881C3.54246 19.292 4.31191 20 5.21891 20H14.7811C15.6881 20 16.4576 19.292 16.5329 18.3879L17.5779 5.77187C18.2803 5.54145 18.7891 4.88 18.7891 4.10156C18.7891 3.1323 18.0005 2.34375 17.0312 2.34375ZM7.07031 1.75781C7.07031 1.43473 7.33316 1.17188 7.65625 1.17188H12.3438C12.6668 1.17188 12.9297 1.43473 12.9297 1.75781V2.34375H7.07031V1.75781ZM15.365 18.2909C15.3399 18.5921 15.0834 18.8281 14.7811 18.8281H5.21891C4.9166 18.8281 4.66012 18.5921 4.63508 18.2911L3.60523 5.85938H16.3948L15.365 18.2909ZM17.0312 4.6875H2.96875C2.64566 4.6875 2.38281 4.42465 2.38281 4.10156C2.38281 3.77848 2.64566 3.51562 2.96875 3.51562H17.0312C17.3543 3.51562 17.6172 3.77848 17.6172 4.10156C17.6172 4.42465 17.3543 4.6875 17.0312 4.6875Z" fill="#838383" />
                                     <path d="M7.65516 17.034L7.06923 7.5809C7.04919 7.25789 6.76962 7.01222 6.44817 7.03234C6.12516 7.05238 5.87958 7.33043 5.89958 7.6534L6.48551 17.1066C6.50477 17.4172 6.76274 17.6562 7.06977 17.6562C7.40911 17.6562 7.67598 17.3705 7.65516 17.034Z" fill="#838383" />

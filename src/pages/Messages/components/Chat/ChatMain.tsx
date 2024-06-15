@@ -18,18 +18,13 @@ import React, { useEffect, useRef, useState } from 'react'
 // import BlockedUserIc from './../../../../assets/img/icons/blocked-user.svg'
 // import { Transition } from 'react-transition-group'
 import { ChatItem } from './ChatItem'
+import { useSelector } from 'react-redux'
 
 interface IChatMainProps {
     chatTheme: string
 }
 
 export const ChatMain: React.FC<IChatMainProps> = ({ chatTheme }) => {
-
-    // const [isLiked, setIsLiked] = useState(false);
-
-    // const handleLiked = () => {
-    //     setIsLiked(!isLiked)
-    // }
 
     const chatWindow: any = useRef(null)
 
@@ -48,91 +43,18 @@ export const ChatMain: React.FC<IChatMainProps> = ({ chatTheme }) => {
         'purple': { background: "#c98dc9" },
     }
 
+    const chatMessages = useSelector((state: any) => state.toolkit.chatMessages)
 
-    const [mockMessages,setMockMessages] = useState([
-        {
-            id: 1,
-            message: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti ipsam cupiditate iste amet repellendus nulla minus omnis ullam quas voluptas reprehenderit numquam, unde, necessitatibus mollitia aliquid! Saepe nam non voluptatem?',
-            user: {
-                username: 'Eeeee',
-                usertag: '@eeee',
-                photo: 'https://static01.nyt.com/images/2012/08/19/t-magazine/19well-emma-2/19well-emma-2-superJumbo.jpg'
-            },
-            date: new Date(),
-            isOwner: true
-        },
-        {
-            id: 2,
-            message: 'ipsam cupiditate iste amet repellendus nulla minus omnis ullam quas voluptas reprehenderit numquam, unde, necessitatibus mollitia aliquid! Saepe nam non voluptatem?',
-            user: {
-                username: 'Eeeee',
-                usertag: '@eeee',
-                photo: 'https://static01.nyt.com/images/2012/08/19/t-magazine/19well-emma-2/19well-emma-2-superJumbo.jpg'
-            },
-            date: new Date(),
-        },
-        {
-            id: 3,
-            message: 'ipsam cupiditate iste amet repellendus nulla minus omnis ullam quas voluptas reprehenderit numquam, unde, necessitatibus mollitia aliquid! Saepe nam non voluptatem?',
-            user: {
-                username: 'Eeeee',
-                usertag: '@eeee',
-                photo: 'https://static01.nyt.com/images/2012/08/19/t-magazine/19well-emma-2/19well-emma-2-superJumbo.jpg'
-            },
-            images: [
-                'https://buffer.com/library/content/images/size/w1200/2023/10/free-images.jpg',
-                'https://letsenhance.io/static/8f5e523ee6b2479e26ecc91b9c25261e/1015f/MainAfter.jpg',
-                'https://letsenhance.io/static/8f5e523ee6b2479e26ecc91b9c25261e/1015f/MainAfter.jpg',
-                'https://letsenhance.io/static/8f5e523ee6b2479e26ecc91b9c25261e/1015f/MainAfter.jpg',
-                'https://letsenhance.io/static/8f5e523ee6b2479e26ecc91b9c25261e/1015f/MainAfter.jpg',
-                'https://letsenhance.io/static/8f5e523ee6b2479e26ecc91b9c25261e/1015f/MainAfter.jpg',
-                'https://letsenhance.io/static/8f5e523ee6b2479e26ecc91b9c25261e/1015f/MainAfter.jpg',
-                'https://letsenhance.io/static/8f5e523ee6b2479e26ecc91b9c25261e/1015f/MainAfter.jpg',
-            ],
-            date: new Date(),
-        },
-        {
-            id: 4,
-            message: 'ipsam cupiditate iste amet repellendus nulla minus omnis ullam quas voluptas reprehenderit numquam, unde, necessitatibus mollitia aliquid! Saepe nam non voluptatem?',
-            user: {
-                username: 'Eeeee',
-                usertag: '@eeee',
-                photo: 'https://static01.nyt.com/images/2012/08/19/t-magazine/19well-emma-2/19well-emma-2-superJumbo.jpg'
-            },
-            images: [
-                'https://buffer.com/library/content/images/size/w1200/2023/10/free-images.jpg',
-                'https://letsenhance.io/static/8f5e523ee6b2479e26ecc91b9c25261e/1015f/MainAfter.jpg',
-            ],
-            isOwner: true,
-            date: new Date(),
-        },
-    ])
-
-
-    const handleDeleteMessage = (messageId: number | string) => {
-        setMockMessages(prev => prev.filter(item => item.id !== messageId))
-    }
-
-
-    // TODO Взять текст сообщения и вставить его в редактор, дальше при отправке, найти уже существующий id и заменить текст в сообщении
-    const handleEditMessage = (messageId: number | string, newMessage: string) => {
-        setMockMessages(prev => prev.map(item => {
-            if(item.id === messageId) {
-                return {
-                    ...item,
-                    message: newMessage
-                }
-            } else return item
-        }))
-    }
-
+    useEffect(() => {
+        chatWindow.current?.scrollTo(0, 9999)
+    }, [chatMessages])
 
     return (
         <div className="chat__content content-chat" ref={chatWindow}>
             <div data-gallery className="content-chat__body theme" style={{ ...themeColors[chatTheme], transition: "all .3s ease" }}>
 
                 {
-                    mockMessages.map(item => (
+                    chatMessages.map((item: any) => (
                         <ChatItem
                             id={item.id}
                             message={item.message}
@@ -140,8 +62,7 @@ export const ChatMain: React.FC<IChatMainProps> = ({ chatTheme }) => {
                             date={item.date}
                             isOwner={item.isOwner}
                             images={item.images}
-                            handleDeleteMessage={handleDeleteMessage}
-                            handleEditMessage={handleEditMessage}
+                            isEdited={item.isEdited}
                         />
                     ))
                 }

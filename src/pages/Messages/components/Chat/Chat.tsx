@@ -16,7 +16,8 @@
 // import AudioMuteIc from './../../../../assets/img/icons/audio-mute.svg'
 // import PinIc from './../../../../assets/img/icons/pin-green.svg'
 // import BlockedUserIc from './../../../../assets/img/icons/blocked-user.svg'
-import {ChatBottom } from './ChatBottom'
+import { createContext, useState } from 'react'
+import { ChatBottom } from './ChatBottom'
 import { ChatHeader } from './ChatHeader'
 import { ChatMain } from './ChatMain'
 
@@ -24,23 +25,25 @@ interface IChatProps {
     chatTheme: string
 }
 
-export const Chat:React.FC<IChatProps> = ({chatTheme}) => {
-    
+export const ChangeMessageId: any = createContext(null)
+
+export const Chat: React.FC<IChatProps> = ({ chatTheme }) => {
+
     return (
         <div className="chat">
-                <div className="chat__container">
-                    <div className="chat__body">
-                        
-                        <ChatHeader/>
-                        
-                        <ChatMain
-                            chatTheme={chatTheme}
-                        />
+            <div className="chat__container">
+                <div className="chat__body">
 
-                        <ChatBottom/>
+                    <ChatHeader />
 
-                    </div>
+                    <ChatMain
+                        chatTheme={chatTheme}
+                    />
+
+                    <ChatBottom />
+
                 </div>
             </div>
+        </div>
     )
 }
