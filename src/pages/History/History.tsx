@@ -89,7 +89,7 @@ export const History = () => {
                             </div>
                             <div data-spollers className="footer-body-earnings__per-page">
                                 <p>Items per page:</p>
-                                <details className="field-block-add-vid__item spollers__item input input-main">
+                                <details className="field-block-add-vid__item spollers__item-main spollers__item input input-main">
                                     <summary data-spoller-close className="field-block-add-vid__title spollers__title">
                                         {countPerPage}
                                     </summary>
