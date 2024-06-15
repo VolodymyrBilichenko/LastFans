@@ -8,7 +8,6 @@ import { NavLink, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import setCookie from '../../functions/setCookie';
 import { IUser } from '../../models';
-import getCookies from '../../functions/getCookie';
 import { setUser } from '../../redux/toolkitSlice';
 import { useDispatch } from 'react-redux';
 
@@ -153,8 +152,8 @@ export const Login = () => {
                     </div>
                     <div className="main-registration__footer footer-main-registration">
                         <p className="footer-main-registration__text">
-                            Already have an account?
-                            <NavLink to={'/registration'}>Sign in</NavLink>
+                            Don`t have an account? 
+                            <NavLink to={'/registration'}>Sign up</NavLink>
                         </p>
                     </div>
                 </div>
