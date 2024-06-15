@@ -71,6 +71,9 @@ import React from 'react';
 import { useForm, SubmitHandler } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
+import { toast } from 'react-toastify';
+import { useDispatch } from 'react-redux';
+import { addPayment } from '../../redux/toolkitSlice';
 
 // Створення інтерфейсу для даних форми
 interface IFormInput {
@@ -102,13 +105,18 @@ const schema = yup.object().shape({
 });
 
 export const PaymentAdd: React.FC = () => {
-    const { register, handleSubmit, formState: { errors } } = useForm<IFormInput>({
+    const dispatch = useDispatch();
+
+    const { register, handleSubmit, reset, formState: { errors } } = useForm<IFormInput>({
         resolver: yupResolver(schema)
     });
 
     // Типізація обробника відправки форми
     const onSubmit: SubmitHandler<IFormInput> = data => {
         console.log(data);
+        dispatch(addPayment(data));
+        toast.success('New payment method added successfully');
+        reset(); // Очищення форми після успішного відправлення
     };
 
     return (
@@ -134,7 +142,7 @@ export const PaymentAdd: React.FC = () => {
                                             className="input-box__input input input-main"
                                             {...register('email')}
                                         />
-                                        {errors.email && <p className="error-message" style={{color: '#CB0000'}}>{errors.email.message}</p>}
+                                        {errors.email && <p className="error-message" style={{ color: '#CB0000' }}>{errors.email.message}</p>}
                                     </div>
                                     <div className="billing-new-body-payment__block">
                                         <div className="input-box">
@@ -145,7 +153,7 @@ export const PaymentAdd: React.FC = () => {
                                                 className="input-box__input input input-main"
                                                 {...register('firstName')}
                                             />
-                                            {errors.firstName && <p className="error-message" style={{color: '#CB0000'}}>{errors.firstName.message}</p>}
+                                            {errors.firstName && <p className="error-message" style={{ color: '#CB0000' }}>{errors.firstName.message}</p>}
                                         </div>
                                         <div className="input-box">
                                             <label>Last name</label>
@@ -155,7 +163,7 @@ export const PaymentAdd: React.FC = () => {
                                                 className="input-box__input input input-main"
                                                 {...register('lastName')}
                                             />
-                                            {errors.lastName && <p className="error-message" style={{color: '#CB0000'}}>{errors.lastName.message}</p>}
+                                            {errors.lastName && <p className="error-message" style={{ color: '#CB0000' }}>{errors.lastName.message}</p>}
                                         </div>
                                     </div>
                                 </div>
@@ -173,7 +181,7 @@ export const PaymentAdd: React.FC = () => {
                                             className="input-box__input input input-main"
                                             {...register('cardNumber')}
                                         />
-                                        {errors.cardNumber && <p className="error-message" style={{color: '#CB0000'}}>{errors.cardNumber.message}</p>}
+                                        {errors.cardNumber && <p className="error-message" style={{ color: '#CB0000' }}>{errors.cardNumber.message}</p>}
                                     </div>
                                     <div className="card-add-body-payment__block">
                                         <div className="input-box">
@@ -184,7 +192,7 @@ export const PaymentAdd: React.FC = () => {
                                                 className="input-box__input input input-main"
                                                 {...register('expiry')}
                                             />
-                                            {errors.expiry && <p className="error-message" style={{color: '#CB0000'}}>{errors.expiry.message}</p>}
+                                            {errors.expiry && <p className="error-message" style={{ color: '#CB0000' }}>{errors.expiry.message}</p>}
                                         </div>
                                         <div className="input-box">
                                             <label>CVV</label>
@@ -194,7 +202,7 @@ export const PaymentAdd: React.FC = () => {
                                                 className="input-box__input input input-main"
                                                 {...register('cvv')}
                                             />
-                                            {errors.cvv && <p className="error-message" style={{color: '#CB0000'}}>{errors.cvv.message}</p>}
+                                            {errors.cvv && <p className="error-message" style={{ color: '#CB0000' }}>{errors.cvv.message}</p>}
                                         </div>
                                     </div>
                                 </div>

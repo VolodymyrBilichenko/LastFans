@@ -66,7 +66,8 @@ const toolkitSlice = createSlice({
         user: <IUser>{},
         modals: [],
         chatMessages: mockChatMessages,
-        chatMessageChange: <{ id: string, text: string }>{}
+        chatMessageChange: <{ id: string, text: string }>{},
+        payment: {},
     },
     reducers: {
         setUser(state: any, action: { payload: IUser }) {
@@ -102,7 +103,10 @@ const toolkitSlice = createSlice({
         },
         deleteMessage(state: any, action: { payload: string }) {
             state.chatMessages = state.chatMessages.filter((item: any) => item.id !== action.payload)
-        }
+        },
+        addPayment(state: any, action: {payload: any}) {
+            state.payment = action.payload
+        },
 
     }
 })
@@ -117,5 +121,7 @@ export const {
     addMessage,
     changeMessage,
     deleteMessage,
+
+    addPayment,
 
 } = toolkitSlice.actions;
