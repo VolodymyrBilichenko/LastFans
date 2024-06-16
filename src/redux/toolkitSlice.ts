@@ -68,6 +68,7 @@ const toolkitSlice = createSlice({
         chatMessages: mockChatMessages,
         chatMessageChange: <{ id: string, text: string }>{},
         payment: {},
+        newGroup: [],
     },
     reducers: {
         setUser(state: any, action: { payload: IUser }) {
@@ -107,6 +108,9 @@ const toolkitSlice = createSlice({
         addPayment(state: any, action: {payload: any}) {
             state.payment = action.payload
         },
+        addNewGroup(state: any, action: {payload: any}) {
+            state.newGroup = [...state.newGroup, action.payload]
+        },
 
     }
 })
@@ -123,5 +127,7 @@ export const {
     deleteMessage,
 
     addPayment,
+
+    addNewGroup,
 
 } = toolkitSlice.actions;
