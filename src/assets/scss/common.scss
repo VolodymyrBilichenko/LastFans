@@ -1968,7 +1968,11 @@ transform: scale(1);
 
 
 
-
+.footer-body-earnings__pages{
+    font-weight: 300;
+    color: var(--black);
+    font-size: toRem(11);
+}
 
 
 
@@ -2041,6 +2045,66 @@ input::-webkit-inner-spin-button {
 	border-top-color: var(--black) !important;
 }
 
+
+
+
+// datepicker
+
+.react-datepicker{
+    border: none !important;
+    background-color: transparent !important;
+}
+.react-datepicker__header{
+    background-color: transparent !important;
+    border-color: #424242 !important;
+}
+.react-datepicker__current-month{
+    color: var(--blue) !important;
+    font-weight: 600 !important;
+}
+.react-datepicker__month-container{
+    width: 100%;
+}
+.react-datepicker__day-name{
+    width: 30px !important;
+    line-height: 30px !important;
+    margin: 0 !important;
+    @media (min-width:em(1280)){
+        width: 48px !important;
+        line-height: 48px !important;   
+    }
+}
+.react-datepicker__day{
+    font-size: 18px !important;
+    color: #757575 !important;
+    width: 30px !important;
+    line-height: 30px !important;
+    margin: 0 !important;
+    @media (min-width:em(1280)){
+        width: 48px !important;
+        line-height: 48px !important;   
+    }
+}
+
+
+
+.react-datepicker__day--weekend{
+    color: #FF3B30 !important;
+}
+
+.react-datepicker__day--outside-month{
+    color: rgba(117, 117, 117, 0.3) !important;
+    &.react-datepicker__day--weekend{
+        color: rgba(255, 58, 48, 0.3) !important;
+    }
+
+}
+
+
+.react-datepicker__day--selected{
+    background-color: var(--blue) !important;
+    color: #fff !important;
+    border-radius: 50% !important;
 
 // auth soc login
 

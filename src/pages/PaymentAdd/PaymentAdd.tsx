@@ -1,72 +1,4 @@
 
-// export const PaymentAdd = () => {
-//     return (
-//         <div className="payment">
-//             <div className="payment__container">
-//                 <div className="payment__header">
-//                     <h2 className="payment__title title title--medium">Add new payment method</h2>
-//                 </div>
-//                 <div className="payment__body body-payment">
-//                     <div className="body-payment__new new-body-payment">
-//                         <p className="new-body-payment__text">Please fill in your card details below to add the card.</p>
-//                         <div className="new-body-payment__billing billing-new-body-payment">
-//                             <div className="new-body-payment__header">
-//                                 <h3 className="new-body-payment__title">BILLING DETAILS</h3>
-//                             </div>
-//                             <div className="billing-new-body-payment__body">
-
-//                                 <div className="input-box">
-//                                     <label>Email</label>
-//                                     <input type="email" placeholder="Enter email" className="input-box__input input input-main"/>
-//                                 </div>
-//                                 <div className="billing-new-body-payment__block">
-//                                     <div className="input-box">
-//                                         <label>First Name</label>
-//                                         <input type="text" placeholder="First Name" className="input-box__input input input-main"/>
-//                                     </div>
-//                                     <div className="input-box">
-//                                         <label>Last name</label>
-//                                         <input type="text" placeholder="Last name" className="input-box__input input input-main"/>
-//                                     </div>
-//                                 </div>
-//                             </div>
-//                         </div>
-//                         <div className="new-body-payment__card card-add-body-payment">
-//                             <div className="new-body-payment__header">
-//                                 <h3 className="new-body-payment__title">CARD DETAILS</h3>
-//                             </div>
-//                             <div className="card-add-body-payment__body">
-
-//                                 <div className="input-box">
-//                                     <label>Card Number</label>
-//                                     <input type="number" placeholder="1234  1234  1234  1234" className="input-box__input input input-main"/>
-//                                 </div>
-//                                 <div className="card-add-body-payment__block">
-//                                     <div className="input-box">
-//                                         <label>Expiry</label>
-//                                         <input type="text" placeholder="MM / YYYY" className="input-box__input input input-main"/>
-//                                     </div>
-//                                     <div className="input-box">
-//                                         <label>CVV</label>
-//                                         <input type="text" placeholder="123" className="input-box__input input input-main"/>
-//                                     </div>
-
-
-//                                 </div>
-//                             </div>
-//                         </div>
-//                         <button className="new-body-payment__button button"><span>Add card</span></button>
-//                     </div>
-                    
-//                 </div>
-//             </div>
-//         </div>
-//     )
-// }
-
-
-
-
 import React from 'react';
 import { useForm, SubmitHandler } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
@@ -128,29 +60,30 @@ export const PaymentAdd: React.FC = () => {
                 <div className="payment__body body-payment">
                     <div className="body-payment__new new-body-payment">
                         <p className="new-body-payment__text">Please fill in your card details below to add the card.</p>
-                        <form onSubmit={handleSubmit(onSubmit)}>
+                        <form className='new-body-payment__form' onSubmit={handleSubmit(onSubmit)}>
                             <div className="new-body-payment__billing billing-new-body-payment">
                                 <div className="new-body-payment__header">
                                     <h3 className="new-body-payment__title">BILLING DETAILS</h3>
                                 </div>
                                 <div className="billing-new-body-payment__body">
-                                    <div className="input-box">
-                                        <label>Email</label>
-                                        <input
-                                            type="email"
-                                            placeholder="Enter email"
-                                            className="input-box__input input input-main"
-                                            {...register('email')}
-                                        />
-                                        {errors.email && <p className="error-message" style={{ color: '#CB0000' }}>{errors.email.message}</p>}
-                                    </div>
+                                <div className="input-box">
+                                    <label>Email</label>
+                                    <input
+                                        type="email"
+                                        placeholder="Enter email"
+                                        className={`input-box__input input input-main ${errors.email ? 'input-error' : ''}`}
+                                        {...register('email')}
+                                    />
+                                    {errors.email && <p className="error-message" style={{ color: '#CB0000' }}>{errors.email.message}</p>}
+                                </div>
                                     <div className="billing-new-body-payment__block">
                                         <div className="input-box">
                                             <label>First Name</label>
                                             <input
                                                 type="text"
                                                 placeholder="First Name"
-                                                className="input-box__input input input-main"
+                                                className={`input-box__input input input-main ${errors.email ? 'input-error' : ''}`}
+
                                                 {...register('firstName')}
                                             />
                                             {errors.firstName && <p className="error-message" style={{ color: '#CB0000' }}>{errors.firstName.message}</p>}
@@ -160,7 +93,8 @@ export const PaymentAdd: React.FC = () => {
                                             <input
                                                 type="text"
                                                 placeholder="Last name"
-                                                className="input-box__input input input-main"
+                                                className={`input-box__input input input-main ${errors.email ? 'input-error' : ''}`}
+
                                                 {...register('lastName')}
                                             />
                                             {errors.lastName && <p className="error-message" style={{ color: '#CB0000' }}>{errors.lastName.message}</p>}
@@ -178,7 +112,8 @@ export const PaymentAdd: React.FC = () => {
                                         <input
                                             type="text"
                                             placeholder="1234  1234  1234  1234"
-                                            className="input-box__input input input-main"
+                                            className={`input-box__input input input-main ${errors.email ? 'input-error' : ''}`}
+
                                             {...register('cardNumber')}
                                         />
                                         {errors.cardNumber && <p className="error-message" style={{ color: '#CB0000' }}>{errors.cardNumber.message}</p>}
@@ -189,7 +124,8 @@ export const PaymentAdd: React.FC = () => {
                                             <input
                                                 type="text"
                                                 placeholder="MM / YYYY"
-                                                className="input-box__input input input-main"
+                                                className={`input-box__input input input-main ${errors.email ? 'input-error' : ''}`}
+
                                                 {...register('expiry')}
                                             />
                                             {errors.expiry && <p className="error-message" style={{ color: '#CB0000' }}>{errors.expiry.message}</p>}
@@ -199,7 +135,8 @@ export const PaymentAdd: React.FC = () => {
                                             <input
                                                 type="text"
                                                 placeholder="123"
-                                                className="input-box__input input input-main"
+                                                className={`input-box__input input input-main ${errors.email ? 'input-error' : ''}`}
+
                                                 {...register('cvv')}
                                             />
                                             {errors.cvv && <p className="error-message" style={{ color: '#CB0000' }}>{errors.cvv.message}</p>}

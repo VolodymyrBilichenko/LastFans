@@ -8,6 +8,7 @@ import FolderIc from '../../assets/img/icons/folder.svg'
 import { NavLink } from 'react-router-dom'
 // import { IUser } from '../../models'
 // import { useSelector } from 'react-redux'
+import { Highlights } from '../../components/Highlights/Highlights'
 
 
 export const Profile = () => {
@@ -90,7 +91,8 @@ export const Profile = () => {
 
 
                                 {/* TODO Сделать слайдер */}
-                                <div className="highlights-main__body body-highlights-main swiper">
+                                <Highlights />
+                                {/* <div className="highlights-main__body body-highlights-main swiper">
                                     <div className="highlights-main__content swiper-wrapper">
                                         <a href="some" className="highlights-main__item item-highlights-main swiper-slide">
                                             <div className="item-highlights-main__image">
@@ -160,7 +162,7 @@ export const Profile = () => {
                                         </a>
 
                                     </div>
-                                </div>
+                                </div> */}
                             </div>
                         </div>
                     </div>
