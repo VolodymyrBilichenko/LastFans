@@ -12,11 +12,7 @@ export const Highlights = () => {
 	}
 
     return (
-        <div className="main__highlights highlights-main main__item">
-            <div className="highlights-main__header">
-                <h3 className="highlights-main__title title title--small">Highlights</h3>
-            </div>
-
+        
             <Swiper data-gallery className="highlights-main__body body-highlights-main mySwiper"
                 slidesPerView={'auto'}
                 spaceBetween={22}
@@ -27,9 +23,9 @@ export const Highlights = () => {
                         spaceBetween: 10,
                         
                     },
-                    // 991.98: {
-                    //     slidesPerView: 6,
-                    // },
+                    1600: {
+                        slidesPerView: 8,
+                    },
 
                     
                 }}
@@ -134,7 +130,5 @@ export const Highlights = () => {
                     </NavLink>
                 </SwiperSlide>
             </Swiper>
-
-        </div>
     )
 }

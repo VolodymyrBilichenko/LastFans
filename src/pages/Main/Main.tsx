@@ -87,8 +87,15 @@ export const Main = () => {
 
 					</div>
 				</div>}
+				
+				{user.sex === "woman" && <div className="main__highlights highlights-main main__item">
+					<div className="highlights-main__header">
+						<h3 className="highlights-main__title title title--small">Highlights</h3>
+					</div>
+					<Highlights />
 
-				{user.sex === "woman" && <Highlights />}
+
+        		</div>}
 
 				<div className="main__content content-main">
 

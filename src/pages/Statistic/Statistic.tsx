@@ -221,77 +221,112 @@ export const Statistic = () => {
                                 <div className="transactions-body-statistics__content">
                                     <div className="transactions-body-statistics__items">
                                         <div className="transactions-body-statistics__item item-transactions">
-                                                <span className="item-transactions__date">16/08/2023</span>
-                                                <p className="item-transactions__time"><span>03:23 PM</span></p>
-                                                <p className="item-transactions__text">
-                                                    <p>
-                                                        <span className="item-transactions__item">Locked Media Message</span> sold to <span className="item-transactions__user">Eric101</span> <a href="some" className="item-transactions__user-link">Eric101</a>
+                                                <div className="item-transactions__block">
+                                                    <span className="item-transactions__date">16/08/2023</span>
+                                                    <p className="item-transactions__time"><span>03:23 PM</span></p>
+                                                    <p className="item-transactions__text">
+                                                        <p>
+                                                            <span className="item-transactions__item">Locked Media Message</span> sold to <span className="item-transactions__user">Eric101</span> <a href="some" className="item-transactions__user-link">Eric101</a>
+                                                        </p>
                                                     </p>
-                                                </p>
+                                                </div>
+                                                <div className="item-transactions__block item-transactions__block--values">
 
-                                                <p className="item-transactions__price">$<span>20.00</span></p>
-                                                <div className="item-transactions__percent">80%</div>
-                                                <p className="item-transactions__value">$<span>16.00</span></p>
+                                                    <p className="item-transactions__price">$<span>20.00</span></p>
+                                                    <div className="item-transactions__percent">80%</div>
+                                                    <p className="item-transactions__value">$<span>16.00</span></p>
+                                                </div>
+
                                         </div>
                                         <div className="transactions-body-statistics__item item-transactions">
-                                            <span className="item-transactions__date">16/08/2023</span>
-                                            <p className="item-transactions__time"><span>03:23 PM</span></p>
-                                            <p className="item-transactions__text">
-                                                <p>
-                                                    <span className="item-transactions__item">Locked Media Message</span> sold to <span className="item-transactions__user">Eric101</span> <a href="some" className="item-transactions__user-link">Eric101</a>
-                                                </p>
-                                            </p>
-                                            <p className="item-transactions__price">$<span>20.00</span></p>
-                                            <div className="item-transactions__percent">80%</div>
-                                            <p className="item-transactions__value">$<span>16.00</span></p>
+                                                <div className="item-transactions__block">
+                                                    <span className="item-transactions__date">16/08/2023</span>
+                                                    <p className="item-transactions__time"><span>03:23 PM</span></p>
+                                                    <p className="item-transactions__text">
+                                                        <p>
+                                                            <span className="item-transactions__item">Locked Media Message</span> sold to <span className="item-transactions__user">Eric101</span> <a href="some" className="item-transactions__user-link">Eric101</a>
+                                                        </p>
+                                                    </p>
+                                                </div>
+                                                <div className="item-transactions__block item-transactions__block--values">
+
+                                                    <p className="item-transactions__price">$<span>20.00</span></p>
+                                                    <div className="item-transactions__percent">80%</div>
+                                                    <p className="item-transactions__value">$<span>16.00</span></p>
+                                                </div>
+
                                         </div>
                                         <div className="transactions-body-statistics__item item-transactions">
-                                            <span className="item-transactions__date">16/08/2023</span>
-                                            <p className="item-transactions__time"><span>03:23 PM</span></p>
-                                            <p className="item-transactions__text">
-                                                <p>
-                                                    <span className="item-transactions__item">Locked Media Message</span> sold to <span className="item-transactions__user">Eric101</span> <a href="some" className="item-transactions__user-link">Eric101</a>
-                                                </p>
-                                            </p>
-                                            <p className="item-transactions__price">$<span>20.00</span></p>
-                                            <div className="item-transactions__percent">80%</div>
-                                            <p className="item-transactions__value">$<span>16.00</span></p>
+                                                <div className="item-transactions__block">
+                                                    <span className="item-transactions__date">16/08/2023</span>
+                                                    <p className="item-transactions__time"><span>03:23 PM</span></p>
+                                                    <p className="item-transactions__text">
+                                                        <p>
+                                                            <span className="item-transactions__item">Locked Media Message</span> sold to <span className="item-transactions__user">Eric101</span> <a href="some" className="item-transactions__user-link">Eric101</a>
+                                                        </p>
+                                                    </p>
+                                                </div>
+                                                <div className="item-transactions__block item-transactions__block--values">
+
+                                                    <p className="item-transactions__price">$<span>20.00</span></p>
+                                                    <div className="item-transactions__percent">80%</div>
+                                                    <p className="item-transactions__value">$<span>16.00</span></p>
+                                                </div>
+
                                         </div>
                                         <div className="transactions-body-statistics__item item-transactions">
-                                            <span className="item-transactions__date">16/08/2023</span>
-                                            <p className="item-transactions__time"><span>03:23 PM</span></p>
-                                            <p className="item-transactions__text">
-                                                <p>
-                                                    <span className="item-transactions__item">Locked Media Message</span> sold to <span className="item-transactions__user">Eric101</span> <a href="some" className="item-transactions__user-link">Eric101</a>
-                                                </p>
-                                            </p>
-                                            <p className="item-transactions__price">$<span>20.00</span></p>
-                                            <div className="item-transactions__percent">80%</div>
-                                            <p className="item-transactions__value">$<span>16.00</span></p>
+                                                <div className="item-transactions__block">
+                                                    <span className="item-transactions__date">16/08/2023</span>
+                                                    <p className="item-transactions__time"><span>03:23 PM</span></p>
+                                                    <p className="item-transactions__text">
+                                                        <p>
+                                                            <span className="item-transactions__item">Locked Media Message</span> sold to <span className="item-transactions__user">Eric101</span> <a href="some" className="item-transactions__user-link">Eric101</a>
+                                                        </p>
+                                                    </p>
+                                                </div>
+                                                <div className="item-transactions__block item-transactions__block--values">
+
+                                                    <p className="item-transactions__price">$<span>20.00</span></p>
+                                                    <div className="item-transactions__percent">80%</div>
+                                                    <p className="item-transactions__value">$<span>16.00</span></p>
+                                                </div>
+
                                         </div>
                                         <div className="transactions-body-statistics__item item-transactions">
-                                            <span className="item-transactions__date">16/08/2023</span>
-                                            <p className="item-transactions__time"><span>03:23 PM</span></p>
-                                            <p className="item-transactions__text">
-                                                <p>
-                                                    <span className="item-transactions__item">Locked Media Message</span> sold to <span className="item-transactions__user">Eric101</span> <a href="some" className="item-transactions__user-link">Eric101</a>
-                                                </p>
-                                            </p>
-                                            <p className="item-transactions__price">$<span>20.00</span></p>
-                                            <div className="item-transactions__percent">80%</div>
-                                            <p className="item-transactions__value">$<span>16.00</span></p>
+                                                <div className="item-transactions__block">
+                                                    <span className="item-transactions__date">16/08/2023</span>
+                                                    <p className="item-transactions__time"><span>03:23 PM</span></p>
+                                                    <p className="item-transactions__text">
+                                                        <p>
+                                                            <span className="item-transactions__item">Locked Media Message</span> sold to <span className="item-transactions__user">Eric101</span> <a href="some" className="item-transactions__user-link">Eric101</a>
+                                                        </p>
+                                                    </p>
+                                                </div>
+                                                <div className="item-transactions__block item-transactions__block--values">
+
+                                                    <p className="item-transactions__price">$<span>20.00</span></p>
+                                                    <div className="item-transactions__percent">80%</div>
+                                                    <p className="item-transactions__value">$<span>16.00</span></p>
+                                                </div>
+
                                         </div>
                                         <div className="transactions-body-statistics__item item-transactions">
-                                            <span className="item-transactions__date">16/08/2023</span>
-                                            <p className="item-transactions__time"><span>03:23 PM</span></p>
-                                            <p className="item-transactions__text">
-                                                <p>
-                                                    <span className="item-transactions__item">Locked Media Message</span> sold to <span className="item-transactions__user">Eric101</span> <a href="some" className="item-transactions__user-link">Eric101</a>
-                                                </p>
-                                            </p>
-                                            <p className="item-transactions__price">$<span>20.00</span></p>
-                                            <div className="item-transactions__percent">80%</div>
-                                            <p className="item-transactions__value">$<span>16.00</span></p>
+                                                <div className="item-transactions__block">
+                                                    <span className="item-transactions__date">16/08/2023</span>
+                                                    <p className="item-transactions__time"><span>03:23 PM</span></p>
+                                                    <p className="item-transactions__text">
+                                                        <p>
+                                                            <span className="item-transactions__item">Locked Media Message</span> sold to <span className="item-transactions__user">Eric101</span> <a href="some" className="item-transactions__user-link">Eric101</a>
+                                                        </p>
+                                                    </p>
+                                                </div>
+                                                <div className="item-transactions__block item-transactions__block--values">
+
+                                                    <p className="item-transactions__price">$<span>20.00</span></p>
+                                                    <div className="item-transactions__percent">80%</div>
+                                                    <p className="item-transactions__value">$<span>16.00</span></p>
+                                                </div>
+
                                         </div>
 
                                     </div>
@@ -318,10 +353,13 @@ export const Statistic = () => {
                                         <p>Items per page:</p>
                                         <button className="field-block-add-vid__item spollers__item-main spollers__item input input-main">
                                             <div data-spoller-close className="field-block-add-vid__title spollers__title">10</div>
-                                            <div className="field-block-add-vid__body spollers__body">
-                                                <div className="field-block-add-vid__value">10</div>
-                                                <div className="field-block-add-vid__value">16</div>
-                                                <div className="field-block-add-vid__value">32</div>
+                                            <div className="spollers__wrapper">
+
+                                                <div className="field-block-add-vid__body spollers__body">
+                                                    <div className="field-block-add-vid__value">10</div>
+                                                    <div className="field-block-add-vid__value">16</div>
+                                                    <div className="field-block-add-vid__value">32</div>
+                                                </div>
                                             </div>
                                         </button>
                                     </div>
