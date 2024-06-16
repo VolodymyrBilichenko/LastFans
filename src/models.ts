@@ -9,3 +9,8 @@ export interface IFilterVideo {
     price: string[]
     isCanDownload: boolean
 }
+
+// export interface IGroups {
+//     groupName: string;
+//     users: number;
+// }
