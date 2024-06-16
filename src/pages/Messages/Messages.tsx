@@ -249,7 +249,7 @@ export const Messages = () => {
             />
 
             <div className="messages-user">
-                <div className="messages-user__body" style={{ height: "auto" }}>
+                <div className="messages-user__body" >
                     <div className="messages-user__top top-messages-user">
                         <div className="user-item">
                             <div className="user-item__image">

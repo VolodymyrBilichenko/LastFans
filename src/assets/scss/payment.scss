@@ -35,9 +35,14 @@
     &__items {
         width: 100%;
         display: flex;
+        flex-direction: column;
         flex-wrap: wrap;
-        justify-content: center;
         gap: toRem(25);
+        align-items: center;
+        @media (min-width:$mobile){
+             flex-direction: row;
+        }
+
     }
     // .body-payment__add
     &__add {
@@ -198,6 +203,11 @@
 .new-body-payment {
     display: grid;
     gap: toRem(30);
+    .input-box {
+        label{
+            font-weight: 400;
+        }
+    }
     // .new-body-payment__text
     &__text {
         font-weight: 500;
@@ -275,7 +285,7 @@
     min-width: toRem(110);
     width: 100%;
     display: grid;
-    gap: toRem(5);
+    gap: toRem(10);
     // .input-box__input
     &__input {
         

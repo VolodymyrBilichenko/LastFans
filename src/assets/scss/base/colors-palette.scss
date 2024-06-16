@@ -25,4 +25,10 @@
 	--secondary: #121212; // Site secondary color - (Додатковий колір сайту)
 	--black: #fff;
 	
+	.rdw-editor-toolbar{
+		img{
+			filter: invert(1);
+		}
+	}
+	
 }
