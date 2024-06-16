@@ -101,6 +101,8 @@
         left: 50%;
         transform: translate(-50%,-50%);
         color: #000;
+        border-radius: 5px;
+        line-height: 120%;
     }
     // .live__button
     &__button {
@@ -145,8 +147,7 @@
         }
     }
     .top-chat {
-        padding: 0 toRem(20);
-        padding-bottom: toRem(15);
+        padding: toRem(24);
         // .top-chat__title
         &__title {
             font-size: toRem(20);

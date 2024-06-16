@@ -11,21 +11,25 @@ export const ModalTimeLinePost = () => {
                     </div>
                     <div data-spollers className="user-item__body">
                         <a href="#" className="user-item__name">Boob007</a>
-                        <details className="field-block-add-vid__item spollers__item input input-main">
-                            <summary data-spoller-close className="field-block-add-vid__title spollers__title">Subscribers</summary>
-                            <div className="field-block-add-vid__body spollers__body">
-                                <div className="field-block-add-vid__value">Subscribers</div>
-                                <div className="field-block-add-vid__value">Fans</div>
-                                <div className="field-block-add-vid__value">All</div>
+                        <button className="field-block-add-vid__item spollers__item-main spollers__item input input-main">
+                            <div data-spoller-close className="field-block-add-vid__title spollers__title">Subscribers</div>
+                            <div className="spollers__wrapper">
+
+                                <div className="field-block-add-vid__body spollers__body">
+                                    <div className="field-block-add-vid__value">Subscribers</div>
+                                    <div className="field-block-add-vid__value">Fans</div>
+                                    <div className="field-block-add-vid__value">All</div>
+                                </div>
                             </div>
-                        </details>
+                        </button>
                     </div>
                 </div>
             </div>
             <div className="popup-timeline-post__body body-popup-timeline-post">
                 <div className="body-popup-timeline-post__title input-box">
                     <label>Title</label>
-                    <textarea placeholder="Add title of your post" className="input-box__input input input-main"></textarea>
+                    
+                    <input placeholder="Add title of your post" className="input-box__input input input-main"></input>
                 </div>
                 <div className="body-popup-timeline-post__description input-box">
                     <label>Description</label>
@@ -33,14 +37,17 @@ export const ModalTimeLinePost = () => {
                 </div>
                 <div data-spollers className="body-popup-timeline-post__folder input-box">
                     <label>Add post to folder</label>
-                    <details className="field-block-add-vid__item spollers__item input input-main">
-                        <summary data-spoller-close className="field-block-add-vid__title spollers__title">Choose folder</summary>
-                        <div className="field-block-add-vid__body spollers__body">
-                            <div className="field-block-add-vid__value">1</div>
-                            <div className="field-block-add-vid__value">2</div>
-                            <div className="field-block-add-vid__value">3</div>
+                    <button className="field-block-add-vid__item spollers__item-main spollers__item input input-main">
+                        <div data-spoller-close className="field-block-add-vid__title spollers__title">Choose folder</div>
+                        <div className="spollers__wrapper">
+                                
+                            <div className="field-block-add-vid__body spollers__body">
+                                <div className="field-block-add-vid__value">1</div>
+                                <div className="field-block-add-vid__value">2</div>
+                                <div className="field-block-add-vid__value">3</div>
+                            </div>
                         </div>
-                    </details>
+                    </button>
                 </div>
             </div>
             <div className="popup-timeline-post__actions actions-popup-timeline-post">

@@ -16,27 +16,33 @@ export const AutoMessage = () => {
                             <div className="automated__block">
                                 <label className="automated__label">Fan type</label>
                                 <div data-spollers className="automated__body">
-                                    <details className="automated__spoller spoller-automated spollers__item-main spollers__item input-main">
-                                        <summary data-spoller-close className="spoller-automated__title spollers__title">Non Follower</summary>
-                                        <div className="spoller-automated__body spollers__body">
-                                            <p>option 1</p>
-                                            <p>option 2</p>
-                                            <p>option 3</p>
+                                    <button className="automated__spoller spoller-automated spollers__item-main spollers__item input-main">
+                                        <div data-spoller-close className="spoller-automated__title spollers__title">Non Follower</div>
+                                        <div className="spollers__wrapper">
+
+                                            <div className="spoller-automated__body spollers__body">
+                                                <p>option 1</p>
+                                                <p>option 2</p>
+                                                <p>option 3</p>
+                                            </div>
                                         </div>
-                                    </details>
+                                    </button>
                                 </div>
                             </div>
                             <div className="automated__block">
                                 <label className="automated__label">Action</label>
                                 <div data-spollers className="automated__body">
-                                    <details className="automated__spoller spoller-automated spollers__item-main spollers__item input-main">
-                                        <summary data-spoller-close className="spoller-automated__title spollers__title">Follows</summary>
-                                        <div className="spoller-automated__body spollers__body">
-                                            <p>option 1</p>
-                                            <p>option 2</p>
-                                            <p>option 3</p>
+                                    <button className="automated__spoller spoller-automated spollers__item-main spollers__item input-main">
+                                        <div data-spoller-close className="spoller-automated__title spollers__title">Follows</div>
+                                        <div className="spollers__wrapper">
+
+                                            <div className="spoller-automated__body spollers__body">
+                                                <p>option 1</p>
+                                                <p>option 2</p>
+                                                <p>option 3</p>
+                                            </div>
                                         </div>
-                                    </details>
+                                    </button>
                                 </div>
                             </div>
                             <div className="automated__block">

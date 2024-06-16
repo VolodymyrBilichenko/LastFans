@@ -25,9 +25,9 @@
         display: flex;
         flex-direction: column;
         min-height: 400px;
-        height: calc(100vh - 110px);
+        height: calc(100vh - 130px);
         @media (min-width:$mobile){
-            height: calc(100vh - 160px);
+            height: calc(100vh - 180px);
         }
     }
     // .chat__top
@@ -48,21 +48,26 @@
     @media (min-width: em(1280)){
         flex-direction: row;
         align-items: center;
-
+        padding-left: toRem(18);
+        padding-right: toRem(18);
     }
     // .top-chat__block
     &__block {
-         padding: 0 toRem(18);
         width: 100%;
         display: flex;
         align-items: center;
         gap: toRem(20);
+        @media (max-width: em(1280)){
+            padding-left: toRem(14);
+            padding-right: toRem(14);
+        }
     }
     &__button{
         height: toRem(40);
         padding: toRem(5);
         @include adaptiveValue("font-size", 16, 14);
         margin: 0 0 0 auto;
+        max-width: toRem(178);
     }
     // .top-chat__user
     &__user {
@@ -143,7 +148,6 @@
     outline: 1px solid #F3F3F3;
     @media (min-width: em(1280)){
         border-radius: toRem(12);
-        margin: 0 toRem(18);
     }
     // width: 100%;
     // .chat-price-list__item

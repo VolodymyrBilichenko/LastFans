@@ -341,12 +341,14 @@
     }
     // .success__title
     &__title {
-        &:not(:last-child) {
-            margin-bottom: toRem(10);
-        }
+        @include adaptiveValue("font-size", 26, 18);
+        line-height: 142.307692%; /* 37/26 */
+
     }
     // .success__text
     &__text {
+        @include adaptiveValue("font-size", 20, 16);
+        line-height: 145%; /* 29/20 */
     }
     // .success__button
     &__button {
@@ -357,6 +359,8 @@
 
 .page-recovery{
     .success__text{
+        @include adaptiveValue("font-size", 20, 18);
+        line-height: 145%; /* 29/20 */
         font-weight: 700;
     }
 }

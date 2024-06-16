@@ -89,16 +89,19 @@ export const History = () => {
                             </div>
                             <div data-spollers className="footer-body-earnings__per-page">
                                 <p>Items per page:</p>
-                                <details className="field-block-add-vid__item spollers__item-main spollers__item input input-main">
-                                    <summary data-spoller-close className="field-block-add-vid__title spollers__title">
+                                <button className="field-block-add-vid__item spollers__item-main spollers__item input input-main">
+                                    <div data-spoller-close className="field-block-add-vid__title spollers__title">
                                         {countPerPage}
-                                    </summary>
-                                    <div className="field-block-add-vid__body spollers__body">
-                                        <div onClick={_ => setCountPerPage(10)} className="field-block-add-vid__value">10</div>
-                                        <div onClick={_ => setCountPerPage(16)} className="field-block-add-vid__value">16</div>
-                                        <div onClick={_ => setCountPerPage(32)} className="field-block-add-vid__value">32</div>
                                     </div>
-                                </details>
+                                    <div className="spollers__wrapper">
+
+                                        <div className="field-block-add-vid__body spollers__body">
+                                            <div onClick={_ => setCountPerPage(10)} className="field-block-add-vid__value">10</div>
+                                            <div onClick={_ => setCountPerPage(16)} className="field-block-add-vid__value">16</div>
+                                            <div onClick={_ => setCountPerPage(32)} className="field-block-add-vid__value">32</div>
+                                        </div>
+                                    </div>
+                                </button>
                             </div>
                         </div>
                     </div>

@@ -36,6 +36,7 @@
     // padding-bottom: toRem(30);
     gap: toRem(20);
     justify-content: space-between;
+    padding-bottom: toRem(20);
     .messages-user{
         @media (max-width: em(1280)){
             display: none;
@@ -59,7 +60,7 @@
     height: calc(100vh - 60px);
     overflow: auto;
         @media (min-width:$mobile){
-            height: calc(100vh - 110px);
+            height: calc(100vh - 130px);
         }
     // .main-messages__top
     &__body {
@@ -230,11 +231,11 @@
         display: grid;
         gap: toRem(30);
         justify-content: center;
-        height: calc(100vh - 110px);
-    overflow: auto;
+        height: calc(100vh - 130px);
+        overflow: auto;
 
         @media (min-width:$mobile){
-            height: calc(100vh - 160px);
+            height: calc(100vh - 180px);
         }
     }
     &__top{

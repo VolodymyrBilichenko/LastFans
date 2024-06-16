@@ -32,13 +32,17 @@ export const Models = () => {
                         </div>
                         <div data-spollers className="header-video-store__per-page per-page">
                             <p className="per-page__text">Per page</p>
-                            <details className="field-block-add-vid__item spollers__item-main spollers__item input input-main">
-                                <summary data-spoller-close className="field-block-add-vid__title spollers__title">36</summary>
-                                <div className="field-block-add-vid__body spollers__body">
-                                    <div className="field-block-add-vid__value">18</div>
-                                    <div className="field-block-add-vid__value">36</div>
+                            <button className="field-block-add-vid__item spollers__item-main spollers__item input input-main">
+                                <div data-spoller-close className="field-block-add-vid__title spollers__title">36</div>
+                                <div className="spollers__wrapper">
+
+                                    <div className="field-block-add-vid__body spollers__body">
+                                        <div className="field-block-add-vid__value">18</div>
+                                        <div className="field-block-add-vid__value">36</div>
+                                    </div>
                                 </div>
-                            </details>
+                                
+                            </button>
                         </div>
                     </div>
                 </div>
