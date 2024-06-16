@@ -1,7 +1,7 @@
 import { useDispatch } from 'react-redux'
 import UserPh from '../../../assets/img/user/01.png'
 import { NavLink } from 'react-router-dom'
-import { addModal, removeModal } from '../../../redux/toolkitSlice';
+import { removeModal } from '../../../redux/toolkitSlice';
 
 export const ModalBlockUser = () => {
     const dispatch = useDispatch();
