@@ -63,6 +63,22 @@ export const ChatBottom: React.FC<IChatBottomProps> = () => {
 
     return (
         <form onSubmit={handleAddMessage} className="chat__footer footer-chat">
+            <div className="message-reply">
+                <div className="message-reply__body">
+                    <div className="message-reply__block">
+
+                        <div className="message-reply__title">
+                            Reply to Boob007
+                        </div>
+                        <p className="message-reply__text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's</p>
+                    </div>
+                    <button className="message-reply__close">
+                        <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M20.5114 19.0517C20.6072 19.1475 20.6833 19.2613 20.7351 19.3865C20.787 19.5117 20.8136 19.6458 20.8136 19.7813C20.8136 19.9168 20.787 20.051 20.7351 20.1762C20.6833 20.3014 20.6072 20.4151 20.5114 20.5109C20.4156 20.6068 20.3019 20.6828 20.1767 20.7346C20.0515 20.7865 19.9173 20.8132 19.7818 20.8132C19.6463 20.8132 19.5121 20.7865 19.387 20.7346C19.2618 20.6828 19.148 20.6068 19.0522 20.5109L10.5006 11.958L1.94893 20.5109C1.75543 20.7045 1.49298 20.8132 1.21932 20.8132C0.945667 20.8132 0.683218 20.7045 0.489714 20.5109C0.29621 20.3174 0.1875 20.055 0.1875 19.7813C0.1875 19.5077 0.29621 19.2452 0.489714 19.0517L9.04264 10.5001L0.489714 1.94844C0.29621 1.75494 0.1875 1.49249 0.1875 1.21884C0.1875 0.945179 0.29621 0.68273 0.489714 0.489226C0.683218 0.295721 0.945667 0.187012 1.21932 0.187012C1.49298 0.187012 1.75543 0.295721 1.94893 0.489226L10.5006 9.04216L19.0522 0.489226C19.2457 0.295721 19.5082 0.187012 19.7818 0.187012C20.0555 0.187012 20.3179 0.295721 20.5114 0.489226C20.7049 0.68273 20.8136 0.945179 20.8136 1.21884C20.8136 1.49249 20.7049 1.75494 20.5114 1.94844L11.9585 10.5001L20.5114 19.0517Z" fill="#838383"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
             <div className="footer-chat__input input-chat">
                 <div className="input-chat__box">
                     <div className="input-chat__icon">
@@ -197,6 +213,8 @@ export const ChatBottom: React.FC<IChatBottomProps> = () => {
                     </svg>
                 </button>
             </div>
+
+            
         </form>
     )
 }

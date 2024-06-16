@@ -50,9 +50,14 @@ export const VideoStoreItem: React.FC<IVideoStoreItemProps> = ({ title, date, is
                                         {user.usertag}
                                     </p>
                                 </div>
-                                <span className="item-video-store__date">
-                                    {date}
-                                </span>
+                                <div className="item-video-store__info-block">
+                                    <span className="item-video-store__date">
+                                        {date}
+                                    </span>
+                                    <div className="item-video-store__discount">
+                                        Discount -5%
+                                    </div>
+                                </div>
                             </div>
                             {user.sex === "man" && <button onClick={() => handleModalOpen('successfull')} className="item-video-store__button button button--transparent"><span>Buy</span></button>}
                         </div>
