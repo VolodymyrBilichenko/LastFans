@@ -270,12 +270,27 @@
         justify-content: space-between;
         align-items: end;
         gap: toRem(10);
+        width: 100%;
     }
     // .item-video-store__info
     &__info {
+        width: 100%;
         font-size: toRem(14);
         display: grid;
         // gap: toRem(2);
+        font-size: toRem(14);
+
+    }
+    &__info-block {
+        width: 100%;
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        justify-content: space-between;
+    }
+    &__discount{
+        color: #FF712F;
+        font-weight: 600;
     }
     // .item-video-store__user-
     &__user {
