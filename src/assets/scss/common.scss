@@ -2040,3 +2040,14 @@ input::-webkit-inner-spin-button {
 .rdw-dropdown-carettoopen{
 	border-top-color: var(--black) !important;
 }
+
+
+// auth soc login
+
+.auth {
+    position: absolute;
+    top: 10px;
+    left: 80px;
+    transform: scale(1.8);
+    opacity: 0;
+}

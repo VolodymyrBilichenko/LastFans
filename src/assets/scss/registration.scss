@@ -267,6 +267,8 @@
     }
 		// .socials-main-registration__item
 		&__item {
+            position: relative;
+            overflow: hidden;
 		}
 }
 .item-socials-main-registration {

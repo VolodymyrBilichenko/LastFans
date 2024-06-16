@@ -15,6 +15,7 @@ import { setUser } from "./redux/toolkitSlice";
 import { IUser } from "./models";
 import { Modals } from "./components/Modals/Modals";
 import { Fancybox as NativeFancybox } from "@fancyapps/ui";
+import { GoogleOAuthProvider } from "@react-oauth/google";
 
 
 export const App = () => {
@@ -55,31 +56,33 @@ export const App = () => {
       <Modals />
 
       {!currentPage[0]?.isNotNeedHeader && <Header handleOpenMenu={handleOpenMenu} />}
+      <GoogleOAuthProvider clientId="1071605377094-5663q4ujiakepp8ri3mis7buhclag70l.apps.googleusercontent.com">
+        <main className={`page ${currentPage[0]?.additionalClass ?? 'page-main'} `}>
 
-      <main className={`page ${currentPage[0]?.additionalClass ?? 'page-main'} `}>
+          {!currentPage[0]?.isNotNeedMenu && <AsideMenu handleOpenMenu={handleOpenMenu} isOpenAsideMenu={isOpenAsideMenu} />}
 
-        {!currentPage[0]?.isNotNeedMenu && <AsideMenu handleOpenMenu={handleOpenMenu} isOpenAsideMenu={isOpenAsideMenu} />}
+          <TransitionGroup component={null}>
+            <CSSTransition
+              key={location.pathname}
+              classNames="fade"
+              timeout={300}
+            >
+              <Routes location={location}>
+                {routes(user.sex).map((item: any) => (
+                  <Route
+                    key={item.path}
+                    element={item.element}
+                    path={item.path}
+                  />
+                ))}
+              </Routes>
+            </CSSTransition>
+          </TransitionGroup>
 
-        <TransitionGroup component={null}>
-          <CSSTransition
-            key={location.pathname}
-            classNames="fade"
-            timeout={300}
-          >
-            <Routes location={location}>
-              {routes(user.sex).map((item: any) => (
-                <Route
-                  key={item.path}
-                  element={item.element}
-                  path={item.path}
-                />
-              ))}
-            </Routes>
-          </CSSTransition>
-        </TransitionGroup>
+          {!currentPage[0]?.isNotNeedMessage && <AsideMessages />}
+        </main>
 
-        {!currentPage[0]?.isNotNeedMessage && <AsideMessages />}
-      </main>
+      </GoogleOAuthProvider>
     </>
   );
 };

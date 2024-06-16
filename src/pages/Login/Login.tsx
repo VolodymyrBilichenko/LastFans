@@ -1,15 +1,13 @@
 import MainDecor from '../../assets/img/registration/01.svg';
 import LogoIc from '../../assets/img/icons/logo.svg';
 import LogoWhiteIc from '../../assets/img/icons/logo-white.svg';
-import GoogleIc from '../../assets/img/icons/google.svg';
-import AppleIc from '../../assets/img/icons/apple.svg';
-import FacebookIc from '../../assets/img/icons/facebook.svg';
 import { NavLink, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import setCookie from '../../functions/setCookie';
 import { IUser } from '../../models';
 import { setUser } from '../../redux/toolkitSlice';
 import { useDispatch } from 'react-redux';
+import { LoginSocial } from './components/LoginSocial';
 
 export const Login = () => {
     const [password, setPassword] = useState<string>("");
@@ -130,26 +128,9 @@ export const Login = () => {
 
                     <NavLink to={'/forgot'} className="main-registration__forgot">Forgot your password?</NavLink>
 
-                    <div className="main-registration__socials socials-main-registration">
-                        <a href="some" className="socials-main-registration__item item-socials-main-registration">
-                            <div className="item-socials-main-registration__image">
-                                <img src={GoogleIc} alt="Icon" />
-                            </div>
-                            <p className="item-socials-main-registration__text">Google</p>
-                        </a>
-                        <a href="some" className="socials-main-registration__item item-socials-main-registration">
-                            <div className="item-socials-main-registration__image">
-                                <img src={AppleIc} alt="Icon" />
-                            </div>
-                            <p className="item-socials-main-registration__text">Apple</p>
-                        </a>
-                        <a href="some" className="socials-main-registration__item item-socials-main-registration">
-                            <div className="item-socials-main-registration__image">
-                                <img src={FacebookIc} alt="Icon" />
-                            </div>
-                            <p className="item-socials-main-registration__text">Facebook</p>
-                        </a>
-                    </div>
+
+                    <LoginSocial/>
+
                     <div className="main-registration__footer footer-main-registration">
                         <p className="footer-main-registration__text">
                             Don`t have an account? 
