@@ -244,6 +244,7 @@
 
     .field-block-add-vid__item{
         outline: 1px solid #E2E2E2;
+        background-color: var(--secondary);
 
     }
     .field-block-add-vid__body{
@@ -480,10 +481,7 @@
     }
     // .field-block-add-vid__body
     &__body {
-        position: absolute;
 
-        top: 100%;
-        left: 0;
         width: 100%;
         padding: toRem(10) 0;
         display: grid;

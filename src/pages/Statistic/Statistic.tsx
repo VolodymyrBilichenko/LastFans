@@ -316,14 +316,14 @@ export const Statistic = () => {
                                     </div>
                                     <div data-spollers className="footer-body-earnings__per-page _spoller-init">
                                         <p>Items per page:</p>
-                                        <details className="field-block-add-vid__item spollers__item-main spollers__item input input-main">
-                                            <summary data-spoller-close className="field-block-add-vid__title spollers__title">10</summary>
+                                        <button className="field-block-add-vid__item spollers__item-main spollers__item input input-main">
+                                            <div data-spoller-close className="field-block-add-vid__title spollers__title">10</div>
                                             <div className="field-block-add-vid__body spollers__body">
                                                 <div className="field-block-add-vid__value">10</div>
                                                 <div className="field-block-add-vid__value">16</div>
                                                 <div className="field-block-add-vid__value">32</div>
                                             </div>
-                                        </details>
+                                        </button>
                                     </div>
                                 </div>
                             </div>

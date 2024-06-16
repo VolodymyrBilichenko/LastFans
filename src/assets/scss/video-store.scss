@@ -119,10 +119,8 @@
             justify-content: center;
             outline-color: var(--blue);
             min-height: 0;
-            background-color: var(--white);
             @media (min-width:$tablet){
                 width: toRem(100);
-                  
             }
 		}
 		// .field-block-add-vid__title

@@ -16,7 +16,6 @@ export const ModalBlockUser = () => {
                         <picture><source srcSet={UserPh} type="image/webp"/><img className="user-photo" src={UserPh} alt="User ph"/></picture>
                     </div>
                     <div className="user-item__body">
-                        <div className="user-item__name">Boob007</div>
                         <div className="user-item__username">@Boob007</div>
                     </div>
                 </NavLink>
