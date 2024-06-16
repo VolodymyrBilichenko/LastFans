@@ -3,13 +3,18 @@ import GoogleIc from '../../../assets/img/icons/google.svg';
 import AppleIc from '../../../assets/img/icons/apple.svg';
 import FacebookIc from '../../../assets/img/icons/facebook.svg';
 
-import { GoogleLogin } from '@react-oauth/google';
+import { GoogleLogin } from '@react-oauth/google'
+import FacebookLogin from 'react-facebook-login';
+
 
 export const LoginSocial = () => {
 
     const responseGoogle = (credentialResponse: any) => {
         console.log('Google Login Successful:', credentialResponse);
-        // SubmitAuth('google', credentialResponse.credential);
+    }
+
+    const responseFacebook = (response: any) => {
+        console.log('facebook', response.accessToken);
     }
 
     return (
@@ -28,18 +33,28 @@ export const LoginSocial = () => {
                     />;
                 </div>
             </button>
-            <a href="some" className="socials-main-registration__item item-socials-main-registration">
+            <button className="socials-main-registration__item item-socials-main-registration">
                 <div className="item-socials-main-registration__image">
                     <img src={AppleIc} alt="Icon" />
                 </div>
                 <p className="item-socials-main-registration__text">Apple</p>
-            </a>
-            <a href="some" className="socials-main-registration__item item-socials-main-registration">
+                
+            </button>
+            <button className="socials-main-registration__item item-socials-main-registration">
                 <div className="item-socials-main-registration__image">
                     <img src={FacebookIc} alt="Icon" />
                 </div>
                 <p className="item-socials-main-registration__text">Facebook</p>
-            </a>
+                <div className="auth">
+                    <FacebookLogin
+                    appId="YOUR_FACEBOOK_APP_ID"
+                        autoLoad={false}
+                        fields="name,email,picture"
+                        callback={responseFacebook}
+                        icon="fa-facebook"
+                    />,
+                </div>
+            </button>
         </div>
     )
 }
