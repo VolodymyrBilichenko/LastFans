@@ -67,14 +67,14 @@ const toolkitSlice = createSlice({
         modals: [],
         chatMessages: mockChatMessages,
         chatMessageChange: <{ id: string, text: string }>{},
-        payment: {},
+        payment: [],
         newGroup: [],
     },
     reducers: {
         setUser(state: any, action: { payload: IUser }) {
             state.user = action.payload
         },
-        
+
         addModal(state: any, action: { payload: string }) {
             state.modals = [...state.modals, action.payload]
         },
@@ -108,7 +108,7 @@ const toolkitSlice = createSlice({
         },
 
         addPayment(state: any, action: {payload: any}) {
-            state.payment = action.payload
+            state.payment = [...state.payment, action.payload]
         },
         addNewGroup(state: any, action: {payload: any}) {
             state.newGroup = [...state.newGroup, action.payload]
