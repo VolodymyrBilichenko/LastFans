@@ -44,7 +44,7 @@ export const VideoStore = () => {
             poster: 'https://m.media-amazon.com/images/I/71AnnJuUpoL._AC_UF894,1000_QL80_.jpg'
         },
         {
-            title: "Sexy Emma Watwon",
+            title: "Sexy Emma Watwon New",
             user: {
                 username: "Emmik",
                 usertag: "@emmiikk",

@@ -48,9 +48,15 @@ export const VideoStoreFilter: React.FC<IVideoStoreFilterProps> = ({ isOpenFilte
         setFilter((prev: IFilterVideo) => {
             return {
                 ...prev,
-                price: prev?.price?.some(item => item === value) ? prev?.price?.filter(item => item !== value) : [...prev?.price, value]
+                price: [value]
             }
         })
+        // setFilter((prev: IFilterVideo) => {
+        //     return {
+        //         ...prev,
+        //         price: prev?.price?.some(item => item === value) ? prev?.price?.filter(item => item !== value) : [...prev?.price, value]
+        //     }
+        // })
     }
 
     return (
@@ -159,7 +165,7 @@ export const VideoStoreFilter: React.FC<IVideoStoreFilterProps> = ({ isOpenFilte
                                 <div key={item.label} className="block-filters-video-store__item item-filter">
                                     <div className="form-block">
                                         <label>
-                                            <input checked={filter.price.some(item2 => item2 === item.value.join(','))} onChange={e => handleFilterByPrice(item.value.join(','))} value={item.value.join(',')} type="checkbox" name="conditions" className="real-checkbox" />
+                                            <input checked={filter.price.some(item2 => item2 === item.value.join(','))} onChange={e => handleFilterByPrice(item.value.join(','))} value={item.value.join(',')} type="radio" name="conditions" className="real-checkbox" />
                                             <span className="custom-checkbox"></span>
                                             <p className="form-block__text">
                                                 {item.label}
