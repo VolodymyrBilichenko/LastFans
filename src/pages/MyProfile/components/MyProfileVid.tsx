@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { toast } from "react-toastify";
+import { useClickOutside } from "../../../hooks/ClickOutside";
 
 interface ITariff {
     id: number,
@@ -12,6 +13,7 @@ export const MyProfileVid = () => {
     const [minutes, setMinutes] = useState<string>('');
     const [pricePerMinute, setPricePerMinute] = useState<string>('');
     const [billedAmount, setBilledAmount] = useState<string>('');
+    const [isOpenSelect, setIsOpenSelect] = useState(false);
     const [startTariff, setStartTariff] = useState<ITariff[]>([
         {id: 1, minutes: '5', pricePerMinute: '25', billedAmount: '50'},
         {id: 2, minutes: '15', pricePerMinute: '250', billedAmount: '500'},
@@ -49,6 +51,9 @@ export const MyProfileVid = () => {
         setMinutes(selectedMinutes);
     };
 
+
+    const {rootEl} = useClickOutside(setIsOpenSelect)
+
     return (
         <div className="profile__vid vid-profile">
             <h2 className="vid-profile__title title title--medium">Custom vid settings</h2>
@@ -60,23 +65,24 @@ export const MyProfileVid = () => {
                             <div className="block-add-vid__minutes minutes-block-add-vid">
                                 <p className="block-add-vid__text">Minutes</p>
                                 <div className="block-add-vid__field field-block-add-vid">
-                                    <button className="field-block-add-vid__item spollers__item-main input input-main">
-                                        <div className="field-block-add-vid__title">{minutes || "Select"}</div>
-                                        <div className="spollers__wrapper">
-                                    
-                                            <div className="field-block-add-vid__body spollers__body">
-                                                {["5 min", "10 min", "15 min", "20 min", "25 min", "30 min"].map((time) => (
-                                                    <div
-                                                        key={time}
-                                                        className="field-block-add-vid__value"
-                                                        onClick={() => handleMinuteSelection(time)}
-                                                    >
-                                                        {time}
-                                                    </div>
-                                                ))}
-                                            </div>
+                                <button ref={rootEl} onClick={_ => setIsOpenSelect(prev => !prev)} className={`field-block-add-vid__item spollers__item-main spollers__item input input-main ${isOpenSelect ? 'active' : ''}`}>
+                                    <div className="field-block-add-vid__title spollers__title">
+                                        {minutes || "Select"}
+                                    </div>
+                                    <div className="spollers__wrapper">
+                                        <div className="field-block-add-vid__body spollers__body">
+                                            {["5 min", "10 min", "15 min", "20 min", "25 min", "30 min"].map((time) => (
+                                                <div
+                                                    key={time}
+                                                    className="field-block-add-vid__value"
+                                                    onClick={() => handleMinuteSelection(time)}
+                                                >
+                                                    {time}
+                                                </div>
+                                            ))}
                                         </div>
-                                    </button>
+                                    </div>
+                                </button>
                                 </div>
                             </div>
                             <div className="block-add-vid__price">
@@ -107,7 +113,7 @@ export const MyProfileVid = () => {
                                 <div key={tariff.id} className="vid-profile__block block-vid" style={{marginBottom: '15px'}}>
                                     <div className="block-vid__content input input-main">
                                         <div className="block-vid__minutes">
-                                            <p><span>{tariff.minutes}</span> min</p>
+                                            <p><span>{tariff.minutes}</span></p>
                                         </div>
                                         <div className="block-vid__price">
                                             <p>$ <span>{tariff.pricePerMinute}</span></p>
