@@ -1,13 +1,3 @@
-// import React from 'react'
-// import PostPh from './../../../../assets/img/post/01.jpg'
-// import UserPh from './../../../../assets/img/user/01.png'
-// import UserPh2 from './../../../../assets/img/user/02.jpg'
-// import UserBgPh from './../../../../assets/img/user/bg.jpg'
-// import LogoWhiteIc from './../../../../assets/img/icons/logo-white.svg'
-// import MessageIc from './../../../../assets/img/icons/user-menu/message.svg'
-// import ImageIc from './../../../../assets/img/icons/image.svg'
-// import VideoIc from './../../../../assets/img/icons/video.svg'
-// import AudioIc from './../../../../assets/img/icons/audio.svg'
 import SendIc from './../../../../assets/img/icons/send.svg'
 import MicroIc from './../../../../assets/img/icons/micro.svg'
 import { toast } from 'react-toastify'
@@ -15,12 +5,8 @@ import { IUser } from '../../../../models'
 import { useDispatch, useSelector } from 'react-redux'
 import { addMessage } from '../../../../redux/toolkitSlice'
 import { useEffect, useState } from 'react'
-// import ProfileIc from './../../../../assets/img/icons/user.svg'
-// import StatsIc from './../../../../assets/img/icons/stats.svg'
-// import RenameIc from './../../../../assets/img/icons/user-menu/edit.svg'
-// import AudioMuteIc from './../../../../assets/img/icons/audio-mute.svg'
-// import PinIc from './../../../../assets/img/icons/pin-green.svg'
-// import BlockedUserIc from './../../../../assets/img/icons/blocked-user.svg'
+import InputEmoji from 'react-input-emoji'
+
 
 interface IChatBottomProps {
 
@@ -54,7 +40,7 @@ export const ChatBottom: React.FC<IChatBottomProps> = () => {
             date: new Date(),
         }
 
-        dispatch(addMessage({...newMessage, images: imagesValue}))
+        dispatch(addMessage({ ...newMessage, images: imagesValue }))
         setTextValue('')
         setImagesValue([])
     }
@@ -70,8 +56,7 @@ export const ChatBottom: React.FC<IChatBottomProps> = () => {
         const imageUrls = files.map((file: any) => URL.createObjectURL(file));
         setImagesValue((prev: any[]) => [...prev, ...imageUrls]);
     };
-
-
+    
     return (
         <form onSubmit={handleAddMessage} className="chat__footer footer-chat">
 
@@ -151,7 +136,15 @@ export const ChatBottom: React.FC<IChatBottomProps> = () => {
                                 <path d="M18.072 13.4633C17.7365 13.3447 17.3682 13.5206 17.2496 13.8562C16.4647 16.0768 14.3543 17.5687 11.9981 17.5687C9.6418 17.5687 7.53138 16.0768 6.74655 13.8562C6.62795 13.5206 6.25962 13.3447 5.92407 13.4633C5.58844 13.5819 5.41253 13.9502 5.53116 14.2858C6.49771 17.0204 9.09657 18.8578 11.9981 18.8578C14.8995 18.8578 17.4984 17.0204 18.4649 14.2858C18.5836 13.9502 18.4077 13.5819 18.072 13.4633Z" fill="#B5CBED" />
                             </svg>
 
-
+                            <InputEmoji
+                                value={textValue}
+                                onChange={setTextValue}
+                                // cleanOnEnter
+                                // onEnter={handleOnEnter}
+                                placeholder="Type a message"
+                                shouldReturn={false}
+                                shouldConvertEmojiToImage={false}
+                            />
                         </button>
                         <button type="button" className="actions-input-chat__item actions-input-chat__item--file" style={{ position: 'relative', cursor: 'pointer' }}>
                             <svg style={{ cursor: 'pointer' }} width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">

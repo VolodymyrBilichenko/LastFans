@@ -53,7 +53,7 @@ export const ChatItem: React.FC<IChatItemProps> = ({ isOwner, isEdited, message,
                                 {message}
                             </p>
 
-                            {images?.length && <div data-gallery="true" className="content-post__images gallery">
+                            {!!images?.length && <div data-gallery="true" className="content-post__images gallery">
 
                                 {
                                     images.map(item => (
