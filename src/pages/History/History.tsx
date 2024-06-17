@@ -1,11 +1,16 @@
 import { useState } from "react"
 import { HistoryItem } from "./components/HistoryItem"
+import { useClickOutside } from "../../hooks/ClickOutside"
 
 export const History = () => {
 
     const [countPerPage, setCountPerPage] = useState(10)
     const [currentPageNumber, setCurrentPageNumber] = useState(1)
     const [historyList, setHistoryList] = useState(Array(56).fill(''))
+
+    const [isOpenSelect, setIsOpenSelect] = useState(false)
+
+    const {rootEl} = useClickOutside(setIsOpenSelect)
 
     return (
         <div className="earnings">
@@ -87,18 +92,18 @@ export const History = () => {
                                     </button>
                                 </div>
                             </div>
-                            <div data-spollers className="footer-body-earnings__per-page">
+                            <div className={`footer-body-earnings__per-page`}>
                                 <p>Items per page:</p>
-                                <button className="field-block-add-vid__item spollers__item-main spollers__item input input-main">
-                                    <div data-spoller-close className="field-block-add-vid__title spollers__title">
+                                <button ref={rootEl} onClick={_ => setIsOpenSelect(prev => !prev)} className={`field-block-add-vid__item spollers__item-main spollers__item input input-main ${isOpenSelect ? 'active' : ''}`}>
+                                    <div className="field-block-add-vid__title spollers__title">
                                         {countPerPage}
                                     </div>
                                     <div className="spollers__wrapper">
 
                                         <div className="field-block-add-vid__body spollers__body">
-                                            <div onClick={_ => setCountPerPage(10)} className="field-block-add-vid__value">10</div>
-                                            <div onClick={_ => setCountPerPage(16)} className="field-block-add-vid__value">16</div>
-                                            <div onClick={_ => setCountPerPage(32)} className="field-block-add-vid__value">32</div>
+                                            <div onClick={_ => {setCountPerPage(10); setCurrentPageNumber(1)}} className="field-block-add-vid__value">10</div>
+                                            <div onClick={_ => {setCountPerPage(16); setCurrentPageNumber(1)}} className="field-block-add-vid__value">16</div>
+                                            <div onClick={_ => {setCountPerPage(32); setCurrentPageNumber(1)}} className="field-block-add-vid__value">32</div>
                                         </div>
                                     </div>
                                 </button>
