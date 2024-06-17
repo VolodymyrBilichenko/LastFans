@@ -34,7 +34,7 @@ export const App = () => {
       NativeFancybox.unbind("[data-fancybox]");
       NativeFancybox.close();
     };
-  }, []);
+  }, [location.pathname]);
 
   useEffect(() => {
     if (!getCookies('access_token')) return
