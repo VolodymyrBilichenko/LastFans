@@ -36,7 +36,7 @@ export const Pagination: React.FC<IPaginationProps> = ({ ...props }) => {
                 }
 
             </div>
-            <div data-spollers className="header-video-store__per-page per-page">
+            <div data-spollers className="per-page">
                 <p className="per-page__text">Per page</p>
                 <button onClick={_ => setIsOpenSelect(prev => !prev)} className={`field-block-add-vid__item spollers__item-main spollers__item input input-main ${isOpenSelect ? 'active' : ''}`}>
                     <div data-spoller-close className="field-block-add-vid__title spollers__title">

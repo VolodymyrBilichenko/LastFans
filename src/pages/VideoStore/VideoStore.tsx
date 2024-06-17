@@ -161,7 +161,7 @@ export const VideoStore = () => {
                             <a href="some"><span>4</span></a>
                             <a href="some"><span>5</span></a>
                         </div>
-                        <div data-spollers className="header-video-store__per-page per-page">
+                        <div data-spollers className="footer-video-store__per-page per-page">
                             <p className="per-page__text">Per page</p>
                             <button className="field-block-add-vid__item spollers__item-main spollers__item input input-main">
                                 <div data-spoller-close className="field-block-add-vid__title spollers__title">36</div>

@@ -622,12 +622,11 @@
         width: fit-content;
         // height: 100%;
         position: relative;
-        display: flex;
-        flex-direction: column;
+        display: grid;
         justify-content: center;
         gap: toRem(3);
         padding-left: toRem(28);
-        max-width: 90%;
+
         &::before{
             content:'';
             width: 4px;
@@ -647,8 +646,7 @@
         line-height: 22px;
         overflow: hidden;
         text-overflow: ellipsis;
-        // white-space: nowrap;
-        // text-align: center;
+        white-space: nowrap;
     }
     &__close{
         flex: 0 0 toRem(33);

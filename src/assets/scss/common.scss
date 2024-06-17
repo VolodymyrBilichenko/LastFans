@@ -512,6 +512,13 @@
             display: flex !important;
         }
     }
+
+    &.share{
+        .share-content{
+            opacity: 1;
+            pointer-events: all;
+        }
+    }
 }
 
 
@@ -1924,12 +1931,21 @@ transform: scale(1);
     position: relative;
     background-color: transparent;
 
+    transition: border-radius 1s ease !important;
     &.active{
         border-bottom-left-radius: 0 !important;
         border-bottom-right-radius: 0 !important;
+        transition: border-radius 0s !important;
+
         // .spollers__wrapper{
         //     height: 100px !important;
         // }
+        .spollers__title{
+            &::after{
+                content:'';
+                transform: rotate(180deg);
+            }
+        }
         .spollers__body{
             transform: translate(0) !important;
 
