@@ -24,6 +24,8 @@ export const PostitemComments: React.FC<IPostitemCommentsProps> = ({ mockComment
     const leaveComment = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
 
+        if(!messageValue) return toast.error('Write anything please')
+
         const newComment: IComment = {
             user: user,
             date: new Date(),
@@ -35,7 +37,6 @@ export const PostitemComments: React.FC<IPostitemCommentsProps> = ({ mockComment
     }
 
     const scrollingBlock: any = useRef(null)
-
 
     useEffect(() => {
         scrollingBlock.current?.scrollTo(0, 9999)
@@ -69,22 +70,22 @@ export const PostitemComments: React.FC<IPostitemCommentsProps> = ({ mockComment
                     <p className="actions-comments-post__text">Add to your comment</p>
                     <div className="actions-comments-post__items">
 
-                        <button onClick={_ => toast.error("This modal is developing")} className="actions-comments-post__item">
+                        <button type='button' onClick={_ => toast.error("This modal is developing")} className="actions-comments-post__item">
                             <img src={Icon} alt="Icon" />
                         </button>
-                        <button onClick={_ => toast.error("This modal is developing")} className="actions-comments-post__item">
+                        <button type='button' onClick={_ => toast.error("This modal is developing")} className="actions-comments-post__item">
                             <img src={VideoIc} alt="Icon" />
                         </button>
-                        <button onClick={_ => toast.error("This modal is developing")} className="actions-comments-post__item">
+                        <button type='button' onClick={_ => toast.error("This modal is developing")} className="actions-comments-post__item">
                             <img src={MoneyIc} alt="Icon" />
                         </button>
-                        <button onClick={_ => toast.error("This modal is developing")} className="actions-comments-post__item">
+                        <button type='button' onClick={_ => toast.error("This modal is developing")} className="actions-comments-post__item">
                             <img src={AudioIc} alt="Icon" />
                         </button>
-                        <button onClick={_ => toast.error("This modal is developing")} className="actions-comments-post__item">
+                        <button type='button' onClick={_ => toast.error("This modal is developing")} className="actions-comments-post__item">
                             <img src={FileIc} alt="Icon" />
                         </button>
-                        <button onClick={_ => toast.error("This modal is developing")} className="actions-comments-post__item">
+                        <button type='button' onClick={_ => toast.error("This modal is developing")} className="actions-comments-post__item">
                             <img src={MoneyIc2} alt="Icon" />
                         </button>
                     </div>

@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import { IUser } from '../../../models'
+import { toast } from 'react-toastify'
 
 interface IPostItemCommentsItemProps {
     user: IUser
@@ -13,6 +14,8 @@ export const PostItemCommentsItem: React.FC<IPostItemCommentsItemProps> = ({user
     const dateWithZeroSymbol = (number: number) => {
         return +number < 10 ? "0" + number : number
     }
+
+    const [isLiked, setIsLiked] = useState(false)
 
     return (
         <div className="comments-post__item item-comments-post">
@@ -50,8 +53,8 @@ export const PostItemCommentsItem: React.FC<IPostItemCommentsItemProps> = ({user
                     </p>
                 </div>
                 <div className="item-comments-post__actions">
-                    <button className="item-comments-post__button">Like</button>
-                    <button className="item-comments-post__button">Reply</button>
+                    <button onClick={_ => setIsLiked(prev => !prev)} className="item-comments-post__button">{isLiked ? "Liked" : "Like"} {isLiked ? 1 : 0}</button>
+                    <button className="item-comments-post__button" onClick={_ => toast.error('This function id developing')}>Reply</button>
                 </div>
             </div>
         </div>
