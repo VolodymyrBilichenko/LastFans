@@ -27,9 +27,9 @@ export const Models = () => {
                                     />
                                 ))
                         }
-
+   
                     </div>
-
+                  
                     <Pagination setCountPerPage={setCountPerPage} setPaginatePage={setPaginatePage} />
                 </div>
             </div>

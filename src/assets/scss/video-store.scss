@@ -436,15 +436,29 @@
     &__pages {
         display: flex;
         align-items: center;
-        @include adaptiveValue("gap", 25, 15);
+        @include adaptiveValue("gap", 25, 10);
         font-weight: 500;
-        @media (min-width:$tablet){
-             gap: 37px; 
-        }
+
         a{
+            width: toRem(14);
+            height: toRem(14);
+            font-size: toRem(14);
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: color .3s ease;
+            @media (min-width:$mobileSmall){
+                width: toRem(20);
+                height: toRem(20); 
+                font-size: toRem(16);
+            }
+            &.active{
+                color: var(--blue);
+
+            }
             @media (any-hover: hover){
                 &:hover{
-                    transition: color .3s ease;
                     color: var(--blue);
                 }
             }
