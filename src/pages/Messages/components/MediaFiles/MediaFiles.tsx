@@ -5,7 +5,7 @@ import { MediaFilesVideo } from './components/MediaFilesVideo';
 import { MediaFilesGif } from './components/MediaFilesGif';
 
 
-export const MediaFiles = () => {
+export const MediaFiles = ({handleClose}: any) => {
     const [activeTab, setActiveTab] = useState('all');
 
     const activeTabContent = () => {
@@ -25,7 +25,7 @@ export const MediaFiles = () => {
     return (
         <div className="messages-user__media-files media-files">
             <div className="media-files__header">
-                <a href="some" className="media-files__back"><span>Media Files</span></a>
+                <button onClick={handleClose} className="media-files__back"><span>Media Files</span></button>
             </div>
             <div className="media-files__tabs">
                 <div className={`tabs-content-profile__item all ${activeTab === 'all' ? 'active' : ''}`}
