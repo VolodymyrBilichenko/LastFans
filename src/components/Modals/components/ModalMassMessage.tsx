@@ -45,7 +45,11 @@ export const ModalMassMessage = () => {
         }
     ])
 
+    // 1) посмотри что ты принимаешь. Вопрос, что приходит в параметрах этой функции addExcludeUser?
     const addExcludeUser = (user: any) => {
+
+        // Ну и теперь главный вопрос, что ты тут сравниваешь?
+        // Что такое (u) переданое в параметрах стрелочной функции?
         if (!exclude.some((u) => u.user.usertag === user.user.usertag)) {
             setExclude([...exclude, user]);
         }
@@ -211,6 +215,8 @@ export const ModalMassMessage = () => {
                                                 </span>
                                             </div>
                                         </div>
+
+                                        // Посмотри, что ты сюда передаешь и дальше (1). Ну и вопрос, что ты передаешь в эту функцию addExcludeUser?
                                         <button onClick={() => addExcludeUser(item?.user?.usertag)} className="exclude-button button"><span>Exclude</span></button>
                                     </div>
                                 ))
