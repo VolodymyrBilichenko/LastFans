@@ -24,11 +24,11 @@ export const Models = () => {
                     </div>
                     <div className="video-store__footer footer-video-store">
                         <div className="footer-video-store__pages">
-                            <a href="some"><span>1</span></a>
-                            <a href="some"><span>2</span></a>
-                            <a href="some"><span>3</span></a>
-                            <a href="some"><span>4</span></a>
-                            <a href="some"><span>5</span></a>
+                            <a className='active' href="some"><span>1</span></a>
+                            <a className='' href="some"><span>2</span></a>
+                            <a className='' href="some"><span>3</span></a>
+                            <a className='' href="some"><span>4</span></a>
+                            <a className='' href="some"><span>5</span></a>
                         </div>
                         <div data-spollers className="header-video-store__per-page per-page">
                             <p className="per-page__text">Per page</p>
