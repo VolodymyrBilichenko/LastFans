@@ -164,7 +164,9 @@ export const VideoStore = () => {
                         }
 
                     </div>
+                  
                     {user.sex === "man" && <Pagination setCountPerPage={setCountPerPage} countPerPage={countPerPage} arrayLength={filteredVideo.length} setPaginatePage={setPaginatePage} />}
+
 
                 </div>
             </div>

@@ -203,10 +203,16 @@
 // =================================================================================
 
 .popup-timeline-post {
+	
 	// .popup-timeline-post__body
 	&__body {
 		display: grid;
 		gap: toRem(20);
+		.user-item{
+			.user-item__name{
+				@include adaptiveValue("font-size", 20, 16);
+			}
+		}
 	}
 	// .popup-timeline-post__title
 	&__title {
@@ -294,6 +300,7 @@
 
 
 .body-popup-timeline-post {
+	
     .input-box__input{
         font-size: toRem(15);
     }

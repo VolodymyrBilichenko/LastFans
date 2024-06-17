@@ -39,6 +39,11 @@
     @media (min-width:$mobile){
          flex-direction: row; 
     }
+    .per-page{
+        .spollers__body{
+            background-color: var(--secondary);
+        }
+    }
     // .header-video-store__block
     &__block {
         justify-content: space-between;
@@ -85,6 +90,7 @@
     }
     // .header-video-store__per-page
     &__per-page {
+        
     }
 
     &__add{
