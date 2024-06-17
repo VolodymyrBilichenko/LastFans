@@ -659,3 +659,33 @@
         justify-content: center;
     }
 }
+
+
+
+
+
+
+
+// NEW STYLES
+
+.chatImages {
+    display: flex;
+    gap: 20px;
+    .delete {
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        background: #fff;
+        width: 15px;
+        height: 15px;
+        color: #000;
+        display: block;
+    }
+    .image {
+        position: relative;
+    }
+    img {
+        width: 60px;
+        height: 60px;
+    }
+}

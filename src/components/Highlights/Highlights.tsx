@@ -6,7 +6,11 @@ import StoryPh from '../../assets/img/story/story.jpg'
 import { NavLink } from "react-router-dom";
 import { toast } from "react-toastify";
 
-export const Highlights = () => {
+interface IHighlights {
+    isNeedAdd?: boolean
+}
+
+export const Highlights = ({isNeedAdd}: IHighlights) => {
     const handleInDevelop = () => {
 		toast.error('This element in the development')
 	}
@@ -30,7 +34,7 @@ export const Highlights = () => {
                     
                 }}
             >
-                <SwiperSlide>
+                {isNeedAdd && <SwiperSlide>
                     <NavLink to={''} onClick={handleInDevelop} data-popup="#popup-timeline-post" className="highlights-main__item item-highlights-main item-highlights-main--new">
                         <div className="item-highlights-main__image">
                             <svg width="18" height="17" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -39,7 +43,7 @@ export const Highlights = () => {
                         </div>
                         <p className="item-highlights-main__text">New</p>
                     </NavLink>
-                </SwiperSlide>
+                </SwiperSlide>}
 
                 <SwiperSlide >
                     <NavLink to={'https://goldenglobes.com/wp-content/uploads/2023/10/17-tomcruiseag.jpg'} data-fancybox={"stories"} className="highlights-main__item item-highlights-main">

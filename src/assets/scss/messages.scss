@@ -549,3 +549,27 @@
 // ===========================================================================================================
 
 // ===========================================================================================================
+
+
+
+.react-input-emoji--container {
+    position: absolute !important;
+    margin: 0 !important;
+    opacity: 0;
+}
+
+.actions-input-chat__item--emoji {
+    position: relative;
+}
+
+.react-input-emoji--button {
+    opacity: 0;
+}
+
+.react-emoji {
+    position: absolute !important;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}

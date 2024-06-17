@@ -30,7 +30,7 @@ export const ChatItem: React.FC<IChatItemProps> = ({ isOwner, isEdited, message,
     const handleEditMessage = () => {
         dispatch(changeMessage({
             id: String(id),
-            text: message
+            isOwner, isEdited, text: message, images, isLocked, user, date, isRead
         }))
     }
 
@@ -53,7 +53,7 @@ export const ChatItem: React.FC<IChatItemProps> = ({ isOwner, isEdited, message,
                                 {message}
                             </p>
 
-                            {images?.length && <div data-gallery="true" className="content-post__images gallery">
+                            {!!images?.length && <div data-gallery="true" className="content-post__images gallery">
 
                                 {
                                     images.map(item => (

@@ -24,8 +24,10 @@ export const VideoStoreItem: React.FC<IVideoStoreItemProps> = ({ title, date, is
     return (
         <div className="content-video-store__item item-video-store">
             <div className="item-video-store__wrapper">
-                <div className="item-video-store__image">
-                    <img src={poster} alt="ph" />
+                <div data-gallery className="item-video-store__image">
+                    <a data-fancybox={title} style={{width: "100%", height: "100%"}} href="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.webm">
+                        <img src={poster} alt="ph" />
+                    </a>
                     {user.sex === "man" && <div className="item-video-store__price">
                         <p>$<span>
                             {price}
