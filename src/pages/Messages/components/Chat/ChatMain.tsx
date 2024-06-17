@@ -63,6 +63,7 @@ export const ChatMain: React.FC<IChatMainProps> = ({ chatTheme }) => {
                             isOwner={item.isOwner}
                             images={item.images}
                             isEdited={item.isEdited}
+                            replyTo={item.replyTo}
                         />
                     ))
                 }

@@ -10,7 +10,8 @@ export interface IFilterVideo {
     isCanDownload: boolean
 }
 
-// export interface IGroups {
-//     groupName: string;
-//     users: number;
-// }
+export interface IComment {
+    user: IUser
+    comment: string
+    date: Date
+}

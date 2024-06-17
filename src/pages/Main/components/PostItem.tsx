@@ -1,12 +1,13 @@
 import lockLogo from './../../../assets/img/icons/logo.svg'
 import PinIc from './../../../assets/img/icons/pin.svg'
 import React, { useState, useEffect } from 'react'
-import { IUser } from '../../../models'
+import { IComment, IUser } from '../../../models'
 import { Fancybox as NativeFancybox } from "@fancyapps/ui";
 import "@fancyapps/ui/dist/fancybox/fancybox.css";
 import { toast } from 'react-toastify';
 import { useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
+import { PostitemComments } from './PostItemComments';
 
 interface IPostItemProps {
     user: IUser
@@ -31,9 +32,8 @@ export const PostItem: React.FC<IPostItemProps> = ({ user, date, message, images
     const userState: IUser = useSelector((state: any) => state.toolkit.user)
 
     user = userState.sex === "woman" ? userState : {...user, sex: "man"}
-
-    console.log(user);
  
+    const [isOpenCommetns, setisOpenCommetns] = useState(false)
     const [chosenLike, setChosenLike] = useState<ILikeType>()
     const [isOpenEditor, setIsOpenEditor] = useState<boolean>(false)
     const [isPinned, setisPinned] = useState(props.isPinned)
@@ -92,6 +92,27 @@ export const PostItem: React.FC<IPostItemProps> = ({ user, date, message, images
     const handlePinned = () => {
         setisPinned(prev => !prev)
     }
+
+    const [mockComments, setMockComments] = useState<IComment[]>([
+        {
+            user: {
+                username: 'asd',
+                usertag: '@asd',
+                photo: 'https://play-lh.googleusercontent.com/a018MxY7Wc8PrvaWGlZHGcAo27NzU__aE29b2NgnWC2hKA9nXe_YsQvj0sJA2kgs4hE'
+            },
+            comment: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facere, ratione adipisci corrupti blanditiis repellendus, obcaecati aperiam veritatis, laborum reiciendis est esse. Maxime id, voluptate consectetur nostrum quidem distinctio. Vitae, deleniti.',
+            date: new Date()
+        },
+        {
+            user: {
+                username: 'asd',
+                usertag: '@asd',
+                photo: 'https://play-lh.googleusercontent.com/a018MxY7Wc8PrvaWGlZHGcAo27NzU__aE29b2NgnWC2hKA9nXe_YsQvj0sJA2kgs4hE'
+            },
+            comment: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facere, ratione adipisci corrupti blanditiis repellendus, obcaecati aperiam veritatis, laborum reiciendis est esse. Maxime id, voluptate consectetur nostrum quidem distinctio. Vitae, deleniti.',
+            date: new Date()
+        },
+    ])
 
     return (
         <div className={`content-main__post post pin main__item ${user.sex === "man" ? "locked" : ""}`}>
@@ -215,14 +236,16 @@ export const PostItem: React.FC<IPostItemProps> = ({ user, date, message, images
                                 </div>
                             </div>
                         </button>
-                        <button onClick={_ => toast.error('This function is developing')} className="footer-post__comments comments-footer-post">
+                        <button onClick={_ => setisOpenCommetns(prev => !prev)} className="footer-post__comments comments-footer-post">
                             <div className="comments-footer-post__body">
                                 <div className="comments-footer-post__icon">
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M11.9545 23.9998C9.94249 24.0127 7.96028 23.5133 6.19455 22.5486C6.15918 22.5339 6.12124 22.5263 6.08293 22.5263C6.04461 22.5263 6.00667 22.5339 5.9713 22.5486L2.03086 23.6649C1.78969 23.7416 1.5321 23.7508 1.28609 23.6913C1.04008 23.6319 0.815083 23.5061 0.635551 23.3278C0.456019 23.1494 0.32883 22.9252 0.267813 22.6796C0.206796 22.434 0.214288 22.1763 0.289473 21.9347L1.47272 17.9719C1.49842 17.9035 1.49842 17.8282 1.47272 17.7598C0.262574 15.548 -0.220201 13.0113 0.0929184 10.5096C0.406038 8.00794 1.49914 5.66844 3.21709 3.82316C4.93503 1.97787 7.19054 0.720561 9.66348 0.229669C12.1364 -0.261223 14.7011 0.0392451 16.9937 1.08843C19.2862 2.13761 21.19 3.8822 22.4349 6.07459C23.6798 8.26699 24.2026 10.7958 23.929 13.3021C23.6554 15.8084 22.5994 18.1649 20.9108 20.037C19.2222 21.9092 16.9868 23.202 14.5219 23.7318C13.6773 23.9074 12.8172 23.9972 11.9545 23.9998ZM6.04944 20.7961C6.38084 20.8006 6.70628 20.8848 6.99827 21.0416C8.44285 21.8339 10.056 22.2689 11.7031 22.3104C13.3501 22.352 14.9831 21.9987 16.4658 21.2803C17.9485 20.5619 19.2377 19.4991 20.2258 18.1807C21.2139 16.8624 21.8721 15.3267 22.1456 13.702C22.4191 12.0773 22.2998 10.4107 21.7977 8.84155C21.2956 7.27236 20.4253 5.8461 19.2595 4.68191C18.0937 3.51772 16.6662 2.6494 15.0964 2.14948C13.5265 1.64956 11.8598 1.53256 10.2355 1.80826C8.608 2.07865 7.06926 2.73589 5.74866 3.72471C4.42807 4.71353 3.36423 6.00501 2.64663 7.49054C1.92903 8.97606 1.57864 10.6122 1.62495 12.2613C1.67125 13.9104 2.11289 15.5243 2.91271 16.9672C3.03848 17.195 3.11801 17.4454 3.14674 17.704C3.17548 17.9626 3.15285 18.2244 3.08015 18.4742L2.04202 21.9235L5.4913 20.8854C5.67196 20.8284 5.86002 20.7983 6.04944 20.7961Z" fill="#838383" style={{ fill: '#838383', fillOpacity: '1' }} />
                                     </svg>
                                 </div>
-                                <span>0</span>
+                                <span>
+                                    {mockComments?.length}
+                                </span>
                             </div>
 
                         </button>
@@ -241,6 +264,8 @@ export const PostItem: React.FC<IPostItemProps> = ({ user, date, message, images
                 </div>
 
             </div>
+            
+            {isOpenCommetns && <PostitemComments mockComments={mockComments} setMockComments={setMockComments}/>}
         </div>
     )
 }

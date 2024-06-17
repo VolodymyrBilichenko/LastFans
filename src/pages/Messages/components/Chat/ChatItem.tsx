@@ -3,7 +3,7 @@ import { IUser } from '../../../../models'
 import { Fancybox as NativeFancybox } from "@fancyapps/ui";
 import "@fancyapps/ui/dist/fancybox/fancybox.css";
 import { useDispatch } from 'react-redux';
-import { changeMessage, deleteMessage } from '../../../../redux/toolkitSlice';
+import { changeMessage, deleteMessage, replyMessage } from '../../../../redux/toolkitSlice';
 
 interface IChatItemProps {
     isOwner?: boolean
@@ -15,9 +15,10 @@ interface IChatItemProps {
     message: string
     user: IUser
     date: Date
+    replyTo: any
 }
 
-export const ChatItem: React.FC<IChatItemProps> = ({ isOwner, isEdited, message, images, isLocked, user, date, isRead, id }) => {
+export const ChatItem: React.FC<IChatItemProps> = ({ isOwner, isEdited, message, images, isLocked, user, date, isRead, id, replyTo }) => {
 
     const [isLiked, setIsLiked] = useState(false);
 
@@ -30,12 +31,18 @@ export const ChatItem: React.FC<IChatItemProps> = ({ isOwner, isEdited, message,
     const handleEditMessage = () => {
         dispatch(changeMessage({
             id: String(id),
-            isOwner, isEdited, text: message, images, isLocked, user, date, isRead
+            isOwner, isEdited, text: message, images, isLocked, user, date, isRead, replyTo
         }))
     }
 
     const handleDeleteMessage = () => {
         dispatch(deleteMessage(String(id)))
+    }
+    const handleReply = () => {
+        dispatch(replyMessage({
+            id: String(id),
+            isOwner, isEdited, text: message, images, isLocked, user, date, isRead
+        }))
     }
 
     return (
@@ -49,6 +56,16 @@ export const ChatItem: React.FC<IChatItemProps> = ({ isOwner, isEdited, message,
                 <div className="chat-message__content">
                     <div className="chat-message__body">
                         <div className={`chat-message__text ${isLocked ? "locked" : ""}`}>
+
+                            {replyTo?.text && <div style={{fontSize: "11px", borderLeft: "1px solid blue", borderRadius: "7px", padding: "0 10px", background: "rgba(0, 0, 0, .2)", marginBottom: "10px"}} className="chat-message__reply">
+                                <div className="user">
+                                    {replyTo?.user?.username}
+                                </div>
+                                <div className="message">
+                                    {replyTo?.text?.slice(0, 50) + "..."}
+                                </div>
+                            </div>}
+
                             <p>
                                 {message}
                             </p>
@@ -96,11 +113,8 @@ export const ChatItem: React.FC<IChatItemProps> = ({ isOwner, isEdited, message,
 
                             <button className={`actions-chat-message__button like ${isLiked ? 'active' : ''}`} onClick={handleLiked}>
                                 <svg width="22" height="20" viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M9.83191 18.0065L9.83083 18.0055C7.00698 15.4472 4.72355 13.3741 3.13731 11.4352C1.55929 9.50633 0.75 7.80226 0.75 5.99455C0.75 3.04245 3.05268 0.75 6 0.75C7.67171 0.75 9.2884 1.53139 10.3402 2.75575L10.9091 3.418L11.478 2.75575C12.5298 1.53139 14.1465 0.75 15.8182 0.75C18.7655 0.75 21.0682 3.04245 21.0682 5.99455C21.0682 7.80226 20.2589 9.50633 18.6809 11.4352C17.0946 13.3741 14.8112 15.4472 11.9874 18.0055L11.9863 18.0065L10.9091 18.9862L9.83191 18.0065Z" fill="transparent" stroke="#838383" stroke-width="1.5"/>
+                                    <path d="M9.83191 18.0065L9.83083 18.0055C7.00698 15.4472 4.72355 13.3741 3.13731 11.4352C1.55929 9.50633 0.75 7.80226 0.75 5.99455C0.75 3.04245 3.05268 0.75 6 0.75C7.67171 0.75 9.2884 1.53139 10.3402 2.75575L10.9091 3.418L11.478 2.75575C12.5298 1.53139 14.1465 0.75 15.8182 0.75C18.7655 0.75 21.0682 3.04245 21.0682 5.99455C21.0682 7.80226 20.2589 9.50633 18.6809 11.4352C17.0946 13.3741 14.8112 15.4472 11.9874 18.0055L11.9863 18.0065L10.9091 18.9862L9.83191 18.0065Z" fill="transparent" stroke="#838383" stroke-width="1.5" />
                                 </svg>
-
-
-                            
                             </button>
 
                             {isOwner && <button onClick={handleDeleteMessage} className="actions-chat-message__button reply">
@@ -112,7 +126,7 @@ export const ChatItem: React.FC<IChatItemProps> = ({ isOwner, isEdited, message,
                                 </svg>
                             </button>}
 
-                            {!isOwner && <button className="actions-chat-message__button reply">
+                            {!isOwner && <button onClick={handleReply} className="actions-chat-message__button reply">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path fill-rule="evenodd" clip-rule="evenodd" d="M10.0303 6.47001C10.1708 6.61064 10.2497 6.80126 10.2497 7.00001C10.2497 7.19876 10.1708 7.38939 10.0303 7.53001L6.31032 11.25H14.5003C15.4533 11.25 16.8673 11.53 18.0633 12.391C19.2983 13.281 20.2503 14.756 20.2503 17C20.2503 17.1989 20.1713 17.3897 20.0306 17.5303C19.89 17.671 19.6992 17.75 19.5003 17.75C19.3014 17.75 19.1106 17.671 18.97 17.5303C18.8293 17.3897 18.7503 17.1989 18.7503 17C18.7503 15.244 18.0353 14.22 17.1873 13.609C16.3003 12.97 15.2133 12.75 14.5003 12.75H6.31032L10.0303 16.47C10.104 16.5387 10.1631 16.6215 10.2041 16.7135C10.2451 16.8055 10.2671 16.9048 10.2689 17.0055C10.2707 17.1062 10.2522 17.2062 10.2144 17.2996C10.1767 17.393 10.1206 17.4778 10.0494 17.549C9.97814 17.6203 9.8933 17.6764 9.79991 17.7141C9.70653 17.7519 9.6065 17.7704 9.50579 17.7686C9.40509 17.7668 9.30578 17.7448 9.21378 17.7038C9.12178 17.6628 9.03898 17.6037 8.97032 17.53L3.97032 12.53C3.82987 12.3894 3.75098 12.1988 3.75098 12C3.75098 11.8013 3.82987 11.6106 3.97032 11.47L8.97032 6.47001C9.11094 6.32956 9.30157 6.25067 9.50032 6.25067C9.69907 6.25067 9.88969 6.32956 10.0303 6.47001Z" fill="#A3A3A3">
                                     </path>

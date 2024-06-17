@@ -67,6 +67,7 @@ const toolkitSlice = createSlice({
         modals: [],
         chatMessages: mockChatMessages,
         chatMessageChange: {},
+        chatMessageReply: {},
         payment: [],
         newGroup: [],
     },
@@ -100,6 +101,9 @@ const toolkitSlice = createSlice({
             }
 
         },
+        replyMessage(state: any, action: {payload: any}) {
+            state.chatMessageReply = action.payload
+        },
         changeMessage(state: any, action: { payload: any }) {
             state.chatMessageChange = action.payload
         },
@@ -127,6 +131,7 @@ export const {
     addMessage,
     changeMessage,
     deleteMessage,
+    replyMessage,
 
     addPayment,
 

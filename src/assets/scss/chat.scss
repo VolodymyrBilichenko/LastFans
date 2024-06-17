@@ -647,8 +647,8 @@
         line-height: 22px;
         overflow: hidden;
         text-overflow: ellipsis;
-        white-space: nowrap;
-        text-align: center;
+        // white-space: nowrap;
+        // text-align: center;
     }
     &__close{
         flex: 0 0 toRem(33);
