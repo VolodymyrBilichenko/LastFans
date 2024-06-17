@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { SetStateAction, useEffect, useState } from 'react'
 // import PostPh from '../../assets/img/post/01.jpg'
 // import UserPh from '../../assets/img/user/01.png'
 import { VideoStoreFilter } from './components/VideoStoreFilter'
@@ -6,6 +6,8 @@ import { VideoStoreItem } from './components/VideoStoreItem'
 import { IFilterVideo, IUser } from '../../models'
 import { useDispatch, useSelector } from 'react-redux'
 import { addModal } from '../../redux/toolkitSlice'
+import { useClickOutside } from '../../hooks/ClickOutside'
+import { Pagination } from '../../components/Pagination/Pagination'
 
 export const VideoStore = () => {
 
@@ -80,6 +82,17 @@ export const VideoStore = () => {
 
     }, [filter.price])
 
+    const [countPerPage, setCountPerPage] = useState(8)
+    const [paginatePage, setPaginatePage] = useState(1)
+    const [isOpenSelect, setIsOpenSelect] = useState(false)
+
+    const { rootEl } = useClickOutside(setIsOpenFilter)
+    const select = useClickOutside(setIsOpenSelect)
+
+    const filteredVideo = mockVideo
+        ?.filter(item => filter.isCanDownload ? item.isDownload : item)
+        ?.filter(item => item.price <= Math.max(...filterByPrice) && item.price >= Math.min(...filterByPrice))
+        ?.filter(item => item.title.toLocaleLowerCase().includes(searchValue.toLocaleLowerCase()))
 
     return (
         <div className="video-store">
@@ -89,6 +102,7 @@ export const VideoStore = () => {
                 setIsOpenFilter={setIsOpenFilter}
                 setFilter={setFilter}
                 filter={filter}
+                rootEl={rootEl}
             />
 
             <div className="video-store__container">
@@ -106,13 +120,15 @@ export const VideoStore = () => {
                         </button>
                         <div data-spollers className="header-video-store__per-page per-page">
                             <p className="per-page__text">Per page</p>
-                            <button className="field-block-add-vid__item spollers__item-main spollers__item input input-main">
-                                <div data-spoller-close className="field-block-add-vid__title spollers__title">36</div>
+                            <button ref={select.rootEl} onClick={_ => setIsOpenSelect(prev => !prev)} className={`field-block-add-vid__item spollers__item-main spollers__item input input-main ${isOpenSelect ? 'active' : ''}`}>
+                                <div data-spoller-close className="field-block-add-vid__title spollers__title">
+                                    {countPerPage}
+                                </div>
                                 <div className="spollers__wrapper">
 
                                     <div className="field-block-add-vid__body spollers__body">
-                                        <div className="field-block-add-vid__value">18</div>
-                                        <div className="field-block-add-vid__value">36</div>
+                                        <div onClick={_ => setCountPerPage(8)} className="field-block-add-vid__value">8</div>
+                                        <div onClick={_ => setCountPerPage(36)} className="field-block-add-vid__value">36</div>
                                     </div>
                                 </div>
 
@@ -125,10 +141,8 @@ export const VideoStore = () => {
 
 
                         {
-                            mockVideo
-                                ?.filter(item => filter.isCanDownload ? item.isDownload : item)
-                                ?.filter(item => item.price <= Math.max(...filterByPrice) && item.price >= Math.min(...filterByPrice))
-                                ?.filter(item => item.title.toLocaleLowerCase().includes(searchValue.toLocaleLowerCase()))
+                            filteredVideo
+                                ?.slice(countPerPage * paginatePage - countPerPage, countPerPage * paginatePage)
                                 ?.map(item => (
                                     <VideoStoreItem
                                         title={item.title}
@@ -144,38 +158,11 @@ export const VideoStore = () => {
 
 
                         {
-                            !mockVideo
-                                ?.filter(item => filter.isCanDownload ? item.isDownload : item)
-                                ?.filter(item => item.price <= Math.max(...filterByPrice) && item.price >= Math.min(...filterByPrice))
-                                ?.filter(item => item.title.toLocaleLowerCase().includes(searchValue.toLocaleLowerCase()))
-                                .length
-                            && "Videos not found"
+                            !filteredVideo.length && "Videos not found"
                         }
 
                     </div>
-                    {user.sex === "man" && <div className="video-store__footer footer-video-store">
-                        <div className="footer-video-store__pages">
-                            <a href="some"><span>1</span></a>
-                            <a href="some"><span>2</span></a>
-                            <a href="some"><span>3</span></a>
-                            <a href="some"><span>4</span></a>
-                            <a href="some"><span>5</span></a>
-                        </div>
-                        <div data-spollers className="header-video-store__per-page per-page">
-                            <p className="per-page__text">Per page</p>
-                            <button className="field-block-add-vid__item spollers__item-main spollers__item input input-main">
-                                <div data-spoller-close className="field-block-add-vid__title spollers__title">36</div>
-                                <div className="spollers__wrapper">
-
-                                    <div className="field-block-add-vid__body spollers__body">
-                                        <div className="field-block-add-vid__value">18</div>
-                                        <div className="field-block-add-vid__value">36</div>
-                                    </div>
-                                </div>
-
-                            </button>
-                        </div>
-                    </div>}
+                    {user.sex === "man" && <Pagination setCountPerPage={setCountPerPage} countPerPage={countPerPage} arrayLength={filteredVideo.length} setPaginatePage={setPaginatePage} />}
 
                 </div>
             </div>

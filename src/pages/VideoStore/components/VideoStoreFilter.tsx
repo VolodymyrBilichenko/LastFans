@@ -2,15 +2,17 @@ import React, { SetStateAction, useEffect, useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import { toast } from 'react-toastify'
 import { IFilterVideo } from '../../../models'
+import { useClickOutside } from '../../../hooks/ClickOutside'
 
 interface IVideoStoreFilterProps {
     isOpenFilter: boolean
     setIsOpenFilter: React.Dispatch<SetStateAction<boolean>>
     setFilter: React.Dispatch<SetStateAction<IFilterVideo>>
     filter: IFilterVideo
+    rootEl: any
 }
 
-export const VideoStoreFilter: React.FC<IVideoStoreFilterProps> = ({ isOpenFilter, setIsOpenFilter, setFilter, filter }) => {
+export const VideoStoreFilter: React.FC<IVideoStoreFilterProps> = ({ isOpenFilter, setIsOpenFilter, setFilter, filter, rootEl }) => {
 
     const [priceFilterList] = useState([
         {
@@ -60,7 +62,7 @@ export const VideoStoreFilter: React.FC<IVideoStoreFilterProps> = ({ isOpenFilte
     }
 
     return (
-        <div className={`video-store__filters filters-video-store ${isOpenFilter ? 'active' : ''}`}>
+        <div ref={rootEl} className={`video-store__filters filters-video-store ${isOpenFilter ? 'active' : ''}`}>
             <div className="filters-video-store__top top-filters-video-store">
                 <ul className="top-filters-video-store__items">
                     <li>

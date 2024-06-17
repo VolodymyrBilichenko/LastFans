@@ -3,11 +3,16 @@
 import { useState } from 'react'
 import { Pagination } from '../../components/Pagination/Pagination'
 import { ModelItem } from './components/ModelItem'
+import { log } from 'console'
 
 export const Models = () => {
 
     const [countPerPage, setCountPerPage] = useState(8)
     const [paginatePage, setPaginatePage] = useState(1)
+
+    console.log(Array(50).fill('')?.slice(countPerPage * paginatePage - countPerPage, countPerPage * paginatePage));
+    console.log(countPerPage * paginatePage - countPerPage, countPerPage * paginatePage);
+    
 
     return (
         <div className="models">
@@ -30,7 +35,7 @@ export const Models = () => {
    
                     </div>
                   
-                    <Pagination setCountPerPage={setCountPerPage} setPaginatePage={setPaginatePage} />
+                    <Pagination setCountPerPage={setCountPerPage} arrayLength={50} setPaginatePage={setPaginatePage} />
                 </div>
             </div>
         </div>
