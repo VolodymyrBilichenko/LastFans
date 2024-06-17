@@ -5,6 +5,7 @@ import { StatisticStyled } from './Statistic.styled'
 import DatePicker from 'react-datepicker'
 import "react-datepicker/dist/react-datepicker.css";
 import { StatisticTable } from './components/StatisticTable'
+import { useClickOutside } from '../../hooks/ClickOutside'
 
 
 
@@ -14,6 +15,18 @@ export const Statistic = () => {
     const [selectType, setSelectType] = useState<string>('')
     const [startDate, setStartDate] = useState<Date | null>(null);
     const [endDate, setEndDate] = useState<Date | null>(null);
+    const [selectedMonth, setSelectedMonth] = useState<string>('March 2024');
+
+    const months = [
+        'March 2024',
+        'February 2024',
+        'January 2024',
+        'December 2023',
+        'November 2023',
+        'October 2023',
+        'September 2023',
+        'August 2023',
+    ];
 
     const showZeroSymbol = (number: number | string) => {
         return +number < 10 ? '0' + +number : +number
@@ -93,6 +106,17 @@ export const Statistic = () => {
         setSelectType('CUSTOM')
     }
 
+    const handleMonthClick = (month: string) => {
+        setSelectedMonth(month);
+    };
+
+    const handleClickCalendar = () => {
+        setIsActiveCalendar(prev => !prev);
+        setSelectedMonth('');
+    }  
+
+    const {rootEl} = useClickOutside(setIsActiveCalendar)
+
     return (
         <StatisticStyled className="statistics">
             <div className="statistics__container">
@@ -107,8 +131,8 @@ export const Statistic = () => {
                         </div>
 
                         <div className="months-statistics__items">
-                            <div className={`months-statistics__item months-statistics-range ${isActiveCalendar ? 'active' : ''}`}>
-                                <div className="months-statistics__head" onClick={_ => setIsActiveCalendar(prev => !prev)}>
+                            <div ref={rootEl} className={`months-statistics__item months-statistics-range ${isActiveCalendar ? 'active' : ''}`}>
+                                <div className="months-statistics__head" onClick={handleClickCalendar}>
                                     <input readOnly value={startDate && endDate ? date : ""} type="text" id="dateRange" placeholder="Select a custom range" className="months-statistics-range__input" />
                                     <div className="months-statistics-range__icon">
                                         <img src={CalendarIc} alt="Icon" />
@@ -135,38 +159,16 @@ export const Statistic = () => {
                                     </div>
                                 </div>
                             </div>
-                            <div className="months-statistics__item item-months-statistics">
-                                <div className="item-months-statistics__month">March 2024</div>
-                                <p className="item-months-statistics__value">$<span>2,129</span></p>
-                            </div>
-                            <div className="months-statistics__item item-months-statistics">
-                                <div className="item-months-statistics__month">February 2024</div>
-                                <p className="item-months-statistics__value">$<span>2,129</span></p>
-                            </div>
-                            <div className="months-statistics__item item-months-statistics">
-                                <div className="item-months-statistics__month">January 2024</div>
-                                <p className="item-months-statistics__value">$<span>2,129</span></p>
-                            </div>
-                            <div className="months-statistics__item item-months-statistics">
-                                <div className="item-months-statistics__month">December 2023</div>
-                                <p className="item-months-statistics__value">$<span>2,129</span></p>
-                            </div>
-                            <div className="months-statistics__item item-months-statistics">
-                                <div className="item-months-statistics__month">November 2023</div>
-                                <p className="item-months-statistics__value">$<span>2,129</span></p>
-                            </div>
-                            <div className="months-statistics__item item-months-statistics">
-                                <div className="item-months-statistics__month">October 2023</div>
-                                <p className="item-months-statistics__value">$<span>2,129</span></p>
-                            </div>
-                            <div className="months-statistics__item item-months-statistics">
-                                <div className="item-months-statistics__month">September 2023</div>
-                                <p className="item-months-statistics__value">$<span>2,129</span></p>
-                            </div>
-                            <div className="months-statistics__item item-months-statistics">
-                                <div className="item-months-statistics__month">August 2023</div>
-                                <p className="item-months-statistics__value">$<span>2,129</span></p>
-                            </div>
+
+                            {months.map((month) => (
+                                <div key={month} className={`months-statistics__item item-months-statistics ${selectedMonth === month ? 'active' : ''}`}
+                                    onClick={() => handleMonthClick(month)}
+                                >
+                                    <div className="item-months-statistics__month">{month}</div>
+                                    <p className="item-months-statistics__value">$<span>2,129</span></p>
+                                </div>
+                            ))}
+                            
                         </div>
 
                     </div>

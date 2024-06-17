@@ -4,6 +4,9 @@ import { useNavigate } from 'react-router-dom'
 import LogoWhiteIc from './../../../assets/img/icons/logo-white.svg'
 import { IUser } from '../../../models'
 import { AsideMessageStyled } from '../AsideMessage.styled'
+import { addModal } from '../../../redux/toolkitSlice'
+import { useDispatch } from 'react-redux'
+import { useClickOutside } from '../../../hooks/ClickOutside'
 
 interface IAsideMessagesItemProps {
     user: IUser
@@ -13,10 +16,12 @@ interface IAsideMessagesItemProps {
 export const AsideMessagesItem: React.FC<IAsideMessagesItemProps> = ({user, isOnline}) => {
 
     const [isOpen, setIsOpen] = useState(false)
+    const [isLookedStories, setIsLookedStories] = useState(false)
 
     const navigate = useNavigate()
+    const dispatch = useDispatch()
 
-    const [isLookedStories, setIsLookedStories] = useState(false)
+    const {rootEl} = useClickOutside(setIsOpen)
 
     return (
         <AsideMessageStyled className="body-messages__item item-message">
@@ -46,7 +51,7 @@ export const AsideMessagesItem: React.FC<IAsideMessagesItemProps> = ({user, isOn
                     </span>
                 </div>
             </div>
-            <div className={`top-body-messages__actions actions field ${isOpen ? 'field-active' : ''}`}>
+            <div ref={rootEl} className={`top-body-messages__actions actions field ${isOpen ? 'field-active' : ''}`}>
                 <svg onClick={_ => setIsOpen(prev => !prev)} width="21" height="6" viewBox="0 0 21 6" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M15.8569 3.00003C15.8569 4.1835 16.8163 5.14289 17.9997 5.14289C19.1832 5.14289 20.1426 4.1835 20.1426 3.00003C20.1426 1.81657 19.1832 0.857178 17.9997 0.857178C16.8163 0.857178 15.8569 1.81657 15.8569 3.00003Z" fill="#93989A" style={{ fill: '#93989A', fillOpacity: '1' }} />
                     <path d="M7.99944 3.00003C7.99944 4.1835 8.95883 5.14289 10.1423 5.14289C11.3258 5.14289 12.2852 4.1835 12.2852 3.00003C12.2852 1.81657 11.3258 0.857178 10.1423 0.857178C8.95883 0.857178 7.99944 1.81657 7.99944 3.00003Z" fill="#93989A" style={{ fill: '#93989A', fillOpacity: '1' }} />
@@ -56,7 +61,7 @@ export const AsideMessagesItem: React.FC<IAsideMessagesItemProps> = ({user, isOn
                     <div className="popup-actions__wrapper">
                         <div className="popup-actions__content">
                             <div className="popup-actions__body body-popup-actions">
-                                <a href="some" className="body-popup-actions__item mass">Mass message</a>
+                                <button onClick={() => dispatch(addModal('massMessage'))} className="body-popup-actions__item mass">Mass message</button>
                             </div>
                         </div>
                     </div>
