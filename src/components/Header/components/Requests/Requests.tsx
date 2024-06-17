@@ -23,7 +23,7 @@ export const Requests: React.FC<IRequestsProps> = () => {
     ])
 
     const handleRequest = (id: number) => {
-        setRequests(requests.filter(request => request.id !== id))
+        setRequests(prevRequests => prevRequests.filter(request => request.id !== id))
         setTimeout(() => setIsOpenBlock(true), 1)
     }
 
@@ -40,9 +40,11 @@ export const Requests: React.FC<IRequestsProps> = () => {
                     <path d="M20.8613 17.0621H20.3707V16.5757C20.3707 16.1814 20.0487 15.8616 19.6516 15.8616C19.2544 15.8616 18.9324 16.1814 18.9324 16.5757V17.0621H18.4418C18.0447 17.0621 17.7227 17.3819 17.7227 17.7763C17.7227 18.1706 18.0447 18.4904 18.4418 18.4904H18.9324V18.9768C18.9324 19.3712 19.2544 19.691 19.6516 19.691C20.0487 19.691 20.3707 19.3712 20.3707 18.9768V18.4904H20.8613C21.2584 18.4904 21.5804 18.1706 21.5804 17.7763C21.5804 17.3819 21.2584 17.0621 20.8613 17.0621Z" fill="#6F767E" style={{ fill: '#6F767E', fillOpacity: '1' }} />
                 </svg>
             </div>
-            <div className="sub-header__notification header-icon-notification">
-                <span>100</span>
-            </div>
+            {!!requests.length &&
+                <div className="sub-header__notification header-icon-notification">
+                    <span>{requests.length}</span>
+                </div>
+             }
 
             <div className="sub-header__popup popup-sub-header popup-main">
                 <div className="popup-main__wrapper">
