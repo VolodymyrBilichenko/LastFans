@@ -102,12 +102,14 @@ export const Registration = () => {
                                 <form onSubmit={handleSubmit} className="main-registration__form form-main-registration">
                                     <div className="form-main-registration__body">
                                         <input 
+                                            required
                                             type="text" 
                                             name="fullName" 
                                             placeholder="Full name *" 
                                             className="form-main-registration__input form-main-registration-email input input-main"
                                         />
                                         <input 
+                                            required
                                             type="text" 
                                             name="passportNumber" 
                                             placeholder="Passport number *" 
@@ -120,12 +122,14 @@ export const Registration = () => {
                                             className="form-main-registration__input form-main-registration-nickname input input-main"
                                         />
                                         <input 
+                                            required
                                             type="text" 
                                             name="idNumber" 
                                             placeholder="Identification number *" 
                                             className="form-main-registration__input form-main-registration-nickname input input-main"
                                         />
                                         <input 
+                                            required
                                             type="email" 
                                             name="email" 
                                             placeholder="Email address *" 
@@ -170,6 +174,7 @@ export const Registration = () => {
                                             />
                                             {emailError && <p className="error" style={{color: '#CB0000'}}>{emailError}</p>}
                                             <input 
+                                                required
                                                 type="text" 
                                                 name="nickname" 
                                                 placeholder="Nickname *" 
