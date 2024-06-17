@@ -95,7 +95,7 @@ export const Profile: React.FC<IProfileProps> = () => {
                                 <p className="link-menu-popup-user-header__text">Timeline</p>
                             </button>
                             {user.sex === 'man' &&
-                                <NavLink to={'/profile'} className="menu-popup-user-header__link link-menu-popup-user-header">
+                                <NavLink to={'/my-profile'} className="menu-popup-user-header__link link-menu-popup-user-header">
                                     <div className="link-menu-popup-user-header__image">
                                         <img src={EditIc} alt="ph" />
 
