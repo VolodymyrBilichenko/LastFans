@@ -1,11 +1,11 @@
 import {useEffect, useRef} from "react";
 
-export const useClickOutside = (setIsClose: any, onChange?: any) => {
+export const useClickOutside = (setIsClose: any, onChange?: any, exceptions?: any[]) => {
     const rootEl: any = useRef(null);
 
     useEffect(() => {
         const onClick = (e: any) => {
-            if (!rootEl.current?.contains(e.target)) {
+            if (!rootEl.current?.contains(e.target) && !exceptions?.filter(item => item.contains(e.target)).length) {
                 return setIsClose((prev: any) => {
                     if (prev) onChange && onChange()
                     return false
