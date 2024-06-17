@@ -47,7 +47,7 @@ export const Header = ({handleOpenMenu}: IOpenMenu) => {
                     <div className="header__content">
                         <AsideMenuMode />
 
-                        <div className="header__value">$ 268.80</div>
+                        <NavLink to={'/statistic'} className="header__value">$ 268.80</NavLink>
 
                         <Messages/>
 

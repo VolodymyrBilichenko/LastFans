@@ -52,7 +52,7 @@ export const Notifications: React.FC<INotificationsProps> = () => {
             </div>
             {!!mockNotify.filter(item => !item.isRead).length && 
                 <div className="notifications-header__notification header-icon-notification">
-                    <span>{mockNotify.filter(item => !item.isRead).length}</span>
+                    <span></span>
                 </div>
             }
 

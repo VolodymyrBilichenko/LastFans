@@ -5,6 +5,7 @@ import { StatisticStyled } from './Statistic.styled'
 import DatePicker from 'react-datepicker'
 import "react-datepicker/dist/react-datepicker.css";
 import { StatisticTable } from './components/StatisticTable'
+import { useClickOutside } from '../../hooks/ClickOutside'
 
 
 
@@ -93,6 +94,8 @@ export const Statistic = () => {
         setSelectType('CUSTOM')
     }
 
+    const {rootEl} = useClickOutside(setIsActiveCalendar)
+
     return (
         <StatisticStyled className="statistics">
             <div className="statistics__container">
@@ -107,7 +110,7 @@ export const Statistic = () => {
                         </div>
 
                         <div className="months-statistics__items">
-                            <div className={`months-statistics__item months-statistics-range ${isActiveCalendar ? 'active' : ''}`}>
+                            <div ref={rootEl} className={`months-statistics__item months-statistics-range ${isActiveCalendar ? 'active' : ''}`}>
                                 <div className="months-statistics__head" onClick={_ => setIsActiveCalendar(prev => !prev)}>
                                     <input readOnly value={startDate && endDate ? date : ""} type="text" id="dateRange" placeholder="Select a custom range" className="months-statistics-range__input" />
                                     <div className="months-statistics-range__icon">
