@@ -30,7 +30,7 @@ export const ChatItem: React.FC<IChatItemProps> = ({ isOwner, isEdited, message,
     const handleEditMessage = () => {
         dispatch(changeMessage({
             id: String(id),
-            text: message
+            isOwner, isEdited, text: message, images, isLocked, user, date, isRead
         }))
     }
 

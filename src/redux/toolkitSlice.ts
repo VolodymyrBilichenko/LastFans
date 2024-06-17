@@ -66,7 +66,7 @@ const toolkitSlice = createSlice({
         user: <IUser>{},
         modals: [],
         chatMessages: mockChatMessages,
-        chatMessageChange: <{ id: string, text: string }>{},
+        chatMessageChange: {},
         payment: [],
         newGroup: [],
     },
@@ -100,7 +100,7 @@ const toolkitSlice = createSlice({
             }
 
         },
-        changeMessage(state: any, action: { payload: { id: string, text: string } }) {
+        changeMessage(state: any, action: { payload: any }) {
             state.chatMessageChange = action.payload
         },
         deleteMessage(state: any, action: { payload: string }) {
