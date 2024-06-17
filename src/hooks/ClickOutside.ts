@@ -5,7 +5,7 @@ export const useClickOutside = (setIsClose: any, onChange?: any, exceptions?: an
 
     useEffect(() => {
         const onClick = (e: any) => {
-            if (!rootEl.current?.contains(e.target) && (exceptions?.length && !exceptions?.filter(item => item?.contains(e.target))?.length)) {
+            if (!rootEl.current?.contains(e.target) && (exceptions?.length ? !exceptions?.filter(item => item?.contains(e.target))?.length : true)) {
                 return setIsClose((prev: any) => {
                     if (prev) onChange && onChange()
                     return false
