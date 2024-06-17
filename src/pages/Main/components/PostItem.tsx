@@ -8,6 +8,38 @@ import { toast } from 'react-toastify';
 import { useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { PostitemComments } from './PostItemComments';
+import {
+    EmailShareButton,
+    FacebookShareButton,
+    GabShareButton,
+    HatenaShareButton,
+    InstapaperShareButton,
+    LineShareButton,
+    LinkedinShareButton,
+    LivejournalShareButton,
+    MailruShareButton,
+    OKShareButton,
+    PinterestShareButton,
+    PocketShareButton,
+    RedditShareButton,
+    TelegramShareButton,
+    TumblrShareButton,
+    TwitterShareButton,
+    ViberShareButton,
+    VKShareButton,
+    WhatsappShareButton,
+    WorkplaceShareButton,
+} from "react-share";
+
+import {
+    FacebookShareCount,
+    HatenaShareCount,
+    OKShareCount,
+    PinterestShareCount,
+    RedditShareCount,
+    TumblrShareCount,
+    VKShareCount,
+} from "react-share";
 
 interface IPostItemProps {
     user: IUser
@@ -31,8 +63,8 @@ export const PostItem: React.FC<IPostItemProps> = ({ user, date, message, images
 
     const userState: IUser = useSelector((state: any) => state.toolkit.user)
 
-    user = userState.sex === "woman" ? userState : {...user, sex: "man"}
- 
+    user = userState.sex === "woman" ? userState : { ...user, sex: "man" }
+
     const [isOpenCommetns, setisOpenCommetns] = useState(false)
     const [chosenLike, setChosenLike] = useState<ILikeType>()
     const [isOpenEditor, setIsOpenEditor] = useState<boolean>(false)
@@ -113,6 +145,8 @@ export const PostItem: React.FC<IPostItemProps> = ({ user, date, message, images
             date: new Date()
         },
     ])
+
+    const [isOpenShare, setIsOpenShare] = useState(false)
 
     return (
         <div className={`content-main__post post pin main__item ${user.sex === "man" ? "locked" : ""}`}>
@@ -219,7 +253,7 @@ export const PostItem: React.FC<IPostItemProps> = ({ user, date, message, images
                             <div onClick={_ => handleLike()} className="like-footer-post__body">
                                 <div className="like-footer-post__icon" style={{ fontSize: "25px" }}>
                                     {chosenLike?.id ? chosenLike.smile : <svg width="22" height="20" viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M9.83191 18.0065L9.83083 18.0055C7.00698 15.4472 4.72355 13.3741 3.13731 11.4352C1.55929 9.50633 0.75 7.80226 0.75 5.99455C0.75 3.04245 3.05268 0.75 6 0.75C7.67171 0.75 9.2884 1.53139 10.3402 2.75575L10.9091 3.418L11.478 2.75575C12.5298 1.53139 14.1465 0.75 15.8182 0.75C18.7655 0.75 21.0682 3.04245 21.0682 5.99455C21.0682 7.80226 20.2589 9.50633 18.6809 11.4352C17.0946 13.3741 14.8112 15.4472 11.9874 18.0055L11.9863 18.0065L10.9091 18.9862L9.83191 18.0065Z" fill="transparent" stroke="#838383" stroke-width="1.5"/>
+                                        <path d="M9.83191 18.0065L9.83083 18.0055C7.00698 15.4472 4.72355 13.3741 3.13731 11.4352C1.55929 9.50633 0.75 7.80226 0.75 5.99455C0.75 3.04245 3.05268 0.75 6 0.75C7.67171 0.75 9.2884 1.53139 10.3402 2.75575L10.9091 3.418L11.478 2.75575C12.5298 1.53139 14.1465 0.75 15.8182 0.75C18.7655 0.75 21.0682 3.04245 21.0682 5.99455C21.0682 7.80226 20.2589 9.50633 18.6809 11.4352C17.0946 13.3741 14.8112 15.4472 11.9874 18.0055L11.9863 18.0065L10.9091 18.9862L9.83191 18.0065Z" fill="transparent" stroke="#838383" stroke-width="1.5" />
                                     </svg>}
                                 </div>
                                 <span>
@@ -256,16 +290,53 @@ export const PostItem: React.FC<IPostItemProps> = ({ user, date, message, images
                         </div>
 
                     </div>
-                    <a href="some" className="footer-post__share">
+                    <button onClick={_ => setIsOpenShare(prev => !prev)} className="footer-post__share">
                         <svg width="22" height="24" viewBox="0 0 22 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M17.5074 16.1435C16.3575 16.1435 15.3214 16.64 14.6024 17.43L8.13493 13.4243C8.3076 12.9823 8.40337 12.5022 8.40337 12C8.40337 11.4975 8.3076 11.0174 8.13493 10.5756L14.6024 6.56981C15.3214 7.35973 16.3575 7.85649 17.5074 7.85649C19.6735 7.85649 21.4357 6.09429 21.4357 3.92815C21.4357 1.76202 19.6735 0 17.5074 0C15.3412 0 13.579 1.7622 13.579 3.92834C13.579 4.43059 13.675 4.9107 13.8474 5.35271L7.38017 9.35832C6.66112 8.5684 5.62511 8.07164 4.47521 8.07164C2.30908 8.07164 0.546875 9.83403 0.546875 12C0.546875 14.1661 2.30908 15.9283 4.47521 15.9283C5.62511 15.9283 6.66112 15.4317 7.38017 14.6416L13.8474 18.6472C13.675 19.0893 13.579 19.5694 13.579 20.0718C13.579 22.2377 15.3412 24 17.5074 24C19.6735 24 21.4357 22.2377 21.4357 20.0718C21.4357 17.9057 19.6735 16.1435 17.5074 16.1435ZM15.0114 3.92834C15.0114 2.55212 16.1311 1.43243 17.5074 1.43243C18.8836 1.43243 20.0033 2.55212 20.0033 3.92834C20.0033 5.30455 18.8836 6.42424 17.5074 6.42424C16.1311 6.42424 15.0114 5.30455 15.0114 3.92834ZM4.47521 14.4959C3.09881 14.4959 1.97912 13.3762 1.97912 12C1.97912 10.6238 3.09881 9.50407 4.47521 9.50407C5.85143 9.50407 6.97093 10.6238 6.97093 12C6.97093 13.3762 5.85143 14.4959 4.47521 14.4959ZM15.0114 20.0716C15.0114 18.6954 16.1311 17.5757 17.5074 17.5757C18.8836 17.5757 20.0033 18.6954 20.0033 20.0716C20.0033 21.4478 18.8836 22.5675 17.5074 22.5675C16.1311 22.5675 15.0114 21.4478 15.0114 20.0716Z" fill="#838383" style={{ fill: '#838383', fillOpacity: '1' }} />
                         </svg>
-                    </a>
+                    </button>
+
+                    <div className="share-item">
+                        <FacebookShareButton url={'https://google.com'}>
+                            FCB
+                        </FacebookShareButton>
+                        <FacebookShareCount url={'asd'} />
+                    </div>
+                    <div className="share-item">
+                        <EmailShareButton url={'https://google.com'}>
+                            EML
+                        </EmailShareButton>
+                    </div>
+                    <div className="share-item">
+                        <PinterestShareButton url={'https://google.com'} media={'https://i.guim.co.uk/img/media/235decf96980ee9351d2b2613e40463ce870a1f5/0_0_2800_3806/master/2800.jpg?width=465&dpr=1&s=none'}>
+                            PNT
+                        </PinterestShareButton>
+                    </div>
+                    <div className="share-item">
+                        <TelegramShareButton url={'https://google.com'}>
+                            TG
+                        </TelegramShareButton>
+                    </div>
+                    <div className="share-item">
+                        <TwitterShareButton url={'https://google.com'}>
+                            TW
+                        </TwitterShareButton>
+                    </div>
+                    <div className="share-item">
+                        <ViberShareButton url={'https://google.com'}>
+                            VIB
+                        </ViberShareButton>
+                    </div>
+                    <div className="share-item">
+                        <WhatsappShareButton url={'https://google.com'}>
+                            WA
+                        </WhatsappShareButton>
+                    </div>
                 </div>
 
             </div>
-            
-            {isOpenCommetns && <PostitemComments mockComments={mockComments} setMockComments={setMockComments}/>}
+
+            {isOpenCommetns && <PostitemComments mockComments={mockComments} setMockComments={setMockComments} />}
         </div>
     )
 }

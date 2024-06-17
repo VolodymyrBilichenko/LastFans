@@ -22,9 +22,9 @@ export const MessagesItem: React.FC<IMessagesItemProps> = ({ user, isRead, messa
                     </div>
                 </div>
                 <div className="user-item__body">
-                    <a href="some" className="user-item__name">
+                    <button className="user-item__name">
                         {user.username}
-                    </a>
+                    </button>
                     <p className="user-item__message">
                         {message}
                     </p>

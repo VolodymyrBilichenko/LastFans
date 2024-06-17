@@ -14,6 +14,7 @@ import { AsideMessagesItem } from '../../components/AsideMessages/components/Asi
 import { IUser } from '../../models'
 import { useDispatch, useSelector } from 'react-redux'
 import { addModal } from '../../redux/toolkitSlice'
+import { NavLink } from 'react-router-dom'
 
 export const Messages = () => {
     const groupStore = useSelector((state: any) => state.toolkit.newGroup)
@@ -206,46 +207,46 @@ export const Messages = () => {
                             <div className="user-item__image">
                                 <img className="user-photo" src={UserPh} alt="User ph" />
                             </div>
-                            <div className="user-item__body">
-                                <a href="some" className="user-item__name">Boob007</a>
-                                <a href="some" className="user-item__username">@Boob007</a>
+                            <NavLink to={`/profile/${'123'}`} className="user-item__body">
+                                <button className="user-item__name">Boob007</button>
+                                <button className="user-item__username">@Boob007</button>
 
-                            </div>
+                            </NavLink>
                         </div>
                     </div>
                     <div className="messages-user__block">
                         <div className="messages-user__actions actions-messages-user">
-                            {user.sex === "man" && <button className="actions-messages-user__item item-actions-messages-user">
+                            {user.sex === "man" && <button onClick={() => toast.error('This function is developing')} className="actions-messages-user__item item-actions-messages-user">
                                 <div className="item-actions-messages-user__icon">
                                     <img src={ProfileIc} alt="Icon" />
                                 </div>
                                 <p className="item-actions-messages-user__text">Timeline</p>
                             </button>}
-                            {user.sex === "woman" && <button className="actions-messages-user__item item-actions-messages-user">
+                            {user.sex === "woman" && <NavLink to={`/profile/${'123'}`} className="actions-messages-user__item item-actions-messages-user">
                                 <div className="item-actions-messages-user__icon">
                                     <img src={ProfileIc} alt="Icon" />
                                 </div>
                                 <p className="item-actions-messages-user__text">Profile</p>
-                            </button>}
-                            {user.sex === "woman" && <button className="actions-messages-user__item item-actions-messages-user">
+                            </NavLink>}
+                            {user.sex === "woman" && <NavLink to={`/statistic`} className="actions-messages-user__item item-actions-messages-user">
                                 <div className="item-actions-messages-user__icon">
                                     <img src={StatsIc} alt="Icon" />
                                 </div>
                                 <p className="item-actions-messages-user__text">Stats</p>
-                            </button>}
-                            {user.sex === "woman" && <button className="actions-messages-user__item item-actions-messages-user">
+                            </NavLink>}
+                            {user.sex === "woman" && <button onClick={() => toast.error('This function is developing')} className="actions-messages-user__item item-actions-messages-user">
                                 <div className="item-actions-messages-user__icon">
                                     <img src={RenameIc} alt="Icon" />
                                 </div>
                                 <p className="item-actions-messages-user__text">Rename</p>
                             </button>}
-                            <button className="actions-messages-user__item item-actions-messages-user">
+                            <button onClick={() => toast.error('This function is developing')} className="actions-messages-user__item item-actions-messages-user">
                                 <div className="item-actions-messages-user__icon">
                                     <img src={AudioMuteIc} alt="Icon" />
                                 </div>
                                 <p className="item-actions-messages-user__text">Mute</p>
                             </button>
-                            {user.sex === "woman" && <button className="actions-messages-user__item item-actions-messages-user">
+                            {user.sex === "woman" && <button onClick={() => toast.error('This function is developing')} className="actions-messages-user__item item-actions-messages-user">
                                 <div className="item-actions-messages-user__icon">
                                     <img src={PinIc} alt="Icon" />
                                 </div>
