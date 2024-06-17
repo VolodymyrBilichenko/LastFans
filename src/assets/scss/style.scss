@@ -25,6 +25,10 @@ $fontSize: toRem(16); // де 14(px) - розмір шрифту за замов
 $mainColor: var(--black); // Колір шрифту за замовчуванням
 
 
+*{
+	scroll-behavior: smooth;
+}
+
 
 // Палітра кольорів
 @import "base/colors-palette";
