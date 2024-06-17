@@ -1,6 +1,72 @@
-import React from 'react'
+import { toast } from 'react-toastify'
+import GroupIc from '../../../assets/img/icons/group-add-white.svg'
+import LogoIc from '../../../assets/img/icons/logo-white.svg'
+import MoneyIc from '../../../assets/img/icons/money-white.svg'
+import { useState } from 'react'
+import { NavLink } from 'react-router-dom'
+import { useDispatch } from 'react-redux'
+import { removeModal } from '../../../redux/toolkitSlice'
 
 export const ModalMassMessage = () => {
+    const dispatch = useDispatch();
+    const [searchValue, setSearchValue] = useState<string>("");
+    const [sendTo, setSendTo] = useState<string>("");
+    const [sendAt, setSendAt] = useState<string>("");
+    const [exclude, setExclude] = useState<any[]>([]);
+    const [message, setMessage] = useState<string>("");
+    const [amount, setAmount] = useState<number | undefined>();
+
+    console.log(exclude);
+    
+    const [mockUsers] = useState([
+        {
+            user: {
+                username: "Tomik",
+                usertag: "@tommm",
+                photo: 'https://goldenglobes.com/wp-content/uploads/2023/10/17-tomcruiseag.jpg'
+            },
+            isOnline: true
+        },
+        {
+            user: {
+                username: "Robertik",
+                usertag: "@robbb",
+                photo: 'https://ca-times.brightspotcdn.com/dims4/default/4c31853/2147483647/strip/false/crop/3000x2000+0+0/resize/1486x991!/quality/75/?url=https%3A%2F%2Fcalifornia-times-brightspot.s3.amazonaws.com%2Ff6%2Ff2%2Fada36e394ddeaa69bf4706fd378a%2Firon-man-robert-downey-jr.jpg'
+            },
+            isOnline: true
+        },
+        {
+            user: {
+                username: "Danilyok",
+                usertag: "@dan",
+                photo: 'https://www.okino.ua/media/var/cache/a0/1d/a01d08309b6f5ed71c78c393033b7c19.jpg'
+            },
+            isOnline: true
+        }
+    ])
+
+    const addExcludeUser = (user: any) => {
+        if (!exclude.some((u) => u.user.usertag === user.user.usertag)) {
+            setExclude([...exclude, user]);
+        }
+    };
+
+    const handleSubmit = () => {
+        if (!sendTo || !sendAt || !message || amount === undefined) {
+            toast.error("Please fill out all fields");
+            return;
+        }
+
+        toast.success('Form submitted successful')
+        dispatch(removeModal('massMessage'))
+        // Submit the form
+        console.log("Form submitted", { sendTo, sendAt, exclude, message, amount });
+    };
+
+    const removeExcludeUser = (usertag: string) => {
+        setExclude(exclude.filter((user) => user !== usertag));
+    };
+
     return (
         <div className="popup-mass-message__body popup__body">
             <div className="popup-mass-message__block">
@@ -8,12 +74,18 @@ export const ModalMassMessage = () => {
                 <h4 className="popup-mass-message__title popup-title">MASS MESSAGE</h4>
                 <div className="input-box">
                     <label>Send to</label>
-                    <input  type="text" placeholder="Everyone" className="input-box__input input input-main"/>
+                    <input  type="text" placeholder="Everyone" className="input-box__input input input-main"
+                        value={sendTo}
+                        onChange={(e) => setSendTo(e.target.value)}
+                    />
                 </div>
                 <div className="input-box">
                     <label>Send at</label>
                     <label className="input-block input-block-calendar input input-main">
-                        <input  id="post-date" placeholder="Immidiately" className="input-box__input post-date" />
+                        <input  id="post-date" placeholder="Immidiately" className="input-box__input post-date" 
+                            value={sendAt}
+                            onChange={(e) => setSendAt(e.target.value)}
+                        />
                         <svg width="22" height="24" viewBox="0 0 22 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M19.75 2.5H17.125V1.625C17.125 1.39294 17.0328 1.17038 16.8687 1.00628C16.7046 0.842187 16.4821 0.75 16.25 0.75C16.0179 0.75 15.7954 0.842187 15.6313 1.00628C15.4672 1.17038 15.375 1.39294 15.375 1.625V2.5H6.625V1.625C6.625 1.39294 6.53281 1.17038 6.36872 1.00628C6.20462 0.842187 5.98206 0.75 5.75 0.75C5.51794 0.75 5.29538 0.842187 5.13128 1.00628C4.96719 1.17038 4.875 1.39294 4.875 1.625V2.5H2.25C1.78587 2.5 1.34075 2.68437 1.01256 3.01256C0.684374 3.34075 0.5 3.78587 0.5 4.25V21.75C0.5 22.2141 0.684374 22.6592 1.01256 22.9874C1.34075 23.3156 1.78587 23.5 2.25 23.5H19.75C20.2141 23.5 20.6592 23.3156 20.9874 22.9874C21.3156 22.6592 21.5 22.2141 21.5 21.75V4.25C21.5 3.78587 21.3156 3.34075 20.9874 3.01256C20.6592 2.68437 20.2141 2.5 19.75 2.5ZM4.875 4.25V5.125C4.875 5.35706 4.96719 5.57962 5.13128 5.74372C5.29538 5.90781 5.51794 6 5.75 6C5.98206 6 6.20462 5.90781 6.36872 5.74372C6.53281 5.57962 6.625 5.35706 6.625 5.125V4.25H15.375V5.125C15.375 5.35706 15.4672 5.57962 15.6313 5.74372C15.7954 5.90781 16.0179 6 16.25 6C16.4821 6 16.7046 5.90781 16.8687 5.74372C17.0328 5.57962 17.125 5.35706 17.125 5.125V4.25H19.75V7.75H2.25V4.25H4.875ZM19.75 21.75H2.25V9.5H19.75V21.75Z" fill="#B5CBED" ></path>
                         </svg>
@@ -24,20 +96,25 @@ export const ModalMassMessage = () => {
                     <label>Exclude</label>
                     <div className="input-box__exclude exclude-input-box input input-main">
                         <div className="exclude-input-box__items">
-                            <div className="exclude-input-box__item item-exclude-input-box">
-                                <div className="item-exclude-input-box__name">123456sch</div>
-                                <div className="item-exclude-input-box__username">@123456sch</div>
-                                <button className="item-exclude-input-box__delete">
-                                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M9.21112 8.5886C9.2434 8.62088 9.26901 8.6592 9.28648 8.70138C9.30395 8.74356 9.31294 8.78877 9.31294 8.83443C9.31294 8.88008 9.30395 8.92529 9.28648 8.96747C9.26901 9.00965 9.2434 9.04797 9.21112 9.08026C9.17883 9.11254 9.14051 9.13815 9.09833 9.15562C9.05615 9.17309 9.01094 9.18208 8.96529 9.18208C8.91963 9.18208 8.87442 9.17309 8.83224 9.15562C8.79006 9.13815 8.75174 9.11254 8.71946 9.08026L5.83811 6.19848L2.95677 9.08026C2.89157 9.14546 2.80314 9.18208 2.71094 9.18208C2.61873 9.18208 2.53031 9.14546 2.46511 9.08026C2.39991 9.01506 2.36328 8.92663 2.36328 8.83443C2.36328 8.74222 2.39991 8.65379 2.46511 8.5886L5.34689 5.70725L2.46511 2.82591C2.39991 2.76071 2.36328 2.67228 2.36328 2.58008C2.36328 2.48787 2.39991 2.39945 2.46511 2.33425C2.53031 2.26905 2.61873 2.23242 2.71094 2.23242C2.80314 2.23242 2.89157 2.26905 2.95677 2.33425L5.83811 5.21603L8.71946 2.33425C8.78465 2.26905 8.87308 2.23242 8.96529 2.23242C9.05749 2.23242 9.14592 2.26905 9.21112 2.33425C9.27632 2.39945 9.31294 2.48787 9.31294 2.58008C9.31294 2.67228 9.27632 2.76071 9.21112 2.82591L6.32934 5.70725L9.21112 8.5886Z" fill="#3F79CF"  />
-                                    </svg>
-                                </button>
-                            </div>
+                        {exclude.map((user, index) => (
+                                <div key={index} className="exclude-input-box__item item-exclude-input-box">
+                                    <div className="item-exclude-input-box__name">{user}</div>
+                                    <div className="item-exclude-input-box__username">{user}</div>
+                                    <button
+                                        className="item-exclude-input-box__delete"
+                                        onClick={() => removeExcludeUser(user)}
+                                    >
+                                        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M9.21112 8.5886C9.2434 8.62088 9.26901 8.6592 9.28648 8.70138C9.30395 8.74356 9.31294 8.78877 9.31294 8.83443C9.31294 8.88008 9.30395 8.9253 9.28648 8.96747C9.26901 9.00965 9.2434 9.04797 9.21112 9.08025C9.17884 9.11253 9.14052 9.13814 9.09834 9.15561C9.05617 9.17308 9.01095 9.18207 8.9653 9.18207C8.91965 9.18207 8.87443 9.17308 8.83225 9.15561C8.79008 9.13814 8.75176 9.11253 8.71948 9.08025L6.00101 6.36177L3.28253 9.08025C3.24992 9.11231 3.2112 9.13765 3.16886 9.15497C3.12652 9.17229 3.08108 9.18128 3.03518 9.1816C2.98928 9.18192 2.94358 9.16354 2.90402 9.12874C2.86446 9.09394 2.8324 9.04467 2.81126 8.98513C2.79011 8.9256 2.78074 8.8585 2.7841 8.79199C2.78745 8.72549 2.80348 8.66131 2.83114 8.60577C2.85879 8.55023 2.89749 8.50501 2.94448 8.47404L5.66295 5.75556L2.94448 3.03708C2.8975 3.0061 2.8588 2.96088 2.83114 2.90534C2.80348 2.8498 2.78745 2.78562 2.7841 2.71911C2.78074 2.65261 2.79011 2.58551 2.81126 2.52598C2.8324 2.46644 2.86446 2.41717 2.90402 2.38237C2.94358 2.34757 2.98928 2.32919 3.03518 2.32951C3.08108 2.32983 3.12652 2.33882 3.16886 2.35614C3.2112 2.37346 3.24992 2.3988 3.28253 2.43086L6.00101 5.14934L8.71948 2.43086C8.75176 2.39858 8.79008 2.37297 8.83225 2.3555C8.87443 2.33803 8.91965 2.32904 8.9653 2.32904C9.01095 2.32904 9.05617 2.33803 9.09834 2.3555C9.14052 2.37297 9.17884 2.39858 9.21112 2.43086C9.2434 2.46314 9.26901 2.50146 9.28648 2.54364C9.30395 2.58582 9.31294 2.63103 9.31294 2.67669C9.31294 2.72234 9.30395 2.76756 9.28648 2.80973C9.26901 2.85191 9.2434 2.89023 9.21112 2.92251L6.49265 5.641L9.21112 8.35947C9.24314 8.39175 9.26875 8.43007 9.28622 8.47225C9.3037 8.51442 9.31269 8.55963 9.31269 8.60529C9.31269 8.65094 9.3037 8.69616 9.28622 8.73834C9.26875 8.78051 9.24314 8.81883 9.21112 8.85111Z" fill="#B5CBED" ></path>
+                                        </svg>
+                                    </button>
+                                </div>
+                            ))}
 
                         </div>
                         <button className="exclude-input-box__add">
                             <div className="exclude-input-box__add-icon">
-                                <img src="img/icons/group-add-white.svg" alt="Icon"/>
+                                <img src={GroupIc} alt="Icon"/>
                             </div>
                         </button>
                     </div>
@@ -45,14 +122,20 @@ export const ModalMassMessage = () => {
                 <div className="input-box">
                     <div className="subscription-body-profile__field">
                         <div className="subscription-body-profile__image-input">
-                            <img src="img/icons/money-white.svg" alt="Icon"/>
+                            <img src={MoneyIc} alt="Icon"/>
                         </div>
-                        <input min="0"  type="number" placeholder="" className="subscription-body-profile__input input input-main"/>
+                        <input min="0"  type="number" placeholder="" className="subscription-body-profile__input input input-main"
+                            value={amount}
+                            onChange={(e: any) => setAmount(e.target.value)}
+                        />
                     </div>
                 </div>
                 <div className="footer-chat__input input-chat input-main">
                     <div className="input-chat__box">
-                        <input  type="text" placeholder="Your Message" className="input-chat__input input"/>
+                        <input  type="text" placeholder="Your Message" className="input-chat__input input"
+                            value={message}
+                            onChange={(e) => setMessage(e.target.value)}
+                        />
                     </div>
                     <div className="input-chat__block">
                         <div className="input-chat__actions actions-input-chat">
@@ -88,7 +171,7 @@ export const ModalMassMessage = () => {
                 </div>
 
                 <div className="popup-mass-message__actions">
-                    <button className="popup-mass-message__button button button--fw"><span>Send</span></button>
+                    <button onClick={handleSubmit} className="popup-mass-message__button button button--fw"><span>Send</span></button>
                     <button className="popup-mass-message__button button button--fw button--transparent"><span>Cancel</span></button>
 
                 </div>
@@ -97,136 +180,42 @@ export const ModalMassMessage = () => {
                 <button className="excluding__back">Back</button>
                 <div className="excluding__search">
                     <div className="body-messages__search search">
-                        <input  type="text" name="form[]" placeholder="Search by nickname" className="search__input input"/>
+                        <input  type="text" name="form[]" placeholder="Search by nickname" className="search__input input"
+                            onChange={e => setSearchValue(e.target.value)} value={searchValue}
+                        />
                     </div>
                 </div>
                 <div className="excluding__items">
-                    <div className="excluding__item item-message">
-                        <div className="item-message__user user-item user-item--stories">
-                            <div className="user-item__image user-item__image--decoration">
-                                <picture><source srcSet="img/user/02.webp" type="image/webp"/><img className="user-photo" src="img/user/02.jpg" alt="User image"/></picture>
-                                <div className="user-item__image-icon">
-                                    <img src="img/icons/logo-white.svg" alt="Image"/>
-                                </div>
-                            </div>
-                            <div className="user-item__body">
-                                <a href="#" className="user-item__name">Boob007</a>
-                                <span className="user-item__status online">
-                                    <svg className="online-status" width="8" height="9" viewBox="0 0 8 9" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <circle cx="4" cy="4.5" r="4" fill="#3DD598" ></circle>
-                                    </svg>
 
-                                    Online
-                                </span>
-                            </div>
-                        </div>
-                        <button className="exclude-button button"><span>Exclude</span></button>
-                    </div>
-                    <div className="excluding__item item-message">
-                        <div className="item-message__user user-item user-item--stories">
-                            <div className="user-item__image user-item__image--decoration">
-                                <picture><source srcSet="img/user/02.webp" type="image/webp"/><img className="user-photo" src="img/user/02.jpg" alt="User image"/></picture>
-                                <div className="user-item__image-icon">
-                                    <img src="img/icons/logo-white.svg" alt="Image"/>
-                                </div>
-                            </div>
-                            <div className="user-item__body">
-                                <a href="#" className="user-item__name">😈МАТТЕО ОБИЖЕНКА</a>
-                                <span className="user-item__status online">
-                                    <svg className="online-status" width="8" height="9" viewBox="0 0 8 9" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <circle cx="4" cy="4.5" r="4" fill="#3DD598" ></circle>
-                                    </svg>
+                    {
+                        mockUsers?.filter(item => item.user.username.toLowerCase().includes(searchValue.toLowerCase())).length
+                            ? mockUsers
+                                ?.filter(item => item.user.username.toLowerCase().includes(searchValue.toLowerCase()))
+                                ?.map(item => (
+                                    <div className="excluding__item item-message">
+                                        <div className="item-message__user user-item user-item--stories">
+                                            <div className="user-item__image user-item__image--decoration">
+                                                <picture><source srcSet={item?.user?.photo} type="image/webp"/><img className="user-photo" src={item?.user?.photo} alt="User image"/></picture>
+                                                <div className="user-item__image-icon">
+                                                    <img src={LogoIc} alt="ph"/>
+                                                </div>
+                                            </div>
+                                            <div className="user-item__body">
+                                                <NavLink to={`/messages/${item?.user?.usertag}`} className="user-item__name">{item?.user?.username}</NavLink>
+                                                <span className="user-item__status online">
+                                                    <svg className="online-status" width="8" height="9" viewBox="0 0 8 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <circle cx="4" cy="4.5" r="4" fill="#3DD598" ></circle>
+                                                    </svg>
 
-                                    Online
-                                </span>
-                            </div>
-                        </div>
-                        <button className="exclude-button button"><span>Exclude</span></button>
-                    </div>
-                    <div className="excluding__item item-message">
-                        <div className="item-message__user user-item user-item--stories">
-                            <div className="user-item__image user-item__image--decoration">
-                                <picture><source srcSet="img/user/02.webp" type="image/webp"/><img className="user-photo" src="img/user/02.jpg" alt="User image"/></picture>
-                                <div className="user-item__image-icon">
-                                    <img src="img/icons/logo-white.svg" alt="Image"/>
-                                </div>
-                            </div>
-                            <div className="user-item__body">
-                                <a href="#" className="user-item__name">Boob007</a>
-                                <span className="user-item__status online">
-                                    <svg className="online-status" width="8" height="9" viewBox="0 0 8 9" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <circle cx="4" cy="4.5" r="4" fill="#3DD598" ></circle>
-                                    </svg>
-
-                                    Online
-                                </span>
-                            </div>
-                        </div>
-                        <button className="exclude-button button"><span>Exclude</span></button>
-                    </div>
-                    <div className="excluding__item item-message">
-                        <div className="item-message__user user-item user-item--stories">
-                            <div className="user-item__image user-item__image--decoration">
-                                <picture><source srcSet="img/user/02.webp" type="image/webp"/><img className="user-photo" src="img/user/02.jpg" alt="User image"/></picture>
-                                <div className="user-item__image-icon">
-                                    <img src="img/icons/logo-white.svg" alt="Image"/>
-                                </div>
-                            </div>
-                            <div className="user-item__body">
-                                <a href="#" className="user-item__name">Boob007</a>
-                                <span className="user-item__status online">
-                                    <svg className="online-status" width="8" height="9" viewBox="0 0 8 9" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <circle cx="4" cy="4.5" r="4" fill="#3DD598" ></circle>
-                                    </svg>
-
-                                    Online
-                                </span>
-                            </div>
-                        </div>
-                        <button className="exclude-button button"><span>Exclude</span></button>
-                    </div>
-                    <div className="excluding__item item-message">
-                        <div className="item-message__user user-item user-item--stories">
-                            <div className="user-item__image user-item__image--decoration">
-                                <picture><source srcSet="img/user/02.webp" type="image/webp"/><img className="user-photo" src="img/user/02.jpg" alt="User image"/></picture>
-                                <div className="user-item__image-icon">
-                                    <img src="img/icons/logo-white.svg" alt="Image"/>
-                                </div>
-                            </div>
-                            <div className="user-item__body">
-                                <a href="#" className="user-item__name">Boob007</a>
-                                <span className="user-item__status online">
-                                    <svg className="online-status" width="8" height="9" viewBox="0 0 8 9" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <circle cx="4" cy="4.5" r="4" fill="#3DD598" ></circle>
-                                    </svg>
-
-                                    Online
-                                </span>
-                            </div>
-                        </div>
-                        <button className="exclude-button button"><span>Exclude</span></button>
-                    </div>
-                    <div className="excluding__item item-message">
-                        <div className="item-message__user user-item user-item--stories">
-                            <div className="user-item__image user-item__image--decoration">
-                                <picture><source srcSet="img/user/02.webp" type="image/webp"/><img className="user-photo" src="img/user/02.jpg" alt="User image"/></picture>
-                                <div className="user-item__image-icon">
-                                    <img src="img/icons/logo-white.svg" alt="Image"/>
-                                </div>
-                            </div>
-                            <div className="user-item__body">
-                                <a href="#" className="user-item__name">Boob007</a>
-                                <span className="user-item__status online">
-                                    <svg className="online-status" width="8" height="9" viewBox="0 0 8 9" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <circle cx="4" cy="4.5" r="4" fill="#3DD598" ></circle>
-                                    </svg>
-
-                                    Online
-                                </span>
-                            </div>
-                        </div>
-                        <button className="exclude-button button"><span>Exclude</span></button>
-                    </div>
+                                                    {item?.isOnline}
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <button onClick={() => addExcludeUser(item?.user?.usertag)} className="exclude-button button"><span>Exclude</span></button>
+                                    </div>
+                                ))
+                            : <p style={{ marginLeft: "25px" }}>Users not found</p>
+                    }
 
                 </div>
             </div>
