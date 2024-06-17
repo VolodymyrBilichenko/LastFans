@@ -4,7 +4,6 @@ import { History } from '../pages/History/History'
 import { LiveStream } from '../pages/LiveStream/LiveStream'
 import { Login } from '../pages/Login/Login'
 import { Main } from '../pages/Main/Main'
-import { MainDanya } from '../pages/MainDanya/MainDanya'
 import { Messages } from '../pages/Messages/Messages'
 import { Models } from '../pages/Models/Models'
 import { NotFound } from '../pages/NotFound/NotFound'
@@ -27,11 +26,6 @@ export const routes = (sex?: string) => {
     
 
     return [
-        {
-            path: '/main-danya',
-            element: <MainDanya/>,
-            additionalClass: 'page-main'
-        },
         {
             path: '/LastFans',
             element: <Main/>,

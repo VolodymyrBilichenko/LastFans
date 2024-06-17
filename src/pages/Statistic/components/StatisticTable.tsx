@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { useClickOutside } from '../../../hooks/ClickOutside'
+import { NavLink } from 'react-router-dom'
 
 interface IStatisticTableProps {
 
@@ -36,7 +37,7 @@ export const StatisticTable: React.FC<IStatisticTableProps> = () => {
                                             <p className="item-transactions__time"><span>03:23 PM</span></p>
                                             <p className="item-transactions__text">
                                                 <p>
-                                                    <span className="item-transactions__item">Locked Media Message</span> sold to <span className="item-transactions__user">Eric101</span> <a href="some" className="item-transactions__user-link">Eric101</a>
+                                                    <span className="item-transactions__item">Locked Media Message</span> sold to <NavLink to={'/profile/123'} className="item-transactions__user">Eric101</NavLink> <NavLink to={'/profile/123'} className="item-transactions__user-link">Eric101</NavLink>
                                                 </p>
                                             </p>
                                         </div>

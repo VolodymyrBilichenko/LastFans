@@ -4,6 +4,7 @@ import { Fancybox as NativeFancybox } from "@fancyapps/ui";
 import "@fancyapps/ui/dist/fancybox/fancybox.css";
 import { useDispatch } from 'react-redux';
 import { changeMessage, deleteMessage, replyMessage } from '../../../../redux/toolkitSlice';
+import { NavLink } from 'react-router-dom';
 
 interface IChatItemProps {
     isOwner?: boolean
@@ -84,7 +85,7 @@ export const ChatItem: React.FC<IChatItemProps> = ({ isOwner, isEdited, message,
 
                             {isLocked && <div className="content-post__image-unlock unlock">
                                 <div className="unlock__body">
-                                    <a href="some" className="unlock__button button button--fw"><span>Follow to unlock</span></a>
+                                    <NavLink to={"/profile/123"} className="unlock__button button button--fw"><span>Follow to unlock</span></NavLink>
                                 </div>
                             </div>}
 

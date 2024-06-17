@@ -1,5 +1,5 @@
 import LogoPh from '../../assets/img/icons/logo.svg'
-import { NavLink } from 'react-router-dom'
+import { NavLink, useNavigate } from 'react-router-dom'
 import { useState } from 'react'
 import { Notifications } from './components/Notifications/Notifications'
 import { toast } from 'react-toastify'
@@ -16,6 +16,17 @@ interface IOpenMenu {
 }
 
 export const Header = ({handleOpenMenu}: IOpenMenu) => {
+
+    const [searchValue, setSearchValue] = useState<string>('')
+
+    const navigate = useNavigate()
+
+    const handleSearch = (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault()
+
+        navigate(`/models/?search=${searchValue}`)
+
+    }
     
     return (
         <header className="header">
@@ -41,9 +52,9 @@ export const Header = ({handleOpenMenu}: IOpenMenu) => {
                 </NavLink>
 
                 <div className="header__actions">
-                    <div className="header__search">
-                        <input type="text" name="form[]" placeholder="Search by nickname or hashtags " className="header__input input"/>
-                    </div>
+                    <form onSubmit={handleSearch} className="header__search">
+                        <input onChange={e => setSearchValue(e.target.value)} value={searchValue} type="text" name="form[]" placeholder="Search by nickname or hashtags " className="header__input input"/>
+                    </form>
                     <div className="header__content">
                         <AsideMenuMode />
 
