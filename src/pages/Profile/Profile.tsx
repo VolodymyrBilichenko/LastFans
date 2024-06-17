@@ -10,9 +10,15 @@ import { NavLink } from 'react-router-dom'
 // import { useSelector } from 'react-redux'
 import { Highlights } from '../../components/Highlights/Highlights'
 import { PostItem } from '../Main/components/PostItem'
+import { useState } from 'react'
 
 
 export const Profile = () => {
+
+    const [isSubscibed, setIsSubscibed] = useState(false)
+    const [isActiveFolder, setIsActiveFolder] = useState('body1')
+    const [selectedTab, setSelectedTab] = useState('timeline')
+    const [selectedTabPosts, setSelectedTabPosts] = useState('POSTS')
 
     return (
         <div className="profile">
@@ -95,19 +101,19 @@ export const Profile = () => {
                     </div>
                 </div>
                 <div className="profile__tabs tabs-profile">
-                    <div className="tabs-profile__item active timeline">
+                    <div onClick={_ => setSelectedTab('timeline')} className={`tabs-profile__item ${selectedTab === 'timeline' ? 'active' : ''} timeline`}>
                         <div className="tabs-profile__image">
                             <img src={MessageIc} alt="Icon" />
                         </div>
                         <p className="tabs-profile__name">Timeline</p>
                     </div>
-                    <div className="tabs-profile__item video-store">
+                    <div onClick={_ => setSelectedTab('video-store')} className={`tabs-profile__item ${selectedTab === 'video-store' ? 'active' : ''} video-store`}>
                         <div className="tabs-profile__image">
                             <img src={VideoIc} alt="Icon" />
                         </div>
                         <p className="tabs-profile__name">Video Store</p>
                     </div>
-                    <div className="tabs-profile__item folders">
+                    <div onClick={_ => setSelectedTab('folders')} className={`tabs-profile__item ${selectedTab === 'folders' ? 'active' : ''} folders`}>
                         <div className="tabs-profile__image">
                             <img src={FolderIc} alt="Icon" />
                         </div>
@@ -115,10 +121,10 @@ export const Profile = () => {
                     </div>
                 </div>
                 <div className="profile__block">
-                    <div className="profile__promotional promotional-profile">
+                    {!isSubscibed ? <div className="profile__promotional promotional-profile">
                         <div className="promotional-profile__title title title--medium">PROMOTIONAL CAMPAIGN</div>
                         <p className="promotional-profile__text">Welcome, I hope you enjoy your stay and extend it! LOYALFANS is the ONLY platform I'm on!! Can't wait to connect with you in my DMs! XXX & OH! Nyssa</p>
-                        <a href="some" data-popup="#popup-successfull" className="promotional-profile__button button-subscribe button">
+                        <button onClick={_ => setIsSubscibed(true)} data-popup="#popup-successfull" className="promotional-profile__button button-subscribe button">
                             <div className="button-subscribe__block">
                                 <p>Subscribe (<span>60%</span>off)</p>
                             </div>
@@ -127,39 +133,39 @@ export const Profile = () => {
                                     <span className="button-subscribe__value">$10</span>
                                     <span className="button-subscribe__discount">$25.00</span>(per month)</p>
                             </div>
-                        </a>
-                    </div>
+                        </button>
+                    </div> :
                     <div className="profile__folders folders-profile">
-                        <div className="folders-profile__item active">
+                        <div onClick={_ => setIsActiveFolder('body1')} className={`folders-profile__item ${isActiveFolder === 'body1' ? 'active' : ''}`}>
                             <p>Тело</p>
                         </div>
-                        <div className="folders-profile__item">
+                        <div onClick={_ => setIsActiveFolder('ass1')} className={`folders-profile__item ${isActiveFolder === 'ass1' ? 'active' : ''}`}>
                             <p>Попа</p>
                         </div>
-                        <div className="folders-profile__item">
+                        <div onClick={_ => setIsActiveFolder('tits1')} className={`folders-profile__item ${isActiveFolder === 'tits1' ? 'active' : ''}`}>
                             <p>Сиськи</p>
                         </div>
-                        <div className="folders-profile__item">
+                        <div onClick={_ => setIsActiveFolder('body2')} className={`folders-profile__item ${isActiveFolder === 'body2' ? 'active' : ''}`}>
                             <p>Тело</p>
                         </div>
-                        <div className="folders-profile__item">
+                        <div onClick={_ => setIsActiveFolder('ass2')} className={`folders-profile__item ${isActiveFolder === 'ass2' ? 'active' : ''}`}>
                             <p>Попа</p>
                         </div>
-                        <div className="folders-profile__item">
+                        <div onClick={_ => setIsActiveFolder('tits2')} className={`folders-profile__item ${isActiveFolder === 'tits2' ? 'active' : ''}`}>
                             <p>Сиськи</p>
                         </div>
-                    </div>
+                    </div>}
                 </div>
                 <div className="profile__content content-profile">
                     <div className="content-profile__tabs tabs-content-profile">
-                        <div className="tabs-content-profile__item">
+                        <button onClick={_ => setSelectedTabPosts('POSTS')} className={`tabs-content-profile__item ${selectedTabPosts === 'POSTS' ? 'active' : ''}`}>
                             <p className="tabs-content-profile__name">
                                 <span>2379</span> Posts</p>
-                        </div>
-                        <div className="tabs-content-profile__item">
+                        </button>
+                        <button onClick={_ => setSelectedTabPosts('MEDIA')} className={`tabs-content-profile__item ${selectedTabPosts === 'MEDIA' ? 'active' : ''}`}>
                             <p className="tabs-content-profile__name">
                                 <span>6419</span> MEDIA</p>
-                        </div>
+                        </button>
 
                     </div>
                     <div className="main__content content-main">
