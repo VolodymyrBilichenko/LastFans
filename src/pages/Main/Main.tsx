@@ -92,7 +92,7 @@ export const Main = () => {
 					<div className="highlights-main__header">
 						<h3 className="highlights-main__title title title--small">Highlights</h3>
 					</div>
-					<Highlights />
+					<Highlights isNeedAdd={true} />
 
 
         		</div>}
