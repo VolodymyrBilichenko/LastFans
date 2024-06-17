@@ -33,17 +33,17 @@ export const ChatHeader: React.FC<IChatHeaderProps> = () => {
         <div className="chat__top top-chat">
             <div className="top-chat__block">
                 <div className="top-chat__user user-item online">
-                    <a href="some" data-popup="#popup-messages-user" className="user-item__image">
+                    <NavLink to={'/profile/123'} data-popup="#popup-messages-user" className="user-item__image">
                         <img className="user-photo" src={UserPh} alt="User ph" />
                         <div className="user-item__image-status">
                             <svg className="online-status" width="8" height="9" viewBox="0 0 8 9" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <circle cx="4" cy="4.5" r="4" fill="#3DD598" ></circle>
                             </svg>
                         </div>
-                    </a>
-                    <NavLink to={'/my-profile'} className="user-item__body">
-                        <a href="some" className="user-item__name">Boob007</a>
-                        <a href="some" className="user-item__username">@Boob007</a>
+                    </NavLink>
+                    <NavLink to={'/profile/123'} className="user-item__body">
+                        <div className="user-item__name">Boob007</div>
+                        <div className="user-item__username">@Boob007</div>
                     </NavLink>
 
                 </div>

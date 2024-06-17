@@ -74,11 +74,11 @@ export const Profile = () => {
                             <div className="body-profile__info info-body-profile">
                                 <div className="info-body-profile__item">
                                     <p className="info-body-profile__text">Type</p>
-                                    <a href="some">Model/Producer</a>
+                                    <span>Model/Producer</span>
                                 </div>
                                 <div className="info-body-profile__item">
                                     <p className="info-body-profile__text">Location</p>
-                                    <a href="some">Florida Beaches</a>
+                                    <span>Florida Beaches</span>
                                 </div>
                                 <div className="info-body-profile__item">
                                     <p className="info-body-profile__text">FANS</p>

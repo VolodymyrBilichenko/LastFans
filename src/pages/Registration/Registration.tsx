@@ -149,7 +149,7 @@ export const Registration = () => {
                                         <label>
                                             <input type="checkbox" name="conditions" className="real-checkbox"/>
                                             <span className="custom-checkbox"></span>
-                                            <p className="form-block__text">By clicking on Create Free Account, I acknowledge that I am 18+ years old and I accept the <a href="some">Terms & Conditions</a></p>
+                                            <p className="form-block__text">By clicking on Create Free Account, I acknowledge that I am 18+ years old and I accept the <a href="#">Terms & Conditions</a></p>
                                         </label>
                                     </div>
                                     <button className="form-main-registration__button button button--fw" type="submit">
@@ -189,7 +189,7 @@ export const Registration = () => {
                                             <label>
                                                 <input type="checkbox" name="conditions" className="real-checkbox"/>
                                                 <span className="custom-checkbox"></span>
-                                                <p className="form-block__text">By clicking on Create Free Account, I acknowledge that I am 18+ years old and I accept the <a href="some">Terms & Conditions</a></p>
+                                                <p className="form-block__text">By clicking on Create Free Account, I acknowledge that I am 18+ years old and I accept the <a href="#">Terms & Conditions</a></p>
                                             </label>
                                         </div>
                                         <button className="form-main-registration__button button button--fw" type="submit">

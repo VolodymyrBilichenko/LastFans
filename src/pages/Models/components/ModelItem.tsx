@@ -21,12 +21,12 @@ export const ModelItem: React.FC<IModelItemProps> = ({ userName, userTag, userId
                 </div>
                 <div className="body-item-models__user user-item">
                     <div className="user-item__body">
-                        <a href="some" className="user-item__name">
+                        <NavLink to={`/profile/${userTag}`} className="user-item__name">
                             {userName}
-                        </a>
-                        <a href="some" className="user-item__username">
+                        </NavLink>
+                        <NavLink to={`/profile/${userTag}`} className="user-item__username">
                             {userTag}
-                        </a>
+                        </NavLink>
                     </div>
                 </div>
 

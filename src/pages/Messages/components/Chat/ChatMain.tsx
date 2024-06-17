@@ -64,6 +64,7 @@ export const ChatMain: React.FC<IChatMainProps> = ({ chatTheme }) => {
                             images={item.images}
                             isEdited={item.isEdited}
                             replyTo={item.replyTo}
+                            isLocked={item.isLocked}
                         />
                     ))
                 }
