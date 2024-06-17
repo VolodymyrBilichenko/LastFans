@@ -1,13 +1,15 @@
 import React, { SetStateAction, useEffect, useState } from 'react'
+import { useClickOutside } from '../../hooks/ClickOutside'
 
 interface IPaginationProps {
     setCountPerPage: React.Dispatch<SetStateAction<number>>
     setPaginatePage: React.Dispatch<SetStateAction<number>>
+    countPerPage?: number
+    arrayLength: number
 }
 
-export const Pagination: React.FC<IPaginationProps> = ({ ...props }) => {
+export const Pagination: React.FC<IPaginationProps> = ({ arrayLength, ...props }) => {
 
-    const [modelsLength] = useState(50)
     const [isOpenSelect, setIsOpenSelect] = useState(false)
     const [countPerPage, setCountPerPage] = useState<number>(8)
     const [paginatePage, setPaginatePage] = useState(1)
@@ -18,15 +20,23 @@ export const Pagination: React.FC<IPaginationProps> = ({ ...props }) => {
     }, [countPerPage])
 
     useEffect(() => {
+        if(!props.countPerPage) return
+        
+        setCountPerPage(props.countPerPage ?? 0)
+    }, [props.countPerPage])
+
+    useEffect(() => {
         props.setPaginatePage(paginatePage)
     }, [paginatePage])
+
+    const {rootEl} = useClickOutside(setIsOpenSelect)
 
     return (
         <div className="video-store__footer footer-video-store">
             <div className="footer-video-store__pages">
 
                 {
-                    Array(Math.ceil(modelsLength / countPerPage)).fill('').map((item: string, index: number) => (
+                    Array(Math.ceil(arrayLength / countPerPage)).fill('').map((item: string, index: number) => (
                         <button onClick={_ => setPaginatePage(index + 1)} key={index + 1} className={paginatePage === index + 1 ? 'active' : ''}>
                             <span>
                                 {index + 1}
@@ -38,7 +48,7 @@ export const Pagination: React.FC<IPaginationProps> = ({ ...props }) => {
             </div>
             <div data-spollers className="header-video-store__per-page per-page">
                 <p className="per-page__text">Per page</p>
-                <button onClick={_ => setIsOpenSelect(prev => !prev)} className={`field-block-add-vid__item spollers__item-main spollers__item input input-main ${isOpenSelect ? 'active' : ''}`}>
+                <button ref={rootEl} onClick={_ => setIsOpenSelect(prev => !prev)} className={`field-block-add-vid__item spollers__item-main spollers__item input input-main ${isOpenSelect ? 'active' : ''}`}>
                     <div data-spoller-close className="field-block-add-vid__title spollers__title">
                         {countPerPage}
                     </div>
