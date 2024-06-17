@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { IUser } from '../../../../models'
 import { useSelector } from 'react-redux'
-import { NavLink } from 'react-router-dom'
+import { NavLink, useNavigate } from 'react-router-dom'
 import CreditCardIc from '../../../../assets/img/icons/user-menu/credit-card.svg'
 import EditIc from '../../../../assets/img/icons/user-menu/edit.svg'
 import SupportIc from '../../../../assets/img/icons/user-menu/service.svg'
@@ -19,12 +19,16 @@ interface IProfileProps {
 }
 
 export const Profile: React.FC<IProfileProps> = () => {
+    const navigate = useNavigate();
+    const [isOpenBlock, setIsOpenBlock] = useState(false);
 
-    const [isOpenBlock, setIsOpenBlock] = useState(false)
+    const user: IUser = useSelector((state: any) => state.toolkit.user);
 
-    const user: IUser = useSelector((state: any) => state.toolkit.user)
+    const { rootEl } = useClickOutside(setIsOpenBlock);
 
-    const { rootEl } = useClickOutside(setIsOpenBlock)
+    const handleFansClick = () => {
+        navigate('/subscribers?tab=followers');
+    };
 
     return (
         <div ref={rootEl} className={`header__user user-header field ${isOpenBlock ? 'field-active' : ''}`} onClick={() => setIsOpenBlock(prev => !prev)}>
@@ -68,7 +72,7 @@ export const Profile: React.FC<IProfileProps> = () => {
                                     <div className="subscribers__value">26</div>
                                     <div className="subscribers__text">Subscibers</div>
                                 </NavLink>
-                                <div className="body-popup-user-header__fans subscribers">
+                                <div onClick={handleFansClick} className="body-popup-user-header__fans subscribers">
                                     <div className="subscribers__value">1389</div>
                                     <div className="subscribers__text">Fans</div>
                                 </div>

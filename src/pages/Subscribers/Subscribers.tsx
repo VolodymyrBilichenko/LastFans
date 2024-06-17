@@ -5,9 +5,14 @@ import { Followers } from './components/Followers/Followers'
 import { SubscribersItems } from './components/SubscribersItems/SubscribersItems'
 import { Groups } from './components/Groups/Groups'
 import { BlockedUsers } from './components/BlockedUsers/BlockedUsers'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import { useLocation } from 'react-router-dom'
 
 export const Subscribers = () => {
+    const location = useLocation();
+    const queryParams = new URLSearchParams(location.search);
+    const initialTab = queryParams.get('tab') || 'subscribers';
+
     const [activeTab, setActiveTab] = useState('subscribers');
     const [isOpenModal, setIsOpenModal] = useState(false);
 
@@ -27,6 +32,12 @@ export const Subscribers = () => {
     const handleOpenModal = () => {
         setIsOpenModal(!isOpenModal);
     }
+
+    useEffect(() => {
+
+        setActiveTab(initialTab);
+        
+    }, [initialTab]);
 
 
     return (
