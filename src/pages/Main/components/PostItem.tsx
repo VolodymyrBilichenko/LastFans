@@ -5,7 +5,7 @@ import { IComment, IUser } from '../../../models'
 import { Fancybox as NativeFancybox } from "@fancyapps/ui";
 import "@fancyapps/ui/dist/fancybox/fancybox.css";
 import { toast } from 'react-toastify';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { PostitemComments } from './PostItemComments';
 import {
@@ -40,6 +40,7 @@ import {
     TumblrShareCount,
     VKShareCount,
 } from "react-share";
+import { addModal } from '../../../redux/toolkitSlice';
 
 interface IPostItemProps {
     user: IUser
@@ -148,6 +149,8 @@ export const PostItem: React.FC<IPostItemProps> = ({ user, date, message, images
 
     const [isOpenShare, setIsOpenShare] = useState(false)
 
+    const dispatch = useDispatch()
+
     return (
         <div className={`content-main__post post pin main__item ${user.sex === "man" ? "locked" : ""}`}>
             <div className="post__top top-post">
@@ -193,7 +196,7 @@ export const PostItem: React.FC<IPostItemProps> = ({ user, date, message, images
                                     </button>
                                 </div>
                                 <div className="popup-actions__body body-popup-actions">
-                                    <button onClick={_ => toast.error("This element is developing")} className="body-popup-actions__item mass">Edit</button>
+                                    <button onClick={_ => dispatch(addModal('timeLinePost'))} className="body-popup-actions__item mass">Edit</button>
                                 </div>
                                 <div className="popup-actions__body body-popup-actions">
                                     <button onClick={_ => toast.error("This element is developing")} className="body-popup-actions__item mass">Delete</button>
