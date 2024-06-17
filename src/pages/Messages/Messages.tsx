@@ -15,6 +15,7 @@ import { IUser } from '../../models'
 import { useDispatch, useSelector } from 'react-redux'
 import { addModal } from '../../redux/toolkitSlice'
 import { NavLink } from 'react-router-dom'
+import { MediaFiles } from './components/MediaFiles/MediaFiles'
 
 export const Messages = () => {
     const groupStore = useSelector((state: any) => state.toolkit.newGroup)
@@ -286,67 +287,13 @@ export const Messages = () => {
                                 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
                             </p>
                         </div>}
+                        
                         {user.sex === "woman" && <a href="some" className="messages-user__media button button--fw button--transparent">
                             <img src={ImageIc} alt="Icon" />
                             <span>Media files</span>
                         </a>}
 
-                        {user.sex === "woman" && <div className="messages-user__media-files media-files">
-                            <div className="media-files__header">
-                                <a href="some" className="media-files__back"><span>Media Files</span></a>
-                            </div>
-                            <div className="media-files__tabs">
-                                <div className="tabs-content-profile__item all active">
-
-                                    <p className="tabs-content-profile__name">All</p>
-                                </div>
-                                <div className="tabs-content-profile__item images ">
-                                    <p className="tabs-content-profile__name">Images</p>
-
-                                </div>
-                                <div className="tabs-content-profile__item videos">
-                                    <p className="tabs-content-profile__name">Videos</p>
-                                </div>
-                                <div className="tabs-content-profile__item gifs">
-
-                                    <p className="tabs-content-profile__name">GIFs</p>
-                                </div>
-                            </div>
-                            <div className="media-files__items">
-                                <div className="media-files__item item-media-files blocked">
-                                    <div className="item-video-store__wrapper">
-                                        <div className="item-video-store__image">
-                                            <img src={UserBgPh} alt="ph" />
-                                        </div>
-                                    </div>
-                                    <div className="item-video-store__tags">
-                                        <div className="item-video-store__tag tag-item-video-store tag-item-video-store--orange price">
-                                            <div className="tag-item-video-store__body">
-                                                <p className="tag-item-video-store__text">18$</p>
-                                            </div>
-                                            <div className="tag-item-video-store__decor"></div>
-                                        </div>
-
-                                    </div>
-                                </div>
-                                <div className="media-files__item item-media-files">
-                                    <div className="item-video-store__wrapper">
-                                        <div className="item-video-store__image">
-                                            <img src={UserBgPh} alt="ph" />
-                                        </div>
-                                    </div>
-                                    <div className="item-video-store__tags">
-                                        <div className="item-video-store__tag tag-item-video-store tag-item-video-store--orange price">
-                                            <div className="tag-item-video-store__body">
-                                                <p className="tag-item-video-store__text">18$</p>
-                                            </div>
-                                            <div className="tag-item-video-store__decor"></div>
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>}
+                        {user.sex === "woman" && <MediaFiles/>}
                     </div>
                 </div>
             </div>
