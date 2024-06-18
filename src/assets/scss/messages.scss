@@ -91,6 +91,10 @@
             gap: toRem(10);
         }
         .item-message{
+            &.active{
+                background-color: var(--blue-transparent);
+
+            }
             padding: toRem(5) toRem(24);
             @media (any-hover: hover){
                 &:hover{

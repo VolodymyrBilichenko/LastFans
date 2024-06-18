@@ -9,6 +9,7 @@ import { useState } from 'react'
 import { toast } from 'react-toastify'
 import { useDispatch } from 'react-redux'
 import { removeModal } from '../../../redux/toolkitSlice'
+import { useClickOutside } from '../../../hooks/ClickOutside'
 
 export const ModalTimeLinePost = () => {
     const dispatch = useDispatch();
@@ -31,6 +32,10 @@ export const ModalTimeLinePost = () => {
         }
     };
 
+    const recipientDropdown = useClickOutside(setIsRecipientDropdownOpen)
+    const folderDropdown = useClickOutside(setIsFolderDropdownOpen)
+
+
     return (
         <div className="popup-timeline-post__body popup__body">
             <h4 className="popup-timeline-post__title">Create timeline post</h4>
@@ -42,11 +47,10 @@ export const ModalTimeLinePost = () => {
                     <div data-spollers className="user-item__body">
                         <a href="#" className="user-item__name">Boob007</a>
 
-                        <button className={`field-block-add-vid__item spollers__item-main spollers__item input input-main ${isRecipientDropdownOpen ? 'active' : ''}`}
+                        <button ref={recipientDropdown.rootEl} className={`field-block-add-vid__item spollers__item-main spollers__item input input-main ${isRecipientDropdownOpen ? 'active' : ''}`}
                             onClick={() => setIsRecipientDropdownOpen(!isRecipientDropdownOpen)}
                         >
                             <div data-spoller-close className="field-block-add-vid__title spollers__title">{recipient}</div>
-                            {isRecipientDropdownOpen && (
                                 <div className="spollers__wrapper">
                                     <div className="field-block-add-vid__body spollers__body">
                                         {['Subscribers', 'Fans', 'All'].map((option) => (
@@ -63,7 +67,7 @@ export const ModalTimeLinePost = () => {
                                         ))}
                                     </div>
                                 </div>
-                            )}
+                         
                             {/* <div className="spollers__wrapper">
 
 
@@ -94,17 +98,16 @@ export const ModalTimeLinePost = () => {
                 <div data-spollers className="body-popup-timeline-post__folder input-box">
                     <label>Add post to folder</label>
 
-                    <button className={`field-block-add-vid__item spollers__item-main spollers__item input input-main ${isFolderDropdownOpen ? 'active' : ''}`}
+                    <button ref={folderDropdown.rootEl} className={`spoller-input spollers__item-main ${isFolderDropdownOpen ? 'active' : ''}`}
                         onClick={() => setIsFolderDropdownOpen(!isFolderDropdownOpen)}
                     >
-                        <div data-spoller-close className="field-block-add-vid__title spollers__title">{folder || 'Choose folder'}</div>
-                        {isFolderDropdownOpen && (
+                        <div data-spoller-close className="spoller-input__title spollers__title">{folder || 'Choose folder'}</div>
                             <div className="spollers__wrapper">
-                                <div className="field-block-add-vid__body spollers__body">
+                                <div className="spoller-input__body spollers__body">
                                     {[1, 2, 3].map((option) => (
                                         <div
                                             key={option}
-                                            className="field-block-add-vid__value"
+                                            className="spollers__body-value"
                                             onClick={() => {
                                                 setFolder(option.toString());
                                                 setIsFolderDropdownOpen(false);
@@ -115,7 +118,7 @@ export const ModalTimeLinePost = () => {
                                     ))}
                                 </div>
                             </div>
-                        )}
+
                         {/* <div className="spollers__wrapper">
                                 
                             <div className="field-block-add-vid__body spollers__body">

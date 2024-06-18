@@ -21,9 +21,9 @@ export const AutoMessage = () => {
                                         <div className="spollers__wrapper">
 
                                             <div className="spoller-input__body spollers__body">
-                                                <p>option 1</p>
-                                                <p>option 2</p>
-                                                <p>option 3</p>
+                                                <p className='pollers__body-value'>option 1</p>
+                                                <p className='pollers__body-value'>option 2</p>
+                                                <p className='pollers__body-value'>option 3</p>
                                             </div>
                                         </div>
                                     </button>
@@ -37,9 +37,9 @@ export const AutoMessage = () => {
                                         <div className="spollers__wrapper">
 
                                             <div className="spoller-input__body spollers__body">
-                                                <p>option 1</p>
-                                                <p>option 2</p>
-                                                <p>option 3</p>
+                                                <p className='pollers__body-value'>option 1</p>
+                                                <p className='pollers__body-value'>option 2</p>
+                                                <p className='pollers__body-value'>option 3</p>
                                             </div>
                                         </div>
                                     </button>
