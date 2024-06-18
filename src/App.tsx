@@ -16,11 +16,9 @@ import { IUser } from "./models";
 import { Modals } from "./components/Modals/Modals";
 import { Fancybox as NativeFancybox } from "@fancyapps/ui";
 import { GoogleOAuthProvider } from "@react-oauth/google";
-import { Loader } from "./components/Loader/Loader";
 
 
 export const App = () => {
-  const [loading, setLoading] = useState<boolean>(false);
   const location = useLocation();
   const dispatch = useDispatch()
   const { handleOpenMenu, isOpenAsideMenu } = useOpenAside();
@@ -30,10 +28,7 @@ export const App = () => {
   const checkLocation = location.pathname.slice(0, location.pathname.indexOf('/', 1) === -1 ? undefined : location.pathname.indexOf('/', 1))
   const currentPage = routes(user.sex).filter(item => item.path === checkLocation || item.path === '*');
 
-  const toggleLoader = (value: boolean) => {
-    setLoading(value);
-  }
-
+ 
   useEffect(() => {
     NativeFancybox.bind("[data-fancybox]", {});
     return () => {
@@ -61,8 +56,6 @@ export const App = () => {
 
       <Modals />
 
-      <Loader loading={loading}/>
-
       {!currentPage[0]?.isNotNeedHeader && <Header handleOpenMenu={handleOpenMenu} />}
       <GoogleOAuthProvider clientId="1071605377094-5663q4ujiakepp8ri3mis7buhclag70l.apps.googleusercontent.com">
         <main className={`page ${currentPage[0]?.additionalClass ?? 'page-main'} `}>
@@ -74,8 +67,6 @@ export const App = () => {
               key={location.pathname}
               classNames="fade"
               timeout={300}
-              onEnter={() => toggleLoader(true)}
-              onExited={() => toggleLoader(false)}
             >
               <Routes location={location}>
                 {routes(user.sex).map((item: any) => (
