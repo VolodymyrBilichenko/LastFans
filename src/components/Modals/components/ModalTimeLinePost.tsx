@@ -41,6 +41,7 @@ export const ModalTimeLinePost = () => {
                     </div>
                     <div data-spollers className="user-item__body">
                         <a href="#" className="user-item__name">Boob007</a>
+
                         <button className={`field-block-add-vid__item spollers__item-main spollers__item input input-main ${isRecipientDropdownOpen ? 'active' : ''}`}
                             onClick={() => setIsRecipientDropdownOpen(!isRecipientDropdownOpen)}
                         >
@@ -64,6 +65,7 @@ export const ModalTimeLinePost = () => {
                                 </div>
                             )}
                             {/* <div className="spollers__wrapper">
+
 
                                 <div className="field-block-add-vid__body spollers__body">
                                     <div className="field-block-add-vid__value">Subscribers</div>
@@ -91,6 +93,7 @@ export const ModalTimeLinePost = () => {
                 </div>
                 <div data-spollers className="body-popup-timeline-post__folder input-box">
                     <label>Add post to folder</label>
+
                     <button className={`field-block-add-vid__item spollers__item-main spollers__item input input-main ${isFolderDropdownOpen ? 'active' : ''}`}
                         onClick={() => setIsFolderDropdownOpen(!isFolderDropdownOpen)}
                     >

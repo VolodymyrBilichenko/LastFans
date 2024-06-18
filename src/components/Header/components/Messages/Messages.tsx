@@ -79,7 +79,7 @@ export const Messages: React.FC<IMessagesProps> = () => {
                         </div>
                         <div className="popup-messages-header__body body-popup-messages-header">
                             <div className="page-messages__body body-messages">
-                                <div className="body-messages__content">
+                                <div className="content-body-messages">
                                     <div className="body-messages__items">
 
                                         {
