@@ -1,4 +1,10 @@
-import React from 'react'
+import UserPh from '../../../assets/img/user/01.png'
+import ImgIch from '../../../assets/img/icons/image.svg'
+import VideoIc from '../../../assets/img/icons/video.svg'
+import MoneyIc from '../../../assets/img/icons/monney.svg'
+import AudioIc from '../../../assets/img/icons/audio.svg'
+import FileIc from '../../../assets/img/icons/file.svg'
+import MoneyIc2 from '../../../assets/img/icons/money-02.svg'
 
 export const ModalTimeLinePost = () => {
     return (
@@ -7,11 +13,11 @@ export const ModalTimeLinePost = () => {
             <div className="popup-timeline-post__top top-popup-timeline-post">
                 <div className="top-post__user user-item">
                     <div className="user-item__image">
-                        <picture><source srcSet="img/user/01.webp" type="image/webp"/><img className="user-photo" src="img/user/01.png" alt="User image"/></picture>
+                        <picture><source srcSet={UserPh} type="image/webp"/><img className="user-photo" src={UserPh} alt="User ph"/></picture>
                     </div>
                     <div data-spollers className="user-item__body">
                         <a href="#" className="user-item__name">Boob007</a>
-                        <button className="field-block-add-vid__item spollers__item-main spollers__item input input-main">
+                        <button className="field-block-add-vid__item spollers__item-main spollers__item input input-main active">
                             <div data-spoller-close className="field-block-add-vid__title spollers__title">Subscribers</div>
                             <div className="spollers__wrapper">
 
@@ -55,22 +61,22 @@ export const ModalTimeLinePost = () => {
                 <div className="actions-popup-timeline-post__content">
                     <div className="new-post-main__actions">
                         <button className="new-post-main__item">
-                            <img src="img/icons/image.svg" alt="Icon"/>
+                            <img src={ImgIch} alt="Icon"/>
                         </button>
                         <button className="new-post-main__item">
-                            <img src="img/icons/video.svg" alt="Icon"/>
+                            <img src={VideoIc} alt="Icon"/>
                         </button>
                         <button className="new-post-main__item">
-                            <img src="img/icons/monney.svg" alt="Icon"/>
+                            <img src={MoneyIc} alt="Icon"/>
                         </button>
                         <button className="new-post-main__item">
-                            <img src="img/icons/audio.svg" alt="Icon"/>
+                            <img src={AudioIc} alt="Icon"/>
                         </button>
                         <button className="new-post-main__item">
-                            <img src="img/icons/file.svg" alt="Icon"/>
+                            <img src={FileIc} alt="Icon"/>
                         </button>
                         <button className="new-post-main__item">
-                            <img src="img/icons/money-02.svg" alt="Icon"/>
+                            <img src={MoneyIc2} alt="Icon"/>
                         </button>
                     </div>
                 </div>

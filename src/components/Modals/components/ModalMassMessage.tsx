@@ -176,7 +176,7 @@ export const ModalMassMessage = () => {
 
                 <div className="popup-mass-message__actions">
                     <button onClick={handleSubmit} className="popup-mass-message__button button button--fw"><span>Send</span></button>
-                    <button className="popup-mass-message__button button button--fw button--transparent"><span>Cancel</span></button>
+                    <button onClick={() => dispatch(removeModal('massMessage'))} className="popup-mass-message__button button button--fw button--transparent"><span>Cancel</span></button>
 
                 </div>
             </div>
@@ -216,7 +216,7 @@ export const ModalMassMessage = () => {
                                             </div>
                                         </div>
 
-                                        // Посмотри, что ты сюда передаешь и дальше (1). Ну и вопрос, что ты передаешь в эту функцию addExcludeUser?
+                                        {/* // Посмотри, что ты сюда передаешь и дальше (1). Ну и вопрос, что ты передаешь в эту функцию addExcludeUser? */}
                                         <button onClick={() => addExcludeUser(item?.user?.usertag)} className="exclude-button button"><span>Exclude</span></button>
                                     </div>
                                 ))
