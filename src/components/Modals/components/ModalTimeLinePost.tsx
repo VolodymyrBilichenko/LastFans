@@ -17,7 +17,7 @@ export const ModalTimeLinePost = () => {
                     </div>
                     <div data-spollers className="user-item__body">
                         <a href="#" className="user-item__name">Boob007</a>
-                        <button className="field-block-add-vid__item spollers__item-main spollers__item input input-main active">
+                        <button className="field-block-add-vid__item spollers__item-main spollers__item-main">
                             <div data-spoller-close className="field-block-add-vid__title spollers__title">Subscribers</div>
                             <div className="spollers__wrapper">
 
@@ -43,14 +43,14 @@ export const ModalTimeLinePost = () => {
                 </div>
                 <div data-spollers className="body-popup-timeline-post__folder input-box">
                     <label>Add post to folder</label>
-                    <button className="field-block-add-vid__item spollers__item-main spollers__item input input-main">
-                        <div data-spoller-close className="field-block-add-vid__title spollers__title">Choose folder</div>
+                    
+                    <button className="spoller-input spollers__item-main">
+                        <div data-spoller-close className="spoller-input__title spollers__title">Non Follower</div>
                         <div className="spollers__wrapper">
-                                
-                            <div className="field-block-add-vid__body spollers__body">
-                                <div className="field-block-add-vid__value">1</div>
-                                <div className="field-block-add-vid__value">2</div>
-                                <div className="field-block-add-vid__value">3</div>
+                            <div className="spoller-input__body spollers__body">
+                                <p>option 1</p>
+                                <p>option 2</p>
+                                <p>option 3</p>
                             </div>
                         </div>
                     </button>

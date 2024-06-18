@@ -42,38 +42,7 @@
         
     }
 }
-.spoller-automated {
-    border-radius: toRem(10);
-    cursor: pointer;
-    height: fit-content;
-    // .spoller-automated__title
-    &__title {
-        list-style: none;
-        font-size: toRem(15);
-        color: #525252;
-        display: flex;
-        align-items: center;
-        gap: toRem(10);
-        justify-content: space-between;
-        &::after{
-            content:'';
-            flex: 0 0 toRem(12);
-            width: toRem(12);
-            height: toRem(6);
-            background: url('../img/icons/arrow.svg') center / cover no-repeat;
-            transition: all .3s ease;
-        }
-        &._spoller-active{
-            &::after{
-                content:'';
-                transform: scale(-1);
-            }
-        }
-    }
-    // .spoller-automated__body
-    &__body {
-    }
-}
+
 
 .delay-automated {
     

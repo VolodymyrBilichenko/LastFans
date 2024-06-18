@@ -82,7 +82,7 @@ export const Messages = () => {
             <div className="main-messages">
                 <div className="main-messages__body">
                     <div className="main-messages__wrapper">
-                        <div className="body-messages__top top-body-messages">
+                        <div className="main-messages__top top-body-messages">
                             <h3 className="top-body-messages__title title title--small">Messages</h3>
                             <div onClick={handleOpenMass} className={`top-body-messages__actions actions field ${openMass ? 'field-active' : ''}`}>
                                 <svg width="21" height="6" viewBox="0 0 21 6" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -169,7 +169,7 @@ export const Messages = () => {
                         </>}
                     </div>
 
-                    <div className="body-messages__content">
+                    <div className="content-body-messages">
 
                         <div className="body-messages__items">
 

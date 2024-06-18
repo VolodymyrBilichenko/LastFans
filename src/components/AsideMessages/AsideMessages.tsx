@@ -73,7 +73,7 @@ export const AsideMessages = () => {
                         <input onChange={e => setSearchValue(e.target.value)} value={searchValue} type="text" name="form[]" placeholder="Search by nickname or hashtags " className="search__input input" />
                     </div>
                 </div>
-                <div className="body-messages__content">
+                <div className="body-messages__content content-body-messages">
                     
                     <div className="body-messages__items">
 
