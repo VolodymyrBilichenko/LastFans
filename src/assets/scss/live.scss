@@ -118,42 +118,65 @@
 
 .live-chat {
     flex: 1 1 auto;
-    padding-bottom: toRem(30);
-    @media (min-width:$tablet){
-        max-width: toRem(465);
-        padding: toRem(30) 0;
-          
-    }
-    .chat {
-        // .chat__body
-        &__body {
-            min-height: 400px;
-            @media (max-width:$tablet){
-                max-height: 60vh;
-            }
-            height: calc(40vh - 130px);
-            @media (min-width:$tablet){
-                height: calc(100vh - 170px);
-            }
+    margin-top: toRem(30);
+    display: block;
+    .body-messages{
+        padding-bottom: toRem(17);
+        gap: 0;
+        min-height: 400px;
+        @media (max-width:$tablet){
+            max-height: 60vh;
         }
-        // .chat__top
-        &__top {
-        }
-        // .chat__content
-        &__content {
-        }
-        // .chat__footer
-        &__footer {
+        height: calc(40vh - 130px);
+        @media (min-width:$tablet){
+            height: calc(100vh - 170px);
         }
     }
-    .top-chat {
-        padding: toRem(24);
-        // .top-chat__title
-        &__title {
+    .top-body-messages{
+        width: 100%;
+        padding-bottom: toRem(24);
+        align-items: start;
+        .top-chat__title{
             font-size: toRem(20);
             font-weight: 600;
         }
     }
+    .body-messages__footer{
+        padding-top: toRem(17);
+    }
+    .footer-chat {
+        padding: 0;
+    }
+    // .chat {
+    //     // .chat__body
+    //     &__body {
+    //         min-height: 400px;
+    //         @media (max-width:$tablet){
+    //             max-height: 60vh;
+    //         }
+    //         height: calc(40vh - 130px);
+    //         @media (min-width:$tablet){
+    //             height: calc(100vh - 170px);
+    //         }
+    //     }
+    //     // .chat__top
+    //     &__top {
+    //     }
+    //     // .chat__content
+    //     &__content {
+    //     }
+    //     // .chat__footer
+    //     &__footer {
+    //     }
+    // }
+    // .top-chat {
+    //     padding: toRem(24);
+    //     // .top-chat__title
+    //     &__title {
+    //         font-size: toRem(20);
+    //         font-weight: 600;
+    //     }
+    // }
 }
 .content-chat {
     // .content-chat__body

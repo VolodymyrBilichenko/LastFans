@@ -420,10 +420,11 @@
     &__body{
         display: flex;
         flex-direction: column;
-        gap: 5px;
+        // gap: 5px;
     }
     &__content{
         line-height: 24px;
+        color: var(--grey);
         *{
 
             word-wrap: break-word;
@@ -435,7 +436,7 @@
     &__actions{
         display: flex;
         align-items: center;
-        gap: 25px;
+        gap: 30px;
     }
 
     &__button{

@@ -138,35 +138,37 @@ export const VideoStore = () => {
                         </div>
                     </div>}
                 </div>
-                <div className="video-store__body">
-                    <div className="video-store__content content-video-store">
+                <div className="video-store__wrapper">
+                    <div className="video-store__body">
+                            <div className="video-store__content content-video-store">
 
 
-                        {
-                            filteredVideo
-                                ?.slice(countPerPage * paginatePage - countPerPage, countPerPage * paginatePage)
-                                ?.map(item => (
-                                    <VideoStoreItem
-                                        title={item.title}
-                                        user={item.user}
-                                        date={item.date}
-                                        isNew={item.isNew}
-                                        isDownload={item.isDownload}
-                                        price={item.price}
-                                        poster={item.poster}
-                                    />
-                                ))
-                        }
+                                {
+                                    filteredVideo
+                                        ?.slice(countPerPage * paginatePage - countPerPage, countPerPage * paginatePage)
+                                        ?.map(item => (
+                                            <VideoStoreItem
+                                                title={item.title}
+                                                user={item.user}
+                                                date={item.date}
+                                                isNew={item.isNew}
+                                                isDownload={item.isDownload}
+                                                price={item.price}
+                                                poster={item.poster}
+                                            />
+                                        ))
+                                }
 
 
-                        {
-                            !filteredVideo.length && "Videos not found"
-                        }
+                                {
+                                    !filteredVideo.length && "Videos not found"
+                                }
 
+                            </div>
+                        
+                            {user.sex === "man" && <Pagination setCountPerPage={setCountPerPage} countPerPage={countPerPage} arrayLength={filteredVideo.length} setPaginatePage={setPaginatePage} />}
+                        
                     </div>
-                  
-                    {user.sex === "man" && <Pagination setCountPerPage={setCountPerPage} countPerPage={countPerPage} arrayLength={filteredVideo.length} setPaginatePage={setPaginatePage} />}
-
 
                 </div>
             </div>

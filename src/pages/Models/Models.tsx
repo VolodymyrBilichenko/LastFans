@@ -15,7 +15,8 @@ export const Models = () => {
         <div className="models">
             <div className="models__container">
                 <div className="models__body main__item">
-                    {/* <div className="models__content"> */}
+
+                    <div className="models__wrapper">
 
                         <TransitionGroup>
                             <CSSTransition
@@ -41,10 +42,7 @@ export const Models = () => {
 
                             </CSSTransition>
                         </TransitionGroup>
-
-
-
-                    {/* </div> */}
+                    </div>
 
                     <Pagination setCountPerPage={setCountPerPage} arrayLength={50} setPaginatePage={setPaginatePage} />
                 </div>
