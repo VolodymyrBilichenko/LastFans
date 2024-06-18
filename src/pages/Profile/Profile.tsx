@@ -80,7 +80,7 @@ export const Profile = () => {
                                     <p className="info-body-profile__text">Location</p>
                                     <span>Florida Beaches</span>
                                 </div>
-                                <div className="info-body-profile__item">
+                                <div className="info-body-profile__item info-body-profile__item--fans">
                                     <p className="info-body-profile__text">FANS</p>
                                     <span>9K</span>
                                 </div>

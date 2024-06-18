@@ -629,8 +629,7 @@
 
 .info-body-profile {
     display: grid;
-    border-top: 2px solid var(--secondary);
-    border-bottom: 2px solid var(--secondary);
+
     @media (min-width:$mobile){
          grid-template-columns: repeat(3,1fr);
          justify-content: center;
@@ -646,23 +645,34 @@
         padding: toRem(5) toRem(10);
         gap: toRem(5);
         line-height: 24px;
+        
         span{
-            font-weight: 500;
+            font-weight: 300;
             color: var(--blue);
         }
         a{
             color: var(--blue);
             font-weight: 300;
         }
-
-        &:not(:last-child) {
-    
-            border-bottom: 2px solid var(--secondary);
+        &:first-child{
+            border-top: 2px solid var(--secondary);
         }
+
+        border-bottom: 2px solid var(--secondary);
+
         @media (min-width:$mobile){
+            border-top: 2px solid var(--secondary);
+
             &:not(:last-child) {
     
                 border-right: 2px solid var(--secondary);
+            }
+        }
+
+
+        &--fans{
+            span{
+                font-weight: 500;
             }
         }
     }

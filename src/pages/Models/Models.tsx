@@ -18,21 +18,24 @@ export const Models = () => {
         <div className="models">
             <div className="models__container">
                 <div className="models__body main__item">
-                    <div className="models__content">
+                    <div className="models__wrapper">
 
-                        {
-                            Array(50).fill('')
-                                ?.slice(countPerPage * paginatePage - countPerPage, countPerPage * paginatePage)
-                                ?.map((item, index: number) => (
-                                    <ModelItem
-                                        key={index}
-                                        userName={'Natasha'}
-                                        userTag={'@natasha123'}
-                                        userId={'natasha123'}
-                                    />
-                                ))
-                        }
-   
+                        <div className="models__content">
+
+                            {
+                                Array(50).fill('')
+                                    ?.slice(countPerPage * paginatePage - countPerPage, countPerPage * paginatePage)
+                                    ?.map((item, index: number) => (
+                                        <ModelItem
+                                            key={index}
+                                            userName={'Natasha'}
+                                            userTag={'@natasha123'}
+                                            userId={'natasha123'}
+                                        />
+                                    ))
+                            }
+    
+                        </div>
                     </div>
                   
                     <Pagination setCountPerPage={setCountPerPage} arrayLength={50} setPaginatePage={setPaginatePage} />
