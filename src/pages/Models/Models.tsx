@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { Pagination } from '../../components/Pagination/Pagination'
 import { ModelItem } from './components/ModelItem'
 import { log } from 'console'
+import { TransitionGroup, CSSTransition } from "react-transition-group";
 
 export const Models = () => {
 
@@ -12,29 +13,41 @@ export const Models = () => {
 
     console.log(Array(50).fill('')?.slice(countPerPage * paginatePage - countPerPage, countPerPage * paginatePage));
     console.log(countPerPage * paginatePage - countPerPage, countPerPage * paginatePage);
-    
+
 
     return (
         <div className="models">
             <div className="models__container">
                 <div className="models__body main__item">
-                    <div className="models__content">
+                    {/* <div className="models__content"> */}
 
-                        {
-                            Array(50).fill('')
-                                ?.slice(countPerPage * paginatePage - countPerPage, countPerPage * paginatePage)
-                                ?.map((item, index: number) => (
-                                    <ModelItem
-                                        key={index}
-                                        userName={'Natasha'}
-                                        userTag={'@natasha123'}
-                                        userId={'natasha123'}
-                                    />
-                                ))
-                        }
-   
-                    </div>
-                  
+                    <TransitionGroup
+                        style={{ width: "100%" }}
+                    >
+                        <CSSTransition
+                            key={`${countPerPage * paginatePage - countPerPage},${countPerPage * paginatePage}`}
+                            timeout={300}
+                            classNames={"fade"}
+                        >
+                            <div className='models__content'>
+                                {
+                                    Array(50).fill('')
+                                        ?.slice(countPerPage * paginatePage - countPerPage, countPerPage * paginatePage)
+                                        ?.map((item, index: number) => (
+                                            <ModelItem
+                                                key={index}
+                                                userName={'Natasha'}
+                                                userTag={'@natasha123'}
+                                                userId={'natasha123'}
+                                            />
+                                        ))
+                                }
+                            </div>
+                        </CSSTransition>
+                    </TransitionGroup>
+
+                    {/* </div> */}
+
                     <Pagination setCountPerPage={setCountPerPage} arrayLength={50} setPaginatePage={setPaginatePage} />
                 </div>
             </div>

@@ -38,6 +38,7 @@ export const routes = (sex?: string) => {
             isNotNeedHeader: !getCookies('access_token'),
             isNotNeedMessage: !getCookies('access_token'),
             isNotNeedMenu: !getCookies('access_token'),
+            asideType: 'messages'
         },
         {
             path: '/registration',
@@ -68,30 +69,38 @@ export const routes = (sex?: string) => {
             element: <LiveStream/>,
             isNotNeedMessage: true,
             isNeedAsideChat: true,
+            asideType: 'chat'
         },
         {
             path: '/auto-message',
-            element: <AutoMessage/>
+            element: <AutoMessage/>,
+            asideType: 'messages'
         },
         {
             path: '/history',
-            element: <History/>
+            element: <History/>,
+            asideType: 'messages'
         },
         {
             path: '/messages',
             element: <Messages/>,
             isNotNeedMessage: true,
-            additionalClass: 'messages-page'
+            isNeedAsideUser: true,
+            additionalClass: 'messages-page',
+            asideType: 'user'
         },
         {
             path: '/messages/:userId',
             element: <Messages/>,
             isNotNeedMessage: true,
-            additionalClass: 'messages-page'
+            isNeedAsideUser: true,
+            additionalClass: 'messages-page',
+            asideType: 'user'
         },
         {
             path: '/models',
-            element: <Models/>
+            element: <Models/>,
+            asideType: 'messages'
         },
         {
             path: '/payment',
@@ -105,17 +114,20 @@ export const routes = (sex?: string) => {
         {
             path: '/profile',
             element: <MyProfile/>,
-            additionalClass: 'page-profile-model'
+            additionalClass: 'page-profile-model',
+            asideType: 'messages'
         },
         {
             path: '/profile/:userId',
             element: <Profile/>,
-            additionalClass: 'page-profile-model'
+            additionalClass: 'page-profile-model',
+            asideType: 'messages'
         },
         {
             path: '/my-profile',
             element: <MyProfile/>,
-            additionalClass: sex === 'man' ? 'page-profile-man' : 'page-profile'
+            additionalClass: sex === 'man' ? 'page-profile-man' : 'page-profile',
+            asideType: 'messages'
         },
         {
             path: '/statistic',
@@ -124,7 +136,8 @@ export const routes = (sex?: string) => {
         },
         {
             path: '/video-store',
-            element: <VideoStore/>
+            element: <VideoStore/>,
+            asideType: 'messages'
         },
         {
             path: '/add-store',
@@ -132,17 +145,20 @@ export const routes = (sex?: string) => {
         },
         {
             path: '/subscribers',
-            element: <Subscribers/>
+            element: <Subscribers/>,
+            asideType: 'messages'
         },
         {
             path: '/rules',
             element: <Rules/>,
-            additionalClass: 'page-main'
+            additionalClass: 'page-main',
+            asideType: 'messages'
         },
         {
             path: '/rules/:title',
             element: <Rules/>,
-            additionalClass: 'page-main'
+            additionalClass: 'page-main',
+            asideType: 'messages'
         },
         {
             path: '*',

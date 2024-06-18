@@ -67,8 +67,10 @@ export const LiveStreamChat: React.FC<ILiveStreamChatProps> = () => {
     }
 
     return (
-        <div className="live-chat" style={{width: "100%"}}>
-            <div className="live-chat__container">
+        // className="live-chat" style={{width: "100%"}}
+        <div>
+            {/* className="live-chat__container" */}
+            <div >
                 <div className="chat__body">
                     <div className="chat__top top-chat">
                         <div className="top-chat__title">Live chat</div>

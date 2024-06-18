@@ -119,6 +119,7 @@
 .live-chat {
     flex: 1 1 auto;
     padding-bottom: toRem(30);
+    width: 100%;
     @media (min-width:$tablet){
         max-width: toRem(465);
         padding: toRem(30) 0;

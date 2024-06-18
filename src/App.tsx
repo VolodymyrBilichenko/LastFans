@@ -18,6 +18,7 @@ import { Fancybox as NativeFancybox } from "@fancyapps/ui";
 import { GoogleOAuthProvider } from "@react-oauth/google";
 import { Loader } from "./components/Loader/Loader";
 import { LiveStreamChat } from "./pages/LiveStream/components/LiveStreamChat";
+import { AsideUser } from "./pages/Messages/components/AsideUser/AsideUser";
 
 
 export const App = () => {
@@ -56,6 +57,23 @@ export const App = () => {
     dispatch(setUser(user))
   }, [])
 
+  const isHideBlock = !(!currentPage[0]?.isNotNeedMessage || currentPage[0]?.isNeedAsideChat || currentPage[0]?.isNeedAsideUser)
+
+  const asideBars: any = {
+    "messages": {
+      el: <AsideMessages />,
+      className: "page-messages"
+    },
+    "chat": {
+      el: <LiveStreamChat />,
+      className: "live-chat"
+    },
+    "user": {
+      el: <AsideUser />,
+      className: "messages-user"
+    },
+  }
+
   return (
     <>
       <ToastContainer />
@@ -91,20 +109,19 @@ export const App = () => {
             </CSSTransition>
           </TransitionGroup>
 
-          <div style={{ display: !(!currentPage[0]?.isNotNeedMessage || currentPage[0]?.isNeedAsideChat) ? 'none' : 'block' }}>
-            <TransitionGroup>
-              <CSSTransition
-                key={!currentPage[0]?.isNotNeedMessage ? 'liveStreamChat' : 'asideMessages'}
-                timeout={300}
-                classNames={"fade"}
-              >
-                <div>
-                  {!currentPage[0]?.isNotNeedMessage && <AsideMessages />}
-                  {currentPage[0]?.isNeedAsideChat && <LiveStreamChat />}
-                </div>
-              </CSSTransition>
-            </TransitionGroup>
-          </div>
+          {/* className={currentPage[0]?.asideType ? asideBars[currentPage[0].asideType]?.className : ""} */}
+          <TransitionGroup>
+            <CSSTransition
+              key={currentPage[0]?.asideType ? asideBars[currentPage[0].asideType]?.className : ""}
+              timeout={300}
+              classNames={"fade"}
+            >
+              {
+                currentPage[0]?.asideType ? asideBars[currentPage[0].asideType]?.el ?? <></> : <></>
+              }
+
+            </CSSTransition>
+          </TransitionGroup>
 
         </main>
 
