@@ -136,6 +136,7 @@ export const PaymentAdd: React.FC = () => {
                                             type="text"
                                             placeholder="1234 1234 1234 1234"
                                             className={`input-box__input input input-main ${errors.cardNumber ? 'input-error' : ''}`}
+                                            maxLength={19}
                                             {...register('cardNumber')}
                                             onChange={handleCardNumberChange}
                                         />
@@ -148,6 +149,7 @@ export const PaymentAdd: React.FC = () => {
                                                 type="text"
                                                 placeholder="MM/YYYY"
                                                 className={`input-box__input input input-main ${errors.expiry ? 'input-error' : ''}`}
+                                                maxLength={7}
                                                 {...register('expiry')}
                                                 onChange={handleExpiryChange}
                                             />
@@ -159,6 +161,7 @@ export const PaymentAdd: React.FC = () => {
                                                 type="text"
                                                 placeholder="123"
                                                 className={`input-box__input input input-main ${errors.cvv ? 'input-error' : ''}`}
+                                                maxLength={3}
                                                 {...register('cvv')}
                                             />
                                             {errors.cvv && <p className="error-message" style={{ color: '#CB0000' }}>{errors.cvv.message}</p>}
