@@ -5,8 +5,32 @@ import MoneyIc from '../../../assets/img/icons/monney.svg'
 import AudioIc from '../../../assets/img/icons/audio.svg'
 import FileIc from '../../../assets/img/icons/file.svg'
 import MoneyIc2 from '../../../assets/img/icons/money-02.svg'
+import { useState } from 'react'
+import { toast } from 'react-toastify'
+import { useDispatch } from 'react-redux'
+import { removeModal } from '../../../redux/toolkitSlice'
 
 export const ModalTimeLinePost = () => {
+    const dispatch = useDispatch();
+    const [title, setTitle] = useState<string>('');
+    const [folder, setFolder] = useState<string>('');
+    const [recipient, setRecipient] = useState<string>('Subscribers');
+    const [isRecipientDropdownOpen, setIsRecipientDropdownOpen] = useState<boolean>(false);
+    const [isFolderDropdownOpen, setIsFolderDropdownOpen] = useState<boolean>(false);
+
+    const handlePost = () => {
+        if (title && folder) {
+            toast.success('Пост відправлено');
+
+            // Відправка посту
+            console.log('Пост відправлено', { title, folder, recipient });
+
+            dispatch(removeModal('timeLinePost'))
+        } else {
+            toast.error('Будь ласка, заповніть всі обов’язкові поля.');
+        }
+    };
+
     return (
         <div className="popup-timeline-post__body popup__body">
             <h4 className="popup-timeline-post__title">Create timeline post</h4>
@@ -17,16 +41,36 @@ export const ModalTimeLinePost = () => {
                     </div>
                     <div data-spollers className="user-item__body">
                         <a href="#" className="user-item__name">Boob007</a>
-                        <button className="field-block-add-vid__item spollers__item-main spollers__item input input-main active">
-                            <div data-spoller-close className="field-block-add-vid__title spollers__title">Subscribers</div>
-                            <div className="spollers__wrapper">
+                        <button className={`field-block-add-vid__item spollers__item-main spollers__item input input-main ${isRecipientDropdownOpen ? 'active' : ''}`}
+                            onClick={() => setIsRecipientDropdownOpen(!isRecipientDropdownOpen)}
+                        >
+                            <div data-spoller-close className="field-block-add-vid__title spollers__title">{recipient}</div>
+                            {isRecipientDropdownOpen && (
+                                <div className="spollers__wrapper">
+                                    <div className="field-block-add-vid__body spollers__body">
+                                        {['Subscribers', 'Fans', 'All'].map((option) => (
+                                            <div
+                                                key={option}
+                                                className="field-block-add-vid__value"
+                                                onClick={() => {
+                                                    setRecipient(option);
+                                                    setIsRecipientDropdownOpen(false);
+                                                }}
+                                            >
+                                                {option}
+                                            </div>
+                                        ))}
+                                    </div>
+                                </div>
+                            )}
+                            {/* <div className="spollers__wrapper">
 
                                 <div className="field-block-add-vid__body spollers__body">
                                     <div className="field-block-add-vid__value">Subscribers</div>
                                     <div className="field-block-add-vid__value">Fans</div>
                                     <div className="field-block-add-vid__value">All</div>
                                 </div>
-                            </div>
+                            </div> */}
                         </button>
                     </div>
                 </div>
@@ -35,7 +79,11 @@ export const ModalTimeLinePost = () => {
                 <div className="body-popup-timeline-post__title input-box">
                     <label>Title</label>
                     
-                    <input placeholder="Add title of your post" className="input-box__input input input-main"></input>
+                    <input placeholder="Add title of your post" className="input-box__input input input-main"
+                        required
+                        value={title}
+                        onChange={(e) => setTitle(e.target.value)}
+                    />
                 </div>
                 <div className="body-popup-timeline-post__description input-box">
                     <label>Description</label>
@@ -43,16 +91,36 @@ export const ModalTimeLinePost = () => {
                 </div>
                 <div data-spollers className="body-popup-timeline-post__folder input-box">
                     <label>Add post to folder</label>
-                    <button className="field-block-add-vid__item spollers__item-main spollers__item input input-main">
-                        <div data-spoller-close className="field-block-add-vid__title spollers__title">Choose folder</div>
-                        <div className="spollers__wrapper">
+                    <button className={`field-block-add-vid__item spollers__item-main spollers__item input input-main ${isFolderDropdownOpen ? 'active' : ''}`}
+                        onClick={() => setIsFolderDropdownOpen(!isFolderDropdownOpen)}
+                    >
+                        <div data-spoller-close className="field-block-add-vid__title spollers__title">{folder || 'Choose folder'}</div>
+                        {isFolderDropdownOpen && (
+                            <div className="spollers__wrapper">
+                                <div className="field-block-add-vid__body spollers__body">
+                                    {[1, 2, 3].map((option) => (
+                                        <div
+                                            key={option}
+                                            className="field-block-add-vid__value"
+                                            onClick={() => {
+                                                setFolder(option.toString());
+                                                setIsFolderDropdownOpen(false);
+                                            }}
+                                        >
+                                            {option}
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                        )}
+                        {/* <div className="spollers__wrapper">
                                 
                             <div className="field-block-add-vid__body spollers__body">
                                 <div className="field-block-add-vid__value">1</div>
                                 <div className="field-block-add-vid__value">2</div>
                                 <div className="field-block-add-vid__value">3</div>
                             </div>
-                        </div>
+                        </div> */}
                     </button>
                 </div>
             </div>
@@ -81,7 +149,7 @@ export const ModalTimeLinePost = () => {
                     </div>
                 </div>
             </div>
-            <button className="popup-timeline-post__post button button--fw"><span>Post</span></button>
+            <button className="popup-timeline-post__post button button--fw" onClick={handlePost}><span>Post</span></button>
         </div>
     )
 }
