@@ -50,7 +50,7 @@ export const Highlights = ({isNeedAdd}: IHighlights) => {
                         <div className="item-highlights-main__image">
                                 <img src={StoryPh} alt="ph"/>
                         </div>
-                        <p className="item-highlights-main__text">NewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNew</p>
+                        <p className="item-highlights-main__text">New</p>
                     </NavLink>
                 </SwiperSlide>
                 <SwiperSlide >
@@ -66,7 +66,7 @@ export const Highlights = ({isNeedAdd}: IHighlights) => {
                         <div className="item-highlights-main__image">
                                 <img src={StoryPh} alt="ph"/>
                         </div>
-                        <p className="item-highlights-main__text">NewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNew</p>
+                        <p className="item-highlights-main__text">NewNewNewNewNewNew</p>
                     </NavLink>
                 </SwiperSlide>
                 <SwiperSlide >
@@ -74,7 +74,7 @@ export const Highlights = ({isNeedAdd}: IHighlights) => {
                         <div className="item-highlights-main__image">
                                 <img src={StoryPh} alt="ph"/>
                         </div>
-                        <p className="item-highlights-main__text">NewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNew</p>
+                        <p className="item-highlights-main__text">New</p>
                     </NavLink>
                 </SwiperSlide>
                 <SwiperSlide >
@@ -82,7 +82,7 @@ export const Highlights = ({isNeedAdd}: IHighlights) => {
                         <div className="item-highlights-main__image">
                                 <img src={StoryPh} alt="ph"/>
                         </div>
-                        <p className="item-highlights-main__text">NewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNew</p>
+                        <p className="item-highlights-main__text">New</p>
                     </NavLink>
                 </SwiperSlide>
                 <SwiperSlide >
@@ -90,7 +90,7 @@ export const Highlights = ({isNeedAdd}: IHighlights) => {
                         <div className="item-highlights-main__image">
                                 <img src={StoryPh} alt="ph"/>
                         </div>
-                        <p className="item-highlights-main__text">NewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNew</p>
+                        <p className="item-highlights-main__text">New</p>
                     </NavLink>
                 </SwiperSlide>
                 <SwiperSlide >
@@ -98,7 +98,7 @@ export const Highlights = ({isNeedAdd}: IHighlights) => {
                         <div className="item-highlights-main__image">
                                 <img src={StoryPh} alt="ph"/>
                         </div>
-                        <p className="item-highlights-main__text">NewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNew</p>
+                        <p className="item-highlights-main__text">New</p>
                     </NavLink>
                 </SwiperSlide>
                 <SwiperSlide >
@@ -106,7 +106,7 @@ export const Highlights = ({isNeedAdd}: IHighlights) => {
                         <div className="item-highlights-main__image">
                                 <img src={StoryPh} alt="ph"/>
                         </div>
-                        <p className="item-highlights-main__text">NewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNew</p>
+                        <p className="item-highlights-main__text">New</p>
                     </NavLink>
                 </SwiperSlide>
                 <SwiperSlide >
@@ -114,7 +114,7 @@ export const Highlights = ({isNeedAdd}: IHighlights) => {
                         <div className="item-highlights-main__image">
                                 <img src={StoryPh} alt="ph"/>
                         </div>
-                        <p className="item-highlights-main__text">NewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNew</p>
+                        <p className="item-highlights-main__text">New</p>
                     </NavLink>
                 </SwiperSlide>
                 <SwiperSlide >
@@ -122,7 +122,7 @@ export const Highlights = ({isNeedAdd}: IHighlights) => {
                         <div className="item-highlights-main__image">
                                 <img src={StoryPh} alt="ph"/>
                         </div>
-                        <p className="item-highlights-main__text">NewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNew</p>
+                        <p className="item-highlights-main__text">New</p>
                     </NavLink>
                 </SwiperSlide>
                 <SwiperSlide >
@@ -130,7 +130,7 @@ export const Highlights = ({isNeedAdd}: IHighlights) => {
                         <div className="item-highlights-main__image">
                                 <img src={StoryPh} alt="ph"/>
                         </div>
-                        <p className="item-highlights-main__text">NewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNewNew</p>
+                        <p className="item-highlights-main__text">New</p>
                     </NavLink>
                 </SwiperSlide>
             </Swiper>

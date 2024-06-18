@@ -5,9 +5,9 @@ export const MediaFilesAll = () => {
         <>
             <div className="media-files__item item-media-files blocked">
                 <div className="item-video-store__wrapper">
-                    <div className="item-video-store__image">
+                    <a href={`${UserBgPh}`} data-fancybox={"media-all"} className="item-video-store__image">
                         <img src={UserBgPh} alt="ph" />
-                    </div>
+                    </a>
                 </div>
                 <div className="item-video-store__tags">
                     <div className="item-video-store__tag tag-item-video-store tag-item-video-store--orange price">
@@ -21,9 +21,9 @@ export const MediaFilesAll = () => {
             </div>
             <div className="media-files__item item-media-files">
                 <div className="item-video-store__wrapper">
-                    <div className="item-video-store__image">
+                    <a href={`${UserBgPh}`} data-fancybox={"media-all"} className="item-video-store__image">
                         <img src={UserBgPh} alt="ph" />
-                    </div>
+                    </a>
                 </div>
                 <div className="item-video-store__tags">
                     <div className="item-video-store__tag tag-item-video-store tag-item-video-store--orange price">
