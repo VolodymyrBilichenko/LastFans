@@ -8,6 +8,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { addModal } from '../../redux/toolkitSlice'
 import { useClickOutside } from '../../hooks/ClickOutside'
 import { Pagination } from '../../components/Pagination/Pagination'
+import { AsideMessages } from '../../components/AsideMessages/AsideMessages'
 
 export const VideoStore = () => {
 
@@ -170,6 +171,7 @@ export const VideoStore = () => {
 
                 </div>
             </div>
+
         </div>
     )
 }

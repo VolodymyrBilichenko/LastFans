@@ -18,6 +18,7 @@ import { toast } from 'react-toastify'
 import { IUser } from '../../models'
 import { useDispatch, useSelector } from 'react-redux'
 import { addModal } from '../../redux/toolkitSlice'
+import { AsideMessages } from '../../components/AsideMessages/AsideMessages'
 
 export const Main = () => {
 	const dispatch = useDispatch();
@@ -30,8 +31,9 @@ export const Main = () => {
 	const handleOpenModal = (modalName: string) => {
 		dispatch(addModal(`${modalName}`))
 	}
-	
+
 	return (
+		// style={{display: "flex"}}
 		<div className="main">
 			<div className="main__container">
 				{user.sex === "woman" && <div className="main__new-post new-post-main main__item">
@@ -41,7 +43,7 @@ export const Main = () => {
 								<img src={"https://static01.nyt.com/images/2012/08/19/t-magazine/19well-emma-2/19well-emma-2-superJumbo.jpg"} alt="ph" />
 							</NavLink>
 							<button onClick={() => handleOpenModal('timeLinePost')} className="new-post-main__input input-main">
-								<input type="text" name="form[]" style={{pointerEvents: "none"}} placeholder="Create new post" disabled className="input" />
+								<input type="text" name="form[]" style={{ pointerEvents: "none" }} placeholder="Create new post" disabled className="input" />
 							</button>
 						</div>
 						<div className="new-post-main__actions">
@@ -87,7 +89,7 @@ export const Main = () => {
 
 					</div>
 				</div>}
-				
+
 				{user.sex === "woman" && <div className="main__highlights highlights-main main__item">
 					<div className="highlights-main__header">
 						<h3 className="highlights-main__title title title--small">Highlights</h3>
@@ -95,7 +97,7 @@ export const Main = () => {
 					<Highlights isNeedAdd={true} />
 
 
-        		</div>}
+				</div>}
 
 				<div className="main__content content-main">
 
@@ -135,6 +137,7 @@ export const Main = () => {
 
 				</div>
 			</div>
+			{/* <AsideMessages /> */}
 		</div>
 	)
 }

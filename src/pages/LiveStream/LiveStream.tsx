@@ -14,8 +14,6 @@ export const LiveStream = () => {
                     </div>
                 </div>
             </div>
-            
-            <LiveStreamChat/>
         </div>
 
     )

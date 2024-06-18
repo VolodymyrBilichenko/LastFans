@@ -10,14 +10,14 @@ export const LoaderStyle = styled.div`
     height: 100%;
     opacity: 0;
     visibility: hidden;
-    transition: all .3s ease;
+    transition: all 2s ease;
 
     display: flex;
     justify-content: center;
     align-items: center;
 
     &.loaderActive{
-        opacity: 0.9;
+        opacity: 1;
         visibility: visible;       
     }
 `

@@ -66,7 +66,8 @@ export const routes = (sex?: string) => {
         {
             path: '/live',
             element: <LiveStream/>,
-            isNotNeedMessage: true
+            isNotNeedMessage: true,
+            isNeedAsideChat: true,
         },
         {
             path: '/auto-message',

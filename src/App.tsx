@@ -17,6 +17,7 @@ import { Modals } from "./components/Modals/Modals";
 import { Fancybox as NativeFancybox } from "@fancyapps/ui";
 import { GoogleOAuthProvider } from "@react-oauth/google";
 import { Loader } from "./components/Loader/Loader";
+import { LiveStreamChat } from "./pages/LiveStream/components/LiveStreamChat";
 
 
 export const App = () => {
@@ -61,7 +62,7 @@ export const App = () => {
 
       <Modals />
 
-      <Loader loading={loading}/>
+      {/* <Loader loading={loading}/> */}
 
       {!currentPage[0]?.isNotNeedHeader && <Header handleOpenMenu={handleOpenMenu} />}
       <GoogleOAuthProvider clientId="1071605377094-5663q4ujiakepp8ri3mis7buhclag70l.apps.googleusercontent.com">
@@ -85,11 +86,26 @@ export const App = () => {
                     path={item.path}
                   />
                 ))}
+
               </Routes>
             </CSSTransition>
           </TransitionGroup>
 
-          {!currentPage[0]?.isNotNeedMessage && <AsideMessages />}
+          <div style={{ display: !(!currentPage[0]?.isNotNeedMessage || currentPage[0]?.isNeedAsideChat) ? 'none' : 'block' }}>
+            <TransitionGroup>
+              <CSSTransition
+                key={!currentPage[0]?.isNotNeedMessage ? 'liveStreamChat' : 'asideMessages'}
+                timeout={300}
+                classNames={"fade"}
+              >
+                <div>
+                  {!currentPage[0]?.isNotNeedMessage && <AsideMessages />}
+                  {currentPage[0]?.isNeedAsideChat && <LiveStreamChat />}
+                </div>
+              </CSSTransition>
+            </TransitionGroup>
+          </div>
+
         </main>
 
       </GoogleOAuthProvider>
