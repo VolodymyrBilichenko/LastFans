@@ -18,7 +18,6 @@ import { VideoStore } from '../pages/VideoStore/VideoStore'
 import { AddStore } from '../pages/AddStore/AddStore'
 import { Rules } from '../pages/Rules/Rules'
 import getCookies from '../functions/getCookie'
-import { Modals } from '../components/Modals/Modals'
 
 export const routes = (sex?: string) => {
     
