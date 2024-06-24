@@ -4,6 +4,18 @@ import React from 'react';
 
 ChartJS.register(ArcElement, Tooltip, Legend, LineElement, CategoryScale, LinearScale, PointElement);
 
+const daysInMonth = 31; // Кількість днів у місяці
+const labels = Array.from({ length: daysInMonth }, (_, i) => i + 1); // Створюємо масив днів від 1 до 31
+const dataPoints = [
+    100, 120, 130, 140, 150, 160, 170, 180, 190, 200,
+    210, 100, 342, 568, 222, 800, 150, 90, 600, 350,
+]; // Замініть на ваші дані для кожного дня
+
+const totatlErnings = dataPoints.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
+
+console.log(totatlErnings);
+
+
 export const StatisticItem: React.FC = () => {
     return (
         <>
@@ -15,7 +27,7 @@ export const StatisticItem: React.FC = () => {
                     </div>
                     <div className="graphic-body-statistics__stat">
                         <div className="graphic-body-statistics__block">
-                            <p className="graphic-body-statistics__value">$ <span>2,129</span></p>
+                            <p className="graphic-body-statistics__value">$ <span>{totatlErnings}</span></p>
                             <div className="graphic-body-statistics__change change-graphic-body-statistics">
                                 <div className="change-graphic-body-statistics__arrow">
                                     <svg width="5" height="7" viewBox="0 0 5 7" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -31,19 +43,13 @@ export const StatisticItem: React.FC = () => {
                 <div className="graphic-body-statistics__body">
                     <Line
                         data={{
-                            labels: ['Jun', 'Jul', 'Aug'],
+                            labels: labels,
                             datasets: [
                                 {
-                                    label: 'Dataset 1',
-                                    data: [5, 6, 7],
+                                    label: 'Earnings',
+                                    data: dataPoints,
                                     borderColor: 'rgba(75, 192, 192, 1)',
                                     backgroundColor: 'rgba(75, 192, 192, 0.2)',
-                                },
-                                {
-                                    label: 'Dataset 2',
-                                    data: [3, 2, 1],
-                                    borderColor: 'rgba(255, 99, 132, 1)',
-                                    backgroundColor: 'rgba(255, 99, 132, 0.2)',
                                 },
                             ],
                         }}
@@ -63,14 +69,14 @@ export const StatisticItem: React.FC = () => {
                                     display: true,
                                     title: {
                                         display: true,
-                                        text: 'Month',
+                                        text: 'Days',
                                     },
                                 },
                                 y: {
                                     display: true,
                                     title: {
                                         display: true,
-                                        text: 'Value',
+                                        text: 'Earnings (USD)',
                                     },
                                     beginAtZero: true,
                                 },
