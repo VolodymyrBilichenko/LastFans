@@ -9,7 +9,7 @@ const labels = Array.from({ length: daysInMonth }, (_, i) => i + 1); // Ство
 const dataPoints = [
     100, 120, 130, 140, 150, 160, 170, 180, 190, 200,
     210, 100, 342, 568, 222, 800, 150, 90, 600, 350,
-]; // Замініть на ваші дані для кожного дня
+];
 
 const totatlErnings = dataPoints.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
 
@@ -48,7 +48,7 @@ export const StatisticItem: React.FC = () => {
                                 {
                                     label: 'Earnings',
                                     data: dataPoints,
-                                    borderColor: 'rgba(75, 192, 192, 1)',
+                                    borderColor: '#3F79CF',
                                     backgroundColor: 'rgba(75, 192, 192, 0.2)',
                                 },
                             ],
