@@ -94,7 +94,7 @@ export const ModalAddVid = () => {
     return (
         <div  className="popup-add-vid__body popup__body">
             <h4  className="popup-add-vid__title">Add video to my store</h4>
-            <form onSubmit={handleSubmit}>
+            <form className='popup-add-vid__form' onSubmit={handleSubmit}>
                 <div  className="popup-add-vid__block">
                     <div  className="input-box">
                         <label>Title</label>

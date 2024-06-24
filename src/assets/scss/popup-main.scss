@@ -10,18 +10,31 @@
 .popup-add-vid {
 	// .popup-add-vid__body
 	&__body {
-		display: grid;
-		gap: toRem(20);
+		display: flex;
+		flex-direction: column;
+		gap: toRem(15);
+		max-width: toRem(540);
 	}
 	// .popup-add-vid__title
 	&__title {
 		font-weight: 600;
 		font-size: toRem(20);
+		text-transform: uppercase;
+	}
+	&__form{
+		display: flex;
+		flex-direction: column;
+		gap: toRem(24);
 	}
 	// .popup-add-vid__block
 	&__block {
 		display: grid;
 		gap: toRem(15);
+	}
+	&__upload{
+		span{
+			// color: var(--black);
+		}
 	}
 	.input-box-block {
 		display: grid;
@@ -520,12 +533,15 @@
 			}
 			// .user-item__username
 			&__username {
+				font-size: toRem(16);
+				line-height: 125%; /* 20/16 */
 			}
 		}
 	}
 	// .popup-block-user__title
 	&__title {
 		text-transform: uppercase;
+		line-height: 120%; /* 24/20 */
 		&:not(:last-child) {
 			margin-bottom: toRem(14);
 		}
@@ -593,8 +609,25 @@
 	}
 	// .popup-mass-message__body
 	&__body {
+		max-width: toRem(919);
+		width: 100vw;
 		display: flex;
 		gap: toRem(20);
+		max-height: toRem(810);
+		.input-chat {
+			border-radius: toRem(10) !important;
+	
+		}
+		.input-box {
+			
+			input{
+				font-size: toRem(15);
+				&::placeholder{
+					font-size: toRem(15);
+				}
+			}
+	
+		}
 	}
 	// .popup-mass-message__block
 	&__block {
@@ -620,7 +653,6 @@
 	&__excluding {
 	}
 	.input-box__exclude{
-		min-height: toRem(217);
 	}
 	.input-block-calendar{
 		justify-content: space-between;
@@ -632,20 +664,8 @@
 	input::placeholder{
 		font-size: toRem(15);
 	}
-	.input-box {
-		// .input-box__input
-		&__input {
-		}
-		
-		input{
-			background-color: var(--secondary);
-			outline: none;
-		}
-
-	}
-	.input-chat{
-		border-radius: toRem(12);
-	}
+	
+	
 }
 
 
@@ -666,20 +686,7 @@
 	&__input {
 	}
 }
-.input-chat {
-	// .input-chat__box
-	&__box {
-	}
-	// .input-chat__input
-	&__input {
-	}
-	// .input-chat__block
-	&__block {
-	}
-	// .input-chat__actions
-	&__actions {
-	}
-}
+
 .actions-input-chat {
 	// .actions-input-chat__item
 	&__item {
@@ -697,11 +704,10 @@
 
 .excluding {
 	width: 100%;
-	
+	max-width: toRem(347);
 	display: flex;
 	flex-direction: column;
 	gap: toRem(20);
-	height: fit-content;
 	display: none; 
 
 	@media (min-width:$mobile){
@@ -739,11 +745,19 @@
 
 		}
 	}
+
 	// .excluding__items
 	&__items {
 		display: flex;
 		flex-direction: column;
 		gap: toRem(20);
+		height: fit-content;
+		overflow-y: auto;
+		padding: 5px;
+		&::-webkit-scrollbar{
+			display: none;
+		}
+
 	}
 	// .excluding__item
 	&__item {
@@ -762,6 +776,8 @@
 	padding: toRem(15);
 	display: flex;
 	flex-direction: column;
+	min-height: toRem(217);
+
 	&__items{
 		display: flex;
 		flex-wrap: wrap;
@@ -808,11 +824,13 @@
 	display: flex;
 	align-items: center;
 	gap: toRem(5);
-	font-size: toRem(10);
+	font-size: toRem(12);
+
 	border-radius: toRem(12);
 	outline: 1px solid var(--blue);
 	line-height: 20px;
-	padding: toRem(3) toRem(8);
+	padding: toRem(3) toRem(18);
+	padding-right: toRem(9);
 	// .item-exclude-input-box__name
 	&__name {
 		font-weight: 500;
@@ -823,9 +841,9 @@
 	}
 	// .item-exclude-input-box__delete
 	&__delete {
-		flex: 0 0 toRem(12);
-		width: toRem(12);
-		height: toRem(12);
+		flex: 0 0 toRem(14);
+		width: toRem(14);
+		height: toRem(14);
 		svg{
 			width: 100%;
 			height: 100%;

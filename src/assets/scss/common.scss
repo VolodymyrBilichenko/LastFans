@@ -104,6 +104,24 @@
     
 }
 
+.input-box {
+    min-width: toRem(110);
+    width: 100%;
+    display: grid;
+    gap: toRem(8);
+    label{
+        line-height: 24px;
+    }
+    // .input-box__input
+    &__input {
+        
+    }
+    .input-box__input::placeholder{
+        font-size: toRem(15);
+
+    }
+}
+
 .search{
     display: flex;
     align-items: center;
@@ -659,7 +677,6 @@
     }
     &__content{
         border-radius: toRem(10);
-        padding: toRem(20);
         display: flex;
         min-width: 124px;
         flex-direction: column;
@@ -669,7 +686,7 @@
         overflow: hidden;
         box-shadow: 0px 0px 15px 0 rgba(0, 0, 0, 0.15);
         border-radius: toRem(10);
-        padding: toRem(18) toRem(26);
+        padding: toRem(10) 0;
         display: flex;
         flex-direction: column;
 
@@ -690,7 +707,9 @@
         z-index: 2;
         width: 100%;
         text-align: start;
-        line-height: 24px;
+        line-height: 39px;
+        padding: 0 toRem(26);
+
         @media (any-hover: hover){
             &:hover{
                 transition: all .3s ease;
@@ -1392,7 +1411,7 @@
     padding: 0 15px;
     @media (min-width:em(1280)){
         display: block;
-        margin-top: toRem(15);
+        margin-top: toRem(26);
         margin-right: toRem(33);
         max-width: toRem(430);
         padding: 0;
@@ -1402,10 +1421,11 @@
     }
     .popup-actions__content{
         min-width: 186px;
-        padding: 18px 5px;
+        padding: 18px 0;
         .body-popup-actions__item{
             justify-content: center;
             text-align: center;
+            line-height: 24px;
         }
     }
 }
@@ -1646,9 +1666,9 @@ transform: scale(1);
     align-items: center;
     padding: toRem(10);
     width: 100%;
-    height: fit-content;
+    height: 100%;
     min-height: toRem(55);
- 
+    max-height: 60px;
     gap: 10px;
     // .select-custom__body
     &__content {
@@ -1661,7 +1681,9 @@ transform: scale(1);
         overflow-y: auto;
         width: fit-content;
         height: toRem(50);
-        flex: 0 0 40%;
+        // flex: 0 0 40%;
+        max-width: 40%;
+        flex: 0 0 auto;
     }
     .add-tag__content::-webkit-scrollbar {
         display: none;

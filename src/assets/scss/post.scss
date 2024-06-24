@@ -167,6 +167,8 @@
         display: flex;
         align-items: center;
         gap: toRem(20);
+        font-weight: 600;
+
     }
     // .footer-post__like
     &__like {
@@ -180,6 +182,7 @@
         top: 0;
         transform: translate(0,-100%);
         padding-bottom: 10px;
+        padding-left: toRem(30);
         left: 0;
         transition: all .3s ease;
         opacity: 0;
@@ -196,7 +199,7 @@
         }
         // .reactions-popup__item
         &__item {
-            font-size: toRem(18);
+            font-size: toRem(23);
         }
     }
     // .footer-post__comments
@@ -221,6 +224,8 @@
 
 .like-footer-post{
     position: relative;
+    font-weight: 600;
+
         @media (any-hover: hover){
             &:hover{
                 .reactions-popup{
@@ -234,7 +239,6 @@
         align-items: center;
         gap: toRem(8);
         color: var(--grey);
-
     }
     &__icon{
         flex: 0 0 toRem(24);
@@ -248,6 +252,8 @@
 }
 
 .comments-footer-post{
+    font-weight: 600;
+
     &__body{
         display: flex;
         align-items: center;
@@ -274,6 +280,8 @@
         text-wrap: nowrap;
         cursor: pointer;
         font-weight: 600;
+        font-size: toRem(16);
+        line-height: 23px;
         span{
             color: var(--grey);
         }
@@ -383,6 +391,7 @@
         flex-direction: column;
         gap: 20px;
         padding: 5px;
+        padding-bottom: toRem(20);
         
         overflow-y: auto;
         max-height: 400px;
@@ -393,11 +402,13 @@
         justify-content: space-between;
         gap: 10px;
         padding: 8px;
-        min-height: 48px;
+        height: 48px;
         input{
             outline: none;
             background-color: transparent;
             width: 100%;
+            height: 100%;
+            font-size: toRem(14);
         }
 
     }

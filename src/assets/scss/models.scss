@@ -1,6 +1,6 @@
 .models {
     width: 100%;
-    padding-top: toRem(15);
+    padding-top: toRem(26);
     // .models__container
     &__container {
         height: 100%;
@@ -10,7 +10,7 @@
         flex-direction: column;
         gap: toRem(20);
         height: 100%;
-
+        
     }
     &__wrapper{
         
@@ -50,6 +50,7 @@
     padding: toRem(10) toRem(14);
     width: 100%;
     aspect-ratio: 210/350;
+    max-width: toRem(210);
     // .item-models__body
     &__body {
     }
